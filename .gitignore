@@ -1,0 +1,11 @@
+# Ignore user specific project data
+
+*.suo
+*.user
+*.sln.docstates
+xcuserdata
+
+# Ignore build output directories
+
+/Bin
+/Build
