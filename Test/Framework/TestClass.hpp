@@ -1,7 +1,7 @@
 #pragma once
 
 #include "TestCase.hpp"
-#include "UnitTestResult.hpp"
+#include "TestClassResult.hpp"
 
 #include <memory>
 #include <vector>
@@ -12,17 +12,17 @@ namespace Fnd
 namespace Test
 {
 
-class UnitTest
+class TestClass
 {
 public:
 	
 	void Run();
 	
-	const UnitTestResult& GetResult() const;
+	const TestClassResult& GetResult() const;
 	
 protected:
 
-	UnitTest( const std::string& name );
+	TestClass( const std::string& desciption );
 
 	template <typename FunctionType,typename DerivedType>
 	void AddTestCase( const std::string& name, FunctionType function, DerivedType* ptr )
@@ -39,12 +39,10 @@ private:
 	void AddTestCase( std::shared_ptr<TestCase> test_case );
 	
 private:
-
-	std::string _name;
 	
 	std::vector<std::shared_ptr<TestCase>> _test_cases;
 	
-	UnitTestResult _result;
+	TestClassResult _result;
 };
 
 }

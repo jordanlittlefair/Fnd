@@ -15,10 +15,11 @@
 		10555C9C1C7B8A8A007BEC3D /* TestSuite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C901C7B8A8A007BEC3D /* TestSuite.hpp */; };
 		10555C9D1C7B8A8A007BEC3D /* TestSuiteResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10555C911C7B8A8A007BEC3D /* TestSuiteResult.cpp */; };
 		10555C9E1C7B8A8A007BEC3D /* TestSuiteResult.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C921C7B8A8A007BEC3D /* TestSuiteResult.hpp */; };
-		10555C9F1C7B8A8A007BEC3D /* UnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10555C931C7B8A8A007BEC3D /* UnitTest.cpp */; };
-		10555CA01C7B8A8A007BEC3D /* UnitTest.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C941C7B8A8A007BEC3D /* UnitTest.hpp */; };
-		10555CA11C7B8A8A007BEC3D /* UnitTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10555C951C7B8A8A007BEC3D /* UnitTestResult.cpp */; };
-		10555CA21C7B8A8A007BEC3D /* UnitTestResult.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C961C7B8A8A007BEC3D /* UnitTestResult.hpp */; };
+		10555C9F1C7B8A8A007BEC3D /* TestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10555C931C7B8A8A007BEC3D /* TestClass.cpp */; };
+		10555CA01C7B8A8A007BEC3D /* TestClass.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C941C7B8A8A007BEC3D /* TestClass.hpp */; };
+		10555CA11C7B8A8A007BEC3D /* TestClassResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10555C951C7B8A8A007BEC3D /* TestClassResult.cpp */; };
+		10555CA21C7B8A8A007BEC3D /* TestClassResult.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10555C961C7B8A8A007BEC3D /* TestClassResult.hpp */; };
+		10A7B3141CB30A6300B78A7C /* AssertResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3131CB30A6300B78A7C /* AssertResult.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +32,12 @@
 		10555C901C7B8A8A007BEC3D /* TestSuite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestSuite.hpp; sourceTree = "<group>"; };
 		10555C911C7B8A8A007BEC3D /* TestSuiteResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSuiteResult.cpp; sourceTree = "<group>"; };
 		10555C921C7B8A8A007BEC3D /* TestSuiteResult.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestSuiteResult.hpp; sourceTree = "<group>"; };
-		10555C931C7B8A8A007BEC3D /* UnitTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitTest.cpp; sourceTree = "<group>"; };
-		10555C941C7B8A8A007BEC3D /* UnitTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UnitTest.hpp; sourceTree = "<group>"; };
-		10555C951C7B8A8A007BEC3D /* UnitTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitTestResult.cpp; sourceTree = "<group>"; };
-		10555C961C7B8A8A007BEC3D /* UnitTestResult.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UnitTestResult.hpp; sourceTree = "<group>"; };
+		10555C931C7B8A8A007BEC3D /* TestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestClass.cpp; sourceTree = "<group>"; };
+		10555C941C7B8A8A007BEC3D /* TestClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestClass.hpp; sourceTree = "<group>"; };
+		10555C951C7B8A8A007BEC3D /* TestClassResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestClassResult.cpp; sourceTree = "<group>"; };
+		10555C961C7B8A8A007BEC3D /* TestClassResult.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestClassResult.hpp; sourceTree = "<group>"; };
+		10A7B3121CB3098700B78A7C /* AssertResult.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AssertResult.hpp; sourceTree = "<group>"; };
+		10A7B3131CB30A6300B78A7C /* AssertResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertResult.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,18 +54,20 @@
 		10555C741C7B8A66007BEC3D = {
 			isa = PBXGroup;
 			children = (
+				10A7B3131CB30A6300B78A7C /* AssertResult.cpp */,
+				10A7B3121CB3098700B78A7C /* AssertResult.hpp */,
 				10555C8B1C7B8A8A007BEC3D /* TestCase.cpp */,
 				10555C8C1C7B8A8A007BEC3D /* TestCase.hpp */,
 				10555C8D1C7B8A8A007BEC3D /* TestCaseResult.cpp */,
 				10555C8E1C7B8A8A007BEC3D /* TestCaseResult.hpp */,
+				10555C931C7B8A8A007BEC3D /* TestClass.cpp */,
+				10555C941C7B8A8A007BEC3D /* TestClass.hpp */,
+				10555C951C7B8A8A007BEC3D /* TestClassResult.cpp */,
+				10555C961C7B8A8A007BEC3D /* TestClassResult.hpp */,
 				10555C8F1C7B8A8A007BEC3D /* TestSuite.cpp */,
 				10555C901C7B8A8A007BEC3D /* TestSuite.hpp */,
 				10555C911C7B8A8A007BEC3D /* TestSuiteResult.cpp */,
 				10555C921C7B8A8A007BEC3D /* TestSuiteResult.hpp */,
-				10555C931C7B8A8A007BEC3D /* UnitTest.cpp */,
-				10555C941C7B8A8A007BEC3D /* UnitTest.hpp */,
-				10555C951C7B8A8A007BEC3D /* UnitTestResult.cpp */,
-				10555C961C7B8A8A007BEC3D /* UnitTestResult.hpp */,
 				10555C7E1C7B8A66007BEC3D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +90,9 @@
 				10555C9C1C7B8A8A007BEC3D /* TestSuite.hpp in Headers */,
 				10555C981C7B8A8A007BEC3D /* TestCase.hpp in Headers */,
 				10555C9E1C7B8A8A007BEC3D /* TestSuiteResult.hpp in Headers */,
-				10555CA01C7B8A8A007BEC3D /* UnitTest.hpp in Headers */,
+				10555CA01C7B8A8A007BEC3D /* TestClass.hpp in Headers */,
 				10555C9A1C7B8A8A007BEC3D /* TestCaseResult.hpp in Headers */,
-				10555CA21C7B8A8A007BEC3D /* UnitTestResult.hpp in Headers */,
+				10555CA21C7B8A8A007BEC3D /* TestClassResult.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +155,9 @@
 				10555C9B1C7B8A8A007BEC3D /* TestSuite.cpp in Sources */,
 				10555C9D1C7B8A8A007BEC3D /* TestSuiteResult.cpp in Sources */,
 				10555C991C7B8A8A007BEC3D /* TestCaseResult.cpp in Sources */,
-				10555C9F1C7B8A8A007BEC3D /* UnitTest.cpp in Sources */,
-				10555CA11C7B8A8A007BEC3D /* UnitTestResult.cpp in Sources */,
+				10555C9F1C7B8A8A007BEC3D /* TestClass.cpp in Sources */,
+				10555CA11C7B8A8A007BEC3D /* TestClassResult.cpp in Sources */,
+				10A7B3141CB30A6300B78A7C /* AssertResult.cpp in Sources */,
 				10555C971C7B8A8A007BEC3D /* TestCase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +283,7 @@
 				10555C8A1C7B8A66007BEC3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

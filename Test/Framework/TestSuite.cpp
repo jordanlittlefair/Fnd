@@ -2,37 +2,23 @@
 
 using namespace Fnd::Test;
 
-TestSuite::TestSuite( const std::string& name ):
-	_name(name)
+TestSuite::TestSuite( const std::string& description ):
+	_result(description)
 {
-	_result.name = name;
 }
 
-void TestSuite::AddUnitTest( std::shared_ptr<UnitTest> unit_test )
+void TestSuite::AddTestClass( std::shared_ptr<TestClass> test_class )
 {
-	_unit_tests.push_back( unit_test );
+	_test_classes.push_back( test_class );
 }
 
 void TestSuite::Run()
 {
-	for ( auto unit_test : _unit_tests )
+	for ( auto test_class : _test_classes )
 	{
-		unit_test->Run();
+		test_class->Run();
 		
-		_result.succeeded = _result.succeeded && unit_test->GetResult().succeeded;
-		
-		++_result.num_tests;
-		
-		if ( unit_test->GetResult().succeeded )
-		{
-			++_result.num_tests_succeeded;
-		}
-		else
-		{
-			++_result.num_tests_failed;
-		}
-		
-		_result.unit_test_results.push_back( unit_test->GetResult() );
+		_result.AddTestClassResult( test_class->GetResult() );
 	}
 }
 

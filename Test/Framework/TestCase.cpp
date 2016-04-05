@@ -2,11 +2,10 @@
 
 using namespace Fnd::Test;
 
-TestCase::TestCase( const std::string& name, TestFunction function ):
-_function(function),
-_name(name)
+TestCase::TestCase( const std::string& description, TestFunction function ):
+_result(description),
+_function(function)
 {
-	_result.name = _name;
 }
 
 void TestCase::Run()
@@ -16,22 +15,9 @@ void TestCase::Run()
 
 void TestCase::Assert( bool succeeded, const std::string& description )
 {
-	_result.succeeded = _result.succeeded && succeeded;
-	++_result.num_asserts;
+	AssertResult assert_result( succeeded, description );
 	
-	if ( succeeded )
-	{
-		++_result.num_asserts_succeeded;
-	}
-	else
-	{
-		++_result.num_asserts_failed;
-		
-		TestCaseResult::Failure failure;
-		failure.description = description;
-		
-		_result.failures.push_back( failure );
-	}
+	_result.AddAssertResult( assert_result );
 }
 
 const TestCaseResult& TestCase::GetResult() const
