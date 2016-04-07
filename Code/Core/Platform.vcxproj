@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClInclude Include="Bit.hpp" />
     <ClInclude Include="Build.hpp" />
+    <ClInclude Include="Exception.hpp" />
     <ClInclude Include="OS.hpp" />
     <ClInclude Include="Platform.hpp" />
     <ClInclude Include="Types.hpp" />
@@ -83,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Exception.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
