@@ -21,8 +21,8 @@ public:
 
 	TestSuiteResult( const std::string& description );
 	
-	TestSuiteResult( const TestSuiteResult& ) = default;
-	TestSuiteResult& operator=( const TestSuiteResult& ) = default;
+	//TestSuiteResult( const TestSuiteResult& ) = default;
+	//TestSuiteResult& operator=( const TestSuiteResult& ) = default;
 	
 	void AddTestClassResult( const TestClassResult& test_class_result );
 	

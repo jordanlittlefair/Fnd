@@ -18,8 +18,8 @@ public:
 
 	AssertResult( const bool succeeded, const std::string& description );
 	
-	AssertResult( const AssertResult& ) = default;
-	AssertResult& operator=( const AssertResult& ) = default;
+	//AssertResult( const AssertResult& ) = default;
+	//AssertResult& operator=( const AssertResult& ) = default;
 	
 	std::string GetDescription() const;
 	

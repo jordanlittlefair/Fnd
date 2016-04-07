@@ -20,8 +20,8 @@ public:
 
 	TestCaseResult( const std::string& description );
 	
-	TestCaseResult( const TestCaseResult& ) = default;
-	TestCaseResult& operator=( const TestCaseResult& ) = default;
+	//TestCaseResult( const TestCaseResult& ) = default;
+	//TestCaseResult& operator=( const TestCaseResult& ) = default;
 	
 	void AddAssertResult( const AssertResult& assert_result );
 	

@@ -21,8 +21,8 @@ public:
 
 	TestClassResult( const std::string& description );
 	
-	TestClassResult( const TestClassResult& ) = default;
-	TestClassResult& operator=( const TestClassResult& ) = default;
+	//TestClassResult( const TestClassResult& ) = default;
+	//TestClassResult& operator=( const TestClassResult& ) = default;
 	
 	void AddTestCaseResult( const TestCaseResult& test_case_result );
 	
