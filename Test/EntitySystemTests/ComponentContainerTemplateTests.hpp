@@ -35,6 +35,8 @@ private:
 	void CheckDestroyComponent( Fnd::Test::TestCase& test_case );
 
 	void CheckComponentDoesntExist( Fnd::Test::TestCase& test_case );
+
+	void CheckGetComponentBase( Fnd::Test::TestCase& test_case );
 };
 
 }

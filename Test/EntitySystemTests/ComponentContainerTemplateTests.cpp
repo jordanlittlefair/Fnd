@@ -18,6 +18,7 @@ ComponentContainerTemplateTests::ComponentContainerTemplateTests():
 	AddTestCase( "CheckDataFromConstructorIsEqual", &ComponentContainerTemplateTests::CheckDataFromConstructorIsEqual, this );
 	AddTestCase( "CheckDestroyComponent", &ComponentContainerTemplateTests::CheckDestroyComponent, this );
 	AddTestCase( "CheckComponentDoesntExist", &ComponentContainerTemplateTests::CheckComponentId, this );
+	AddTestCase( "CheckGetComponentBase", &ComponentContainerTemplateTests::CheckGetComponentBase, this );
 }
 
 void ComponentContainerTemplateTests::CheckComponentId( Fnd::Test::TestCase& test_case )
@@ -149,4 +150,20 @@ void ComponentContainerTemplateTests::CheckComponentDoesntExist( Fnd::Test::Test
 	{
 		test_case.Assert( true, "GetComponent must throw InvalidEntityIdException" );
 	}
+}
+
+void ComponentContainerTemplateTests::CheckGetComponentBase( Fnd::Test::TestCase& test_case )
+{
+	ComponentContainerTemplate<MockComponentType1> container;
+
+	container.CreateComponent( 1 );
+
+	ComponentContainer* base = &container;
+
+	test_case.Assert( base->GetComponentId() == container.GetComponentId() );
+
+	Component& component = base->GetComponent( 1 );
+	
+	test_case.Assert( component.GetComponentId() == container.GetComponentId() );
+	test_case.Assert( component.GetEntityId() == 1 );
 }
