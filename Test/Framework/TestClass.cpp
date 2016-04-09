@@ -13,7 +13,14 @@ void TestClass::Run()
 	{
 		SetUp();
 		
-		test_case->Run();
+		try
+		{
+			test_case->Run();
+		}
+		catch ( const std::exception& ex )
+		{
+			test_case->Assert( false, std::string( "Unexpected exception: " ) + ex.what() );
+		}
 		
 		_result.AddTestCaseResult( test_case->GetResult() );
 		

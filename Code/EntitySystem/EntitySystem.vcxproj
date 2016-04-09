@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentContainer.hpp" />
+    <ClInclude Include="ComponentContainerTemplate.hpp" />
     <ClInclude Include="ComponentId.hpp" />
     <ClInclude Include="ComponentTemplate.hpp" />
     <ClInclude Include="EntityId.hpp" />
@@ -21,6 +22,7 @@
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentContainer.cpp" />
+    <ClCompile Include="Exceptions.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B06713F6-8423-4C04-B7FC-B06298DC2512}</ProjectGuid>

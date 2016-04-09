@@ -30,6 +30,9 @@
     <ClInclude Include="ExceptionTests.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentContainerTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -51,6 +54,9 @@
       <Filter>Mock</Filter>
     </ClCompile>
     <ClCompile Include="ExceptionTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentContainerTemplateTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
