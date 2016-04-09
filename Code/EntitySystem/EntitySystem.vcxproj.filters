@@ -23,9 +23,15 @@
     <ClInclude Include="ComponentTemplate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentContainer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

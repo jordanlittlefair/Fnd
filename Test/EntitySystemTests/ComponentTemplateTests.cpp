@@ -4,9 +4,10 @@
 
 using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
+
 namespace
 {
-	struct TestComponent
+	struct MockComponent
 	{
 		static const ComponentId Id = 123;
 
@@ -30,19 +31,19 @@ void ComponentTemplateTests::CheckIds( Fnd::Test::TestCase& test_case )
 {
 	const EntityId entity_id = 123;
 
-	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<TestComponent>>( entity_id );
+	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<MockComponent>>( entity_id );
 
-	test_case.Assert( component->GetComponentId() == TestComponent::Id );
+	test_case.Assert( component->GetComponentId() == MockComponent::Id );
 	test_case.Assert( component->GetEntityId() == entity_id );
 }
 
 void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 {
-	TestComponent::Data expected_data;
+	MockComponent::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<TestComponent> component( 0 );
+	ComponentTemplate<MockComponent> component( 0 );
 
 	component.GetData() = expected_data;
 
@@ -69,11 +70,11 @@ void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 
 void ComponentTemplateTests::CheckDataFromConstructorIsEqual( Fnd::Test::TestCase& test_case )
 {	
-	TestComponent::Data expected_data;
+	MockComponent::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<TestComponent> component( 0, expected_data );
+	ComponentTemplate<MockComponent> component( 0, expected_data );
 	
 	test_case.Assert( component.GetData().some_int == expected_data.some_int );
 	test_case.Assert( component.GetData().some_string == expected_data.some_string );
