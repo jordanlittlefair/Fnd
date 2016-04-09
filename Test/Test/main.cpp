@@ -3,6 +3,7 @@
 #include "../EntitySystemTests/ComponentTests.hpp"
 #include "../EntitySystemTests/ComponentTemplateTests.hpp"
 #include "../EntitySystemTests/ComponentContainerTests.hpp"
+#include "../EntitySystemTests/ExceptionTests.hpp"
 
 #include <cassert>
 
@@ -19,6 +20,7 @@ int main()
 	test_suite.AddTestClass<EntitySystem::ComponentTests>();
 	test_suite.AddTestClass<EntitySystem::ComponentTemplateTests>();
 	test_suite.AddTestClass<EntitySystem::ComponentContainerTests>();
+	test_suite.AddTestClass<EntitySystem::ExceptionTests>();
 
 	test_suite.Run();
 	

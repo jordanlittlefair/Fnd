@@ -14,17 +14,19 @@
     <ClInclude Include="ComponentContainerTests.hpp" />
     <ClInclude Include="ComponentTemplateTests.hpp" />
     <ClInclude Include="ComponentTests.hpp" />
+    <ClInclude Include="ExceptionTests.hpp" />
     <ClInclude Include="MockComponent.hpp" />
     <ClInclude Include="MockComponentContainer.hpp" />
-    <ClInclude Include="MockComponentType.hpp" />
+    <ClInclude Include="MockComponentTypes.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp" />
     <ClCompile Include="ComponentTemplateTests.cpp" />
     <ClCompile Include="ComponentTests.cpp" />
+    <ClCompile Include="ExceptionTests.cpp" />
     <ClCompile Include="MockComponent.cpp" />
     <ClCompile Include="MockComponentContainer.cpp" />
-    <ClCompile Include="MockComponentType.cpp" />
+    <ClCompile Include="MockComponentTypes.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{915FB217-65A4-4349-BB7E-0C1553AD8F72}</ProjectGuid>

@@ -21,11 +21,14 @@
     <ClInclude Include="MockComponent.hpp">
       <Filter>Mock</Filter>
     </ClInclude>
-    <ClInclude Include="MockComponentType.hpp">
-      <Filter>Mock</Filter>
-    </ClInclude>
     <ClInclude Include="MockComponentContainer.hpp">
       <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponentTypes.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionTests.hpp">
+      <Filter>Tests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,11 +44,14 @@
     <ClCompile Include="MockComponent.cpp">
       <Filter>Mock</Filter>
     </ClCompile>
-    <ClCompile Include="MockComponentType.cpp">
-      <Filter>Mock</Filter>
-    </ClCompile>
     <ClCompile Include="MockComponentContainer.cpp">
       <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponentTypes.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionTests.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #include "ComponentTemplateTests.hpp"
 
-#include "MockComponentType.hpp"
+#include "MockComponentTypes.hpp"
 
 #include "../../Code/EntitySystem/ComponentTemplate.hpp"
 
@@ -19,19 +19,19 @@ void ComponentTemplateTests::CheckIds( Fnd::Test::TestCase& test_case )
 {
 	const EntityId entity_id = 123;
 
-	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<MockComponentType>>( entity_id );
+	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<MockComponentType1>>( entity_id );
 
-	test_case.Assert( component->GetComponentId() == MockComponentType::Id );
+	test_case.Assert( component->GetComponentId() == MockComponentType1::Id );
 	test_case.Assert( component->GetEntityId() == entity_id );
 }
 
 void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 {
-	MockComponentType::Data expected_data;
+	MockComponentType1::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<MockComponentType> component( 0 );
+	ComponentTemplate<MockComponentType1> component( 0 );
 
 	component.GetData() = expected_data;
 
@@ -58,11 +58,11 @@ void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 
 void ComponentTemplateTests::CheckDataFromConstructorIsEqual( Fnd::Test::TestCase& test_case )
 {	
-	MockComponentType::Data expected_data;
+	MockComponentType1::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<MockComponentType> component( 0, expected_data );
+	ComponentTemplate<MockComponentType1> component( 0, expected_data );
 	
 	test_case.Assert( component.GetData().some_int == expected_data.some_int );
 	test_case.Assert( component.GetData().some_string == expected_data.some_string );
