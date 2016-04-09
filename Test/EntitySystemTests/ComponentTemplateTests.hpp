@@ -11,16 +11,20 @@ namespace Test
 namespace EntitySystem
 {
 
-class ComponentTests:
+class ComponentTemplateTests:
 	public TestClass
 {
 public:
 
-	ComponentTests();
+	ComponentTemplateTests();
 
 private:
 	
 	void CheckIds( Fnd::Test::TestCase& test_case );
+	
+	void CheckDataIsEqual( Fnd::Test::TestCase& test_case );
+
+	void CheckDataFromConstructorIsEqual( Fnd::Test::TestCase& test_case );
 };
 
 }

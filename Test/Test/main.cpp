@@ -1,6 +1,7 @@
 #include "../Framework/TestSuite.hpp"
 
 #include "../EntitySystemTests/ComponentTests.hpp"
+#include "../EntitySystemTests/ComponentTemplateTests.hpp"
 
 #include <cassert>
 
@@ -15,6 +16,7 @@ int main()
 	*/
 	
 	test_suite.AddTestClass<EntitySystem::ComponentTests>();
+	test_suite.AddTestClass<EntitySystem::ComponentTemplateTests>();
 
 	test_suite.Run();
 	

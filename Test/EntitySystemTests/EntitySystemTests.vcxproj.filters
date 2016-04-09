@@ -14,9 +14,15 @@
     <ClInclude Include="ComponentTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentTemplateTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentTemplateTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

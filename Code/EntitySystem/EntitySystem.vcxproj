@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentId.hpp" />
+    <ClInclude Include="ComponentTemplate.hpp" />
     <ClInclude Include="EntityId.hpp" />
   </ItemGroup>
   <ItemGroup>

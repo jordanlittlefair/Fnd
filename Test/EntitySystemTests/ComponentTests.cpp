@@ -24,20 +24,16 @@ public:
 ComponentTests::ComponentTests():
 	TestClass("ComponentTests")
 {
-	AddTestCase( "CheckComponentId", &ComponentTests::CheckComponentId, this );
-	AddTestCase( "CheckEntityId", &ComponentTests::CheckEntityId, this );
+	AddTestCase( "CheckIds", &ComponentTests::CheckIds, this );
 }
 
-void ComponentTests::CheckComponentId( Fnd::Test::TestCase& test_case )
+void ComponentTests::CheckIds( Fnd::Test::TestCase& test_case )
 {
-	std::shared_ptr<Component> component = std::make_shared<MockComponent>( 123, 456 );
+	const ComponentId component_id = 456;
+	const EntityId entity_id = 123;
 
-	test_case.Assert( component->GetComponentId() == 123 );
-}
+	std::shared_ptr<Component> component = std::make_shared<MockComponent>( component_id, entity_id );
 
-void ComponentTests::CheckEntityId( Fnd::Test::TestCase& test_case )
-{
-	std::shared_ptr<Component> component = std::make_shared<MockComponent>( 123, 456 );
-
-	test_case.Assert( component->GetEntityId() == 456 );
+	test_case.Assert( component->GetComponentId() == component_id );
+	test_case.Assert( component->GetEntityId() == entity_id );
 }
