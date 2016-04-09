@@ -1,5 +1,8 @@
 #include "../Framework/TestSuite.hpp"
-#include "ExampleTestClass.hpp"
+
+#include "../EntitySystemTests/ComponentTests.hpp"
+
+#include <cassert>
 
 using namespace Fnd::Test;
 
@@ -10,11 +13,14 @@ int main()
 	/*
 		New TestClasses should be added here.
 	*/
-	test_suite.AddTestClass<ExampleTestClass>();
 	
+	test_suite.AddTestClass<EntitySystem::ComponentTests>();
+
 	test_suite.Run();
 	
 	TestSuiteResult result = test_suite.GetResult();
+
+	assert( result.GetSucceeded() );
 	
 	return 0;
 }

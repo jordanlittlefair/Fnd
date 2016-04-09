@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "..\Code\Core\Platfo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Framework", "Framework\Framework.vcxproj", "{F9A2F267-9FE6-4E93-8C17-2F4D1EF732DD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntitySystemTests", "EntitySystemTests\EntitySystemTests.vcxproj", "{915FB217-65A4-4349-BB7E-0C1553AD8F72}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntitySystem", "..\Code\EntitySystem\EntitySystem.vcxproj", "{B06713F6-8423-4C04-B7FC-B06298DC2512}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +37,14 @@ Global
 		{F9A2F267-9FE6-4E93-8C17-2F4D1EF732DD}.Debug|Win32.Build.0 = Debug|Win32
 		{F9A2F267-9FE6-4E93-8C17-2F4D1EF732DD}.Release|Win32.ActiveCfg = Release|Win32
 		{F9A2F267-9FE6-4E93-8C17-2F4D1EF732DD}.Release|Win32.Build.0 = Release|Win32
+		{915FB217-65A4-4349-BB7E-0C1553AD8F72}.Debug|Win32.ActiveCfg = Debug|Win32
+		{915FB217-65A4-4349-BB7E-0C1553AD8F72}.Debug|Win32.Build.0 = Debug|Win32
+		{915FB217-65A4-4349-BB7E-0C1553AD8F72}.Release|Win32.ActiveCfg = Release|Win32
+		{915FB217-65A4-4349-BB7E-0C1553AD8F72}.Release|Win32.Build.0 = Release|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Debug|Win32.Build.0 = Debug|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Release|Win32.ActiveCfg = Release|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +52,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1F00DF01-BD96-420F-B4CA-5BFC36DDFA4E} = {4742E196-60DE-4A07-9261-1C0E1120BEE0}
 		{6BD48548-0116-4C6E-82BF-1EFCAE6395CB} = {4742E196-60DE-4A07-9261-1C0E1120BEE0}
+		{B06713F6-8423-4C04-B7FC-B06298DC2512} = {4742E196-60DE-4A07-9261-1C0E1120BEE0}
 	EndGlobalSection
 EndGlobal
