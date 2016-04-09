@@ -1,25 +1,8 @@
 #include "ComponentTests.hpp"
-
-#include "../../Code/EntitySystem/Component.hpp"
+#include "MockComponent.hpp"
 
 using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
-
-namespace
-{
-
-class MockComponent:
-	public Component
-{
-public:
-
-	MockComponent( const ComponentId component_id, const EntityId entity_id ):
-		Component( component_id, entity_id )
-	{
-	}
-};
-
-}
 
 ComponentTests::ComponentTests():
 	TestClass("ComponentTests")

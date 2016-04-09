@@ -1,77 +1,14 @@
 #include "ComponentContainerTests.hpp"
 
+#include "MockComponent.hpp"
+#include "MockComponentContainer.hpp"
+
 #include "../../Code/EntitySystem/ComponentContainer.hpp"
 
 #include <map>
 
 using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
-
-namespace
-{
-
-class MockComponent:
-	public Component
-{
-public:
-
-	MockComponent( const ComponentId component_id, const EntityId entity_id ):
-		Component( component_id, entity_id )
-	{
-	}
-};
-
-class MockComponentContainer:
-	public ComponentContainer
-{
-public:
-
-	MockComponentContainer( const ComponentId component_id ):
-		ComponentContainer( component_id )
-	{
-	}
-
-	void AddComponent( const MockComponent& component )
-	{
-		_map[component.GetEntityId()] = std::make_shared<MockComponent>( component );
-	}
-
-protected:
-
-	const Component& OnGetComponent( const EntityId entity_id ) const
-	{
-		auto iter = _map.find( entity_id );
-
-		if ( iter != _map.end() )
-		{
-			return *(iter->second);
-		}
-		else
-		{
-			throw std::runtime_error( "Component doesn't exist!" );
-		}
-	}
-
-	Component& OnGetComponent( const EntityId entity_id )
-	{
-		auto iter = _map.find( entity_id );
-
-		if ( iter != _map.end() )
-		{
-			return *(iter->second);
-		}
-		else
-		{
-			throw std::runtime_error( "Component doesn't exist!" );
-		}
-	}
-
-private:
-
-	std::map<EntityId,std::shared_ptr<MockComponent>> _map;
-};
-
-}
 
 ComponentContainerTests::ComponentContainerTests():
 	TestClass("ComponentTests")

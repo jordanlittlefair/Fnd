@@ -1,35 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{d5ca63f4-8926-4d97-8291-f8cc825e44f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Mock">
+      <UniqueIdentifier>{80497aa8-b607-4077-8b12-c652ecd2a99c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ComponentContainerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
     <ClInclude Include="ComponentTests.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Tests</Filter>
     </ClInclude>
     <ClInclude Include="ComponentTemplateTests.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Tests</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentContainerTests.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MockComponent.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponentType.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponentContainer.hpp">
+      <Filter>Mock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ComponentContainerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
     <ClCompile Include="ComponentTests.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Tests</Filter>
     </ClCompile>
     <ClCompile Include="ComponentTemplateTests.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentContainerTests.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MockComponent.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponentType.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponentContainer.cpp">
+      <Filter>Mock</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

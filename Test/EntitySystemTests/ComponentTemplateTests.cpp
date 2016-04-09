@@ -1,23 +1,11 @@
 #include "ComponentTemplateTests.hpp"
 
+#include "MockComponentType.hpp"
+
 #include "../../Code/EntitySystem/ComponentTemplate.hpp"
 
 using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
-
-namespace
-{
-	struct MockComponent
-	{
-		static const ComponentId Id = 123;
-
-		struct Data
-		{
-			int some_int;
-			std::string some_string;
-		};
-	};
-}
 
 ComponentTemplateTests::ComponentTemplateTests():
 	TestClass("ComponentTemplateTests")
@@ -31,19 +19,19 @@ void ComponentTemplateTests::CheckIds( Fnd::Test::TestCase& test_case )
 {
 	const EntityId entity_id = 123;
 
-	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<MockComponent>>( entity_id );
+	std::shared_ptr<Component> component = std::make_shared<ComponentTemplate<MockComponentType>>( entity_id );
 
-	test_case.Assert( component->GetComponentId() == MockComponent::Id );
+	test_case.Assert( component->GetComponentId() == MockComponentType::Id );
 	test_case.Assert( component->GetEntityId() == entity_id );
 }
 
 void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 {
-	MockComponent::Data expected_data;
+	MockComponentType::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<MockComponent> component( 0 );
+	ComponentTemplate<MockComponentType> component( 0 );
 
 	component.GetData() = expected_data;
 
@@ -70,11 +58,11 @@ void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )
 
 void ComponentTemplateTests::CheckDataFromConstructorIsEqual( Fnd::Test::TestCase& test_case )
 {	
-	MockComponent::Data expected_data;
+	MockComponentType::Data expected_data;
 	expected_data.some_int = 123;
 	expected_data.some_string = "123";
 
-	ComponentTemplate<MockComponent> component( 0, expected_data );
+	ComponentTemplate<MockComponentType> component( 0, expected_data );
 	
 	test_case.Assert( component.GetData().some_int == expected_data.some_int );
 	test_case.Assert( component.GetData().some_string == expected_data.some_string );
