@@ -18,6 +18,13 @@
 			remoteGlobalIDString = 108C2C051C66CB7C00B40C55;
 			remoteInfo = Core;
 		};
+		10A7B3DC1CB9CA8800B78A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10A7B3D71CB9CA8800B78A7C /* SystemManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 10A7B3C91CB9CA8800B78A7C;
+			remoteInfo = SystemManager;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +43,7 @@
 		10A7B3691CB81DA400B78A7C /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3751CB81DF800B78A7C /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
+		10A7B3D71CB9CA8800B78A7C /* SystemManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SystemManager.xcodeproj; path = ../SystemManager/SystemManager.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,7 @@
 		10A7B3601CB81DA400B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10A7B3D71CB9CA8800B78A7C /* SystemManager.xcodeproj */,
 				10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */,
 				10A7B3741CB81DEC00B78A7C /* Source */,
 				10A7B3731CB81DDF00B78A7C /* Header */,
@@ -86,6 +95,14 @@
 			isa = PBXGroup;
 			children = (
 				10A7B3801CB81FC400B78A7C /* libCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10A7B3D81CB9CA8800B78A7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10A7B3DD1CB9CA8800B78A7C /* libSystemManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +156,10 @@
 					ProductGroup = 10A7B37C1CB81FC400B78A7C /* Products */;
 					ProjectRef = 10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */;
 				},
+				{
+					ProductGroup = 10A7B3D81CB9CA8800B78A7C /* Products */;
+					ProjectRef = 10A7B3D71CB9CA8800B78A7C /* SystemManager.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -153,6 +174,13 @@
 			fileType = archive.ar;
 			path = libCore.a;
 			remoteRef = 10A7B37F1CB81FC400B78A7C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10A7B3DD1CB9CA8800B78A7C /* libSystemManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSystemManager.a;
+			remoteRef = 10A7B3DC1CB9CA8800B78A7C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
