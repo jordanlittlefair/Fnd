@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */; };
+		10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4271CC590D500B78A7C /* MockSystem.cpp */; };
+		10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4291CC59D9400B78A7C /* SystemTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,10 @@
 		10A7B4111CBC203000B78A7C /* libFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFramework.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libFramework.a"; sourceTree = "<group>"; };
 		10A7B4191CC1B78900B78A7C /* SystemGraphNodeTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemGraphNodeTests.hpp; sourceTree = "<group>"; };
 		10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemGraphNodeTests.cpp; sourceTree = "<group>"; };
+		10A7B4251CC58A4000B78A7C /* SystemTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemTests.hpp; sourceTree = "<group>"; };
+		10A7B4261CC58F7800B78A7C /* MockSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockSystem.hpp; sourceTree = "<group>"; };
+		10A7B4271CC590D500B78A7C /* MockSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockSystem.cpp; sourceTree = "<group>"; };
+		10A7B4291CC59D9400B78A7C /* SystemTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,8 +40,12 @@
 			isa = PBXGroup;
 			children = (
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
+				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
+				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
 				10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */,
 				10A7B4191CC1B78900B78A7C /* SystemGraphNodeTests.hpp */,
+				10A7B4291CC59D9400B78A7C /* SystemTests.cpp */,
+				10A7B4251CC58A4000B78A7C /* SystemTests.hpp */,
 				10A7B3F41CBAB3F100B78A7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */,
+				10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */,
 				10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +261,7 @@
 				10A7B4001CBAB3F100B78A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

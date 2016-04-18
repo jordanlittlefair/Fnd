@@ -17,8 +17,6 @@ public:
 
 	virtual Id GetId() const = 0;
 
-	virtual void AddDependency( const Id& dependency ) = 0;
-
 	virtual const std::vector<Id>& GetDependencies() const = 0;
 
 	virtual ~ISystem() {}

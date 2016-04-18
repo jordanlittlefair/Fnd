@@ -1,6 +1,7 @@
 #include "../Framework/TestSuite.hpp"
 
 #include "../SystemManagerTests/SystemGraphNodeTests.hpp"
+#include "../SystemManagerTests/SystemTests.hpp"
 
 #include <cassert>
 
@@ -14,6 +15,7 @@ int main()
 		New TestClasses should be added here.
 	*/
 	test_suite.AddTestClass<SystemManager::SystemGraphNodeTests>();
+	test_suite.AddTestClass<SystemManager::SystemTests>();
 	
 	test_suite.Run();
 	
