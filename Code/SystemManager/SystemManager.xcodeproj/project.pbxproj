@@ -11,6 +11,9 @@
 		10A7B41D1CC44CF900B78A7C /* ISystem.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10A7B41C1CC44CF900B78A7C /* ISystem.hpp */; };
 		10A7B4231CC451AD00B78A7C /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4211CC451AD00B78A7C /* System.cpp */; };
 		10A7B4241CC451AD00B78A7C /* System.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10A7B4221CC451AD00B78A7C /* System.hpp */; };
+		10A7B42D1CC5A14000B78A7C /* SystemGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */; };
+		10A7B42E1CC5A14000B78A7C /* SystemGraph.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */; };
+		10A7B4371CC8455A00B78A7C /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4361CC8455A00B78A7C /* Exceptions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		10A7B41C1CC44CF900B78A7C /* ISystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ISystem.hpp; sourceTree = "<group>"; };
 		10A7B4211CC451AD00B78A7C /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		10A7B4221CC451AD00B78A7C /* System.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
+		10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemGraph.cpp; sourceTree = "<group>"; };
+		10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SystemGraph.hpp; sourceTree = "<group>"; };
+		10A7B4351CC8450B00B78A7C /* Exceptions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exceptions.hpp; sourceTree = "<group>"; };
+		10A7B4361CC8455A00B78A7C /* Exceptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exceptions.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,10 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
+				10A7B4351CC8450B00B78A7C /* Exceptions.hpp */,
+				10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */,
+				10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */,
 				10A7B4211CC451AD00B78A7C /* System.cpp */,
 				10A7B4221CC451AD00B78A7C /* System.hpp */,
 				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
@@ -60,6 +71,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A7B42E1CC5A14000B78A7C /* SystemGraph.hpp in Headers */,
 				10A7B41D1CC44CF900B78A7C /* ISystem.hpp in Headers */,
 				10A7B4241CC451AD00B78A7C /* System.hpp in Headers */,
 			);
@@ -121,6 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A7B42D1CC5A14000B78A7C /* SystemGraph.cpp in Sources */,
+				10A7B4371CC8455A00B78A7C /* Exceptions.cpp in Sources */,
 				10A7B4231CC451AD00B78A7C /* System.cpp in Sources */,
 				10A7B3E21CB9CEDA00B78A7C /* SystemGraphNode.cpp in Sources */,
 			);
