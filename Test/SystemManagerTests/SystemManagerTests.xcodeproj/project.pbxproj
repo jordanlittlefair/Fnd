@@ -13,6 +13,7 @@
 		10A7B4311CC6EC8400B78A7C /* SystemGraphTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4301CC6EC8400B78A7C /* SystemGraphTests.cpp */; };
 		10A7B4341CC6EED400B78A7C /* MockSystemGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */; };
 		10A7B43A1CC941C000B78A7C /* SystemManagerExceptionTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4391CC941C000B78A7C /* SystemManagerExceptionTests.cpp */; };
+		10A7B4411CC986F700B78A7C /* CyclicGraphCheckerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockSystemGraph.cpp; sourceTree = "<group>"; };
 		10A7B4381CC9413100B78A7C /* SystemManagerExceptionTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemManagerExceptionTests.hpp; sourceTree = "<group>"; };
 		10A7B4391CC941C000B78A7C /* SystemManagerExceptionTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemManagerExceptionTests.cpp; sourceTree = "<group>"; };
+		10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CyclicGraphCheckerTests.hpp; sourceTree = "<group>"; };
+		10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CyclicGraphCheckerTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
+				10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */,
+				10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */,
 				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
 				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
 				10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */,
@@ -154,6 +159,7 @@
 				10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */,
 				10A7B4341CC6EED400B78A7C /* MockSystemGraph.cpp in Sources */,
 				10A7B43A1CC941C000B78A7C /* SystemManagerExceptionTests.cpp in Sources */,
+				10A7B4411CC986F700B78A7C /* CyclicGraphCheckerTests.cpp in Sources */,
 				10A7B4311CC6EC8400B78A7C /* SystemGraphTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

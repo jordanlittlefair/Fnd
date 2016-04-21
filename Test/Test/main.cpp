@@ -4,6 +4,7 @@
 #include "../SystemManagerTests/SystemGraphNodeTests.hpp"
 #include "../SystemManagerTests/SystemTests.hpp"
 #include "../SystemManagerTests/SystemGraphTests.hpp"
+#include "../SystemManagerTests/CyclicGraphCheckerTests.hpp"
 
 #include <cassert>
 
@@ -20,7 +21,7 @@ int main()
 	test_suite.AddTestClass<SystemManager::SystemGraphNodeTests>();
 	test_suite.AddTestClass<SystemManager::SystemTests>();
 	test_suite.AddTestClass<SystemManager::SystemGraphTests>();
-	
+	test_suite.AddTestClass<SystemManager::CyclicGraphCheckerTests>();
 	test_suite.Run();
 	
 	TestSuiteResult result = test_suite.GetResult();
