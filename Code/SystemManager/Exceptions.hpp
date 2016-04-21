@@ -23,6 +23,14 @@ public:
 
 	InvalidSystemIdException();
 };
+	
+class InvalidSystemDependenciesException:
+	public Fnd::SystemManager::Exception
+{
+public:
+
+	InvalidSystemDependenciesException();
+};
 
 }
 

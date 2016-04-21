@@ -29,6 +29,8 @@ private:
 	
 	bool ContainsDuplicateSystemIds( const std::vector<std::shared_ptr<ISystem>>& systems );
 
+	bool IsGraphCyclic() const;
+
 	std::vector<std::shared_ptr<SystemGraphNode>> _system_nodes;
 };
 

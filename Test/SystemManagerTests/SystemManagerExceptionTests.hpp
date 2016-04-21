@@ -21,6 +21,7 @@ public:
 private:
 
 	void TestInvalidSystemIdException( TestCase& test_case );
+	void TestInvalidSystemDependenciesException( TestCase& test_case );
 };
 
 }

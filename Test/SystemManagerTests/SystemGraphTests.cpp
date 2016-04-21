@@ -47,6 +47,7 @@ TestClass("SystemGraphTests")
 	AddTestCase( "TestUpdateSystemNodes_SingleDependency", &SystemGraphTests::TestUpdateSystemNodes_SingleDependency, this );
 	AddTestCase( "TestUpdateSystemNodes_MultipleDependencies", &SystemGraphTests::TestUpdateSystemNodes_MultipleDependencies, this );
 	AddTestCase( "TestUpdateSystemNodes_SharedDependencies", &SystemGraphTests::TestUpdateSystemNodes_SharedDependencies, this );
+	AddTestCase( "TestUpdateSystemNodes_CyclicDependencies", &SystemGraphTests::TestUpdateSystemNodes_CyclicDependencies, this );
 }
 
 void SystemGraphTests::TestUpdateSystemNodes_Empty( TestCase& test_case )
@@ -321,4 +322,39 @@ void SystemGraphTests::TestUpdateSystemNodes_Chain( TestCase& test_case )
 	test_case.Assert( node2_out->GetPrev().size() == 1 );
 	test_case.Assert( ContainsId( "1", node2_out->GetPrev() ) );
 	test_case.Assert( node2_out->GetNext().empty() );
+}
+
+void SystemGraphTests::TestUpdateSystemNodes_CyclicDependencies( TestCase& test_case )
+{
+/*
+	Graph:
+		->0->1->
+		  <--/
+	 */
+	
+	MockSystemGraph graph;
+	
+	std::vector<std::shared_ptr<ISystem>> systems;
+	
+	auto node0 = std::make_shared<MockSystem>("0");
+	auto node1 = std::make_shared<MockSystem>("1");
+	node0->AddDependency("1");
+	node1->AddDependency("0");
+	
+	systems.push_back(node0);
+	systems.push_back(node1);
+	
+	bool hitException = false;
+	
+	try
+	{
+		graph.UpdateSystemNodes(systems);
+	}
+	catch ( const InvalidSystemDependenciesException& )
+	{
+		hitException = true;
+	}
+	
+	test_case.Assert( hitException );
+	test_case.Assert( graph.GetSystemNodes().empty() );
 }

@@ -28,6 +28,7 @@ private:
 	void TestUpdateSystemNodes_MultipleDependencies( TestCase& test_case );
 	void TestUpdateSystemNodes_SharedDependencies( TestCase& test_case );
 	void TestUpdateSystemNodes_Chain( TestCase& test_case );
+	void TestUpdateSystemNodes_CyclicDependencies( TestCase& test_case );
 };
 
 }

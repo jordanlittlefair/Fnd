@@ -11,3 +11,8 @@ InvalidSystemIdException::InvalidSystemIdException():
 	Fnd::SystemManager::Exception("Invalid System::Id")
 {
 }
+
+InvalidSystemDependenciesException::InvalidSystemDependenciesException():
+	Fnd::SystemManager::Exception("Invalid System dependencies")
+{
+}

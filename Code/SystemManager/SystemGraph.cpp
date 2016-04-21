@@ -1,5 +1,6 @@
 #include "SystemGraph.hpp"
 
+#include "CyclicGraphChecker.hpp"
 #include "Exceptions.hpp"
 
 #include <cassert>
@@ -61,6 +62,13 @@ void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>
 			GetNode( prev )->AddNext( node->GetId() );
 		}
 	}
+	
+	if ( IsGraphCyclic() )
+	{
+		_system_nodes.clear();
+	
+		throw InvalidSystemDependenciesException();
+	}
 }
 
 std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const ISystem::Id& id ) const
@@ -95,4 +103,11 @@ bool SystemGraph::ContainsDuplicateSystemIds( const std::vector<std::shared_ptr<
 	}
 	
 	return false;
+}
+
+bool SystemGraph::IsGraphCyclic() const
+{
+	CyclicGraphChecker cgc(_system_nodes);
+	
+	return cgc.IsCyclic();
 }
