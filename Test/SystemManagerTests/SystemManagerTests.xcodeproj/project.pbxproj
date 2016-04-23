@@ -14,6 +14,7 @@
 		10A7B4341CC6EED400B78A7C /* MockSystemGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */; };
 		10A7B43A1CC941C000B78A7C /* SystemManagerExceptionTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4391CC941C000B78A7C /* SystemManagerExceptionTests.cpp */; };
 		10A7B4411CC986F700B78A7C /* CyclicGraphCheckerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */; };
+		10A7B4471CCAF9D100B78A7C /* OptimalPathFinderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4461CCAF9D100B78A7C /* OptimalPathFinderTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		10A7B4391CC941C000B78A7C /* SystemManagerExceptionTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemManagerExceptionTests.cpp; sourceTree = "<group>"; };
 		10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CyclicGraphCheckerTests.hpp; sourceTree = "<group>"; };
 		10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CyclicGraphCheckerTests.cpp; sourceTree = "<group>"; };
+		10A7B4451CCAF99000B78A7C /* OptimalPathFinderTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OptimalPathFinderTests.hpp; sourceTree = "<group>"; };
+		10A7B4461CCAF9D100B78A7C /* OptimalPathFinderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalPathFinderTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,8 @@
 		10A7B3EA1CBAB3F100B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10A7B4461CCAF9D100B78A7C /* OptimalPathFinderTests.cpp */,
+				10A7B4451CCAF99000B78A7C /* OptimalPathFinderTests.hpp */,
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
 				10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */,
 				10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */,
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */,
+				10A7B4471CCAF9D100B78A7C /* OptimalPathFinderTests.cpp in Sources */,
 				10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */,
 				10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */,
 				10A7B4341CC6EED400B78A7C /* MockSystemGraph.cpp in Sources */,
