@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */; };
 		10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */; };
 		10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4271CC590D500B78A7C /* MockSystem.cpp */; };
 		10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4291CC59D9400B78A7C /* SystemTests.cpp */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LambdaTaskTests.hpp; sourceTree = "<group>"; };
+		105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambdaTaskTests.cpp; sourceTree = "<group>"; };
 		10A7B3F31CBAB3F100B78A7C /* libSystemManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSystemManagerTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B4081CBAB8E900B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSystemManager.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libSystemManager.a"; sourceTree = "<group>"; };
 		10A7B4101CBC203000B78A7C /* libCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCore.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libCore.a"; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
 				10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */,
 				10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */,
+				105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */,
+				105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */,
 				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
 				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
 				10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */,
@@ -177,6 +182,7 @@
 				10A7B4501CCC48FA00B78A7C /* TaskTests.cpp in Sources */,
 				10A7B4341CC6EED400B78A7C /* MockSystemGraph.cpp in Sources */,
 				10A7B43A1CC941C000B78A7C /* SystemManagerExceptionTests.cpp in Sources */,
+				105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */,
 				10A7B4411CC986F700B78A7C /* CyclicGraphCheckerTests.cpp in Sources */,
 				10A7B4311CC6EC8400B78A7C /* SystemGraphTests.cpp in Sources */,
 			);

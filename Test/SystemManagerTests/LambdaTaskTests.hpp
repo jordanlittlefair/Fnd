@@ -10,22 +10,22 @@ namespace Test
 
 namespace SystemManager
 {
-
-class TaskTests:
+	
+class LambdaTaskTests:
 	public TestClass
 {
 public:
-
-	TaskTests();
-
+	
+	LambdaTaskTests();
+	
 private:
-
+	
 	void TestGetParentSystemId( TestCase& test_case );
-	void TestRun( TestCase& test_case );
+	void TestOnRunLambda( TestCase& test_case );
 	void TestSuccessStates( TestCase& test_case );
 	void TestErrorStatesAndException( TestCase& test_case );
 };
-
+	
 }
 
 }

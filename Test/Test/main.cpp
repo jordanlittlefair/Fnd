@@ -7,6 +7,7 @@
 #include "../SystemManagerTests/CyclicGraphCheckerTests.hpp"
 #include "../SystemManagerTests/OptimalPathFinderTests.hpp"
 #include "../SystemManagerTests/TaskTests.hpp"
+#include "../SystemManagerTests/LambdaTaskTests.hpp"
 
 #include <cassert>
 
@@ -26,6 +27,7 @@ int main()
 	test_suite.AddTestClass<SystemManager::CyclicGraphCheckerTests>();
 	test_suite.AddTestClass<SystemManager::OptimalPathFinderTests>();
 	test_suite.AddTestClass<SystemManager::TaskTests>();
+	test_suite.AddTestClass<SystemManager::LambdaTaskTests>();
 	test_suite.Run();
 	
 	TestSuiteResult result = test_suite.GetResult();
