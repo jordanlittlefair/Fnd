@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -21,6 +22,8 @@ public:
 
 	virtual ~ISystem() {}
 };
+
+typedef std::shared_ptr<ISystem> SystemPtr;
 
 }
 

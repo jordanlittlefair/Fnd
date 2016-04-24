@@ -17,6 +17,7 @@
 		10A7B43D1CC94BBD00B78A7C /* CyclicGraphChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */; };
 		10A7B43E1CC94BBD00B78A7C /* CyclicGraphChecker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */; };
 		10A7B4441CCADB5F00B78A7C /* OptimalPathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */; };
+		10A7B44B1CCC454200B78A7C /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B44A1CCC454200B78A7C /* Task.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CyclicGraphChecker.hpp; sourceTree = "<group>"; };
 		10A7B4421CCAD9BF00B78A7C /* OptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OptimalPathFinder.hpp; sourceTree = "<group>"; };
 		10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalPathFinder.cpp; sourceTree = "<group>"; };
+		10A7B4491CCC44A900B78A7C /* Task.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Task.hpp; sourceTree = "<group>"; };
+		10A7B44A1CCC454200B78A7C /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Task.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,19 +53,21 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
-				10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */,
-				10A7B4421CCAD9BF00B78A7C /* OptimalPathFinder.hpp */,
 				10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */,
 				10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */,
 				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
 				10A7B4351CC8450B00B78A7C /* Exceptions.hpp */,
-				10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */,
-				10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */,
+				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
+				10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */,
+				10A7B4421CCAD9BF00B78A7C /* OptimalPathFinder.hpp */,
 				10A7B4211CC451AD00B78A7C /* System.cpp */,
 				10A7B4221CC451AD00B78A7C /* System.hpp */,
-				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
+				10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */,
+				10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */,
 				10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */,
 				10A7B3E01CB9CC6A00B78A7C /* SystemGraphNode.hpp */,
+				10A7B44A1CCC454200B78A7C /* Task.cpp */,
+				10A7B4491CCC44A900B78A7C /* Task.hpp */,
 				10A7B3CA1CB9CA8800B78A7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A7B44B1CCC454200B78A7C /* Task.cpp in Sources */,
 				10A7B42D1CC5A14000B78A7C /* SystemGraph.cpp in Sources */,
 				10A7B4371CC8455A00B78A7C /* Exceptions.cpp in Sources */,
 				10A7B43D1CC94BBD00B78A7C /* CyclicGraphChecker.cpp in Sources */,
