@@ -2,6 +2,7 @@
 
 #include "ISystem.hpp"
 
+#include <condition_variable>
 #include <memory>
 
 namespace Fnd
@@ -25,6 +26,10 @@ public:
 	Task( SystemPtr parent_system );
 
 	State GetState() const;
+	
+	void Wait();
+	
+	bool WaitTimeout( const std::chrono::nanoseconds& timeout );
 
 	void Run();
 	
@@ -39,6 +44,9 @@ protected:
 private:
 
 	void SetState( const State state );
+	
+	std::condition_variable _completed_condition;
+	mutable std::mutex _state_mutex;
 	
 	SystemPtr _parent_system;
 	

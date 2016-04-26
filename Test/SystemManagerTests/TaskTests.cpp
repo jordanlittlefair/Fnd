@@ -3,6 +3,8 @@
 #include "MockSystem.hpp"
 #include "MockTask.hpp"
 
+#include <thread>
+
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
@@ -13,6 +15,8 @@ TaskTests::TaskTests():
 	AddTestCase( "TestRun", &TaskTests::TestRun, this );
 	AddTestCase( "TestSuccessStates", &TaskTests::TestSuccessStates, this );
 	AddTestCase( "TestErrorStatesAndException", &TaskTests::TestErrorStatesAndException, this );
+	AddTestCase( "TestWait_Complete", &TaskTests::TestWait_Complete, this );
+	AddTestCase( "TestWait_Exception", &TaskTests::TestWait_Exception, this );
 }
 
 void TaskTests::TestGetParentSystemId( TestCase& test_case )
@@ -79,4 +83,54 @@ void TaskTests::TestErrorStatesAndException( TestCase& test_case )
 	}
 	
 	test_case.Assert(exceptionHit);
+}
+
+void TaskTests::TestWait_Complete( TestCase& test_case )
+{
+	auto parent_system = std::make_shared<MockSystem>("id");
+	
+	MockTask mt( parent_system );
+	
+	test_case.Assert( mt.GetState() == Task::State::Pending );
+	
+	std::thread run_thread( [&]() { std::this_thread::sleep_for(std::chrono::milliseconds(100)); mt.Run(); } );
+	
+	mt.Wait();
+	
+	test_case.Assert( mt.GetStateInOnRun() == Task::State::Running );
+	test_case.Assert( mt.GetState() == Task::State::Complete );
+	
+	run_thread.join();
+}
+
+void TaskTests::TestWait_Exception( TestCase& test_case )
+{
+	auto parent_system = std::make_shared<MockSystem>("id");
+	
+	MockTask mt( parent_system );
+	mt.SetForceError( std::runtime_error("Forced exception") );
+	
+	test_case.Assert( mt.GetState() == Task::State::Pending );
+	
+	std::thread run_thread( [&]() { std::this_thread::sleep_for(std::chrono::milliseconds(100)); mt.Run(); } );
+	
+	mt.Wait();
+	
+	test_case.Assert( mt.GetStateInOnRun() == Task::State::Running );
+	test_case.Assert( mt.GetState() == Task::State::ExceptionThrown );
+	
+	bool exceptionHit = false;
+	
+	try
+	{
+	mt.RethrowException();
+	}
+	catch ( const std::runtime_error& ex )
+	{
+	exceptionHit = true;
+	}
+	
+	test_case.Assert(exceptionHit);
+	
+	run_thread.join();
 }
