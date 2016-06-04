@@ -16,9 +16,13 @@ class TestClass
 {
 public:
 	
+	void SetResultPrinter(ResultPrinterPtr result_printer);
+
 	void Run();
 	
 	const TestClassResult& GetResult() const;
+
+	virtual ~TestClass();
 	
 protected:
 
@@ -30,20 +34,28 @@ protected:
 		AddTestCase( std::make_shared<TestCase>( name, std::bind( function, ptr, std::placeholders::_1 ) ) );
 	}
 	
-	virtual void SetUp();
+	virtual void SetupClass();
 	
-	virtual void CleanUp();
+	virtual void CleanupClass();
+
+	virtual void SetupTest();
+
+	virtual void CleanupTest();
 	
 private:
 	
-	void AddTestCase( std::shared_ptr<TestCase> test_case );
+	void AddTestCase( TestCasePtr test_case );
 	
 private:
 	
-	std::vector<std::shared_ptr<TestCase>> _test_cases;
+	std::vector<TestCasePtr> _test_cases;
+
+	ResultPrinterPtr _result_printer;
 	
 	TestClassResult _result;
 };
+
+typedef std::shared_ptr<TestClass> TestClassPtr;
 
 }
 

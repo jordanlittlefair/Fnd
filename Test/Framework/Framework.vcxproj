@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssertResult.cpp" />
+    <ClCompile Include="ConsoleResultPrinter.cpp" />
     <ClCompile Include="TestCase.cpp" />
     <ClCompile Include="TestCaseResult.cpp" />
     <ClCompile Include="TestClass.cpp" />
@@ -21,6 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertResult.hpp" />
+    <ClInclude Include="ConsoleResultPrinter.hpp" />
+    <ClInclude Include="IResultPrinter.hpp" />
     <ClInclude Include="TestCase.hpp" />
     <ClInclude Include="TestCaseResult.hpp" />
     <ClInclude Include="TestClass.hpp" />

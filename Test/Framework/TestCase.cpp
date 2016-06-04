@@ -8,9 +8,25 @@ _function(function)
 {
 }
 
+void TestCase::SetResultPrinter(ResultPrinterPtr result_printer)
+{
+	_result_printer = result_printer;
+}
+
 void TestCase::Run()
 {
+	if (_result_printer)
+	{
+		_result_printer->PrintBeginTestCaseResult(_result.GetDescription());
+	}
+
 	_function( *this );
+
+	
+	if (_result_printer)
+	{
+		_result_printer->PrintEndTestCaseResult(_result);
+	}
 }
 
 void TestCase::Assert( bool succeeded, const std::string& description )
