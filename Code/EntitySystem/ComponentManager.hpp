@@ -39,7 +39,7 @@ public:
 	}
 
 	template <typename ComponentType>
-	ComponentTemplate<ComponentType> CreateComponent( const EntityId entity_id )
+	ComponentTemplate<ComponentType>& CreateComponent( const EntityId entity_id )
 	{
 		return GetComponentContainer<ComponentType>().CreateComponent( entity_id );
 	}

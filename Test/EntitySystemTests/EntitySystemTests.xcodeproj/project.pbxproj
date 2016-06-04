@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10FEA97B1D0393B200338F5B /* ComponentContainerTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */; };
+		10FEA97C1D0393B200338F5B /* ComponentContainerTemplateTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */; };
+		10FEA97D1D0393B200338F5B /* ComponentContainerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */; };
+		10FEA97E1D0393B200338F5B /* ComponentContainerTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA96C1D0393B200338F5B /* ComponentContainerTests.hpp */; };
+		10FEA97F1D0393B200338F5B /* ComponentManagerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA96D1D0393B200338F5B /* ComponentManagerTests.cpp */; };
+		10FEA9801D0393B200338F5B /* ComponentManagerTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA96E1D0393B200338F5B /* ComponentManagerTests.hpp */; };
+		10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA96F1D0393B200338F5B /* ComponentTemplateTests.cpp */; };
+		10FEA9821D0393B200338F5B /* ComponentTemplateTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9701D0393B200338F5B /* ComponentTemplateTests.hpp */; };
+		10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9711D0393B200338F5B /* ComponentTests.cpp */; };
+		10FEA9841D0393B200338F5B /* ComponentTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9721D0393B200338F5B /* ComponentTests.hpp */; };
+		10FEA9851D0393B200338F5B /* ExceptionTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9731D0393B200338F5B /* ExceptionTests.cpp */; };
+		10FEA9861D0393B200338F5B /* ExceptionTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9741D0393B200338F5B /* ExceptionTests.hpp */; };
+		10FEA9871D0393B200338F5B /* MockComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9751D0393B200338F5B /* MockComponent.cpp */; };
+		10FEA9881D0393B200338F5B /* MockComponent.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9761D0393B200338F5B /* MockComponent.hpp */; };
+		10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9771D0393B200338F5B /* MockComponentContainer.cpp */; };
+		10FEA98A1D0393B200338F5B /* MockComponentContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */; };
+		10FEA98B1D0393B200338F5B /* MockComponentTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */; };
+		10FEA98C1D0393B200338F5B /* MockComponentTypes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10FEA95B1D03933A00338F5B /* libEntitySystemTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEntitySystemTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentContainerTemplateTests.cpp; sourceTree = "<group>"; };
+		10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentContainerTemplateTests.hpp; sourceTree = "<group>"; };
+		10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentContainerTests.cpp; sourceTree = "<group>"; };
+		10FEA96C1D0393B200338F5B /* ComponentContainerTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentContainerTests.hpp; sourceTree = "<group>"; };
+		10FEA96D1D0393B200338F5B /* ComponentManagerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentManagerTests.cpp; sourceTree = "<group>"; };
+		10FEA96E1D0393B200338F5B /* ComponentManagerTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentManagerTests.hpp; sourceTree = "<group>"; };
+		10FEA96F1D0393B200338F5B /* ComponentTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentTemplateTests.cpp; sourceTree = "<group>"; };
+		10FEA9701D0393B200338F5B /* ComponentTemplateTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentTemplateTests.hpp; sourceTree = "<group>"; };
+		10FEA9711D0393B200338F5B /* ComponentTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentTests.cpp; sourceTree = "<group>"; };
+		10FEA9721D0393B200338F5B /* ComponentTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentTests.hpp; sourceTree = "<group>"; };
+		10FEA9731D0393B200338F5B /* ExceptionTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExceptionTests.cpp; sourceTree = "<group>"; };
+		10FEA9741D0393B200338F5B /* ExceptionTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExceptionTests.hpp; sourceTree = "<group>"; };
+		10FEA9751D0393B200338F5B /* MockComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockComponent.cpp; sourceTree = "<group>"; };
+		10FEA9761D0393B200338F5B /* MockComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockComponent.hpp; sourceTree = "<group>"; };
+		10FEA9771D0393B200338F5B /* MockComponentContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockComponentContainer.cpp; sourceTree = "<group>"; };
+		10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockComponentContainer.hpp; sourceTree = "<group>"; };
+		10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockComponentTypes.cpp; sourceTree = "<group>"; };
+		10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockComponentTypes.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10FEA9581D03933A00338F5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10FEA9521D03933A00338F5B = {
+			isa = PBXGroup;
+			children = (
+				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
+				10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */,
+				10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */,
+				10FEA96C1D0393B200338F5B /* ComponentContainerTests.hpp */,
+				10FEA96D1D0393B200338F5B /* ComponentManagerTests.cpp */,
+				10FEA96E1D0393B200338F5B /* ComponentManagerTests.hpp */,
+				10FEA96F1D0393B200338F5B /* ComponentTemplateTests.cpp */,
+				10FEA9701D0393B200338F5B /* ComponentTemplateTests.hpp */,
+				10FEA9711D0393B200338F5B /* ComponentTests.cpp */,
+				10FEA9721D0393B200338F5B /* ComponentTests.hpp */,
+				10FEA9731D0393B200338F5B /* ExceptionTests.cpp */,
+				10FEA9741D0393B200338F5B /* ExceptionTests.hpp */,
+				10FEA9751D0393B200338F5B /* MockComponent.cpp */,
+				10FEA9761D0393B200338F5B /* MockComponent.hpp */,
+				10FEA9771D0393B200338F5B /* MockComponentContainer.cpp */,
+				10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */,
+				10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */,
+				10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */,
+				10FEA95C1D03933A00338F5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10FEA95C1D03933A00338F5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10FEA95B1D03933A00338F5B /* libEntitySystemTests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		10FEA9591D03933A00338F5B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10FEA98A1D0393B200338F5B /* MockComponentContainer.hpp in Headers */,
+				10FEA97E1D0393B200338F5B /* ComponentContainerTests.hpp in Headers */,
+				10FEA9881D0393B200338F5B /* MockComponent.hpp in Headers */,
+				10FEA9841D0393B200338F5B /* ComponentTests.hpp in Headers */,
+				10FEA9801D0393B200338F5B /* ComponentManagerTests.hpp in Headers */,
+				10FEA98C1D0393B200338F5B /* MockComponentTypes.hpp in Headers */,
+				10FEA9821D0393B200338F5B /* ComponentTemplateTests.hpp in Headers */,
+				10FEA9861D0393B200338F5B /* ExceptionTests.hpp in Headers */,
+				10FEA97C1D0393B200338F5B /* ComponentContainerTemplateTests.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		10FEA95A1D03933A00338F5B /* EntitySystemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10FEA9661D03933A00338F5B /* Build configuration list for PBXNativeTarget "EntitySystemTests" */;
+			buildPhases = (
+				10FEA9571D03933A00338F5B /* Sources */,
+				10FEA9581D03933A00338F5B /* Frameworks */,
+				10FEA9591D03933A00338F5B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EntitySystemTests;
+			productName = EntitySystemTests;
+			productReference = 10FEA95B1D03933A00338F5B /* libEntitySystemTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10FEA9531D03933A00338F5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Jordan Littlefair";
+				TargetAttributes = {
+					10FEA95A1D03933A00338F5B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 10FEA9561D03933A00338F5B /* Build configuration list for PBXProject "EntitySystemTests" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 10FEA9521D03933A00338F5B;
+			productRefGroup = 10FEA95C1D03933A00338F5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10FEA95A1D03933A00338F5B /* EntitySystemTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10FEA9571D03933A00338F5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10FEA97B1D0393B200338F5B /* ComponentContainerTemplateTests.cpp in Sources */,
+				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
+				10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */,
+				10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */,
+				10FEA98B1D0393B200338F5B /* MockComponentTypes.cpp in Sources */,
+				10FEA9851D0393B200338F5B /* ExceptionTests.cpp in Sources */,
+				10FEA97F1D0393B200338F5B /* ComponentManagerTests.cpp in Sources */,
+				10FEA97D1D0393B200338F5B /* ComponentContainerTests.cpp in Sources */,
+				10FEA9871D0393B200338F5B /* MockComponent.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		10FEA9641D03933A00338F5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		10FEA9651D03933A00338F5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		10FEA9671D03933A00338F5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		10FEA9681D03933A00338F5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10FEA9561D03933A00338F5B /* Build configuration list for PBXProject "EntitySystemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10FEA9641D03933A00338F5B /* Debug */,
+				10FEA9651D03933A00338F5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10FEA9661D03933A00338F5B /* Build configuration list for PBXNativeTarget "EntitySystemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10FEA9671D03933A00338F5B /* Debug */,
+				10FEA9681D03933A00338F5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10FEA9531D03933A00338F5B /* Project object */;
+}

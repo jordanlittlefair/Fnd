@@ -117,8 +117,8 @@ void ComponentContainerTemplateTests::CheckDestroyComponent( Fnd::Test::TestCase
 {
 	ComponentContainerTemplate<MockComponentType1> container;
 
-	Component& component1 = container.CreateComponent( 1 );
-	Component& component2 = container.CreateComponent( 2, MockComponentType1::Data() );
+	container.CreateComponent( 1 );
+	container.CreateComponent( 2, MockComponentType1::Data() );
 
 	test_case.Assert( container.HasComponent( 1 ) );
 	test_case.Assert( container.HasComponent( 2 ) );

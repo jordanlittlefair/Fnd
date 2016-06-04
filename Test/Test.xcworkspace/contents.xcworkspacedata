@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:EntitySystemTests/EntitySystemTests.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Framework/Framework.xcodeproj">
+   </FileRef>
    <Group
       location = "container:"
       name = "Game">
@@ -10,8 +16,5 @@
    </Group>
    <FileRef
       location = "group:Test/Test.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Framework/Framework.xcodeproj">
    </FileRef>
 </Workspace>

@@ -99,12 +99,12 @@ void ComponentManagerTests::CreateComponent_DuplicateId_Fail( Fnd::Test::TestCas
 
 	cm.RegisterComponent<MockComponentType1>();
 
-	ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123);
+		cm.CreateComponent<MockComponentType1>(123);
 	}
 	catch (const InvalidEntityIdException&)
 	{
@@ -121,7 +121,7 @@ void ComponentManagerTests::CreateComponent_UnregisteredComponent_Fail( Fnd::Tes
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123);
+		cm.CreateComponent<MockComponentType1>(123);
 	}
 	catch (const InvalidComponentIdException&)
 	{
@@ -157,12 +157,12 @@ void ComponentManagerTests::CreateComponent_WithData_DuplicateId_Fail( Fnd::Test
 
 	MockComponentType1::Data data;
 
-	ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123, data);
+	cm.CreateComponent<MockComponentType1>(123, data);
 
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123);
+		cm.CreateComponent<MockComponentType1>(123);
 	}
 	catch (const InvalidEntityIdException&)
 	{
@@ -181,7 +181,7 @@ void ComponentManagerTests::CreateComponent_WithData_UnregisteredComponent_Fail(
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123,data);
+		cm.CreateComponent<MockComponentType1>(123,data);
 	}
 	catch (const InvalidComponentIdException&)
 	{
@@ -197,7 +197,7 @@ void ComponentManagerTests::HasComponent_True( Fnd::Test::TestCase& test_case )
 
 	cm.RegisterComponent<MockComponentType1>();
 
-	ComponentTemplate<MockComponentType1>& component = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	test_case.Assert(cm.HasComponent<MockComponentType1>(123));
 }
@@ -254,12 +254,12 @@ void ComponentManagerTests::GetComponentNonConst_InvalidId_Fail( Fnd::Test::Test
 
 	cm.RegisterComponent<MockComponentType1>();
 	
-	ComponentTemplate<MockComponentType1>& created = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType1>& got = cm.GetComponent<MockComponentType1>(999);
+		cm.GetComponent<MockComponentType1>(999);
 	}
 	catch (const InvalidEntityIdException&)
 	{
@@ -275,12 +275,12 @@ void ComponentManagerTests::GetComponentNonConst_UnregisteredComponent_Fail( Fnd
 
 	cm.RegisterComponent<MockComponentType1>();
 	
-	ComponentTemplate<MockComponentType1>& created = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	bool exception_caught = false;
 	try
 	{
-		ComponentTemplate<MockComponentType2>& got = cm.GetComponent<MockComponentType2>(123);
+		cm.GetComponent<MockComponentType2>(123);
 	}
 	catch (const InvalidComponentIdException&)
 	{
@@ -317,13 +317,13 @@ void ComponentManagerTests::GetComponentConst_InvalidId_Fail( Fnd::Test::TestCas
 
 	cm.RegisterComponent<MockComponentType1>();
 	
-	ComponentTemplate<MockComponentType1>& created = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	bool exception_caught = false;
 	try
 	{
 		const ComponentManager& cm_const = cm;
-		const ComponentTemplate<MockComponentType1>& got = cm_const.GetComponent<MockComponentType1>(999);
+		cm_const.GetComponent<MockComponentType1>(999);
 	}
 	catch (const InvalidEntityIdException&)
 	{
@@ -339,13 +339,13 @@ void ComponentManagerTests::GetComponentConst_UnregisteredComponent_Fail( Fnd::T
 
 	cm.RegisterComponent<MockComponentType1>();
 	
-	ComponentTemplate<MockComponentType1>& created = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 
 	bool exception_caught = false;
 	try
 	{
 		const ComponentManager& cm_const = cm;
-		const ComponentTemplate<MockComponentType2>& got = cm_const.GetComponent<MockComponentType2>(123);
+		cm_const.GetComponent<MockComponentType2>(123);
 	}
 	catch (const InvalidComponentIdException&)
 	{
@@ -361,7 +361,7 @@ void ComponentManagerTests::DestroyComponent_Succeed( Fnd::Test::TestCase& test_
 
 	cm.RegisterComponent<MockComponentType1>();
 
-	ComponentTemplate<MockComponentType1>& created = cm.CreateComponent<MockComponentType1>(123);
+	cm.CreateComponent<MockComponentType1>(123);
 	
 	cm.DestroyComponent<MockComponentType1>(123);
 
