@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		10A7B3761CB81DF800B78A7C /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3751CB81DF800B78A7C /* Main.cpp */; };
+		10FEA9461D03919600338F5B /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3801CB81FC400B78A7C /* libCore.a */; };
+		10FEA9471D03919600338F5B /* libEntitySystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEA92B1D03912400338F5B /* libEntitySystem.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -17,6 +19,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 108C2C051C66CB7C00B40C55;
 			remoteInfo = Core;
+		};
+		10FEA92A1D03912400338F5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 10FEA9171D03912400338F5B;
+			remoteInfo = EntitySystem;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,6 +45,7 @@
 		10A7B3691CB81DA400B78A7C /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3751CB81DF800B78A7C /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
+		10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EntitySystem.xcodeproj; path = ../EntitySystem/EntitySystem.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FEA9461D03919600338F5B /* libCore.a in Frameworks */,
+				10FEA9471D03919600338F5B /* libEntitySystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +64,7 @@
 		10A7B3601CB81DA400B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */,
 				10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */,
 				10A7B3741CB81DEC00B78A7C /* Source */,
 				10A7B3731CB81DDF00B78A7C /* Header */,
@@ -86,6 +99,14 @@
 			isa = PBXGroup;
 			children = (
 				10A7B3801CB81FC400B78A7C /* libCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10FEA9261D03912400338F5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10FEA92B1D03912400338F5B /* libEntitySystem.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +160,10 @@
 					ProductGroup = 10A7B37C1CB81FC400B78A7C /* Products */;
 					ProjectRef = 10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */;
 				},
+				{
+					ProductGroup = 10FEA9261D03912400338F5B /* Products */;
+					ProjectRef = 10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -153,6 +178,13 @@
 			fileType = archive.ar;
 			path = libCore.a;
 			remoteRef = 10A7B37F1CB81FC400B78A7C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10FEA92B1D03912400338F5B /* libEntitySystem.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEntitySystem.a;
+			remoteRef = 10FEA92A1D03912400338F5B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
