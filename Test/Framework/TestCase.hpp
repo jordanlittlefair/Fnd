@@ -1,8 +1,10 @@
 #pragma once
 
+#include "IResultPrinter.hpp"
 #include "TestCaseResult.hpp"
 
 #include <functional>
+#include <memory>
 
 namespace Fnd
 {
@@ -22,7 +24,9 @@ public:
 	typedef std::function<void(TestCase&)> TestFunction;
 
 	TestCase( const std::string& description, TestFunction function );
-
+	
+	void SetResultPrinter( ResultPrinterPtr result_printer );
+	
 	void Run();
 
 	void Assert( bool succeeded, const std::string& description = "" );
@@ -31,10 +35,14 @@ public:
 
 private:
 
-	TestCaseResult _result;
-
 	TestFunction _function;
+
+	ResultPrinterPtr _result_printer;
+	
+	TestCaseResult _result;
 };
+
+typedef std::shared_ptr<TestCase> TestCasePtr;
 
 }
 

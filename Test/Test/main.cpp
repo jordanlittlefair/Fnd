@@ -6,15 +6,19 @@
 #include "../EntitySystemTests/ComponentContainerTemplateTests.hpp"
 #include "../EntitySystemTests/ExceptionTests.hpp"
 #include "../EntitySystemTests/ComponentManagerTests.hpp"
+#include "../Framework/ConsoleResultPrinter.hpp"
 
 #include <cassert>
-
 using namespace Fnd::Test;
 
 int main()
 {
 	TestSuite test_suite( "Test Suite" );
 	
+	ResultPrinterPtr result_printer = std::make_shared<ConsoleResultPrinter>();
+
+	test_suite.SetResultPrinter(result_printer);
+
 	/*
 		New TestClasses should be added here.
 	*/

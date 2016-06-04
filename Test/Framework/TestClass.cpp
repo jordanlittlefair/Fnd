@@ -7,25 +7,46 @@ TestClass::TestClass( const std::string& description ):
 {
 }
 
+void TestClass::SetResultPrinter(ResultPrinterPtr result_printer)
+{
+	_result_printer = result_printer;
+}
+
 void TestClass::Run()
 {
+	SetupClass();
+
+	if (_result_printer)
+	{
+		_result_printer->PrintBeginTestClassResult(_result.GetDescription());
+	}
+
 	for ( auto& test_case : _test_cases )
 	{
-		SetUp();
+		SetupTest();
+
+		test_case->SetResultPrinter(_result_printer);
 		
 		try
 		{
 			test_case->Run();
 		}
-		catch ( const std::exception& ex )
+		catch (const std::exception& ex)
 		{
-			test_case->Assert( false, std::string( "Unexpected exception: " ) + ex.what() );
+			test_case->Assert(false, std::string("Unhandled exception: ") + ex.what());
 		}
 		
-		_result.AddTestCaseResult( test_case->GetResult() );
+		_result.AddTestCaseResult(test_case->GetResult());
 		
-		CleanUp();
+		CleanupTest();
 	}
+	
+	if (_result_printer)
+	{
+		_result_printer->PrintEndTestClassResult(_result);
+	}
+
+	CleanupClass();
 }
 
 const TestClassResult& TestClass::GetResult() const
@@ -33,15 +54,27 @@ const TestClassResult& TestClass::GetResult() const
 	return _result;
 }
 
-void TestClass::AddTestCase( std::shared_ptr<TestCase> test_case )
+TestClass::~TestClass()
+{
+}
+
+void TestClass::AddTestCase( TestCasePtr test_case )
 {
 	_test_cases.push_back( test_case );
 }
 
-void TestClass::SetUp()
+void TestClass::SetupClass()
 {
 }
 
-void TestClass::CleanUp()
+void TestClass::CleanupClass()
+{
+}
+
+void TestClass::SetupTest()
+{
+}
+
+void TestClass::CleanupTest()
 {
 }
