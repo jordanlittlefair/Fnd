@@ -9,16 +9,27 @@ TestClass::TestClass( const std::string& description ):
 
 void TestClass::Run()
 {
+	SetupClass();
+
 	for ( auto& test_case : _test_cases )
 	{
-		SetUp();
+		SetupTest();
 		
-		test_case->Run();
+		try
+		{
+			test_case->Run();
+		}
+		catch (const std::exception& ex)
+		{
+			test_case->Assert(false, std::string("Unhandled exception: ") + ex.what());
+		}
 		
 		_result.AddTestCaseResult( test_case->GetResult() );
 		
-		CleanUp();
+		CleanupTest();
 	}
+
+	CleanupClass();
 }
 
 const TestClassResult& TestClass::GetResult() const
@@ -31,10 +42,18 @@ void TestClass::AddTestCase( std::shared_ptr<TestCase> test_case )
 	_test_cases.push_back( test_case );
 }
 
-void TestClass::SetUp()
+void TestClass::SetupClass()
 {
 }
 
-void TestClass::CleanUp()
+void TestClass::CleanupClass()
+{
+}
+
+void TestClass::SetupTest()
+{
+}
+
+void TestClass::CleanupTest()
 {
 }

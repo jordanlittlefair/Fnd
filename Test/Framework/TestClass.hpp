@@ -30,9 +30,13 @@ protected:
 		AddTestCase( std::make_shared<TestCase>( name, std::bind( function, ptr, std::placeholders::_1 ) ) );
 	}
 	
-	virtual void SetUp();
+	virtual void SetupClass();
 	
-	virtual void CleanUp();
+	virtual void CleanupClass();
+
+	virtual void SetupTest();
+
+	virtual void CleanupTest();
 	
 private:
 	
