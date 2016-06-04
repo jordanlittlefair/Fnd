@@ -19,6 +19,8 @@ public:
 	void Run();
 	
 	const TestClassResult& GetResult() const;
+
+	virtual ~TestClass();
 	
 protected:
 

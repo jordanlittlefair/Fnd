@@ -37,6 +37,10 @@ const TestClassResult& TestClass::GetResult() const
 	return _result;
 }
 
+TestClass::~TestClass()
+{
+}
+
 void TestClass::AddTestCase( std::shared_ptr<TestCase> test_case )
 {
 	_test_cases.push_back( test_case );
