@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IResultPrinter.hpp"
 #include "TestSuiteResult.hpp"
 #include "TestClass.hpp"
 
@@ -21,18 +22,24 @@ public:
 		AddTestClass( std::make_shared<UnitTestType>() );
 	}
 	
-	void AddTestClass( std::shared_ptr<TestClass> test_class );
+	void AddTestClass( TestClassPtr test_class );
 	
+	void SetResultPrinter(ResultPrinterPtr result_printer);
+
 	void Run();
 	
 	const TestSuiteResult& GetResult() const;
-	
+
 private:
 	
-	std::vector<std::shared_ptr<TestClass>> _test_classes;
+	std::vector<TestClassPtr> _test_classes;
+
+	ResultPrinterPtr _result_printer;
 	
 	TestSuiteResult _result;
 };
+
+typedef std::shared_ptr<TestSuite> TestSuitePtr;
 
 }
 
