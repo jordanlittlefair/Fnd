@@ -7,7 +7,7 @@ TestSuite::TestSuite( const std::string& description ):
 {
 }
 
-void TestSuite::AddTestClass( std::shared_ptr<TestClass> test_class )
+void TestSuite::AddTestClass( TestClassPtr test_class )
 {
 	_test_classes.push_back( test_class );
 }

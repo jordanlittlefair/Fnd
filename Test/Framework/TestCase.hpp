@@ -3,6 +3,7 @@
 #include "TestCaseResult.hpp"
 
 #include <functional>
+#include <memory>
 
 namespace Fnd
 {
@@ -35,6 +36,8 @@ private:
 
 	TestFunction _function;
 };
+
+typedef std::shared_ptr<TestCase> TestCasePtr;
 
 }
 

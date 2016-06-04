@@ -21,7 +21,7 @@ public:
 		AddTestClass( std::make_shared<UnitTestType>() );
 	}
 	
-	void AddTestClass( std::shared_ptr<TestClass> test_class );
+	void AddTestClass( TestClassPtr test_class );
 	
 	void Run();
 	
@@ -29,10 +29,12 @@ public:
 	
 private:
 	
-	std::vector<std::shared_ptr<TestClass>> _test_classes;
+	std::vector<TestClassPtr> _test_classes;
 	
 	TestSuiteResult _result;
 };
+
+typedef std::shared_ptr<TestSuite> TestSuitePtr;
 
 }
 

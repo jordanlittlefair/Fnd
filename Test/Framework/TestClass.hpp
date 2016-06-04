@@ -42,14 +42,16 @@ protected:
 	
 private:
 	
-	void AddTestCase( std::shared_ptr<TestCase> test_case );
+	void AddTestCase( TestCasePtr test_case );
 	
 private:
 	
-	std::vector<std::shared_ptr<TestCase>> _test_cases;
+	std::vector<TestCasePtr> _test_cases;
 	
 	TestClassResult _result;
 };
+
+typedef std::shared_ptr<TestClass> TestClassPtr;
 
 }
 

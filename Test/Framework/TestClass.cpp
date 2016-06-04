@@ -41,7 +41,7 @@ TestClass::~TestClass()
 {
 }
 
-void TestClass::AddTestCase( std::shared_ptr<TestCase> test_case )
+void TestClass::AddTestCase( TestCasePtr test_case )
 {
 	_test_cases.push_back( test_case );
 }
