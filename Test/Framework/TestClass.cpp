@@ -7,13 +7,25 @@ TestClass::TestClass( const std::string& description ):
 {
 }
 
+void TestClass::SetResultPrinter(ResultPrinterPtr result_printer)
+{
+	_result_printer = result_printer;
+}
+
 void TestClass::Run()
 {
 	SetupClass();
 
+	if (_result_printer)
+	{
+		_result_printer->PrintBeginTestClassResult(_result.GetDescription());
+	}
+
 	for ( auto& test_case : _test_cases )
 	{
 		SetupTest();
+
+		test_case->SetResultPrinter(_result_printer);
 		
 		try
 		{
@@ -24,9 +36,14 @@ void TestClass::Run()
 			test_case->Assert(false, std::string("Unhandled exception: ") + ex.what());
 		}
 		
-		_result.AddTestCaseResult( test_case->GetResult() );
+		_result.AddTestCaseResult(test_case->GetResult());
 		
 		CleanupTest();
+	}
+	
+	if (_result_printer)
+	{
+		_result_printer->PrintEndTestClassResult(_result);
 	}
 
 	CleanupClass();

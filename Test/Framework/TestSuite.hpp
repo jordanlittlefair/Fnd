@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IResultPrinter.hpp"
 #include "TestSuiteResult.hpp"
 #include "TestClass.hpp"
 
@@ -23,13 +24,17 @@ public:
 	
 	void AddTestClass( TestClassPtr test_class );
 	
+	void SetResultPrinter(ResultPrinterPtr result_printer);
+
 	void Run();
 	
 	const TestSuiteResult& GetResult() const;
-	
+
 private:
 	
 	std::vector<TestClassPtr> _test_classes;
+
+	ResultPrinterPtr _result_printer;
 	
 	TestSuiteResult _result;
 };

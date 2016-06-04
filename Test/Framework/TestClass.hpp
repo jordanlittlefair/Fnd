@@ -16,6 +16,8 @@ class TestClass
 {
 public:
 	
+	void SetResultPrinter(ResultPrinterPtr result_printer);
+
 	void Run();
 	
 	const TestClassResult& GetResult() const;
@@ -47,6 +49,8 @@ private:
 private:
 	
 	std::vector<TestCasePtr> _test_cases;
+
+	ResultPrinterPtr _result_printer;
 	
 	TestClassResult _result;
 };
