@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="ComponentContainerTemplateTests.hpp" />
     <ClInclude Include="ComponentContainerTests.hpp" />
+    <ClInclude Include="ComponentManagerTests.hpp" />
     <ClInclude Include="ComponentTemplateTests.hpp" />
     <ClInclude Include="ComponentTests.hpp" />
     <ClInclude Include="ExceptionTests.hpp" />
@@ -23,6 +24,7 @@
   <ItemGroup>
     <ClCompile Include="ComponentContainerTemplateTests.cpp" />
     <ClCompile Include="ComponentContainerTests.cpp" />
+    <ClCompile Include="ComponentManagerTests.cpp" />
     <ClCompile Include="ComponentTemplateTests.cpp" />
     <ClCompile Include="ComponentTests.cpp" />
     <ClCompile Include="ExceptionTests.cpp" />

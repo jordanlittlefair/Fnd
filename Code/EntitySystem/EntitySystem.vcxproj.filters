@@ -32,6 +32,9 @@
     <ClInclude Include="ComponentContainerTemplate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -41,6 +44,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Exceptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
