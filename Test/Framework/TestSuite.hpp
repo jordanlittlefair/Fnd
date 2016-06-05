@@ -29,6 +29,8 @@ public:
 	void Run();
 	
 	const TestSuiteResult& GetResult() const;
+	
+	virtual ~TestSuite();
 
 private:
 	

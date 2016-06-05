@@ -1,13 +1,7 @@
 #include "../Framework/TestSuite.hpp"
 
-#include "../SystemManagerTests/SystemManagerExceptionTests.hpp"
-#include "../SystemManagerTests/SystemGraphNodeTests.hpp"
-#include "../SystemManagerTests/SystemTests.hpp"
-#include "../SystemManagerTests/SystemGraphTests.hpp"
-#include "../SystemManagerTests/CyclicGraphCheckerTests.hpp"
-#include "../SystemManagerTests/OptimalPathFinderTests.hpp"
-#include "../SystemManagerTests/TaskTests.hpp"
-#include "../SystemManagerTests/LambdaTaskTests.hpp"
+#include "../SystemManagerTests/SystemManagerTestSuite.hpp"
+
 #include "../Framework/ConsoleResultPrinter.hpp"
 
 #include <cassert>
@@ -16,28 +10,26 @@ using namespace Fnd::Test;
 
 int main()
 {
-	TestSuite test_suite( "Test Suite" );
+	std::vector<TestSuitePtr> test_suites;
 	
 	ResultPrinterPtr result_printer = std::make_shared<ConsoleResultPrinter>();
-
-	test_suite.SetResultPrinter(result_printer);
-
+	
 	/*
-		New TestClasses should be added here.
+		Add any TestSuites below
 	*/
-	test_suite.AddTestClass<SystemManager::SystemManagerExceptionTests>();
-	test_suite.AddTestClass<SystemManager::SystemGraphNodeTests>();
-	test_suite.AddTestClass<SystemManager::SystemTests>();
-	test_suite.AddTestClass<SystemManager::SystemGraphTests>();
-	test_suite.AddTestClass<SystemManager::CyclicGraphCheckerTests>();
-	test_suite.AddTestClass<SystemManager::OptimalPathFinderTests>();
-	test_suite.AddTestClass<SystemManager::TaskTests>();
-	test_suite.AddTestClass<SystemManager::LambdaTaskTests>();
-	test_suite.Run();
 	
-	TestSuiteResult result = test_suite.GetResult();
+	test_suites.push_back( std::make_shared<SystemManager::SystemManagerTestSuite>() );
 	
-	assert( result.GetSucceeded() );
+	
+
+	for (auto& test_suite : test_suites)
+	{
+		test_suite->SetResultPrinter(result_printer);
+	
+		test_suite->Run();
+	
+		assert( test_suite->GetResult().GetSucceeded() );
+	}
 	
 	return 0;
 }
