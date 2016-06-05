@@ -25,6 +25,7 @@
 		10FEA98A1D0393B200338F5B /* MockComponentContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */; };
 		10FEA98B1D0393B200338F5B /* MockComponentTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */; };
 		10FEA98C1D0393B200338F5B /* MockComponentTypes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */; };
+		10FEA9B51D03AFDA00338F5B /* EntitySystemTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockComponentContainer.hpp; sourceTree = "<group>"; };
 		10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockComponentTypes.cpp; sourceTree = "<group>"; };
 		10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockComponentTypes.hpp; sourceTree = "<group>"; };
+		10FEA9B31D03AF4D00338F5B /* EntitySystemTestSuite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntitySystemTestSuite.hpp; sourceTree = "<group>"; };
+		10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntitySystemTestSuite.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 		10FEA9521D03933A00338F5B = {
 			isa = PBXGroup;
 			children = (
+				10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */,
+				10FEA9B31D03AF4D00338F5B /* EntitySystemTestSuite.hpp */,
 				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
 				10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */,
 				10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */,
@@ -172,6 +177,7 @@
 				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
 				10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */,
 				10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */,
+				10FEA9B51D03AFDA00338F5B /* EntitySystemTestSuite.cpp in Sources */,
 				10FEA98B1D0393B200338F5B /* MockComponentTypes.cpp in Sources */,
 				10FEA9851D0393B200338F5B /* ExceptionTests.cpp in Sources */,
 				10FEA97F1D0393B200338F5B /* ComponentManagerTests.cpp in Sources */,

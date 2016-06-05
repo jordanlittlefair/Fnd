@@ -43,3 +43,7 @@ const TestSuiteResult& TestSuite::GetResult() const
 {
 	return _result;
 }
+
+TestSuite::~TestSuite()
+{	
+}
