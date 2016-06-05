@@ -10,7 +10,7 @@ Task::Task( SystemPtr parent_system ):
 
 Task::State Task::GetState() const
 {
-	std::unique_lock<std::mutex> lock(_state_mutex);
+	std::lock_guard<std::mutex> lock(_state_mutex);
 	
 	return _state;
 }
@@ -38,6 +38,7 @@ bool Task::WaitTimeout( const std::chrono::nanoseconds& timeout )
 void Task::Run()
 {
 	SetState(State::Running);
+	
 	try
 	{
 		OnRun();
@@ -64,7 +65,7 @@ void Task::RethrowException()
 
 void Task::SetState( const Fnd::SystemManager::Task::State state )
 {
-	std::unique_lock<std::mutex> lock(_state_mutex);
+	std::lock_guard<std::mutex> lock(_state_mutex);
 	
 	_state = state;
 	
