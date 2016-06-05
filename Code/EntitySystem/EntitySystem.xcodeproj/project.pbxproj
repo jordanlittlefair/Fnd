@@ -20,6 +20,12 @@
 		10FEA9421D03915700338F5B /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9361D03915700338F5B /* Exceptions.cpp */; };
 		10FEA9431D03915700338F5B /* Exceptions.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9371D03915700338F5B /* Exceptions.hpp */; };
 		10FEA9451D03918A00338F5B /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEA9441D03918A00338F5B /* libCore.a */; };
+		10FEA9C01D04D90800338F5B /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9BA1D04D90800338F5B /* EntityManager.cpp */; };
+		10FEA9C11D04D90800338F5B /* EntityManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BB1D04D90800338F5B /* EntityManager.hpp */; };
+		10FEA9C21D04D90800338F5B /* IEntityIdGenerator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */; };
+		10FEA9C31D04D90800338F5B /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9BD1D04D90800338F5B /* Node.cpp */; };
+		10FEA9C41D04D90800338F5B /* Node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BE1D04D90800338F5B /* Node.hpp */; };
+		10FEA9C51D04D90800338F5B /* NodeId.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BF1D04D90800338F5B /* NodeId.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		10FEA9361D03915700338F5B /* Exceptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exceptions.cpp; sourceTree = "<group>"; };
 		10FEA9371D03915700338F5B /* Exceptions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Exceptions.hpp; sourceTree = "<group>"; };
 		10FEA9441D03918A00338F5B /* libCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCore.a; path = "../../../Library/Developer/Xcode/DerivedData/Game-dfdlwxcmaaflswfvrabpcabylxcb/Build/Products/Debug/libCore.a"; sourceTree = "<group>"; };
+		10FEA9BA1D04D90800338F5B /* EntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityManager.cpp; sourceTree = "<group>"; };
+		10FEA9BB1D04D90800338F5B /* EntityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityManager.hpp; sourceTree = "<group>"; };
+		10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IEntityIdGenerator.hpp; sourceTree = "<group>"; };
+		10FEA9BD1D04D90800338F5B /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		10FEA9BE1D04D90800338F5B /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
+		10FEA9BF1D04D90800338F5B /* NodeId.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeId.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +77,14 @@
 				10FEA9331D03915700338F5B /* ComponentManager.hpp */,
 				10FEA9341D03915700338F5B /* ComponentTemplate.hpp */,
 				10FEA9351D03915700338F5B /* EntityId.hpp */,
+				10FEA9BA1D04D90800338F5B /* EntityManager.cpp */,
+				10FEA9BB1D04D90800338F5B /* EntityManager.hpp */,
 				10FEA9361D03915700338F5B /* Exceptions.cpp */,
 				10FEA9371D03915700338F5B /* Exceptions.hpp */,
+				10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */,
+				10FEA9BD1D04D90800338F5B /* Node.cpp */,
+				10FEA9BE1D04D90800338F5B /* Node.hpp */,
+				10FEA9BF1D04D90800338F5B /* NodeId.hpp */,
 				10FEA9181D03912400338F5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,10 +108,14 @@
 				10FEA93D1D03915700338F5B /* ComponentId.hpp in Headers */,
 				10FEA9401D03915700338F5B /* ComponentTemplate.hpp in Headers */,
 				10FEA93B1D03915700338F5B /* ComponentContainer.hpp in Headers */,
+				10FEA9C21D04D90800338F5B /* IEntityIdGenerator.hpp in Headers */,
+				10FEA9C41D04D90800338F5B /* Node.hpp in Headers */,
+				10FEA9C11D04D90800338F5B /* EntityManager.hpp in Headers */,
 				10FEA9411D03915700338F5B /* EntityId.hpp in Headers */,
 				10FEA9391D03915700338F5B /* Component.hpp in Headers */,
 				10FEA9431D03915700338F5B /* Exceptions.hpp in Headers */,
 				10FEA93F1D03915700338F5B /* ComponentManager.hpp in Headers */,
+				10FEA9C51D04D90800338F5B /* NodeId.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +178,8 @@
 				10FEA93E1D03915700338F5B /* ComponentManager.cpp in Sources */,
 				10FEA9421D03915700338F5B /* Exceptions.cpp in Sources */,
 				10FEA9381D03915700338F5B /* Component.cpp in Sources */,
+				10FEA9C31D04D90800338F5B /* Node.cpp in Sources */,
+				10FEA9C01D04D90800338F5B /* EntityManager.cpp in Sources */,
 				10FEA93A1D03915700338F5B /* ComponentContainer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +307,7 @@
 				10FEA9241D03912400338F5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
