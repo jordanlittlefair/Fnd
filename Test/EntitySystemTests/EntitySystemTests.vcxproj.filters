@@ -36,6 +36,7 @@
     <ClInclude Include="ComponentManagerTests.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="EntitySystemTestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -65,5 +66,6 @@
     <ClCompile Include="ComponentManagerTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="EntitySystemTestSuite.cpp" />
   </ItemGroup>
 </Project>

@@ -16,6 +16,7 @@
     <ClInclude Include="ComponentManagerTests.hpp" />
     <ClInclude Include="ComponentTemplateTests.hpp" />
     <ClInclude Include="ComponentTests.hpp" />
+    <ClInclude Include="EntitySystemTestSuite.hpp" />
     <ClInclude Include="ExceptionTests.hpp" />
     <ClInclude Include="MockComponent.hpp" />
     <ClInclude Include="MockComponentContainer.hpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="ComponentManagerTests.cpp" />
     <ClCompile Include="ComponentTemplateTests.cpp" />
     <ClCompile Include="ComponentTests.cpp" />
+    <ClCompile Include="EntitySystemTestSuite.cpp" />
     <ClCompile Include="ExceptionTests.cpp" />
     <ClCompile Include="MockComponent.cpp" />
     <ClCompile Include="MockComponentContainer.cpp" />
