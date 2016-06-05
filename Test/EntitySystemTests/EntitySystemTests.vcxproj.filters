@@ -43,6 +43,12 @@
     <ClInclude Include="EntityManagerTests.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="MockNode.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -77,6 +83,12 @@
       <Filter>Mock</Filter>
     </ClCompile>
     <ClCompile Include="EntityManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNode.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>

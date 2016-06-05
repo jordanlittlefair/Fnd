@@ -23,6 +23,8 @@
     <ClInclude Include="MockComponentContainer.hpp" />
     <ClInclude Include="MockComponentTypes.hpp" />
     <ClInclude Include="MockEntityIdGenerator.hpp" />
+    <ClInclude Include="MockNode.hpp" />
+    <ClInclude Include="NodeTests.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTemplateTests.cpp" />
@@ -37,6 +39,8 @@
     <ClCompile Include="MockComponentContainer.cpp" />
     <ClCompile Include="MockComponentTypes.cpp" />
     <ClCompile Include="MockEntityIdGenerator.cpp" />
+    <ClCompile Include="MockNode.cpp" />
+    <ClCompile Include="NodeTests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{915FB217-65A4-4349-BB7E-0C1553AD8F72}</ProjectGuid>

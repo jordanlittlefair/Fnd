@@ -22,6 +22,8 @@
     <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="Exceptions.hpp" />
     <ClInclude Include="IEntityIdGenerator.hpp" />
+    <ClInclude Include="Node.hpp" />
+    <ClInclude Include="NodeId.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicEntityIdGenerator.cpp" />
@@ -30,6 +32,7 @@
     <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Exceptions.cpp" />
+    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B06713F6-8423-4C04-B7FC-B06298DC2512}</ProjectGuid>
