@@ -16,11 +16,13 @@
     <ClInclude Include="ComponentManagerTests.hpp" />
     <ClInclude Include="ComponentTemplateTests.hpp" />
     <ClInclude Include="ComponentTests.hpp" />
+    <ClInclude Include="EntityManagerTests.hpp" />
     <ClInclude Include="EntitySystemTestSuite.hpp" />
     <ClInclude Include="ExceptionTests.hpp" />
     <ClInclude Include="MockComponent.hpp" />
     <ClInclude Include="MockComponentContainer.hpp" />
     <ClInclude Include="MockComponentTypes.hpp" />
+    <ClInclude Include="MockEntityIdGenerator.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTemplateTests.cpp" />
@@ -28,11 +30,13 @@
     <ClCompile Include="ComponentManagerTests.cpp" />
     <ClCompile Include="ComponentTemplateTests.cpp" />
     <ClCompile Include="ComponentTests.cpp" />
+    <ClCompile Include="EntityManagerTests.cpp" />
     <ClCompile Include="EntitySystemTestSuite.cpp" />
     <ClCompile Include="ExceptionTests.cpp" />
     <ClCompile Include="MockComponent.cpp" />
     <ClCompile Include="MockComponentContainer.cpp" />
     <ClCompile Include="MockComponentTypes.cpp" />
+    <ClCompile Include="MockEntityIdGenerator.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{915FB217-65A4-4349-BB7E-0C1553AD8F72}</ProjectGuid>

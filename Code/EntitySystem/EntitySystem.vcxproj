@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicEntityIdGenerator.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentContainer.hpp" />
     <ClInclude Include="ComponentContainerTemplate.hpp" />
@@ -18,12 +19,16 @@
     <ClInclude Include="ComponentManager.hpp" />
     <ClInclude Include="ComponentTemplate.hpp" />
     <ClInclude Include="EntityId.hpp" />
+    <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="Exceptions.hpp" />
+    <ClInclude Include="IEntityIdGenerator.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasicEntityIdGenerator.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentContainer.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Exceptions.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

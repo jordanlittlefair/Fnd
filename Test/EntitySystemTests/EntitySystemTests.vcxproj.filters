@@ -37,6 +37,12 @@
       <Filter>Tests</Filter>
     </ClInclude>
     <ClInclude Include="EntitySystemTestSuite.hpp" />
+    <ClInclude Include="MockEntityIdGenerator.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManagerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -67,5 +73,11 @@
       <Filter>Tests</Filter>
     </ClCompile>
     <ClCompile Include="EntitySystemTestSuite.cpp" />
+    <ClCompile Include="MockEntityIdGenerator.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,11 +1,12 @@
 #include "EntitySystemTestSuite.hpp"
 
-#include "../EntitySystemTests/ComponentTests.hpp"
-#include "../EntitySystemTests/ComponentTemplateTests.hpp"
-#include "../EntitySystemTests/ComponentContainerTests.hpp"
-#include "../EntitySystemTests/ComponentContainerTemplateTests.hpp"
-#include "../EntitySystemTests/ExceptionTests.hpp"
-#include "../EntitySystemTests/ComponentManagerTests.hpp"
+#include "ComponentTests.hpp"
+#include "ComponentTemplateTests.hpp"
+#include "ComponentContainerTests.hpp"
+#include "ComponentContainerTemplateTests.hpp"
+#include "ExceptionTests.hpp"
+#include "ComponentManagerTests.hpp"
+#include "EntityManagerTests.hpp"
 
 using namespace Fnd::Test::EntitySystemTests;
 
@@ -18,4 +19,5 @@ EntitySystemTestSuite::EntitySystemTestSuite():
 	AddTestClass<EntitySystem::ExceptionTests>();
 	AddTestClass<EntitySystem::ComponentContainerTemplateTests>();
 	AddTestClass<EntitySystem::ComponentManagerTests>();
+	AddTestClass<EntitySystem::EntityManagerTests>();
 }
