@@ -5,6 +5,7 @@
 
 #include <thread>
 
+using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
@@ -77,7 +78,7 @@ void TaskTests::TestErrorStatesAndException( TestCase& test_case )
 	{
 		mt.RethrowException();
 	}
-	catch ( const std::runtime_error& ex )
+	catch (const std::runtime_error&)
 	{
 		exceptionHit = true;
 	}
@@ -125,7 +126,7 @@ void TaskTests::TestWait_Exception( TestCase& test_case )
 	{
 	mt.RethrowException();
 	}
-	catch ( const std::runtime_error& ex )
+	catch (const std::runtime_error&)
 	{
 	exceptionHit = true;
 	}

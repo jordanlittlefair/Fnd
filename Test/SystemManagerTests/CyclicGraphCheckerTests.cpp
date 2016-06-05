@@ -2,6 +2,7 @@
 
 #include "../../Code/SystemManager/CyclicGraphChecker.hpp"
 
+using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 

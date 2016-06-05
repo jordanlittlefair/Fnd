@@ -2,6 +2,7 @@
 
 #include "MockSystem.hpp"
 
+using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 
 SystemTests::SystemTests():

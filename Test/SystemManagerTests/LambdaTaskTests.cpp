@@ -3,6 +3,7 @@
 #include "MockSystem.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
 
+using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
@@ -86,7 +87,7 @@ void LambdaTaskTests::TestErrorStatesAndException( TestCase& test_case )
 	{
 		lt->RethrowException();
 	}
-	catch ( const std::runtime_error& ex )
+	catch (const std::runtime_error&)
 	{
 		exceptionHit = true;
 	}
