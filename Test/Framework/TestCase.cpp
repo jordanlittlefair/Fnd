@@ -20,8 +20,18 @@ void TestCase::Run()
 		_result_printer->PrintBeginTestCaseResult(_result.GetDescription());
 	}
 
-	_function( *this );
-
+	try
+	{
+		_function( *this );
+	}
+	catch (const std::exception& ex)
+	{
+		Assert(false, std::string("Unhandled exception: ") + ex.what());
+	}
+	catch (...)
+	{
+		Assert(false, "Unhandled exception: Unknown exception (...)");
+	}
 	
 	if (_result_printer)
 	{
