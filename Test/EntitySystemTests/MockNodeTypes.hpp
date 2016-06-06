@@ -2,6 +2,7 @@
 
 #include "MockComponentTypes.hpp"
 
+#include "../../Code/EntitySystem/ComponentTemplate.hpp"
 #include "../../Code/EntitySystem/NodeId.hpp"
 
 #include <string>
@@ -21,7 +22,7 @@ struct MockNodeType1
 
 	struct Components
 	{
-		MockComponentType1& component1;
+		Fnd::EntitySystem::ComponentTemplate<MockComponentType1>& component1;
 	};
 };
 
@@ -31,8 +32,8 @@ struct MockNodeType2
 	
 	struct Components
 	{
-		MockComponentType1& component1;
-		MockComponentType2& component2;
+		Fnd::EntitySystem::ComponentTemplate<MockComponentType1>& component1;
+		Fnd::EntitySystem::ComponentTemplate<MockComponentType2>& component2;
 	};
 };
 
