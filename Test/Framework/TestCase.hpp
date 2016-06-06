@@ -32,6 +32,8 @@ public:
 	void Assert( bool succeeded, const std::string& description = "" );
 
 	const TestCaseResult& GetResult() const;
+	
+	virtual ~TestCase();
 
 private:
 

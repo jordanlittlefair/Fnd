@@ -10,6 +10,7 @@
 		10A7B3421CB32C3F00B78A7C /* ExampleTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */; };
 		10A7B3431CB32C3F00B78A7C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3411CB32C3F00B78A7C /* main.cpp */; };
 		10A7B3451CB32CD700B78A7C /* libFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3441CB32CD700B78A7C /* libFramework.a */; };
+		10FEA9E71D06378800338F5B /* ExampleTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		10A7B3401CB32C3F00B78A7C /* ExampleTestClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExampleTestClass.hpp; sourceTree = "<group>"; };
 		10A7B3411CB32C3F00B78A7C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		10A7B3441CB32CD700B78A7C /* libFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFramework.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libFramework.a"; sourceTree = "<group>"; };
+		10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExampleTestSuite.hpp; sourceTree = "<group>"; };
+		10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleTestSuite.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,8 @@
 		10A7B3291CB3293700B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */,
+				10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */,
 				10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */,
 				10A7B3401CB32C3F00B78A7C /* ExampleTestClass.hpp */,
 				10A7B3411CB32C3F00B78A7C /* main.cpp */,
@@ -128,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A7B3431CB32C3F00B78A7C /* main.cpp in Sources */,
+				10FEA9E71D06378800338F5B /* ExampleTestSuite.cpp in Sources */,
 				10A7B3421CB32C3F00B78A7C /* ExampleTestClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

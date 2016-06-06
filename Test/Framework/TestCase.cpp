@@ -50,3 +50,7 @@ const TestCaseResult& TestCase::GetResult() const
 {
 	return _result;
 }
+
+TestCase::~TestCase()
+{
+}
