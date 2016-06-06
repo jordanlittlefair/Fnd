@@ -8,6 +8,7 @@
 #include "ComponentManagerTests.hpp"
 #include "EntityManagerTests.hpp"
 #include "NodeTests.hpp"
+#include "NodeTemplateTests.hpp"
 
 using namespace Fnd::Test::EntitySystemTests;
 
@@ -22,4 +23,5 @@ EntitySystemTestSuite::EntitySystemTestSuite():
 	AddTestClass<EntitySystem::ComponentManagerTests>();
 	AddTestClass<EntitySystem::EntityManagerTests>();
 	AddTestClass<EntitySystem::NodeTests>();
+	AddTestClass<EntitySystem::NodeTemplateTests>();
 }

@@ -34,6 +34,8 @@
 		10FEA9D51D04D97500338F5B /* MockNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9CD1D04D97500338F5B /* MockNode.hpp */; };
 		10FEA9D61D04D97500338F5B /* NodeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9CE1D04D97500338F5B /* NodeTests.cpp */; };
 		10FEA9D71D04D97500338F5B /* NodeTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9CF1D04D97500338F5B /* NodeTests.hpp */; };
+		10FEA9DF1D05EB3900338F5B /* NodeTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */; };
+		10FEA9E21D05FB2A00338F5B /* MockNodeTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,10 @@
 		10FEA9CD1D04D97500338F5B /* MockNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockNode.hpp; sourceTree = "<group>"; };
 		10FEA9CE1D04D97500338F5B /* NodeTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeTests.cpp; sourceTree = "<group>"; };
 		10FEA9CF1D04D97500338F5B /* NodeTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeTests.hpp; sourceTree = "<group>"; };
+		10FEA9DD1D05EAAA00338F5B /* NodeTemplateTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeTemplateTests.hpp; sourceTree = "<group>"; };
+		10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeTemplateTests.cpp; sourceTree = "<group>"; };
+		10FEA9E01D05FA4300338F5B /* MockNodeTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockNodeTypes.hpp; sourceTree = "<group>"; };
+		10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockNodeTypes.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +88,6 @@
 		10FEA9521D03933A00338F5B = {
 			isa = PBXGroup;
 			children = (
-				10FEA9C81D04D97500338F5B /* EntityManagerTests.cpp */,
-				10FEA9C91D04D97500338F5B /* EntityManagerTests.hpp */,
-				10FEA9CA1D04D97500338F5B /* MockEntityIdGenerator.cpp */,
-				10FEA9CB1D04D97500338F5B /* MockEntityIdGenerator.hpp */,
-				10FEA9CC1D04D97500338F5B /* MockNode.cpp */,
-				10FEA9CD1D04D97500338F5B /* MockNode.hpp */,
-				10FEA9CE1D04D97500338F5B /* NodeTests.cpp */,
-				10FEA9CF1D04D97500338F5B /* NodeTests.hpp */,
-				10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */,
-				10FEA9B31D03AF4D00338F5B /* EntitySystemTestSuite.hpp */,
 				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
 				10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */,
 				10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */,
@@ -102,6 +98,10 @@
 				10FEA9701D0393B200338F5B /* ComponentTemplateTests.hpp */,
 				10FEA9711D0393B200338F5B /* ComponentTests.cpp */,
 				10FEA9721D0393B200338F5B /* ComponentTests.hpp */,
+				10FEA9C81D04D97500338F5B /* EntityManagerTests.cpp */,
+				10FEA9C91D04D97500338F5B /* EntityManagerTests.hpp */,
+				10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */,
+				10FEA9B31D03AF4D00338F5B /* EntitySystemTestSuite.hpp */,
 				10FEA9731D0393B200338F5B /* ExceptionTests.cpp */,
 				10FEA9741D0393B200338F5B /* ExceptionTests.hpp */,
 				10FEA9751D0393B200338F5B /* MockComponent.cpp */,
@@ -110,6 +110,16 @@
 				10FEA9781D0393B200338F5B /* MockComponentContainer.hpp */,
 				10FEA9791D0393B200338F5B /* MockComponentTypes.cpp */,
 				10FEA97A1D0393B200338F5B /* MockComponentTypes.hpp */,
+				10FEA9CA1D04D97500338F5B /* MockEntityIdGenerator.cpp */,
+				10FEA9CB1D04D97500338F5B /* MockEntityIdGenerator.hpp */,
+				10FEA9CC1D04D97500338F5B /* MockNode.cpp */,
+				10FEA9CD1D04D97500338F5B /* MockNode.hpp */,
+				10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */,
+				10FEA9E01D05FA4300338F5B /* MockNodeTypes.hpp */,
+				10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */,
+				10FEA9DD1D05EAAA00338F5B /* NodeTemplateTests.hpp */,
+				10FEA9CE1D04D97500338F5B /* NodeTests.cpp */,
+				10FEA9CF1D04D97500338F5B /* NodeTests.hpp */,
 				10FEA95C1D03933A00338F5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,7 +216,9 @@
 				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
 				10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */,
 				10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */,
+				10FEA9DF1D05EB3900338F5B /* NodeTemplateTests.cpp in Sources */,
 				10FEA9B51D03AFDA00338F5B /* EntitySystemTestSuite.cpp in Sources */,
+				10FEA9E21D05FB2A00338F5B /* MockNodeTypes.cpp in Sources */,
 				10FEA98B1D0393B200338F5B /* MockComponentTypes.cpp in Sources */,
 				10FEA9851D0393B200338F5B /* ExceptionTests.cpp in Sources */,
 				10FEA97F1D0393B200338F5B /* ComponentManagerTests.cpp in Sources */,

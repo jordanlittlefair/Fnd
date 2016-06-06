@@ -49,6 +49,7 @@
 		10FEA9BD1D04D90800338F5B /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
 		10FEA9BE1D04D90800338F5B /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		10FEA9BF1D04D90800338F5B /* NodeId.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeId.hpp; sourceTree = "<group>"; };
+		10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeTemplate.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 		10FEA90E1D03912300338F5B = {
 			isa = PBXGroup;
 			children = (
+				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
 				10FEA9441D03918A00338F5B /* libCore.a */,
 				10FEA92C1D03915700338F5B /* Component.cpp */,
 				10FEA92D1D03915700338F5B /* Component.hpp */,
