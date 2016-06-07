@@ -26,6 +26,7 @@
 		10FEA9C31D04D90800338F5B /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9BD1D04D90800338F5B /* Node.cpp */; };
 		10FEA9C41D04D90800338F5B /* Node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BE1D04D90800338F5B /* Node.hpp */; };
 		10FEA9C51D04D90800338F5B /* NodeId.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BF1D04D90800338F5B /* NodeId.hpp */; };
+		10FEA9EC1D077B5500338F5B /* NodeContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		10FEA9BE1D04D90800338F5B /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		10FEA9BF1D04D90800338F5B /* NodeId.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeId.hpp; sourceTree = "<group>"; };
 		10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeTemplate.hpp; sourceTree = "<group>"; };
+		10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainer.hpp; sourceTree = "<group>"; };
+		10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +70,6 @@
 		10FEA90E1D03912300338F5B = {
 			isa = PBXGroup;
 			children = (
-				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
 				10FEA9441D03918A00338F5B /* libCore.a */,
 				10FEA92C1D03915700338F5B /* Component.cpp */,
 				10FEA92D1D03915700338F5B /* Component.hpp */,
@@ -86,7 +88,10 @@
 				10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */,
 				10FEA9BD1D04D90800338F5B /* Node.cpp */,
 				10FEA9BE1D04D90800338F5B /* Node.hpp */,
+				10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */,
+				10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */,
 				10FEA9BF1D04D90800338F5B /* NodeId.hpp */,
+				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
 				10FEA9181D03912400338F5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				10FEA9C31D04D90800338F5B /* Node.cpp in Sources */,
 				10FEA9C01D04D90800338F5B /* EntityManager.cpp in Sources */,
 				10FEA93A1D03915700338F5B /* ComponentContainer.cpp in Sources */,
+				10FEA9EC1D077B5500338F5B /* NodeContainer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

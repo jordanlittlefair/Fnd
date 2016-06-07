@@ -18,7 +18,7 @@ int main()
 		Add any TestSuites below
 	*/
 	
-	test_suites.push_back( std::make_shared<EntitySystemTests::EntitySystemTestSuite>() );
+	test_suites.push_back( std::make_shared<EntitySystem::EntitySystemTestSuite>() );
 	
 	
 	

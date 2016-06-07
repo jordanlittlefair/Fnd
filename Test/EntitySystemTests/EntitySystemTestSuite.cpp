@@ -9,19 +9,21 @@
 #include "EntityManagerTests.hpp"
 #include "NodeTests.hpp"
 #include "NodeTemplateTests.hpp"
+#include "NodeContainerTests.hpp"
 
-using namespace Fnd::Test::EntitySystemTests;
+using namespace Fnd::Test::EntitySystem;
 
 EntitySystemTestSuite::EntitySystemTestSuite():
 	TestSuite("EntitySystemTestSuite")
 {
-	AddTestClass<EntitySystem::ComponentTests>();
-	AddTestClass<EntitySystem::ComponentTemplateTests>();
-	AddTestClass<EntitySystem::ComponentContainerTests>();
-	AddTestClass<EntitySystem::ExceptionTests>();
-	AddTestClass<EntitySystem::ComponentContainerTemplateTests>();
-	AddTestClass<EntitySystem::ComponentManagerTests>();
-	AddTestClass<EntitySystem::EntityManagerTests>();
-	AddTestClass<EntitySystem::NodeTests>();
-	AddTestClass<EntitySystem::NodeTemplateTests>();
+	AddTestClass<ComponentTests>();
+	AddTestClass<ComponentTemplateTests>();
+	AddTestClass<ComponentContainerTests>();
+	AddTestClass<ExceptionTests>();
+	AddTestClass<ComponentContainerTemplateTests>();
+	AddTestClass<ComponentManagerTests>();
+	AddTestClass<EntityManagerTests>();
+	AddTestClass<NodeTests>();
+	AddTestClass<NodeTemplateTests>();
+	AddTestClass<NodeContainerTests>();
 }

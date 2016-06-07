@@ -8,7 +8,7 @@ namespace Fnd
 namespace Test
 {
 
-namespace EntitySystemTests
+namespace EntitySystem
 {
 
 class EntitySystemTestSuite:

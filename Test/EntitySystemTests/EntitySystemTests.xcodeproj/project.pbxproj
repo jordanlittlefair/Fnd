@@ -36,6 +36,8 @@
 		10FEA9D71D04D97500338F5B /* NodeTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9CF1D04D97500338F5B /* NodeTests.hpp */; };
 		10FEA9DF1D05EB3900338F5B /* NodeTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */; };
 		10FEA9E21D05FB2A00338F5B /* MockNodeTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */; };
+		10FEA9EF1D0780C000338F5B /* MockNodeContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9EE1D0780C000338F5B /* MockNodeContainer.cpp */; };
+		10FEA9F21D07846500338F5B /* NodeContainerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,10 @@
 		10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeTemplateTests.cpp; sourceTree = "<group>"; };
 		10FEA9E01D05FA4300338F5B /* MockNodeTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockNodeTypes.hpp; sourceTree = "<group>"; };
 		10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockNodeTypes.cpp; sourceTree = "<group>"; };
+		10FEA9ED1D07801700338F5B /* MockNodeContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockNodeContainer.hpp; sourceTree = "<group>"; };
+		10FEA9EE1D0780C000338F5B /* MockNodeContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockNodeContainer.cpp; sourceTree = "<group>"; };
+		10FEA9F01D0783E100338F5B /* NodeContainerTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainerTests.hpp; sourceTree = "<group>"; };
+		10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainerTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +120,12 @@
 				10FEA9CB1D04D97500338F5B /* MockEntityIdGenerator.hpp */,
 				10FEA9CC1D04D97500338F5B /* MockNode.cpp */,
 				10FEA9CD1D04D97500338F5B /* MockNode.hpp */,
+				10FEA9EE1D0780C000338F5B /* MockNodeContainer.cpp */,
+				10FEA9ED1D07801700338F5B /* MockNodeContainer.hpp */,
 				10FEA9E11D05FB2A00338F5B /* MockNodeTypes.cpp */,
 				10FEA9E01D05FA4300338F5B /* MockNodeTypes.hpp */,
+				10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */,
+				10FEA9F01D0783E100338F5B /* NodeContainerTests.hpp */,
 				10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */,
 				10FEA9DD1D05EAAA00338F5B /* NodeTemplateTests.hpp */,
 				10FEA9CE1D04D97500338F5B /* NodeTests.cpp */,
@@ -216,6 +226,7 @@
 				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
 				10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */,
 				10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */,
+				10FEA9F21D07846500338F5B /* NodeContainerTests.cpp in Sources */,
 				10FEA9DF1D05EB3900338F5B /* NodeTemplateTests.cpp in Sources */,
 				10FEA9B51D03AFDA00338F5B /* EntitySystemTestSuite.cpp in Sources */,
 				10FEA9E21D05FB2A00338F5B /* MockNodeTypes.cpp in Sources */,
@@ -226,6 +237,7 @@
 				10FEA9D21D04D97500338F5B /* MockEntityIdGenerator.cpp in Sources */,
 				10FEA9D61D04D97500338F5B /* NodeTests.cpp in Sources */,
 				10FEA9D01D04D97500338F5B /* EntityManagerTests.cpp in Sources */,
+				10FEA9EF1D0780C000338F5B /* MockNodeContainer.cpp in Sources */,
 				10FEA9871D0393B200338F5B /* MockComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
