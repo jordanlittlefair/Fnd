@@ -53,6 +53,7 @@
 		10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeTemplate.hpp; sourceTree = "<group>"; };
 		10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainer.hpp; sourceTree = "<group>"; };
 		10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainer.cpp; sourceTree = "<group>"; };
+		10FEA9FA1D08942400338F5B /* NodeContainerTemplate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainerTemplate.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 				10FEA9BE1D04D90800338F5B /* Node.hpp */,
 				10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */,
 				10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */,
+				10FEA9FA1D08942400338F5B /* NodeContainerTemplate.hpp */,
 				10FEA9BF1D04D90800338F5B /* NodeId.hpp */,
 				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
 				10FEA9181D03912400338F5B /* Products */,

@@ -27,12 +27,12 @@ public:
 	{
 	}
 	
-	Components GetComponents(Fnd::EntitySystem::ComponentManager& component_manager)
+	Components GetComponents(Fnd::EntitySystem::ComponentManager& component_manager) const
 	{
 		return NodeType::GetComponents(GetEntityId(), component_manager);
 	}
 	
-	ComponentsConst GetComponents(const Fnd::EntitySystem::ComponentManager& component_manager)
+	ComponentsConst GetComponents(const Fnd::EntitySystem::ComponentManager& component_manager) const
 	{
 		return NodeType::GetComponents(GetEntityId(), component_manager);
 	}
