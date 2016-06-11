@@ -31,6 +31,14 @@ public:
 	
 	InvalidEntityIdException();
 };
+	
+class InvalidNodeIdException:
+	public Fnd::EntitySystem::Exception
+{
+public:
+	
+	InvalidNodeIdException();
+};
 
 }
 

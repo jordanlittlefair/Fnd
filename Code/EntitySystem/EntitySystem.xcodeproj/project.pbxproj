@@ -27,6 +27,7 @@
 		10FEA9C41D04D90800338F5B /* Node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BE1D04D90800338F5B /* Node.hpp */; };
 		10FEA9C51D04D90800338F5B /* NodeId.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA9BF1D04D90800338F5B /* NodeId.hpp */; };
 		10FEA9EC1D077B5500338F5B /* NodeContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */; };
+		10FEAA001D08E13200338F5B /* NodeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9FF1D08E13200338F5B /* NodeManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainer.hpp; sourceTree = "<group>"; };
 		10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainer.cpp; sourceTree = "<group>"; };
 		10FEA9FA1D08942400338F5B /* NodeContainerTemplate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainerTemplate.hpp; sourceTree = "<group>"; };
+		10FEA9FE1D08E12400338F5B /* NodeManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeManager.hpp; sourceTree = "<group>"; };
+		10FEA9FF1D08E13200338F5B /* NodeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeManager.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				10FEA9EA1D077A5800338F5B /* NodeContainer.hpp */,
 				10FEA9FA1D08942400338F5B /* NodeContainerTemplate.hpp */,
 				10FEA9BF1D04D90800338F5B /* NodeId.hpp */,
+				10FEA9FF1D08E13200338F5B /* NodeManager.cpp */,
+				10FEA9FE1D08E12400338F5B /* NodeManager.hpp */,
 				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
 				10FEA9181D03912400338F5B /* Products */,
 			);
@@ -185,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10FEA93E1D03915700338F5B /* ComponentManager.cpp in Sources */,
+				10FEAA001D08E13200338F5B /* NodeManager.cpp in Sources */,
 				10FEA9421D03915700338F5B /* Exceptions.cpp in Sources */,
 				10FEA9381D03915700338F5B /* Component.cpp in Sources */,
 				10FEA9C31D04D90800338F5B /* Node.cpp in Sources */,

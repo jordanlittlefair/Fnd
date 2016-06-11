@@ -39,6 +39,7 @@
 		10FEA9EF1D0780C000338F5B /* MockNodeContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9EE1D0780C000338F5B /* MockNodeContainer.cpp */; };
 		10FEA9F21D07846500338F5B /* NodeContainerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */; };
 		10FEA9FD1D08A1C100338F5B /* NodeContainerTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9FC1D08A1C100338F5B /* NodeContainerTemplateTests.cpp */; };
+		10FEAA031D0B883A00338F5B /* NodeManagerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainerTests.cpp; sourceTree = "<group>"; };
 		10FEA9FB1D08A17200338F5B /* NodeContainerTemplateTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeContainerTemplateTests.hpp; sourceTree = "<group>"; };
 		10FEA9FC1D08A1C100338F5B /* NodeContainerTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeContainerTemplateTests.cpp; sourceTree = "<group>"; };
+		10FEAA011D0B87EF00338F5B /* NodeManagerTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeManagerTests.hpp; sourceTree = "<group>"; };
+		10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeManagerTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 		10FEA9521D03933A00338F5B = {
 			isa = PBXGroup;
 			children = (
+				10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */,
+				10FEAA011D0B87EF00338F5B /* NodeManagerTests.hpp */,
 				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
 				10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */,
 				10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */,
@@ -231,6 +236,7 @@
 				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
 				10FEA9811D0393B200338F5B /* ComponentTemplateTests.cpp in Sources */,
 				10FEA9891D0393B200338F5B /* MockComponentContainer.cpp in Sources */,
+				10FEAA031D0B883A00338F5B /* NodeManagerTests.cpp in Sources */,
 				10FEA9F21D07846500338F5B /* NodeContainerTests.cpp in Sources */,
 				10FEA9DF1D05EB3900338F5B /* NodeTemplateTests.cpp in Sources */,
 				10FEA9B51D03AFDA00338F5B /* EntitySystemTestSuite.cpp in Sources */,

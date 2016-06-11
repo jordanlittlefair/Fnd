@@ -16,3 +16,8 @@ InvalidEntityIdException::InvalidEntityIdException():
 	Exception("Invalid EntityId")
 {
 }
+
+InvalidNodeIdException::InvalidNodeIdException():
+	Exception("Invalid NodeId")
+{
+}

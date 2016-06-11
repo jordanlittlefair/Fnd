@@ -11,6 +11,7 @@
 #include "NodeTemplateTests.hpp"
 #include "NodeContainerTests.hpp"
 #include "NodeContainerTemplateTests.hpp"
+#include "NodeManagerTests.hpp"
 
 using namespace Fnd::Test::EntitySystem;
 
@@ -28,4 +29,5 @@ EntitySystemTestSuite::EntitySystemTestSuite():
 	AddTestClass<NodeTemplateTests>();
 	AddTestClass<NodeContainerTests>();
 	AddTestClass<NodeContainerTemplateTests>();
+	AddTestClass<NodeManagerTests>();
 }
