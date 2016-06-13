@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101F23871D0F22EF004D5B5E /* EntitySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 101F23861D0F22EF004D5B5E /* EntitySystem.cpp */; };
 		10FEA9381D03915700338F5B /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA92C1D03915700338F5B /* Component.cpp */; };
 		10FEA9391D03915700338F5B /* Component.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA92D1D03915700338F5B /* Component.hpp */; };
 		10FEA93A1D03915700338F5B /* ComponentContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA92E1D03915700338F5B /* ComponentContainer.cpp */; };
@@ -31,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101F23851D0F21EE004D5B5E /* EntitySystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntitySystem.hpp; sourceTree = "<group>"; };
+		101F23861D0F22EF004D5B5E /* EntitySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntitySystem.cpp; sourceTree = "<group>"; };
+		101F23881D0F23EA004D5B5E /* IEntitySystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IEntitySystem.hpp; sourceTree = "<group>"; };
 		10FEA9171D03912400338F5B /* libEntitySystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEntitySystem.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FEA92C1D03915700338F5B /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
 		10FEA92D1D03915700338F5B /* Component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
@@ -87,9 +91,12 @@
 				10FEA9351D03915700338F5B /* EntityId.hpp */,
 				10FEA9BA1D04D90800338F5B /* EntityManager.cpp */,
 				10FEA9BB1D04D90800338F5B /* EntityManager.hpp */,
+				101F23861D0F22EF004D5B5E /* EntitySystem.cpp */,
+				101F23851D0F21EE004D5B5E /* EntitySystem.hpp */,
 				10FEA9361D03915700338F5B /* Exceptions.cpp */,
 				10FEA9371D03915700338F5B /* Exceptions.hpp */,
 				10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */,
+				101F23881D0F23EA004D5B5E /* IEntitySystem.hpp */,
 				10FEA9BD1D04D90800338F5B /* Node.cpp */,
 				10FEA9BE1D04D90800338F5B /* Node.hpp */,
 				10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */,
@@ -192,6 +199,7 @@
 				10FEA93E1D03915700338F5B /* ComponentManager.cpp in Sources */,
 				10FEAA001D08E13200338F5B /* NodeManager.cpp in Sources */,
 				10FEA9421D03915700338F5B /* Exceptions.cpp in Sources */,
+				101F23871D0F22EF004D5B5E /* EntitySystem.cpp in Sources */,
 				10FEA9381D03915700338F5B /* Component.cpp in Sources */,
 				10FEA9C31D04D90800338F5B /* Node.cpp in Sources */,
 				10FEA9C01D04D90800338F5B /* EntityManager.cpp in Sources */,

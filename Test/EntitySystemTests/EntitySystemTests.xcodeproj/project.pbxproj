@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101F238D1D0F2C9F004D5B5E /* EntitySystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 101F238C1D0F2C9F004D5B5E /* EntitySystemTests.cpp */; };
 		10FEA97B1D0393B200338F5B /* ComponentContainerTemplateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */; };
 		10FEA97C1D0393B200338F5B /* ComponentContainerTemplateTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */; };
 		10FEA97D1D0393B200338F5B /* ComponentContainerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */; };
@@ -43,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101F238B1D0F29EF004D5B5E /* EntitySystemTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntitySystemTests.hpp; sourceTree = "<group>"; };
+		101F238C1D0F2C9F004D5B5E /* EntitySystemTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntitySystemTests.cpp; sourceTree = "<group>"; };
 		10FEA95B1D03933A00338F5B /* libEntitySystemTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEntitySystemTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentContainerTemplateTests.cpp; sourceTree = "<group>"; };
 		10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentContainerTemplateTests.hpp; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 		10FEA9521D03933A00338F5B = {
 			isa = PBXGroup;
 			children = (
+				101F238C1D0F2C9F004D5B5E /* EntitySystemTests.cpp */,
+				101F238B1D0F29EF004D5B5E /* EntitySystemTests.hpp */,
 				10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */,
 				10FEAA011D0B87EF00338F5B /* NodeManagerTests.hpp */,
 				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
@@ -231,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101F238D1D0F2C9F004D5B5E /* EntitySystemTests.cpp in Sources */,
 				10FEA97B1D0393B200338F5B /* ComponentContainerTemplateTests.cpp in Sources */,
 				10FEA9D41D04D97500338F5B /* MockNode.cpp in Sources */,
 				10FEA9831D0393B200338F5B /* ComponentTests.cpp in Sources */,
