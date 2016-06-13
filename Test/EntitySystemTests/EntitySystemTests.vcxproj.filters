@@ -49,6 +49,27 @@
     <ClInclude Include="NodeTests.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="EntitySystemTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNodeContainer.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNodeTypes.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeContainerTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeContainerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeManagerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -89,6 +110,27 @@
       <Filter>Mock</Filter>
     </ClCompile>
     <ClCompile Include="NodeTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystemTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNodeContainer.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNodeTypes.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeContainerTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeContainerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTemplateTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>

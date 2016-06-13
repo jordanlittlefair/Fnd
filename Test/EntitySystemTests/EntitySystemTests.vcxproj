@@ -17,6 +17,7 @@
     <ClInclude Include="ComponentTemplateTests.hpp" />
     <ClInclude Include="ComponentTests.hpp" />
     <ClInclude Include="EntityManagerTests.hpp" />
+    <ClInclude Include="EntitySystemTests.hpp" />
     <ClInclude Include="EntitySystemTestSuite.hpp" />
     <ClInclude Include="ExceptionTests.hpp" />
     <ClInclude Include="MockComponent.hpp" />
@@ -24,6 +25,12 @@
     <ClInclude Include="MockComponentTypes.hpp" />
     <ClInclude Include="MockEntityIdGenerator.hpp" />
     <ClInclude Include="MockNode.hpp" />
+    <ClInclude Include="MockNodeContainer.hpp" />
+    <ClInclude Include="MockNodeTypes.hpp" />
+    <ClInclude Include="NodeContainerTemplateTests.hpp" />
+    <ClInclude Include="NodeContainerTests.hpp" />
+    <ClInclude Include="NodeManagerTests.hpp" />
+    <ClInclude Include="NodeTemplateTests.hpp" />
     <ClInclude Include="NodeTests.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +40,7 @@
     <ClCompile Include="ComponentTemplateTests.cpp" />
     <ClCompile Include="ComponentTests.cpp" />
     <ClCompile Include="EntityManagerTests.cpp" />
+    <ClCompile Include="EntitySystemTests.cpp" />
     <ClCompile Include="EntitySystemTestSuite.cpp" />
     <ClCompile Include="ExceptionTests.cpp" />
     <ClCompile Include="MockComponent.cpp" />
@@ -40,6 +48,12 @@
     <ClCompile Include="MockComponentTypes.cpp" />
     <ClCompile Include="MockEntityIdGenerator.cpp" />
     <ClCompile Include="MockNode.cpp" />
+    <ClCompile Include="MockNodeContainer.cpp" />
+    <ClCompile Include="MockNodeTypes.cpp" />
+    <ClCompile Include="NodeContainerTemplateTests.cpp" />
+    <ClCompile Include="NodeContainerTests.cpp" />
+    <ClCompile Include="NodeManagerTests.cpp" />
+    <ClCompile Include="NodeTemplateTests.cpp" />
     <ClCompile Include="NodeTests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
