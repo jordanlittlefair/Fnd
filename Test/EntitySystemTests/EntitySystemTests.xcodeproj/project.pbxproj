@@ -103,10 +103,6 @@
 		10FEA9521D03933A00338F5B = {
 			isa = PBXGroup;
 			children = (
-				101F238C1D0F2C9F004D5B5E /* EntitySystemTests.cpp */,
-				101F238B1D0F29EF004D5B5E /* EntitySystemTests.hpp */,
-				10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */,
-				10FEAA011D0B87EF00338F5B /* NodeManagerTests.hpp */,
 				10FEA9691D0393B200338F5B /* ComponentContainerTemplateTests.cpp */,
 				10FEA96A1D0393B200338F5B /* ComponentContainerTemplateTests.hpp */,
 				10FEA96B1D0393B200338F5B /* ComponentContainerTests.cpp */,
@@ -119,6 +115,8 @@
 				10FEA9721D0393B200338F5B /* ComponentTests.hpp */,
 				10FEA9C81D04D97500338F5B /* EntityManagerTests.cpp */,
 				10FEA9C91D04D97500338F5B /* EntityManagerTests.hpp */,
+				101F238C1D0F2C9F004D5B5E /* EntitySystemTests.cpp */,
+				101F238B1D0F29EF004D5B5E /* EntitySystemTests.hpp */,
 				10FEA9B41D03AFDA00338F5B /* EntitySystemTestSuite.cpp */,
 				10FEA9B31D03AF4D00338F5B /* EntitySystemTestSuite.hpp */,
 				10FEA9731D0393B200338F5B /* ExceptionTests.cpp */,
@@ -141,6 +139,8 @@
 				10FEA9FB1D08A17200338F5B /* NodeContainerTemplateTests.hpp */,
 				10FEA9F11D07846500338F5B /* NodeContainerTests.cpp */,
 				10FEA9F01D0783E100338F5B /* NodeContainerTests.hpp */,
+				10FEAA021D0B883A00338F5B /* NodeManagerTests.cpp */,
+				10FEAA011D0B87EF00338F5B /* NodeManagerTests.hpp */,
 				10FEA9DE1D05EB3900338F5B /* NodeTemplateTests.cpp */,
 				10FEA9DD1D05EAAA00338F5B /* NodeTemplateTests.hpp */,
 				10FEA9CE1D04D97500338F5B /* NodeTests.cpp */,

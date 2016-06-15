@@ -61,6 +61,18 @@ public:
 		return GetNodeContainer<NodeType>().GetNode(entity_id);
 	}
 	
+	template <typename NodeType,typename Lambda> // void Lambda(const NodeTemplate<NodeType>& node)
+	void ForEachNode(Lambda lambda) const
+	{
+		GetNodeContainer<NodeType>().ForEachNode(lambda);
+	}
+	
+	template <typename NodeType,typename Lambda> // void Lambda(NodeTemplate<NodeType>& node)
+	void ForEachNode(Lambda lambda)
+	{
+		GetNodeContainer<NodeType>().ForEachNode(lambda);
+	}
+	
 	template <typename NodeType>
 	void DestroyNode(const EntityId entity_id)
 	{

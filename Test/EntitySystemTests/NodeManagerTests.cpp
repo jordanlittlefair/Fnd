@@ -30,6 +30,12 @@ NodeManagerTests::NodeManagerTests():
 	AddTestCase( "DestroyNode_Succeed", &NodeManagerTests::DestroyNode_Succeed, this );
 	AddTestCase( "DestroyNode_InvalidId_Fail", &NodeManagerTests::DestroyNode_InvalidId_Fail, this );
 	AddTestCase( "DestroyNode_UnregisteredNode_Fail", &NodeManagerTests::DestroyNode_UnregisteredNode_Fail, this );
+	AddTestCase( "ForEachNodeNonConst_NoNodes_Success", &NodeManagerTests::ForEachNodeNonConst_NoNodes_Success, this );
+	AddTestCase( "ForEachNodeNonConst_MultipleNodes_Success", &NodeManagerTests::ForEachNodeNonConst_MultipleNodes_Success, this );
+	AddTestCase( "ForEachNodeNonConst_UnregisteredNode_Fail", &NodeManagerTests::ForEachNodeNonConst_UnregisteredNode_Fail, this );
+	AddTestCase( "ForEachNodeConst_NoNodes_Success", &NodeManagerTests::ForEachNodeConst_NoNodes_Success, this );
+	AddTestCase( "ForEachNodeConst_MultipleNodes_Success", &NodeManagerTests::ForEachNodeConst_MultipleNodes_Success, this );
+	AddTestCase( "ForEachNodeConst_UnregisteredNode_Fail", &NodeManagerTests::ForEachNodeConst_UnregisteredNode_Fail, this );
 }
 
 void NodeManagerTests::RegisterNode_Succeed( Fnd::Test::TestCase& test_case )
@@ -308,5 +314,180 @@ void NodeManagerTests::DestroyNode_UnregisteredNode_Fail( Fnd::Test::TestCase& t
 	{
 		exception_caught = true;
 	}
+	test_case.Assert(exception_caught);
+}
+
+void NodeManagerTests::ForEachNodeNonConst_NoNodes_Success(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	nm.RegisterNode<MockNodeType1>();
+	
+	bool has_operated_on_node = false;
+	nm.ForEachNode<MockNodeType1>([&](NodeTemplate<MockNodeType1>& node)
+	{
+		has_operated_on_node = true;
+	} );
+	
+	test_case.Assert(!has_operated_on_node);
+}
+
+void NodeManagerTests::ForEachNodeNonConst_MultipleNodes_Success(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	nm.RegisterNode<MockNodeType1>();
+	
+	NodeTemplate<MockNodeType1>& created0 = nm.CreateNode<MockNodeType1>(0);
+	NodeTemplate<MockNodeType1>& created1 = nm.CreateNode<MockNodeType1>(1);
+	NodeTemplate<MockNodeType1>& created2 = nm.CreateNode<MockNodeType1>(2);
+	
+	unsigned int hit_count[3] = { 0 };
+	
+	nm.ForEachNode<MockNodeType1>([&](NodeTemplate<MockNodeType1>& node)
+	{
+		switch (node.GetEntityId())
+		{
+			case 0:
+			{
+				test_case.Assert(&node == &created0);
+				++(hit_count[0]);
+				break;
+			}
+			case 1:
+			{
+				test_case.Assert(&node == &created1);
+				++(hit_count[1]);
+				break;
+			}
+			case 2:
+			{
+				test_case.Assert(&node == &created2);
+				++(hit_count[2]);
+				break;
+			}
+			default:
+			{
+				test_case.Assert(false, "Found a node which hasn't been added!");
+			}
+		}
+	} );
+	
+	for (auto hits : hit_count)
+	{
+		test_case.Assert(hits == 1);
+	}
+}
+
+void NodeManagerTests::ForEachNodeNonConst_UnregisteredNode_Fail(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	bool has_operated_on_node = false;
+	bool exception_caught = false;
+	try
+	{
+		nm.ForEachNode<MockNodeType1>([&](NodeTemplate<MockNodeType1>& node)
+		{
+			has_operated_on_node = true;
+		} );
+	}
+	catch (const InvalidNodeIdException&)
+	{
+		exception_caught = true;
+	}
+	
+	test_case.Assert(!has_operated_on_node);
+	test_case.Assert(exception_caught);
+}
+
+void NodeManagerTests::ForEachNodeConst_NoNodes_Success(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	nm.RegisterNode<MockNodeType1>();
+	
+	const NodeManager& nm_c = nm;
+	
+	bool hasOperatedOnNode = false;
+	nm_c.ForEachNode<MockNodeType1>([&](const NodeTemplate<MockNodeType1>& node)
+	{
+		hasOperatedOnNode = true;
+	} );
+	
+	test_case.Assert(!hasOperatedOnNode);
+}
+
+void NodeManagerTests::ForEachNodeConst_MultipleNodes_Success(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	nm.RegisterNode<MockNodeType1>();
+	
+	NodeTemplate<MockNodeType1>& created0 = nm.CreateNode<MockNodeType1>(0);
+	NodeTemplate<MockNodeType1>& created1 = nm.CreateNode<MockNodeType1>(1);
+	NodeTemplate<MockNodeType1>& created2 = nm.CreateNode<MockNodeType1>(2);
+	
+	const NodeManager& nm_c = nm;
+	
+	unsigned int hit_count[3] = { 0 };
+	
+	nm_c.ForEachNode<MockNodeType1>([&](const NodeTemplate<MockNodeType1>& node)
+	{
+		switch (node.GetEntityId())
+		{
+			case 0:
+			{
+				test_case.Assert(&node == &created0);
+				++(hit_count[0]);
+				break;
+			}
+			case 1:
+			{
+				test_case.Assert(&node == &created1);
+				++(hit_count[1]);
+				break;
+			}
+			case 2:
+			{
+				test_case.Assert(&node == &created2);
+				++(hit_count[2]);
+				break;
+			}
+			default:
+			{
+				test_case.Assert(false, "Found a node which hasn't been added!");
+			}
+		}
+	} );
+	
+	for (auto hits : hit_count)
+	{
+		test_case.Assert(hits == 1);
+	}
+}
+
+void NodeManagerTests::ForEachNodeConst_UnregisteredNode_Fail(Fnd::Test::TestCase& test_case)
+{
+	NodeManager nm;
+	
+	
+	const NodeManager& nm_c = nm;
+	
+	bool has_operated_on_node = false;
+	bool exception_caught = false;
+	try
+	{
+		nm_c.ForEachNode<MockNodeType1>([&](const NodeTemplate<MockNodeType1>& node)
+		{
+			has_operated_on_node = true;
+		} );
+	}
+	catch (const InvalidNodeIdException&)
+	{
+		exception_caught = true;
+	}
+	
+	test_case.Assert(!has_operated_on_node);
 	test_case.Assert(exception_caught);
 }

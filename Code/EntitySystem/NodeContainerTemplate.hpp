@@ -76,6 +76,24 @@ public:
 			throw InvalidEntityIdException();
 		}
 	}
+	
+	template <typename Lambda> // void Lambda(const NodeTemplate<NodeType>& node)
+	void ForEachNode(Lambda lambda) const
+	{
+		for (const auto& node : _node_map)
+		{
+			lambda(node.second);
+		}
+	}
+	
+	template <typename Lambda> // void Lambda(NodeTemplate<NodeType>& node)
+	void ForEachNode(Lambda lambda)
+	{
+		for (auto& node : _node_map)
+		{
+			lambda(node.second);
+		}
+	}
 
 	void DestroyNode(const EntityId entity_id)
 	{

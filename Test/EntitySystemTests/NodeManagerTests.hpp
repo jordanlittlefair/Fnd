@@ -57,6 +57,18 @@ private:
 	void DestroyNode_InvalidId_Fail( Fnd::Test::TestCase& test_case );
 	
 	void DestroyNode_UnregisteredNode_Fail( Fnd::Test::TestCase& test_case );
+	
+	void ForEachNodeNonConst_NoNodes_Success(Fnd::Test::TestCase& test_case);
+	
+	void ForEachNodeNonConst_MultipleNodes_Success(Fnd::Test::TestCase& test_case);
+	
+	void ForEachNodeNonConst_UnregisteredNode_Fail(Fnd::Test::TestCase& test_case);
+	
+	void ForEachNodeConst_NoNodes_Success(Fnd::Test::TestCase& test_case);
+	
+	void ForEachNodeConst_MultipleNodes_Success(Fnd::Test::TestCase& test_case);
+	
+	void ForEachNodeConst_UnregisteredNode_Fail(Fnd::Test::TestCase& test_case);
 };
 
 }
