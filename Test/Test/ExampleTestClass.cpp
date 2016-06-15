@@ -11,7 +11,6 @@ ExampleTestClass::ExampleTestClass():
 	*/
 	AddTestCase( "TestFunction1", &ExampleTestClass::TestFunction1, this );
 	AddTestCase( "TestFunction2", &ExampleTestClass::TestFunction2, this );
-	AddTestCase( "TestFunction3", &ExampleTestClass::TestFunction3, this );
 }
 
 void ExampleTestClass::SetUp()
@@ -30,18 +29,13 @@ void ExampleTestClass::CleanUp()
 
 void ExampleTestClass::TestFunction1( Fnd::Test::TestCase& test_case )
 {
-	/*
-		Test cases should call the TestCase's Assert method to log any failures.
-	*/
 	test_case.Assert( 1 == 1 );
 }
 
 void ExampleTestClass::TestFunction2( Fnd::Test::TestCase& test_case )
 {
-	test_case.Assert( 2 == 2 );
-}
-
-void ExampleTestClass::TestFunction3( Fnd::Test::TestCase& test_case )
-{
-	test_case.Assert( 3 == 3 );
+	test_case.AssertException<std::runtime_error>([]()
+	{
+		throw std::runtime_error("Expected exception!");
+	} );
 }

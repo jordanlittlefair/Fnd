@@ -26,8 +26,6 @@ private:
 	void TestFunction1( Fnd::Test::TestCase& test_case );
 	
 	void TestFunction2( Fnd::Test::TestCase& test_case );
-	
-	void TestFunction3( Fnd::Test::TestCase& test_case );
 };
 
 }
