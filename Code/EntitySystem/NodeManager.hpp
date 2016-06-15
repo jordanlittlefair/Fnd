@@ -33,7 +33,7 @@ public:
 		}
 		else
 		{
-			throw InvalidNodeIdException();
+			throw InvalidNodeIdException(NodeType::Id);
 		}
 	}
 	
@@ -92,7 +92,7 @@ private:
 		}
 		else
 		{
-			throw InvalidNodeIdException();
+			throw InvalidNodeIdException(NodeType::Id);
 		}
 	}
 	
@@ -107,7 +107,7 @@ private:
 		}
 		else
 		{
-			throw InvalidNodeIdException();
+			throw InvalidNodeIdException(NodeType::Id);
 		}
 	}
 	

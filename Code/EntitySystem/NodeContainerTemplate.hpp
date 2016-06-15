@@ -38,7 +38,7 @@ public:
 		}
 		else
 		{
-			throw InvalidEntityIdException();
+			throw InvalidEntityIdException(entity_id);
 		}
 	}
 
@@ -59,7 +59,7 @@ public:
 		}
 		else
 		{
-			throw InvalidEntityIdException();
+			throw InvalidEntityIdException(entity_id);
 		}
 	}
 	
@@ -73,7 +73,7 @@ public:
 		}
 		else
 		{
-			throw InvalidEntityIdException();
+			throw InvalidEntityIdException(entity_id);
 		}
 	}
 	
@@ -105,7 +105,7 @@ public:
 		}
 		else
 		{
-			throw InvalidEntityIdException();
+			throw InvalidEntityIdException(entity_id);
 		}
 	}
 	

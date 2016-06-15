@@ -34,7 +34,7 @@ public:
 		}
 		else
 		{
-			throw InvalidComponentIdException();
+			throw InvalidComponentIdException(ComponentType::Id);
 		}
 	}
 
@@ -87,7 +87,7 @@ private:
 		}
 		else
 		{
-			throw InvalidComponentIdException();
+			throw InvalidComponentIdException(ComponentType::Id);
 		}
 	}
 
@@ -102,7 +102,7 @@ private:
 		}
 		else
 		{
-			throw InvalidComponentIdException();
+			throw InvalidComponentIdException(ComponentType::Id);
 		}
 	}
 

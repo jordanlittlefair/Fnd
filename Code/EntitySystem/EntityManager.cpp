@@ -35,6 +35,6 @@ void EntityManager::DestroyEntity(const EntityId& entity_id)
 	}
 	else
 	{
-		throw InvalidEntityIdException();
+		throw InvalidEntityIdException(entity_id);
 	}
 }
