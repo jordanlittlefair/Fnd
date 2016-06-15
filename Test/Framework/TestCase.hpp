@@ -30,8 +30,25 @@ public:
 	void Run();
 
 	void Assert( bool succeeded, const std::string& description = "" );
+	
+	template<typename ExceptionType,typename LambdaType>
+	void AssertException(LambdaType lambda)
+	{
+		bool exception_caught = false;
+		try
+		{
+			lambda();
+		}
+		catch (const ExceptionType&)
+		{
+			exception_caught = true;
+		}
+		Assert(exception_caught);
+	}
 
 	const TestCaseResult& GetResult() const;
+	
+	virtual ~TestCase();
 
 private:
 

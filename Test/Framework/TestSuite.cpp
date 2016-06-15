@@ -45,5 +45,5 @@ const TestSuiteResult& TestSuite::GetResult() const
 }
 
 TestSuite::~TestSuite()
-{	
+{
 }

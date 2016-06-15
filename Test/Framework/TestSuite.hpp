@@ -13,7 +13,17 @@ namespace Test
 class TestSuite
 {
 public:
+	
+	void SetResultPrinter(ResultPrinterPtr result_printer);
 
+	void Run();
+	
+	const TestSuiteResult& GetResult() const;
+	
+	virtual ~TestSuite();
+	
+protected:
+	
 	TestSuite( const std::string& description );
 	
 	template <typename UnitTestType>
@@ -23,14 +33,6 @@ public:
 	}
 	
 	void AddTestClass( TestClassPtr test_class );
-	
-	void SetResultPrinter(ResultPrinterPtr result_printer);
-
-	void Run();
-	
-	const TestSuiteResult& GetResult() const;
-	
-	virtual ~TestSuite();
 
 private:
 	
