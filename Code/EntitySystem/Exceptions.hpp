@@ -2,6 +2,10 @@
 
 #include "../Core/Exception.hpp"
 
+#include "ComponentId.hpp"
+#include "EntityId.hpp"
+#include "NodeId.hpp"
+
 namespace Fnd
 {
 
@@ -22,6 +26,8 @@ class InvalidComponentIdException:
 public:
 	
 	InvalidComponentIdException();
+	
+	InvalidComponentIdException(const ComponentId invalid_component_id);
 };
 
 class InvalidEntityIdException:
@@ -30,6 +36,8 @@ class InvalidEntityIdException:
 public:
 	
 	InvalidEntityIdException();
+	
+	InvalidEntityIdException(const EntityId invalid_entity_id);
 };
 	
 class InvalidNodeIdException:
@@ -38,6 +46,8 @@ class InvalidNodeIdException:
 public:
 	
 	InvalidNodeIdException();
+	
+	InvalidNodeIdException(const NodeId invalid_node_id);
 };
 
 }
