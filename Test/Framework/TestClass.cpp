@@ -27,14 +27,7 @@ void TestClass::Run()
 
 		test_case->SetResultPrinter(_result_printer);
 		
-		try
-		{
-			test_case->Run();
-		}
-		catch (const std::exception& ex)
-		{
-			test_case->Assert(false, std::string("Unhandled exception: ") + ex.what());
-		}
+		test_case->Run();
 		
 		_result.AddTestCaseResult(test_case->GetResult());
 		

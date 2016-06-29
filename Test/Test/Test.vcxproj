@@ -81,9 +81,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ExampleTestClass.hpp" />
+    <ClInclude Include="ExampleTestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExampleTestClass.cpp" />
+    <ClCompile Include="ExampleTestSuite.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

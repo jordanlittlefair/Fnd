@@ -14,12 +14,18 @@
     <ClInclude Include="ExampleTestClass.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ExampleTestSuite.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ExampleTestClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExampleTestSuite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

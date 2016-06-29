@@ -13,6 +13,7 @@
 		10A7B3E81CBAB3AD00B78A7C /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3E61CBAB3AD00B78A7C /* libCore.a */; };
 		10A7B3E91CBAB3AD00B78A7C /* libSystemManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */; };
 		10A7B4071CBAB78F00B78A7C /* libSystemManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */; };
+		10FEA9E71D06378800338F5B /* ExampleTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 		10A7B3E61CBAB3AD00B78A7C /* libCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCore.a; path = ../../Code/Core/build/Debug/libCore.a; sourceTree = "<group>"; };
 		10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSystemManager.a; path = ../../Code/SystemManager/build/Debug/libSystemManager.a; sourceTree = "<group>"; };
 		10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSystemManagerTests.a; path = ../SystemManagerTests/build/Debug/libSystemManagerTests.a; sourceTree = "<group>"; };
+		10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExampleTestSuite.hpp; sourceTree = "<group>"; };
+		10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleTestSuite.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			children = (
 				10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */,
 				10A7B3461CB32D2D00B78A7C /* Dependencies */,
+				10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */,
+				10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */,
 				10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */,
 				10A7B3401CB32C3F00B78A7C /* ExampleTestClass.hpp */,
 				10A7B3E61CBAB3AD00B78A7C /* libCore.a */,
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A7B3431CB32C3F00B78A7C /* main.cpp in Sources */,
+				10FEA9E71D06378800338F5B /* ExampleTestSuite.cpp in Sources */,
 				10A7B3421CB32C3F00B78A7C /* ExampleTestClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
