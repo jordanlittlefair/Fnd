@@ -8,18 +8,20 @@
 #include "OptimalPathFinderTests.hpp"
 #include "TaskTests.hpp"
 #include "LambdaTaskTests.hpp"
+#include "TaskQueueTests.hpp"
 
 using namespace Fnd::Test::SystemManager;
 
 SystemManagerTestSuite::SystemManagerTestSuite():
 	TestSuite("SystemManagerTestSuite")
 {
-	AddTestClass<SystemManager::SystemManagerExceptionTests>();
-	AddTestClass<SystemManager::SystemGraphNodeTests>();
-	AddTestClass<SystemManager::SystemTests>();
-	AddTestClass<SystemManager::SystemGraphTests>();
-	AddTestClass<SystemManager::CyclicGraphCheckerTests>();
-	AddTestClass<SystemManager::OptimalPathFinderTests>();
-	AddTestClass<SystemManager::TaskTests>();
-	AddTestClass<SystemManager::LambdaTaskTests>();
+	AddTestClass<SystemManagerExceptionTests>();
+	AddTestClass<SystemGraphNodeTests>();
+	AddTestClass<SystemTests>();
+	AddTestClass<SystemGraphTests>();
+	AddTestClass<CyclicGraphCheckerTests>();
+	AddTestClass<OptimalPathFinderTests>();
+	AddTestClass<TaskTests>();
+	AddTestClass<LambdaTaskTests>();
+	AddTestClass<TaskQueueTests>();
 }
