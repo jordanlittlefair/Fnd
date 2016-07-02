@@ -16,7 +16,7 @@ class MockSystem:
 {
 public:
 
-	MockSystem( const Id& id );
+	MockSystem( const Fnd::SystemManager::SystemId& id );
 };
 
 }

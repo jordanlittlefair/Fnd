@@ -35,7 +35,7 @@ void CyclicGraphChecker::ClearSystemNodes()
 
 bool CyclicGraphChecker::IsCyclic() const
 {
-	std::map<ISystem::Id,Node> nodes;
+	std::map<SystemId,Node> nodes;
 	
 	for ( const auto& node : _system_graph_nodes )
 	{
@@ -56,7 +56,7 @@ bool CyclicGraphChecker::IsCyclic() const
 	return false;
 }
 
-bool CyclicGraphChecker::IsCyclicDFS( Node& node, std::map<ISystem::Id,Node>& nodes ) const
+bool CyclicGraphChecker::IsCyclicDFS( Node& node, std::map<SystemId,Node>& nodes ) const
 {
 	node.state = Node::State::BeingExlored;
 	

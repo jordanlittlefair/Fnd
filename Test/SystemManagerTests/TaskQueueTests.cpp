@@ -49,7 +49,7 @@ void TaskQueueTests::SumbitTask_Single_Success(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -96,7 +96,7 @@ void TaskQueueTests::RunNextTask_Single_NoWait_Success(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -113,7 +113,7 @@ void TaskQueueTests::RunNextTask_Single_Wait_Success(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -130,7 +130,7 @@ void TaskQueueTests::SumbitTask_WhileRunningTask_Success(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -168,7 +168,7 @@ void TaskQueueTests::GetNumPendingTasks_One(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -188,7 +188,7 @@ void TaskQueueTests::GetNumTasks_OnePending(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
@@ -201,7 +201,7 @@ void TaskQueueTests::GetNumTasks_OnePendingOneRunning(TestCase& test_case)
 {
 	TaskProviderPtr tq = std::make_shared<TaskQueue>();
 	
-	SystemPtr system = std::make_shared<MockSystem>("123");
+	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	std::mutex task_mutex;
 	bool task_running = false;

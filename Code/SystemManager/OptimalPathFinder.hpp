@@ -22,7 +22,7 @@ public:
 	
 	void ClearSystemNodes();
 	
-	std::vector<ISystem::Id> GetOptimalPath() const;
+	std::vector<SystemId> GetOptimalPath() const;
 	
 private:
 
@@ -37,7 +37,7 @@ private:
 		Node( const std::shared_ptr<SystemGraphNode>& node );
 	};
 	
-	void AddNodeAndDependencies( Node& node, std::map<ISystem::Id,Node>& nodes, std::vector<ISystem::Id>& path ) const;
+	void AddNodeAndDependencies( Node& node, std::map<SystemId,Node>& nodes, std::vector<SystemId>& path ) const;
 
 	std::vector<std::shared_ptr<SystemGraphNode>> _system_graph_nodes;
 };

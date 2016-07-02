@@ -17,21 +17,21 @@ public:
 
 	typedef float Weight;
 	
-	SystemGraphNode( const ISystem::Id& id );
+	SystemGraphNode( const SystemId& id );
 	
-	ISystem::Id GetId() const;
+	SystemId GetId() const;
 	
 	void SetWeight( const Weight& weight );
 	
 	Weight GetWeight() const;
 	
-	void AddPrev( const ISystem::Id& prev );
+	void AddPrev( const SystemId& prev );
 	
-	void AddNext( const ISystem::Id& next );
+	void AddNext( const SystemId& next );
 	
-	void RemovePrev( const ISystem::Id& id );
+	void RemovePrev( const SystemId& id );
 	
-	void RemoveNext( const ISystem::Id& id );
+	void RemoveNext( const SystemId& id );
 	
 	void ClearPrev();
 	
@@ -41,20 +41,20 @@ public:
 	
 	bool HasNext() const;
 	
-	bool ContainsPrev( const ISystem::Id& id ) const;
+	bool ContainsPrev( const SystemId& id ) const;
 	
-	bool ContainsNext( const ISystem::Id& id ) const;
+	bool ContainsNext( const SystemId& id ) const;
 	
-	const std::vector<ISystem::Id>& GetPrev() const;
+	const std::vector<SystemId>& GetPrev() const;
 	
-	const std::vector<ISystem::Id>& GetNext() const;
+	const std::vector<SystemId>& GetNext() const;
 	
 private:
 	
-	const ISystem::Id _id;
+	const SystemId _id;
 	Weight _weight;
-	std::vector<ISystem::Id> _prev;
-	std::vector<ISystem::Id> _next;
+	std::vector<SystemId> _prev;
+	std::vector<SystemId> _next;
 };
 
 }

@@ -18,7 +18,7 @@ LambdaTaskTests::LambdaTaskTests():
 
 void LambdaTaskTests::TestGetParentSystemId( TestCase& test_case )
 {
-	const ISystem::Id id = "_id_";
+	const SystemId id = 123;
 	
 	auto parent_system = std::make_shared<MockSystem>(id);
 	
@@ -29,7 +29,7 @@ void LambdaTaskTests::TestGetParentSystemId( TestCase& test_case )
 
 void LambdaTaskTests::TestOnRunLambda(Fnd::Test::TestCase &test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 
 	bool hitOnRunLambda = false;
 
@@ -44,7 +44,7 @@ void LambdaTaskTests::TestOnRunLambda(Fnd::Test::TestCase &test_case )
 
 void LambdaTaskTests::TestSuccessStates( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	Task::State runningState = Task::State::Pending;
 	
@@ -64,7 +64,7 @@ void LambdaTaskTests::TestSuccessStates( TestCase& test_case )
 
 void LambdaTaskTests::TestErrorStatesAndException( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	Task::State runningState = Task::State::Pending;
 	

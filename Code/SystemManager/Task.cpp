@@ -53,7 +53,7 @@ void Task::Run()
 	}
 }
 
-ISystem::Id	Task::GetParentSystemId() const
+SystemId	Task::GetParentSystemId() const
 {
 	return _parent_system->GetId();
 }

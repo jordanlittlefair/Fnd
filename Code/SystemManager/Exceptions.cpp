@@ -8,7 +8,7 @@ Exception::Exception( const std::string& what ):
 }
 
 InvalidSystemIdException::InvalidSystemIdException():
-	Fnd::SystemManager::Exception("Invalid System::Id")
+	Fnd::SystemManager::Exception("Invalid SystemId")
 {
 }
 

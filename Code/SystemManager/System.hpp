@@ -16,23 +16,23 @@ class System:
 {
 public:
 	
-	Id GetId() const;
+	SystemId GetId() const;
 	
-	void AddDependency( const Id& dependency );
+	void AddDependency( const SystemId& dependency );
 	
-	const std::vector<Id>& GetDependencies() const;
+	const std::vector<SystemId>& GetDependencies() const;
 	
 	~System();
 	
 protected:
 
-	System( const Id& id );
+	System( const SystemId& id );
 	
 private:
 
-	const Id _id;
+	const SystemId _id;
 
-	std::vector<Id> _dependencies;
+	std::vector<SystemId> _dependencies;
 };
 
 }

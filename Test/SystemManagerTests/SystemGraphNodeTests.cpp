@@ -30,7 +30,7 @@ SystemGraphNodeTests::SystemGraphNodeTests():
 
 void SystemGraphNodeTests::SetAndGetId( TestCase& test_case )
 {
-	const ISystem::Id id = "_id";
+	const SystemId id = 123;
 	SystemGraphNode node(id);
 	
 	test_case.Assert( node.GetId() == id );
@@ -40,7 +40,7 @@ void SystemGraphNodeTests::GetWeightDefault( TestCase& test_case )
 {
 	SystemGraphNode::Weight default_weight = 1;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(123);
 	
 	test_case.Assert( node.GetWeight() == default_weight );
 }
@@ -49,7 +49,7 @@ void SystemGraphNodeTests::SetAndGetWeight( TestCase& test_case )
 {
 	SystemGraphNode::Weight weight = 100;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(123);
 	
 	node.SetWeight( weight );
 	
@@ -58,10 +58,10 @@ void SystemGraphNodeTests::SetAndGetWeight( TestCase& test_case )
 
 void SystemGraphNodeTests::AddPrev( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	
@@ -78,10 +78,10 @@ void SystemGraphNodeTests::AddPrev( TestCase& test_case )
 
 void SystemGraphNodeTests::AddPrev_Duplicate( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev";
-	ISystem::Id prev2 = "prev";
+	SystemId prev1 = 1;
+	SystemId prev2 = 1;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	
@@ -96,10 +96,10 @@ void SystemGraphNodeTests::AddPrev_Duplicate( TestCase& test_case )
 
 void SystemGraphNodeTests::AddNext( TestCase& test_case )
 {
-	ISystem::Id next1= "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1= 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	
@@ -116,10 +116,10 @@ void SystemGraphNodeTests::AddNext( TestCase& test_case )
 
 void SystemGraphNodeTests::AddNext_Duplicate( TestCase& test_case )
 {
-	ISystem::Id next1= "next";
-	ISystem::Id next2 = "next";
+	SystemId next1= 1;
+	SystemId next2 = 1;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	
@@ -134,10 +134,10 @@ void SystemGraphNodeTests::AddNext_Duplicate( TestCase& test_case )
 
 void SystemGraphNodeTests::RemovePrev( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	node.AddPrev( prev2 );
@@ -162,10 +162,10 @@ void SystemGraphNodeTests::RemovePrev( TestCase& test_case )
 
 void SystemGraphNodeTests::RemovePrev_NonExisting( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	
@@ -182,10 +182,10 @@ void SystemGraphNodeTests::RemovePrev_NonExisting( TestCase& test_case )
 
 void SystemGraphNodeTests::RemoveNext( TestCase& test_case )
 {
-	ISystem::Id next1= "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1= 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	node.AddNext( next2 );
@@ -210,10 +210,10 @@ void SystemGraphNodeTests::RemoveNext( TestCase& test_case )
 
 void SystemGraphNodeTests::RemoveNext_NonExisting( TestCase& test_case )
 {
-	ISystem::Id next1 = "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1 = 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(123);
 	
 	node.AddNext( next1 );
 	
@@ -230,10 +230,10 @@ void SystemGraphNodeTests::RemoveNext_NonExisting( TestCase& test_case )
 
 void SystemGraphNodeTests::ClearPrev( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	node.AddPrev( prev2 );
@@ -252,10 +252,10 @@ void SystemGraphNodeTests::ClearPrev( TestCase& test_case )
 
 void SystemGraphNodeTests::ClearNext( TestCase& test_case )
 {
-	ISystem::Id next1 = "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1 = 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	node.AddNext( next2 );
@@ -274,10 +274,10 @@ void SystemGraphNodeTests::ClearNext( TestCase& test_case )
 
 void SystemGraphNodeTests::HasPrev( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	
@@ -290,10 +290,10 @@ void SystemGraphNodeTests::HasPrev( TestCase& test_case )
 
 void SystemGraphNodeTests::HasNext( TestCase& test_case )
 {
-	ISystem::Id next1 = "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1 = 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	
@@ -306,10 +306,10 @@ void SystemGraphNodeTests::HasNext( TestCase& test_case )
 
 void SystemGraphNodeTests::ContainsPrev( TestCase& test_case )
 {
-	ISystem::Id prev1 = "prev1";
-	ISystem::Id prev2 = "prev2";
+	SystemId prev1 = 1;
+	SystemId prev2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddPrev( prev1 );
 	
@@ -324,10 +324,10 @@ void SystemGraphNodeTests::ContainsPrev( TestCase& test_case )
 
 void SystemGraphNodeTests::ContainsNext( TestCase& test_case )
 {
-	ISystem::Id next1 = "next1";
-	ISystem::Id next2 = "next2";
+	SystemId next1 = 1;
+	SystemId next2 = 2;
 	
-	SystemGraphNode node("id");
+	SystemGraphNode node(0);
 	
 	node.AddNext( next1 );
 	

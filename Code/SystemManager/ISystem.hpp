@@ -1,5 +1,6 @@
 #pragma once
 
+#include "SystemId.hpp"
 #include <memory>
 #include <string>
 #include <vector>
@@ -14,11 +15,9 @@ class ISystem
 {
 public:
 
-	typedef std::string Id;
+	virtual SystemId GetId() const = 0;
 
-	virtual Id GetId() const = 0;
-
-	virtual const std::vector<Id>& GetDependencies() const = 0;
+	virtual const std::vector<SystemId>& GetDependencies() const = 0;
 
 	virtual ~ISystem() {}
 };

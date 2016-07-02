@@ -31,11 +31,11 @@ void CyclicGraphCheckerTests::TestConstructor( TestCase& test_case )
 */
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node1->AddNext("0");	node0->AddPrev("1");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+												   
+	node0->AddNext(1);	node1->AddPrev(0);
+	node1->AddNext(0);	node0->AddPrev(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -56,11 +56,11 @@ void CyclicGraphCheckerTests::TestClearSystemNodes( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node1->AddNext("0");	node0->AddPrev("1");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node1->AddNext(0);	node0->AddPrev(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -91,7 +91,7 @@ void CyclicGraphCheckerTests::TestIsCyclic_SingleNode( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
 	
 	nodes.push_back(node0);
 	
@@ -112,8 +112,8 @@ void CyclicGraphCheckerTests::TestIsCyclic_MultipleUnlinked( TestCase& test_case
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -133,12 +133,12 @@ void CyclicGraphCheckerTests::TestIsCyclic_Chain( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node1->AddNext("2");	node2->AddPrev("1");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node1->AddNext(2);	node2->AddPrev(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -160,12 +160,12 @@ void CyclicGraphCheckerTests::TestIsCyclic_MultipleDependencies( TestCase& test_
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("2");	node2->AddPrev("0");
-	node1->AddNext("2");	node2->AddPrev("1");
+	node0->AddNext(2);	node2->AddPrev(0);
+	node1->AddNext(2);	node2->AddPrev(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -187,12 +187,12 @@ void CyclicGraphCheckerTests::TestIsCyclic_SharedDependency( TestCase& test_case
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node0->AddNext("2");	node2->AddPrev("0");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node0->AddNext(2);	node2->AddPrev(0);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -214,13 +214,13 @@ void CyclicGraphCheckerTests::TestIsCyclic_SingleCycle( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node1->AddNext("2");	node2->AddPrev("1");
-	node2->AddNext("0");	node0->AddPrev("2");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node1->AddNext(2);	node2->AddPrev(1);
+	node2->AddNext(0);	node0->AddPrev(2);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -245,19 +245,19 @@ void CyclicGraphCheckerTests::TestIsCyclic_MultipleCycles( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
 	
-	auto node2 = std::make_shared<SystemGraphNode>("2");
-	auto node3 = std::make_shared<SystemGraphNode>("3");
-	auto node4 = std::make_shared<SystemGraphNode>("4");
+	auto node2 = std::make_shared<SystemGraphNode>(2);
+	auto node3 = std::make_shared<SystemGraphNode>(3);
+	auto node4 = std::make_shared<SystemGraphNode>(4);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node1->AddNext("0");	node0->AddPrev("1");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node1->AddNext(0);	node0->AddPrev(1);
 	
-	node2->AddNext("3");	node3->AddPrev("2");
-	node3->AddNext("4");	node4->AddPrev("3");
-	node4->AddNext("2");	node2->AddPrev("4");
+	node2->AddNext(3);	node3->AddPrev(2);
+	node3->AddNext(4);	node4->AddPrev(3);
+	node4->AddNext(2);	node2->AddPrev(4);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -282,23 +282,23 @@ void CyclicGraphCheckerTests::TestIsCyclic_ForkAndJoin( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
-	auto node3 = std::make_shared<SystemGraphNode>("3");
-	auto node4 = std::make_shared<SystemGraphNode>("4");
-	auto node5 = std::make_shared<SystemGraphNode>("5");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
+	auto node3 = std::make_shared<SystemGraphNode>(3);
+	auto node4 = std::make_shared<SystemGraphNode>(4);
+	auto node5 = std::make_shared<SystemGraphNode>(5);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node0->AddNext("3");	node3->AddPrev("0");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node0->AddNext(3);	node3->AddPrev(0);
 	
-	node1->AddNext("2");	node2->AddPrev("1");
+	node1->AddNext(2);	node2->AddPrev(1);
 	
-	node2->AddNext("5");	node5->AddPrev("2");
+	node2->AddNext(5);	node5->AddPrev(2);
 	
-	node3->AddNext("4");	node4->AddPrev("3");
+	node3->AddNext(4);	node4->AddPrev(3);
 	
-	node4->AddNext("5");	node5->AddPrev("4");
+	node4->AddNext(5);	node5->AddPrev(4);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);

@@ -33,7 +33,7 @@ public:
 
 	void Run();
 	
-	ISystem::Id	GetParentSystemId() const;
+	SystemId	GetParentSystemId() const;
 	
 	void RethrowException();
 	

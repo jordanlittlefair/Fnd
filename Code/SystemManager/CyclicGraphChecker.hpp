@@ -44,7 +44,7 @@ private:
 		Node( const std::shared_ptr<SystemGraphNode>& node_ );
 	};
 	
-	bool IsCyclicDFS( Node& node, std::map<ISystem::Id,Node>& nodes ) const;
+	bool IsCyclicDFS( Node& node, std::map<SystemId,Node>& nodes ) const;
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> _system_graph_nodes;
 };

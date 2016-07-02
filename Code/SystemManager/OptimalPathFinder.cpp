@@ -33,11 +33,11 @@ void OptimalPathFinder::ClearSystemNodes()
 	_system_graph_nodes.clear();
 }
 
-std::vector<ISystem::Id> OptimalPathFinder::GetOptimalPath() const
+std::vector<SystemId> OptimalPathFinder::GetOptimalPath() const
 {
-	std::vector<ISystem::Id> path;
+	std::vector<SystemId> path;
 	
-	std::map<ISystem::Id,Node> nodes;
+	std::map<SystemId,Node> nodes;
 	
 	for ( const auto& node : _system_graph_nodes )
 	{
@@ -52,7 +52,7 @@ std::vector<ISystem::Id> OptimalPathFinder::GetOptimalPath() const
 	return path;
 }
 
-void OptimalPathFinder::AddNodeAndDependencies( Node& node, std::map<ISystem::Id,Node>& nodes, std::vector<ISystem::Id>& path ) const
+void OptimalPathFinder::AddNodeAndDependencies( Node& node, std::map<SystemId,Node>& nodes, std::vector<SystemId>& path ) const
 {
 	if ( node.added_to_path )
 	{

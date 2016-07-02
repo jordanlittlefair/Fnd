@@ -2,17 +2,17 @@
 
 using namespace Fnd::SystemManager;
 
-System::System( const Id& id ):
+System::System( const SystemId& id ):
 	_id(id)
 {
 }
 
-System::Id System::GetId() const
+SystemId System::GetId() const
 {
 	return _id;
 }
 
-void System::AddDependency( const Id& dependency )
+void System::AddDependency( const SystemId& dependency )
 {
 	if ( std::find( _dependencies.begin(), _dependencies.end(), dependency ) == _dependencies.end() )
 	{
@@ -20,7 +20,7 @@ void System::AddDependency( const Id& dependency )
 	}
 }
 
-const std::vector<System::Id>& System::GetDependencies() const
+const std::vector<SystemId>& System::GetDependencies() const
 {
 	return _dependencies;
 }

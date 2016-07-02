@@ -22,7 +22,7 @@ TaskTests::TaskTests():
 
 void TaskTests::TestGetParentSystemId( TestCase& test_case )
 {
-	const ISystem::Id id = "_id_";
+	const SystemId id = 123;
 	
 	auto parent_system = std::make_shared<MockSystem>(id);
 	
@@ -33,7 +33,7 @@ void TaskTests::TestGetParentSystemId( TestCase& test_case )
 
 void TaskTests::TestRun(Fnd::Test::TestCase &test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	MockTask mt( parent_system );
 	
@@ -46,7 +46,7 @@ void TaskTests::TestRun(Fnd::Test::TestCase &test_case )
 
 void TaskTests::TestSuccessStates( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 
 	MockTask mt( parent_system );
 	
@@ -60,7 +60,7 @@ void TaskTests::TestSuccessStates( TestCase& test_case )
 
 void TaskTests::TestErrorStatesAndException( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	MockTask mt( parent_system );
 	mt.SetForceError( std::runtime_error("Forced exception") );
@@ -88,7 +88,7 @@ void TaskTests::TestErrorStatesAndException( TestCase& test_case )
 
 void TaskTests::TestWait_Complete( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	MockTask mt( parent_system );
 	
@@ -106,7 +106,7 @@ void TaskTests::TestWait_Complete( TestCase& test_case )
 
 void TaskTests::TestWait_Exception( TestCase& test_case )
 {
-	auto parent_system = std::make_shared<MockSystem>("id");
+	auto parent_system = std::make_shared<MockSystem>(123);
 	
 	MockTask mt( parent_system );
 	mt.SetForceError( std::runtime_error("Forced exception") );

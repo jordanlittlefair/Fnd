@@ -23,7 +23,7 @@ void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>
 	}
 	
 	// A small helper method to check if a system exists
-	auto SystemExists = [&] ( const ISystem::Id& id ) -> bool
+	auto SystemExists = [&] ( const SystemId& id ) -> bool
 	{
 		for ( const auto& system : systems )
 		{
@@ -71,7 +71,7 @@ void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>
 	}
 }
 
-std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const ISystem::Id& id ) const
+std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const SystemId& id ) const
 {
 	for ( const auto& node : _system_nodes )
 	{

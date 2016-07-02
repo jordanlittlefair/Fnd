@@ -2,13 +2,13 @@
 
 using namespace Fnd::SystemManager;
 
-SystemGraphNode::SystemGraphNode( const ISystem::Id& id ):
+SystemGraphNode::SystemGraphNode( const SystemId& id ):
 	_id(id),
 	_weight(1)
 {
 }
 
-ISystem::Id SystemGraphNode::GetId() const
+SystemId SystemGraphNode::GetId() const
 {
 	return _id;
 }
@@ -23,7 +23,7 @@ SystemGraphNode::Weight SystemGraphNode::GetWeight() const
 	return _weight;
 }
 
-void SystemGraphNode::AddPrev( const ISystem::Id& prev )
+void SystemGraphNode::AddPrev( const SystemId& prev )
 {
 	if ( !ContainsPrev( prev ) )
 	{
@@ -31,7 +31,7 @@ void SystemGraphNode::AddPrev( const ISystem::Id& prev )
 	}
 }
 
-void SystemGraphNode::AddNext( const ISystem::Id& next )
+void SystemGraphNode::AddNext( const SystemId& next )
 {
 	if ( !ContainsNext( next ) )
 	{
@@ -39,7 +39,7 @@ void SystemGraphNode::AddNext( const ISystem::Id& next )
 	}
 }
 
-void SystemGraphNode::RemovePrev( const ISystem::Id& id )
+void SystemGraphNode::RemovePrev( const SystemId& id )
 {
 	for ( auto iter = _prev.begin(); iter != _prev.end(); ++iter )
 	{
@@ -51,7 +51,7 @@ void SystemGraphNode::RemovePrev( const ISystem::Id& id )
 	}
 }
 
-void SystemGraphNode::RemoveNext( const ISystem::Id& id )
+void SystemGraphNode::RemoveNext( const SystemId& id )
 {
 	for ( auto iter = _next.begin(); iter != _next.end(); ++iter )
 	{
@@ -83,7 +83,7 @@ bool SystemGraphNode::HasNext() const
 	return !_next.empty();
 }
 
-bool SystemGraphNode::ContainsPrev( const ISystem::Id& id ) const
+bool SystemGraphNode::ContainsPrev( const SystemId& id ) const
 {
 	for ( const auto& prev : _prev )
 	{
@@ -96,7 +96,7 @@ bool SystemGraphNode::ContainsPrev( const ISystem::Id& id ) const
 	return false;
 }
 
-bool SystemGraphNode::ContainsNext( const ISystem::Id& id ) const
+bool SystemGraphNode::ContainsNext( const SystemId& id ) const
 {
 	for ( const auto& next : _next )
 	{
@@ -109,12 +109,12 @@ bool SystemGraphNode::ContainsNext( const ISystem::Id& id ) const
 	return false;
 }
 
-const std::vector<ISystem::Id>& SystemGraphNode::GetPrev() const
+const std::vector<SystemId>& SystemGraphNode::GetPrev() const
 {
 	return _prev;
 }
 
-const std::vector<ISystem::Id>& SystemGraphNode::GetNext() const
+const std::vector<SystemId>& SystemGraphNode::GetNext() const
 {
 	return _next;
 }

@@ -2,6 +2,7 @@
 
 #include "MockSystem.hpp"
 
+using namespace Fnd::SystemManager;
 using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 
@@ -15,7 +16,7 @@ SystemTests::SystemTests():
 
 void SystemTests::TestGetId( TestCase& test_case )
 {
-	const MockSystem::Id id = "system_id";
+	const SystemId id = 123;
 	
 	MockSystem system( id );
 	
@@ -24,10 +25,10 @@ void SystemTests::TestGetId( TestCase& test_case )
 
 void SystemTests::TestAddDependency( TestCase& test_case )
 {
-	const MockSystem::Id dep1 = "dep1";
-	const MockSystem::Id dep2 = "dep2";
+	const SystemId dep1 = 1;
+	const SystemId dep2 = 2;
 
-	MockSystem system( "id" );
+	MockSystem system( 0 );
 	
 	system.AddDependency( dep1 );
 	
@@ -44,9 +45,9 @@ void SystemTests::TestAddDependency( TestCase& test_case )
 
 void SystemTests::TestAddDependency_Duplicate( TestCase& test_case )
 {
-	const MockSystem::Id dep1 = "dep1";
+	const SystemId dep1 = 1;
 	
-	MockSystem system( "id" );
+	MockSystem system(123);
 	
 	system.AddDependency( dep1 );
 	

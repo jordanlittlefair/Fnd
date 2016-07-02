@@ -9,14 +9,14 @@ using namespace Fnd::SystemManager;
 namespace
 {
 
-bool ContainsId( const ISystem::Id& id, const std::vector<ISystem::Id>& ids )
+bool ContainsId( const SystemId& id, const std::vector<SystemId>& ids )
 {
 	auto iter = std::find( ids.begin(), ids.end(), id );
 	
 	return iter != ids.end();
 }
 
-bool InOrder( const ISystem::Id& before, const ISystem::Id& after, const std::vector<ISystem::Id>& ids )
+bool InOrder( const SystemId& before, const SystemId& after, const std::vector<SystemId>& ids )
 {
 	int before_index = std::numeric_limits<int>::max();
 	int after_index = std::numeric_limits<int>::min();
@@ -56,7 +56,7 @@ void OptimalPathFinderTests::TestConstructor( TestCase& test_case )
 {
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
 	
 	nodes.push_back(node0);
 	
@@ -71,7 +71,7 @@ void OptimalPathFinderTests::TestClearSystemNodes( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
 	
 	nodes.push_back(node0);
 	
@@ -101,9 +101,9 @@ void OptimalPathFinderTests::TestOptimalPath_NoDependencies( TestCase& test_case
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -114,9 +114,9 @@ void OptimalPathFinderTests::TestOptimalPath_NoDependencies( TestCase& test_case
 	auto optimalPath = opf.GetOptimalPath();
 	
 	test_case.Assert( optimalPath.size() == 3 );
-	test_case.Assert( ContainsId( "0", optimalPath ) );
-	test_case.Assert( ContainsId( "1", optimalPath ) );
-	test_case.Assert( ContainsId( "2", optimalPath ) );
+	test_case.Assert( ContainsId( 0, optimalPath ) );
+	test_case.Assert( ContainsId( 1, optimalPath ) );
+	test_case.Assert( ContainsId( 2, optimalPath ) );
 }
 
 void OptimalPathFinderTests::TestOptimalPath_DependencyChain( TestCase& test_case )
@@ -130,13 +130,13 @@ void OptimalPathFinderTests::TestOptimalPath_DependencyChain( TestCase& test_cas
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
 	// order: 2 -> 1 -> 0
-	node2->AddNext("1");	node1->AddPrev("2");
-	node1->AddNext("0");	node0->AddPrev("1");
+	node2->AddNext(1);	node1->AddPrev(2);
+	node1->AddNext(0);	node0->AddPrev(1);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -147,11 +147,11 @@ void OptimalPathFinderTests::TestOptimalPath_DependencyChain( TestCase& test_cas
 	auto optimalPath = opf.GetOptimalPath();
 	
 	test_case.Assert( optimalPath.size() == 3 );
-	test_case.Assert( ContainsId( "0", optimalPath ) );
-	test_case.Assert( ContainsId( "1", optimalPath ) );
-	test_case.Assert( ContainsId( "2", optimalPath ) );
-	test_case.Assert( InOrder( "2", "1", optimalPath ) );
-	test_case.Assert( InOrder( "1", "0", optimalPath ) );
+	test_case.Assert( ContainsId( 0, optimalPath ) );
+	test_case.Assert( ContainsId( 1, optimalPath ) );
+	test_case.Assert( ContainsId( 2, optimalPath ) );
+	test_case.Assert( InOrder( 2, 1, optimalPath ) );
+	test_case.Assert( InOrder( 1, 0, optimalPath ) );
 }
 
 void OptimalPathFinderTests::TestOptimalPath_MultipleDependencies( TestCase& test_case )
@@ -165,12 +165,12 @@ void OptimalPathFinderTests::TestOptimalPath_MultipleDependencies( TestCase& tes
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("2");	node2->AddPrev("0");
-	node1->AddNext("2");	node2->AddPrev("1");
+	node0->AddNext(2);	node2->AddPrev(0);
+	node1->AddNext(2);	node2->AddPrev(1);
 	
 	nodes.push_back(node2);
 	nodes.push_back(node1);
@@ -181,11 +181,11 @@ void OptimalPathFinderTests::TestOptimalPath_MultipleDependencies( TestCase& tes
 	auto optimalPath = opf.GetOptimalPath();
 	
 	test_case.Assert( optimalPath.size() == 3 );
-	test_case.Assert( ContainsId( "0", optimalPath ) );
-	test_case.Assert( ContainsId( "1", optimalPath ) );
-	test_case.Assert( ContainsId( "2", optimalPath ) );
-	test_case.Assert( InOrder( "0", "2", optimalPath ) );
-	test_case.Assert( InOrder( "1", "2", optimalPath ) );
+	test_case.Assert( ContainsId( 0, optimalPath ) );
+	test_case.Assert( ContainsId( 1, optimalPath ) );
+	test_case.Assert( ContainsId( 2, optimalPath ) );
+	test_case.Assert( InOrder( 0, 2, optimalPath ) );
+	test_case.Assert( InOrder( 1, 2, optimalPath ) );
 }
 
 void OptimalPathFinderTests::TestOptimalPath_SharedDependency( TestCase& test_case )
@@ -199,12 +199,12 @@ void OptimalPathFinderTests::TestOptimalPath_SharedDependency( TestCase& test_ca
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node0->AddNext("2");	node2->AddPrev("0");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node0->AddNext(2);	node2->AddPrev(0);
 	
 	nodes.push_back(node2);
 	nodes.push_back(node1);
@@ -215,11 +215,11 @@ void OptimalPathFinderTests::TestOptimalPath_SharedDependency( TestCase& test_ca
 	auto optimalPath = opf.GetOptimalPath();
 	
 	test_case.Assert( optimalPath.size() == 3 );
-	test_case.Assert( ContainsId( "0", optimalPath ) );
-	test_case.Assert( ContainsId( "1", optimalPath ) );
-	test_case.Assert( ContainsId( "2", optimalPath ) );
-	test_case.Assert( InOrder( "0", "2", optimalPath ) );
-	test_case.Assert( InOrder( "0", "2", optimalPath ) );
+	test_case.Assert( ContainsId( 0, optimalPath ) );
+	test_case.Assert( ContainsId( 1, optimalPath ) );
+	test_case.Assert( ContainsId( 2, optimalPath ) );
+	test_case.Assert( InOrder( 0, 2, optimalPath ) );
+	test_case.Assert( InOrder( 0, 2, optimalPath ) );
 }
 
 void OptimalPathFinderTests::TestOptimalPath_ForkAndJoin( TestCase& test_case )
@@ -234,23 +234,23 @@ void OptimalPathFinderTests::TestOptimalPath_ForkAndJoin( TestCase& test_case )
 	
 	std::vector<std::shared_ptr<SystemGraphNode>> nodes;
 	
-	auto node0 = std::make_shared<SystemGraphNode>("0");
-	auto node1 = std::make_shared<SystemGraphNode>("1");
-	auto node2 = std::make_shared<SystemGraphNode>("2");
-	auto node3 = std::make_shared<SystemGraphNode>("3");
-	auto node4 = std::make_shared<SystemGraphNode>("4");
-	auto node5 = std::make_shared<SystemGraphNode>("5");
+	auto node0 = std::make_shared<SystemGraphNode>(0);
+	auto node1 = std::make_shared<SystemGraphNode>(1);
+	auto node2 = std::make_shared<SystemGraphNode>(2);
+	auto node3 = std::make_shared<SystemGraphNode>(3);
+	auto node4 = std::make_shared<SystemGraphNode>(4);
+	auto node5 = std::make_shared<SystemGraphNode>(5);
 	
-	node0->AddNext("1");	node1->AddPrev("0");
-	node0->AddNext("4");	node4->AddPrev("0");
+	node0->AddNext(1);	node1->AddPrev(0);
+	node0->AddNext(4);	node4->AddPrev(0);
 	
-	node1->AddNext("2");	node2->AddPrev("1");
+	node1->AddNext(2);	node2->AddPrev(1);
 	
-	node2->AddNext("3");	node3->AddPrev("2");
+	node2->AddNext(3);	node3->AddPrev(2);
 	
-	node4->AddNext("5");	node5->AddPrev("4");
+	node4->AddNext(5);	node5->AddPrev(4);
 	
-	node5->AddNext("3");	node3->AddPrev("5");
+	node5->AddNext(3);	node3->AddPrev(5);
 	
 	nodes.push_back(node0);
 	nodes.push_back(node1);
@@ -264,17 +264,17 @@ void OptimalPathFinderTests::TestOptimalPath_ForkAndJoin( TestCase& test_case )
 	auto optimalPath = opf.GetOptimalPath();
 	
 	test_case.Assert( optimalPath.size() == 6 );
-	test_case.Assert( ContainsId( "0", optimalPath ) );
-	test_case.Assert( ContainsId( "1", optimalPath ) );
-	test_case.Assert( ContainsId( "2", optimalPath ) );
-	test_case.Assert( ContainsId( "3", optimalPath ) );
-	test_case.Assert( ContainsId( "4", optimalPath ) );
-	test_case.Assert( ContainsId( "5", optimalPath ) );
-	test_case.Assert( InOrder( "0", "1", optimalPath ) );
-	test_case.Assert( InOrder( "0", "4", optimalPath ) );
-	test_case.Assert( InOrder( "1", "2", optimalPath ) );
-	test_case.Assert( InOrder( "2", "3", optimalPath ) );
-	test_case.Assert( InOrder( "4", "5", optimalPath ) );
-	test_case.Assert( InOrder( "5", "3", optimalPath ) );
+	test_case.Assert( ContainsId( 0, optimalPath ) );
+	test_case.Assert( ContainsId( 1, optimalPath ) );
+	test_case.Assert( ContainsId( 2, optimalPath ) );
+	test_case.Assert( ContainsId( 3, optimalPath ) );
+	test_case.Assert( ContainsId( 4, optimalPath ) );
+	test_case.Assert( ContainsId( 5, optimalPath ) );
+	test_case.Assert( InOrder( 0, 1, optimalPath ) );
+	test_case.Assert( InOrder( 0, 4, optimalPath ) );
+	test_case.Assert( InOrder( 1, 2, optimalPath ) );
+	test_case.Assert( InOrder( 2, 3, optimalPath ) );
+	test_case.Assert( InOrder( 4, 5, optimalPath ) );
+	test_case.Assert( InOrder( 5, 3, optimalPath ) );
 
 }

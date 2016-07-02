@@ -25,7 +25,7 @@ protected:
 	
 private:
 
-	std::shared_ptr<SystemGraphNode> GetNode( const ISystem::Id& id ) const;
+	std::shared_ptr<SystemGraphNode> GetNode( const SystemId& id ) const;
 	
 	bool ContainsDuplicateSystemIds( const std::vector<std::shared_ptr<ISystem>>& systems );
 

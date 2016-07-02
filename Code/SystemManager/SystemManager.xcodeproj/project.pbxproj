@@ -43,6 +43,7 @@
 		10DFC17C1D2474BE001FD2FB /* TaskQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TaskQueue.hpp; sourceTree = "<group>"; };
 		10DFC17D1D247D0C001FD2FB /* ITaskProvider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskProvider.hpp; sourceTree = "<group>"; };
 		10DFC17E1D248114001FD2FB /* TaskQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskQueue.cpp; sourceTree = "<group>"; };
+		10DFC1831D285FFA001FD2FB /* SystemId.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemId.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10DFC1831D285FFA001FD2FB /* SystemId.hpp */,
 				10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */,
 				10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */,
 				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
