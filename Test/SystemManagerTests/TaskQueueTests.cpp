@@ -31,44 +31,44 @@ TestClass("TaskQueueTests")
 
 void TaskQueueTests::IsAlive_OnStartup_True(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
-	test_case.Assert(tq->IsAlive());
+	test_case.Assert(tq.IsAlive());
 }
 
 void TaskQueueTests::IsAlive_AfterKill_False(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
-	tq->Kill();
+	tq.Kill();
 	
-	test_case.Assert(!tq->IsAlive());
+	test_case.Assert(!tq.IsAlive());
 }
 
 void TaskQueueTests::SumbitTask_Single_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(task);
+	tq.SubmitTask(task);
 	
-	test_case.Assert(tq->GetNumPendingTasks());
-	test_case.Assert(tq->GetNumTasks());
+	test_case.Assert(tq.GetNumPendingTasks());
+	test_case.Assert(tq.GetNumTasks());
 }
 
 void TaskQueueTests::RunNextTask_NoTasks_NoWait_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
-	tq->RunNextTask(false);
+	tq.RunNextTask(false);
 }
 
 void TaskQueueTests::RunNextTask_NoTasks_Wait_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	bool has_killed_provider = false;
 	
@@ -78,14 +78,14 @@ void TaskQueueTests::RunNextTask_NoTasks_Wait_Success(TestCase& test_case)
 		
 		has_killed_provider = true;
 		
-		tq->Kill();
+		tq.Kill();
 		
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	});
 	
 	test_case.Assert(!has_killed_provider);
 	
-	tq->RunNextTask(true); // Waits here until kill_provider thread kills tq
+	tq.RunNextTask(true); // Waits here until kill_provider thread kills tq
 	
 	kill_provider.join(); // Waits here until kill_provider thread finishes
 	
@@ -94,41 +94,41 @@ void TaskQueueTests::RunNextTask_NoTasks_Wait_Success(TestCase& test_case)
 
 void TaskQueueTests::RunNextTask_Single_NoWait_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(task);
+	tq.SubmitTask(task);
 	
 	test_case.Assert(task->GetState() == Task::State::Pending);
 	
-	tq->RunNextTask(false);
+	tq.RunNextTask(false);
 	
 	test_case.Assert(task->GetState() == Task::State::Complete);
 }
 
 void TaskQueueTests::RunNextTask_Single_Wait_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(task);
+	tq.SubmitTask(task);
 	
 	test_case.Assert(task->GetState() == Task::State::Pending);
 	
-	tq->RunNextTask(true);
+	tq.RunNextTask(true);
 	
 	test_case.Assert(task->GetState() == Task::State::Complete);
 }
 
 void TaskQueueTests::SumbitTask_WhileRunningTask_Success(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
@@ -140,7 +140,7 @@ void TaskQueueTests::SumbitTask_WhileRunningTask_Success(TestCase& test_case)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 		
-		tq->SubmitTask(task);
+		tq.SubmitTask(task);
 		
 		is_submitted = true;
 		
@@ -149,7 +149,7 @@ void TaskQueueTests::SumbitTask_WhileRunningTask_Success(TestCase& test_case)
 	
 	test_case.Assert(task->GetState() == Task::State::Pending);
 	
-	tq->RunNextTask(true); // Waits here until the task is sumbitted and completed
+	tq.RunNextTask(true); // Waits here until the task is sumbitted and completed
 	
 	submit_thread.join(); // Waits here until submit_thread finishes
 	
@@ -159,47 +159,47 @@ void TaskQueueTests::SumbitTask_WhileRunningTask_Success(TestCase& test_case)
 
 void TaskQueueTests::GetNumPendingTasks_None(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
-	test_case.Assert(tq->GetNumPendingTasks() == 0);
+	test_case.Assert(tq.GetNumPendingTasks() == 0);
 }
 
 void TaskQueueTests::GetNumPendingTasks_One(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(task);
+	tq.SubmitTask(task);
 
-	test_case.Assert(tq->GetNumPendingTasks() == 1);
+	test_case.Assert(tq.GetNumPendingTasks() == 1);
 }
 
 void TaskQueueTests::GetNumTasks_None(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
-	test_case.Assert(tq->GetNumTasks() == 0);
+	test_case.Assert(tq.GetNumTasks() == 0);
 }
 
 void TaskQueueTests::GetNumTasks_OnePending(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
 	TaskPtr task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(task);
+	tq.SubmitTask(task);
 	
-	test_case.Assert(tq->GetNumTasks() == 1);
+	test_case.Assert(tq.GetNumTasks() == 1);
 }
 
 void TaskQueueTests::GetNumTasks_OnePendingOneRunning(TestCase& test_case)
 {
-	TaskProviderPtr tq = std::make_shared<TaskQueue>();
+	TaskQueue tq;
 	
 	SystemPtr system = std::make_shared<MockSystem>(123);
 	
@@ -221,21 +221,21 @@ void TaskQueueTests::GetNumTasks_OnePendingOneRunning(TestCase& test_case)
 	
 	TaskPtr pending_task = CreateLambdaTask(system, [](){});
 	
-	tq->SubmitTask(running_task);
-	tq->SubmitTask(pending_task);
+	tq.SubmitTask(running_task);
+	tq.SubmitTask(pending_task);
 	
-	test_case.Assert(tq->GetNumPendingTasks() == 2);
-	test_case.Assert(tq->GetNumTasks() == 2);
+	test_case.Assert(tq.GetNumPendingTasks() == 2);
+	test_case.Assert(tq.GetNumTasks() == 2);
 	
 	std::thread run_task_thread([&]()
 	{
-		tq->RunNextTask(true); // Waits here until the first task (running_task) is complete
+		tq.RunNextTask(true); // Waits here until the first task (running_task) is complete
 	});
 	
 	std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	
-	test_case.Assert(tq->GetNumPendingTasks() == 1);
-	test_case.Assert(tq->GetNumTasks() == 2);
+	test_case.Assert(tq.GetNumPendingTasks() == 1);
+	test_case.Assert(tq.GetNumTasks() == 2);
 	
 	// Stop the thread from running - it should complete after the call to notify_all()
 	task_running = false;
@@ -246,7 +246,7 @@ void TaskQueueTests::GetNumTasks_OnePendingOneRunning(TestCase& test_case)
 	test_case.Assert(running_task->GetState() == Task::State::Complete);
 	test_case.Assert(pending_task->GetState() == Task::State::Pending);
 	
-	test_case.Assert(tq->GetNumPendingTasks() == 1);
-	test_case.Assert(tq->GetNumTasks() == 1);
+	test_case.Assert(tq.GetNumPendingTasks() == 1);
+	test_case.Assert(tq.GetNumTasks() == 1);
 	
 }
