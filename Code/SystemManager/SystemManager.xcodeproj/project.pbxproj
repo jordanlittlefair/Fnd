@@ -20,6 +20,7 @@
 		10A7B4441CCADB5F00B78A7C /* OptimalPathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */; };
 		10A7B44B1CCC454200B78A7C /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B44A1CCC454200B78A7C /* Task.cpp */; };
 		10DFC17F1D248114001FD2FB /* TaskQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DFC17E1D248114001FD2FB /* TaskQueue.cpp */; };
+		10DFC1871D2884E4001FD2FB /* TaskProcessorThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DFC1861D2884E4001FD2FB /* TaskProcessorThread.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		10DFC17D1D247D0C001FD2FB /* ITaskProvider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskProvider.hpp; sourceTree = "<group>"; };
 		10DFC17E1D248114001FD2FB /* TaskQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskQueue.cpp; sourceTree = "<group>"; };
 		10DFC1831D285FFA001FD2FB /* SystemId.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemId.hpp; sourceTree = "<group>"; };
+		10DFC1841D288345001FD2FB /* TaskProcessorThread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TaskProcessorThread.hpp; sourceTree = "<group>"; };
+		10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskProcessorThread.hpp; sourceTree = "<group>"; };
+		10DFC1861D2884E4001FD2FB /* TaskProcessorThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskProcessorThread.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,12 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
-				10DFC1831D285FFA001FD2FB /* SystemId.hpp */,
 				10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */,
 				10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */,
 				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
 				10A7B4351CC8450B00B78A7C /* Exceptions.hpp */,
 				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
+				10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */,
 				10DFC17D1D247D0C001FD2FB /* ITaskProvider.hpp */,
 				105BFE141CCCEA350095CF2E /* LambdaTask.hpp */,
 				10A7B4431CCADB5F00B78A7C /* OptimalPathFinder.cpp */,
@@ -76,8 +80,11 @@
 				10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */,
 				10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */,
 				10A7B3E01CB9CC6A00B78A7C /* SystemGraphNode.hpp */,
+				10DFC1831D285FFA001FD2FB /* SystemId.hpp */,
 				10A7B44A1CCC454200B78A7C /* Task.cpp */,
 				10A7B4491CCC44A900B78A7C /* Task.hpp */,
+				10DFC1861D2884E4001FD2FB /* TaskProcessorThread.cpp */,
+				10DFC1841D288345001FD2FB /* TaskProcessorThread.hpp */,
 				10DFC17E1D248114001FD2FB /* TaskQueue.cpp */,
 				10DFC17C1D2474BE001FD2FB /* TaskQueue.hpp */,
 				10A7B3CA1CB9CA8800B78A7C /* Products */,
@@ -171,6 +178,7 @@
 				10A7B4231CC451AD00B78A7C /* System.cpp in Sources */,
 				10DFC17F1D248114001FD2FB /* TaskQueue.cpp in Sources */,
 				10A7B3E21CB9CEDA00B78A7C /* SystemGraphNode.cpp in Sources */,
+				10DFC1871D2884E4001FD2FB /* TaskProcessorThread.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

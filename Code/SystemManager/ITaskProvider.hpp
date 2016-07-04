@@ -11,6 +11,8 @@ namespace SystemManager
 class ITaskProvider
 {
 public:
+	
+	virtual bool IsAlive() const = 0;
 
 	virtual void SubmitTask(TaskPtr task) = 0;
 	

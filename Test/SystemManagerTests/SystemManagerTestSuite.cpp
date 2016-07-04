@@ -9,6 +9,7 @@
 #include "TaskTests.hpp"
 #include "LambdaTaskTests.hpp"
 #include "TaskQueueTests.hpp"
+#include "TaskProcessorThreadTests.hpp"
 
 using namespace Fnd::Test::SystemManager;
 
@@ -24,4 +25,5 @@ SystemManagerTestSuite::SystemManagerTestSuite():
 	AddTestClass<TaskTests>();
 	AddTestClass<LambdaTaskTests>();
 	AddTestClass<TaskQueueTests>();
+	AddTestClass<TaskProcessorThreadTests>();
 }
