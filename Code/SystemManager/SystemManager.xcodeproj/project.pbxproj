@@ -21,6 +21,7 @@
 		10A7B44B1CCC454200B78A7C /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B44A1CCC454200B78A7C /* Task.cpp */; };
 		10DFC17F1D248114001FD2FB /* TaskQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DFC17E1D248114001FD2FB /* TaskQueue.cpp */; };
 		10DFC1871D2884E4001FD2FB /* TaskProcessorThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DFC1861D2884E4001FD2FB /* TaskProcessorThread.cpp */; };
+		10DFC1901D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DFC18F1D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,9 @@
 		10DFC1841D288345001FD2FB /* TaskProcessorThread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TaskProcessorThread.hpp; sourceTree = "<group>"; };
 		10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskProcessorThread.hpp; sourceTree = "<group>"; };
 		10DFC1861D2884E4001FD2FB /* TaskProcessorThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskProcessorThread.cpp; sourceTree = "<group>"; };
+		10DFC18E1D2AEA01001FD2FB /* ConcurrentTaskProcessor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ConcurrentTaskProcessor.hpp; sourceTree = "<group>"; };
+		10DFC18F1D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConcurrentTaskProcessor.cpp; sourceTree = "<group>"; };
+		10DFC1911D30739A001FD2FB /* ITaskConsumer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskConsumer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +68,14 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10DFC18F1D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp */,
+				10DFC18E1D2AEA01001FD2FB /* ConcurrentTaskProcessor.hpp */,
 				10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */,
 				10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */,
 				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
 				10A7B4351CC8450B00B78A7C /* Exceptions.hpp */,
 				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
+				10DFC1911D30739A001FD2FB /* ITaskConsumer.hpp */,
 				10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */,
 				10DFC17D1D247D0C001FD2FB /* ITaskProvider.hpp */,
 				105BFE141CCCEA350095CF2E /* LambdaTask.hpp */,
@@ -175,6 +182,7 @@
 				10A7B4371CC8455A00B78A7C /* Exceptions.cpp in Sources */,
 				10A7B43D1CC94BBD00B78A7C /* CyclicGraphChecker.cpp in Sources */,
 				10A7B4441CCADB5F00B78A7C /* OptimalPathFinder.cpp in Sources */,
+				10DFC1901D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp in Sources */,
 				10A7B4231CC451AD00B78A7C /* System.cpp in Sources */,
 				10DFC17F1D248114001FD2FB /* TaskQueue.cpp in Sources */,
 				10A7B3E21CB9CEDA00B78A7C /* SystemGraphNode.cpp in Sources */,

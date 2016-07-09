@@ -1,9 +1,7 @@
 #pragma once
 
-#include "ITaskProcessorThread.hpp"
 #include "ITaskConsumer.hpp"
-
-#include <thread>
+#include "TaskProcessorThread.hpp"
 
 namespace Fnd
 {
@@ -11,36 +9,32 @@ namespace Fnd
 namespace SystemManager
 {
 
-class TaskProcessorThread:
+class ConcurrentTaskProcessor:
 	public ITaskConsumer
 {
 public:
-	
-	TaskProcessorThread();
+
+	ConcurrentTaskProcessor(const unsigned int num_threads);
 	
 	void SetTaskProvider(TaskProviderPtr task_provider);
 	
 	bool IsRunning() const;
-	
+
 	void Start();
-	
+
 	void Kill();
-	
-	~TaskProcessorThread();
-	
+
 private:
 	
 	bool _is_running;
 	
 	mutable std::mutex _is_running_mutex;
-	
+
 	TaskProviderPtr _task_provider;
 	
-	std::thread _thread;
+	std::vector<TaskProcessorThreadPtr> _threads;
 };
-	
-typedef std::shared_ptr<TaskProcessorThread> TaskProcessorThreadPtr;
-	
+
 }
-	
+
 }
