@@ -55,8 +55,8 @@ void TaskQueueTests::SumbitTask_Single_Success(TestCase& test_case)
 	
 	tq.SubmitTask(task);
 	
-	test_case.Assert(tq.GetNumPendingTasks());
-	test_case.Assert(tq.GetNumTasks());
+	test_case.Assert(tq.GetNumPendingTasks() != 0);
+	test_case.Assert(tq.GetNumTasks() != 0);
 }
 
 void TaskQueueTests::RunNextTask_NoTasks_NoWait_Success(TestCase& test_case)

@@ -11,31 +11,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConcurrentTaskProcessorTests.cpp" />
     <ClCompile Include="CyclicGraphCheckerTests.cpp" />
     <ClCompile Include="LambdaTaskTests.cpp" />
     <ClCompile Include="MockSystem.cpp" />
     <ClCompile Include="MockSystemGraph.cpp" />
     <ClCompile Include="MockTask.cpp" />
+    <ClCompile Include="MockTaskProvider.cpp" />
     <ClCompile Include="OptimalPathFinderTests.cpp" />
     <ClCompile Include="SystemGraphNodeTests.cpp" />
     <ClCompile Include="SystemGraphTests.cpp" />
     <ClCompile Include="SystemManagerExceptionTests.cpp" />
     <ClCompile Include="SystemManagerTestSuite.cpp" />
     <ClCompile Include="SystemTests.cpp" />
+    <ClCompile Include="TaskProcessorThreadTests.cpp" />
+    <ClCompile Include="TaskQueueTests.cpp" />
     <ClCompile Include="TaskTests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConcurrentTaskProcessorTests.hpp" />
     <ClInclude Include="CyclicGraphCheckerTests.hpp" />
     <ClInclude Include="LambdaTaskTests.hpp" />
     <ClInclude Include="MockSystem.hpp" />
     <ClInclude Include="MockSystemGraph.hpp" />
     <ClInclude Include="MockTask.hpp" />
+    <ClInclude Include="MockTaskProvider.hpp" />
     <ClInclude Include="OptimalPathFinderTests.hpp" />
     <ClInclude Include="SystemGraphNodeTests.hpp" />
     <ClInclude Include="SystemGraphTests.hpp" />
     <ClInclude Include="SystemManagerExceptionTests.hpp" />
     <ClInclude Include="SystemManagerTestSuite.hpp" />
     <ClInclude Include="SystemTests.hpp" />
+    <ClInclude Include="TaskProcessorThreadTests.hpp" />
+    <ClInclude Include="TaskQueueTests.hpp" />
     <ClInclude Include="TaskTests.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

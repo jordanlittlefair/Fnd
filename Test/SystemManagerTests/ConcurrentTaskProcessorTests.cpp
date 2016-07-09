@@ -6,6 +6,7 @@
 #include "../../Code/SystemManager/LambdaTask.hpp"
 #include "../../Code/SystemManager/TaskQueue.hpp"
 
+using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
@@ -39,6 +40,8 @@ void ConcurrentTaskProcessorTests::IsRunning_AfterStart_True(TestCase& test_case
 	test_case.Assert(ctp.IsRunning());
 	
 	provider->Kill();
+
+	ctp.Kill();
 }
 
 void ConcurrentTaskProcessorTests::IsRunning_AfterKill_False(TestCase& test_case)

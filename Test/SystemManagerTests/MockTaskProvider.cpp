@@ -23,24 +23,34 @@ void MockTaskProvider::SubmitTask(TaskPtr task)
 
 void MockTaskProvider::RunNextTask(const bool wait)
 {
-	if (wait)
+	bool is_alive = true;
 	{
-		std::unique_lock<std::mutex> lock(_condition_mutex);
+		std::lock_guard<std::mutex> lock(_condition_mutex);
 		
-		_has_task_condition.wait(lock);
+		is_alive = _is_alive;
+	}
+	
+	if (is_alive)
+	{
+		if (wait)
+		{
+			std::unique_lock<std::mutex> lock(_condition_mutex);
 		
-		if (_is_alive)
+			_has_task_condition.wait(lock);
+		
+			if (_is_alive)
+			{
+				std::lock_guard<std::mutex> lock(_count_mutex);
+			
+				++_run_task_count;
+			}
+		}
+		else
 		{
 			std::lock_guard<std::mutex> lock(_count_mutex);
-			
+		
 			++_run_task_count;
 		}
-	}
-	else
-	{
-		std::lock_guard<std::mutex> lock(_count_mutex);
-		
-		++_run_task_count;
 	}
 }
 
@@ -58,7 +68,7 @@ unsigned int MockTaskProvider::GetRunTaskCount() const
 
 void MockTaskProvider::Kill()
 {
-	std::lock_guard<std::mutex> lock(_count_mutex);
+	std::lock_guard<std::mutex> lock(_condition_mutex);
 	
 	_is_alive = false;
 	

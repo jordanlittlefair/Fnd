@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConcurrentTaskProcessor.cpp" />
     <ClCompile Include="CyclicGraphChecker.cpp" />
     <ClCompile Include="Exceptions.cpp" />
     <ClCompile Include="OptimalPathFinder.cpp" />
@@ -18,17 +19,26 @@
     <ClCompile Include="SystemGraph.cpp" />
     <ClCompile Include="SystemGraphNode.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskProcessorThread.cpp" />
+    <ClCompile Include="TaskQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConcurrentTaskProcessor.hpp" />
     <ClInclude Include="CyclicGraphChecker.hpp" />
     <ClInclude Include="Exceptions.hpp" />
     <ClInclude Include="ISystem.hpp" />
+    <ClInclude Include="ITaskConsumer.hpp" />
+    <ClInclude Include="ITaskProcessorThread.hpp" />
+    <ClInclude Include="ITaskProvider.hpp" />
     <ClInclude Include="LambdaTask.hpp" />
     <ClInclude Include="OptimalPathFinder.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemGraph.hpp" />
     <ClInclude Include="SystemGraphNode.hpp" />
+    <ClInclude Include="SystemId.hpp" />
     <ClInclude Include="Task.hpp" />
+    <ClInclude Include="TaskProcessorThread.hpp" />
+    <ClInclude Include="TaskQueue.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Platform.vcxproj">
