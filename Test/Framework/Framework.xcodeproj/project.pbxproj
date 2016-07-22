@@ -70,18 +70,15 @@
 		10555C741C7B8A66007BEC3D = {
 			isa = PBXGroup;
 			children = (
-				1090686E1D42CCEF0086B32C /* PerformanceTestClass.cpp */,
-				1090686D1D42CCC80086B32C /* PerformanceTestClass.hpp */,
-				1090686B1D42CC840086B32C /* IntegrationTestClass.cpp */,
-				1090686A1D42CC5C0086B32C /* IntegrationTestClass.hpp */,
-				109068681D42CC060086B32C /* UnitTestClass.cpp */,
-				109068671D42CBB50086B32C /* UnitTestClass.hpp */,
-				109068661D42C8F50086B32C /* TestType.hpp */,
-				10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */,
-				10FEA99B1D03987B00338F5B /* ConsoleResultPrinter.hpp */,
-				10FEA99C1D03987B00338F5B /* IResultPrinter.hpp */,
 				10A7B3131CB30A6300B78A7C /* AssertResult.cpp */,
 				10A7B3121CB3098700B78A7C /* AssertResult.hpp */,
+				10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */,
+				10FEA99B1D03987B00338F5B /* ConsoleResultPrinter.hpp */,
+				1090686B1D42CC840086B32C /* IntegrationTestClass.cpp */,
+				1090686A1D42CC5C0086B32C /* IntegrationTestClass.hpp */,
+				10FEA99C1D03987B00338F5B /* IResultPrinter.hpp */,
+				1090686E1D42CCEF0086B32C /* PerformanceTestClass.cpp */,
+				1090686D1D42CCC80086B32C /* PerformanceTestClass.hpp */,
 				10555C8B1C7B8A8A007BEC3D /* TestCase.cpp */,
 				10555C8C1C7B8A8A007BEC3D /* TestCase.hpp */,
 				10555C8D1C7B8A8A007BEC3D /* TestCaseResult.cpp */,
@@ -94,6 +91,9 @@
 				10555C901C7B8A8A007BEC3D /* TestSuite.hpp */,
 				10555C911C7B8A8A007BEC3D /* TestSuiteResult.cpp */,
 				10555C921C7B8A8A007BEC3D /* TestSuiteResult.hpp */,
+				109068661D42C8F50086B32C /* TestType.hpp */,
+				109068681D42CC060086B32C /* UnitTestClass.cpp */,
+				109068671D42CBB50086B32C /* UnitTestClass.hpp */,
 				10555C7E1C7B8A66007BEC3D /* Products */,
 			);
 			sourceTree = "<group>";

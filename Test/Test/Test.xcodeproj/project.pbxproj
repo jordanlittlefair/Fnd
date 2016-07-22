@@ -56,16 +56,16 @@
 		10A7B3291CB3293700B78A7C = {
 			isa = PBXGroup;
 			children = (
-				109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */,
-				109068731D42DCB90086B32C /* ExamplePerformanceTestClass.hpp */,
+				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */,
 				109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */,
+				109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */,
+				109068731D42DCB90086B32C /* ExamplePerformanceTestClass.hpp */,
 				10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */,
 				10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */,
 				10A7B33F1CB32C3F00B78A7C /* ExampleUnitTestClass.cpp */,
 				10A7B3401CB32C3F00B78A7C /* ExampleUnitTestClass.hpp */,
 				10A7B3411CB32C3F00B78A7C /* main.cpp */,
-				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				10A7B3331CB3293700B78A7C /* Products */,
 			);
 			sourceTree = "<group>";
