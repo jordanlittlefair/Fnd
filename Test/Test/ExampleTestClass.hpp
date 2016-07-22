@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Framework/TestClass.hpp"
+#include "../Framework/UnitTestClass.hpp"
 
 namespace Fnd
 {
@@ -9,7 +9,7 @@ namespace Test
 {
 
 class ExampleTestClass:
-	public TestClass
+	public UnitTestClass
 {
 public:
 

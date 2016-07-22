@@ -3,7 +3,7 @@
 using namespace Fnd::Test;
 
 ExampleTestClass::ExampleTestClass():
-	TestClass("ExampleTestClass")
+	UnitTestClass("ExampleTestClass")
 {
 	/*
 		All test cases which should be called must be added in the constructor. The Run method will iterate

@@ -18,6 +18,8 @@ public:
 
 	void Run();
 	
+	void Run(const TestType type);
+	
 	const TestSuiteResult& GetResult() const;
 	
 	virtual ~TestSuite();

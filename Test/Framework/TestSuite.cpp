@@ -39,6 +39,31 @@ void TestSuite::Run()
 	}
 }
 
+void TestSuite::Run(const TestType type)
+{
+	if (_result_printer)
+	{
+		_result_printer->PrintBeginTestSuiteResult(GetResult().GetDescription());
+	}
+	
+	for (auto test_class : _test_classes)
+	{
+		if (test_class->GetTestType() == type)
+		{
+			test_class->SetResultPrinter(_result_printer);
+			
+			test_class->Run();
+			
+			_result.AddTestClassResult(test_class->GetResult());
+		}
+	}
+	
+	if (_result_printer)
+	{
+		_result_printer->PrintEndTestSuiteResult(GetResult());
+	}
+}
+
 const TestSuiteResult& TestSuite::GetResult() const
 {
 	return _result;
