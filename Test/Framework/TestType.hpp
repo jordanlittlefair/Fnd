@@ -11,9 +11,9 @@ namespace Test
 
 enum class TestType
 {
-	Unit			= 1 << 0,
-	Integration		= 1 << 1,
-	Performance		= 1 << 2
+	Unit,
+	Integration,
+	Performance
 };
 	
 inline std::string GetTestTypeString(const TestType type)
