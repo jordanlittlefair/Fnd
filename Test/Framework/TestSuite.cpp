@@ -1,5 +1,7 @@
 #include "TestSuite.hpp"
 
+#include <algorithm>
+
 using namespace Fnd::Test;
 
 TestSuite::TestSuite( const std::string& description ):
@@ -19,6 +21,8 @@ void TestSuite::SetResultPrinter(ResultPrinterPtr result_printer)
 
 void TestSuite::Run()
 {
+	SortTestClasses();
+	
 	if (_result_printer)
 	{
 		_result_printer->PrintBeginTestSuiteResult(GetResult().GetDescription());
@@ -41,6 +45,8 @@ void TestSuite::Run()
 
 void TestSuite::Run(const TestType type)
 {
+	SortTestClasses();
+	
 	if (_result_printer)
 	{
 		_result_printer->PrintBeginTestSuiteResult(GetResult().GetDescription());
@@ -67,6 +73,17 @@ void TestSuite::Run(const TestType type)
 const TestSuiteResult& TestSuite::GetResult() const
 {
 	return _result;
+}
+
+void TestSuite::SortTestClasses()
+{
+	std::sort(_test_classes.begin(), _test_classes.end(),
+		[&](const TestClassPtr& lhs, const TestClassPtr& rhs)
+		{
+			return
+				((std::underlying_type<TestType>::type)lhs->GetTestType()) <
+				((std::underlying_type<TestType>::type)rhs->GetTestType());
+		});
 }
 
 TestSuite::~TestSuite()

@@ -8,12 +8,12 @@ namespace Fnd
 namespace Test
 {
 
-class ExampleTestClass:
+class ExampleUnitTestClass:
 	public UnitTestClass
 {
 public:
 
-	ExampleTestClass();
+	ExampleUnitTestClass();
 	
 protected:
 	

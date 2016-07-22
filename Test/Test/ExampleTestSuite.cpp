@@ -2,10 +2,14 @@
 
 using namespace Fnd::Test;
 
-#include "ExampleTestClass.hpp"
+#include "ExampleIntegrationTestClass.hpp"
+#include "ExamplePerformanceTestClass.hpp"
+#include "ExampleUnitTestClass.hpp"
 
 ExampleTestSuite::ExampleTestSuite():
 	TestSuite("ExampleTestSuite")
 {
-	AddTestClass<ExampleTestClass>();
+	AddTestClass<ExamplePerformanceTestClass>();
+	AddTestClass<ExampleIntegrationTestClass>();
+	AddTestClass<ExampleUnitTestClass>();
 }

@@ -38,6 +38,10 @@ protected:
 
 private:
 	
+	void SortTestClasses();
+	
+private:
+	
 	std::vector<TestClassPtr> _test_classes;
 
 	ResultPrinterPtr _result_printer;
