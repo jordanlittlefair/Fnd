@@ -10,11 +10,13 @@ void ConsoleResultPrinter::PrintBeginTestSuiteResult(const std::string& descript
 		<< description << "...\n";
 }
 	
-void ConsoleResultPrinter::PrintBeginTestClassResult(const std::string& description)
+void ConsoleResultPrinter::PrintBeginTestClassResult(const TestType test_type, const std::string& description)
 {
 	std::cout 
 		<< "\t"
-		<< description << "...\n";
+		<< description
+		<< " [" << GetTestTypeString(test_type) << "]"
+		<< "...\n";
 }
 
 void ConsoleResultPrinter::PrintBeginTestCaseResult(const std::string& description)

@@ -24,7 +24,7 @@ void TestClass::Run()
 
 	if (_result_printer)
 	{
-		_result_printer->PrintBeginTestClassResult(_result.GetDescription() + " [" + GetTestTypeString(_type) + "]");
+		_result_printer->PrintBeginTestClassResult(_type, _result.GetDescription());
 	}
 
 	for ( auto& test_case : _test_cases )

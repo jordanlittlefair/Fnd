@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TestSuiteResult.hpp"
+#include "TestType.hpp"
 
 #include <memory>
 
@@ -16,7 +17,7 @@ public:
 
 	virtual void PrintBeginTestSuiteResult(const std::string& description) = 0;
 	
-	virtual void PrintBeginTestClassResult(const std::string& description) = 0;
+	virtual void PrintBeginTestClassResult(const TestType test_type, const std::string& description) = 0;
 
 	virtual void PrintBeginTestCaseResult(const std::string& description) = 0;
 
