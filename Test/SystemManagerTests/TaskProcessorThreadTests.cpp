@@ -10,22 +10,22 @@ using namespace Fnd::SystemManager;
 TaskProcessorThreadTests::TaskProcessorThreadTests():
 TestClass("TaskProcessorThreadTests")
 {
-	AddTestCase( "IsRunning_BeforeStart_False", &TaskProcessorThreadTests::IsRunning_BeforeStart_False, this );
-	AddTestCase( "IsRunning_AfterStart_True", &TaskProcessorThreadTests::IsRunning_AfterStart_True, this );
-	AddTestCase( "IsRunning_AfterKill_False", &TaskProcessorThreadTests::IsRunning_AfterKill_False, this );
+	AddTestCase( "IsAlive_BeforeStart_False", &TaskProcessorThreadTests::IsAlive_BeforeStart_False, this );
+	AddTestCase( "IsAlive_AfterStart_True", &TaskProcessorThreadTests::IsAlive_AfterStart_True, this );
+	AddTestCase( "IsAlive_AfterKill_False", &TaskProcessorThreadTests::IsAlive_AfterKill_False, this );
 	AddTestCase( "Start_ProcessesTask_One", &TaskProcessorThreadTests::Start_ProcessesTask_One, this );
 	AddTestCase( "Start_ProcessesTask_Two", &TaskProcessorThreadTests::Start_ProcessesTask_Two, this );
 
 }
 
-void TaskProcessorThreadTests::IsRunning_BeforeStart_False(TestCase& test_case)
+void TaskProcessorThreadTests::IsAlive_BeforeStart_False(TestCase& test_case)
 {
 	TaskProcessorThread tpt;
 	
-	test_case.Assert(!tpt.IsRunning());
+	test_case.Assert(!tpt.IsAlive());
 }
 
-void TaskProcessorThreadTests::IsRunning_AfterStart_True(TestCase& test_case)
+void TaskProcessorThreadTests::IsAlive_AfterStart_True(TestCase& test_case)
 {
 	TaskProcessorThread tpt;
 	
@@ -35,12 +35,12 @@ void TaskProcessorThreadTests::IsRunning_AfterStart_True(TestCase& test_case)
 	
 	tpt.Start();
 	
-	test_case.Assert(tpt.IsRunning());
+	test_case.Assert(tpt.IsAlive());
 	
 	provider->Kill();
 }
 
-void TaskProcessorThreadTests::IsRunning_AfterKill_False(TestCase& test_case)
+void TaskProcessorThreadTests::IsAlive_AfterKill_False(TestCase& test_case)
 {
 	TaskProcessorThread tpt;
 	
@@ -50,13 +50,13 @@ void TaskProcessorThreadTests::IsRunning_AfterKill_False(TestCase& test_case)
 	
 	tpt.Start();
 	
-	test_case.Assert(tpt.IsRunning());
+	test_case.Assert(tpt.IsAlive());
 	
 	provider->Kill();
 	
 	tpt.Kill();
 	
-	test_case.Assert(!tpt.IsRunning());
+	test_case.Assert(!tpt.IsAlive());
 }
 
 void TaskProcessorThreadTests::Start_ProcessesTask_One(TestCase& test_case)

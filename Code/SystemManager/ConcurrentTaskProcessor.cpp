@@ -28,7 +28,7 @@ void ConcurrentTaskProcessor::SetTaskProvider(TaskProviderPtr task_provider)
 	}
 }
 
-bool ConcurrentTaskProcessor::IsRunning() const
+bool ConcurrentTaskProcessor::IsAlive() const
 {
 	std::lock_guard<std::mutex> lock(_is_running_mutex);
 	

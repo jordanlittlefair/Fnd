@@ -18,7 +18,7 @@ public:
 	
 	void SetTaskProvider(TaskProviderPtr task_provider);
 	
-	bool IsRunning() const;
+	bool IsAlive() const;
 
 	void Start();
 

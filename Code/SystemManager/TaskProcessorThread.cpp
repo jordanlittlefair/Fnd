@@ -41,7 +41,7 @@ void TaskProcessorThread::Start()
 	
 	_thread = std::thread([&]()
 	{
-		while (IsRunning())
+		while (IsAlive())
 		{
 			_task_provider->RunNextTask(true);
 		}
@@ -72,7 +72,7 @@ TaskProcessorThread::~TaskProcessorThread()
 	Kill();
 }
 
-bool TaskProcessorThread::IsRunning() const
+bool TaskProcessorThread::IsAlive() const
 {
 	std::lock_guard<std::mutex> lock(_is_running_mutex);
 	

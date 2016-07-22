@@ -18,6 +18,8 @@ public:
 	
 	virtual void RunNextTask(const bool wait) = 0;
 	
+	virtual void Kill() = 0;
+	
 	virtual ~ITaskProvider() {}
 };
 	

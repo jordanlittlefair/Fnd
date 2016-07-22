@@ -24,7 +24,7 @@ void ConcurrentTaskProcessorTests::IsRunning_BeforeStart_False(TestCase& test_ca
 {
 	ConcurrentTaskProcessor ctp(1);
 	
-	test_case.Assert(!ctp.IsRunning());
+	test_case.Assert(!ctp.IsAlive());
 }
 
 void ConcurrentTaskProcessorTests::IsRunning_AfterStart_True(TestCase& test_case)
@@ -37,7 +37,7 @@ void ConcurrentTaskProcessorTests::IsRunning_AfterStart_True(TestCase& test_case
 	
 	ctp.Start();
 	
-	test_case.Assert(ctp.IsRunning());
+	test_case.Assert(ctp.IsAlive());
 	
 	provider->Kill();
 
@@ -54,13 +54,13 @@ void ConcurrentTaskProcessorTests::IsRunning_AfterKill_False(TestCase& test_case
 	
 	ctp.Start();
 	
-	test_case.Assert(ctp.IsRunning());
+	test_case.Assert(ctp.IsAlive());
 	
 	provider->Kill();
 	
 	ctp.Kill();
 	
-	test_case.Assert(!ctp.IsRunning());
+	test_case.Assert(!ctp.IsAlive());
 }
 
 void ConcurrentTaskProcessorTests::Start_ProcessesTask_OneTask_OneThread(TestCase& test_case)
