@@ -26,6 +26,8 @@ public:
 	virtual void PrintEndTestClassResult(const TestClassResult& test_class_result) = 0;
 
 	virtual void PrintEndTestCaseResult(const TestCaseResult& test_case_result) = 0;
+	
+	virtual ~IResultPrinter() {}
 };
 
 typedef std::shared_ptr<IResultPrinter> ResultPrinterPtr;
