@@ -11,6 +11,16 @@ TestClassResult::TestClassResult( const std::string& description ):
 {
 }
 
+void TestClassResult::StartTimer()
+{
+	_timer.Start();
+}
+
+void TestClassResult::EndTimer()
+{
+	_timer.End();
+}
+
 void TestClassResult::AddTestCaseResult( const TestCaseResult& test_case_result )
 {
 	_succeeded = _succeeded && test_case_result.GetSucceeded();
@@ -52,6 +62,11 @@ unsigned int TestClassResult::GetNumTestCasesSucceeded() const
 unsigned int TestClassResult::GetNumTestCasesFailed() const
 {
 	return _num_test_cases_failed;
+}
+
+Timer::Duration TestClassResult::GetTimeElapsed() const
+{
+	return _timer.GetTimeElapsed();
 }
 
 const std::vector<TestCaseResult>& TestClassResult::GetTestCaseResults() const

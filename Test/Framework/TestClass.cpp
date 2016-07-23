@@ -26,6 +26,8 @@ void TestClass::Run()
 	{
 		_result_printer->PrintBeginTestClassResult(_type, _result.GetDescription());
 	}
+	
+	_result.StartTimer();
 
 	for ( auto& test_case : _test_cases )
 	{
@@ -39,6 +41,8 @@ void TestClass::Run()
 		
 		CleanupTest();
 	}
+	
+	_result.EndTimer();
 	
 	if (_result_printer)
 	{

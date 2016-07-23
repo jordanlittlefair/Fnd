@@ -19,6 +19,8 @@ void TestCase::Run()
 	{
 		_result_printer->PrintBeginTestCaseResult(_result.GetDescription());
 	}
+	
+	_result.StartTimer();
 
 	try
 	{
@@ -32,6 +34,8 @@ void TestCase::Run()
 	{
 		Assert(false, "Unhandled exception: Unknown exception (...)");
 	}
+	
+	_result.EndTimer();
 	
 	if (_result_printer)
 	{

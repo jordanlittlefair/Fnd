@@ -27,6 +27,8 @@ void TestSuite::Run()
 	{
 		_result_printer->PrintBeginTestSuiteResult(GetResult().GetDescription());
 	}
+	
+	_result.StartTimer();
 
 	for ( auto test_class : _test_classes )
 	{
@@ -36,6 +38,8 @@ void TestSuite::Run()
 		
 		_result.AddTestClassResult( test_class->GetResult() );
 	}
+	
+	_result.EndTimer();
 
 	if (_result_printer)
 	{

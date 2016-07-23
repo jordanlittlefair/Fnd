@@ -10,6 +10,17 @@
 
 using namespace Fnd::Test;
 
+namespace
+{
+	template <typename T>
+	std::string ToString(const T& t)
+	{
+		std::stringstream ss;
+		ss << t;
+		return ss.str();
+	}
+}
+
 struct XmlResultPrinter::XmlImpl
 {
 	rapidxml::xml_document<> document;
@@ -60,13 +71,11 @@ void XmlResultPrinter::PrintEndTestSuiteResult(const TestSuiteResult& test_suite
 {
 	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("succeeded",test_suite_result.GetSucceeded() ? "true" : "false"));
 	
-	std::stringstream numsucceeded_ss;
-	numsucceeded_ss << test_suite_result.GetNumTestClassesSucceeded();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests_succeeded",_xml_impl->document.allocate_string(numsucceeded_ss.str().c_str())));
-
-	std::stringstream num_ss;
-	num_ss << test_suite_result.GetNumTestClasses();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests",_xml_impl->document.allocate_string(num_ss.str().c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("time_taken",_xml_impl->document.allocate_string(ToString(Timer::ToSeconds<double>(test_suite_result.GetTimeElapsed())).c_str())));
+	
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests_succeeded",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClassesSucceeded()).c_str())));
+	
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClasses()).c_str())));
 	
 	_xml_impl->node_stack.pop();
 }
@@ -75,13 +84,11 @@ void XmlResultPrinter::PrintEndTestClassResult(const TestClassResult& test_class
 {
 	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("succeeded",test_class_result.GetSucceeded() ? "true" : "false"));
 	
-	std::stringstream numsucceeded_ss;
-	numsucceeded_ss << test_class_result.GetNumTestCasesSucceeded();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_cases_succeeded",_xml_impl->document.allocate_string(numsucceeded_ss.str().c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("time_taken",_xml_impl->document.allocate_string(ToString(Timer::ToSeconds<double>(test_class_result.GetTimeElapsed())).c_str())));
 	
-	std::stringstream num_ss;
-	num_ss << test_class_result.GetNumTestCases();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_cases",_xml_impl->document.allocate_string(num_ss.str().c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_cases_succeeded",_xml_impl->document.allocate_string(ToString(test_class_result.GetNumTestCasesSucceeded()).c_str())));
+	
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_cases",_xml_impl->document.allocate_string(ToString(test_class_result.GetNumTestCases()).c_str())));
 	
 	_xml_impl->node_stack.pop();
 }
@@ -90,13 +97,11 @@ void XmlResultPrinter::PrintEndTestCaseResult(const TestCaseResult& test_case_re
 {
 	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("succeeded",test_case_result.GetSucceeded() ? "true" : "false"));
 	
-	std::stringstream numsucceeded_ss;
-	numsucceeded_ss << test_case_result.GetNumAssertsSucceeded();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_asserts_succeeded",_xml_impl->document.allocate_string(numsucceeded_ss.str().c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("time_taken",_xml_impl->document.allocate_string(ToString(Timer::ToSeconds<double>(test_case_result.GetTimeElapsed())).c_str())));
 	
-	std::stringstream num_ss;
-	num_ss << test_case_result.GetNumAsserts();
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_asserts",_xml_impl->document.allocate_string(num_ss.str().c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_asserts_succeeded",_xml_impl->document.allocate_string(ToString(test_case_result.GetNumAssertsSucceeded()).c_str())));
+	
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_asserts",_xml_impl->document.allocate_string(ToString(test_case_result.GetNumAsserts()).c_str())));
 	
 	for (auto assert_result : test_case_result.GetAssertResults())
 	{
