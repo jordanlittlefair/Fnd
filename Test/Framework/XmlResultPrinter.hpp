@@ -15,7 +15,7 @@ class XmlResultPrinter:
 {
 public:
 	
-	XmlResultPrinter();
+	XmlResultPrinter(const std::string& output_filename);
 	
 	void PrintBeginTestSuiteResult(const std::string& description);
 	
@@ -36,6 +36,8 @@ private:
 	struct XmlImpl;
 	
 	std::shared_ptr<XmlImpl> _xml_impl;
+	
+	const std::string _output_filename;
 };
 
 }

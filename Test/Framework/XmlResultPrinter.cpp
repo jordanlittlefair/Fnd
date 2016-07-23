@@ -4,6 +4,7 @@
 #include "../../External/RapidXml/rapidxml_print.hpp"
 
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <stack>
 
@@ -21,8 +22,9 @@ struct XmlResultPrinter::XmlImpl
 	}
 };
 
-XmlResultPrinter::XmlResultPrinter():
-	_xml_impl(std::make_shared<XmlImpl>())
+XmlResultPrinter::XmlResultPrinter(const std::string& output_filename):
+	_xml_impl(std::make_shared<XmlImpl>()),
+	_output_filename(output_filename + ".xml")
 {
 	auto root = _xml_impl->document.allocate_node(rapidxml::node_element,"TestResults");
 	_xml_impl->document.append_node(root);
@@ -117,10 +119,16 @@ void XmlResultPrinter::PrintEndTestCaseResult(const TestCaseResult& test_case_re
 
 XmlResultPrinter::~XmlResultPrinter()
 {
-	std::string s;
-	print(back_inserter(s), _xml_impl->document, 0);
+	std::ofstream output(_output_filename);
 	
-	std::cout << s << '\n';
-	
-	// TODO: Output to file instead of cout
+	if (output.is_open())
+	{
+		output << _xml_impl->document;
+		
+		std::cout << "Test results written to [" << _output_filename << "]\n";
+	}
+	else
+	{
+		std::cout << "Failed to write results to [" << _output_filename << "]\n";
+	}
 }
