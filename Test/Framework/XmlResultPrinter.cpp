@@ -73,9 +73,9 @@ void XmlResultPrinter::PrintEndTestSuiteResult(const TestSuiteResult& test_suite
 	
 	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("time_taken",_xml_impl->document.allocate_string(ToString(Timer::ToSeconds<double>(test_suite_result.GetTimeElapsed())).c_str())));
 	
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests_succeeded",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClassesSucceeded()).c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_classes_succeeded",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClassesSucceeded()).c_str())));
 	
-	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_tests",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClasses()).c_str())));
+	_xml_impl->CurrentNode()->append_attribute(_xml_impl->document.allocate_attribute("num_test_classes",_xml_impl->document.allocate_string(ToString(test_suite_result.GetNumTestClasses()).c_str())));
 	
 	_xml_impl->node_stack.pop();
 }
