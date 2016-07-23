@@ -38,6 +38,9 @@ private:
 	std::shared_ptr<XmlImpl> _xml_impl;
 	
 	const std::string _output_filename;
+	
+	unsigned int _total_test_cases;
+	unsigned int _total_test_cases_succeeded;
 };
 
 }
