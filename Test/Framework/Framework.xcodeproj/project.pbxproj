@@ -79,8 +79,6 @@
 		10555C741C7B8A66007BEC3D = {
 			isa = PBXGroup;
 			children = (
-				1090687E1D43ABB70086B32C /* Timer.cpp */,
-				1090687D1D43AB650086B32C /* Timer.hpp */,
 				10A7B3131CB30A6300B78A7C /* AssertResult.cpp */,
 				10A7B3121CB3098700B78A7C /* AssertResult.hpp */,
 				10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */,
@@ -105,6 +103,8 @@
 				10555C911C7B8A8A007BEC3D /* TestSuiteResult.cpp */,
 				10555C921C7B8A8A007BEC3D /* TestSuiteResult.hpp */,
 				109068661D42C8F50086B32C /* TestType.hpp */,
+				1090687E1D43ABB70086B32C /* Timer.cpp */,
+				1090687D1D43AB650086B32C /* Timer.hpp */,
 				109068681D42CC060086B32C /* UnitTestClass.cpp */,
 				109068671D42CBB50086B32C /* UnitTestClass.hpp */,
 				109068771D42E4EF0086B32C /* XmlResultPrinter.cpp */,

@@ -29,7 +29,8 @@ void ExampleUnitTestClass::CleanUp()
 
 void ExampleUnitTestClass::TestFunction1( Fnd::Test::TestCase& test_case )
 {
-	test_case.Assert( 1 == 1 );
+	test_case.AssertEqual(1, 1);
+	test_case.AssertNotEqual(1, 2);
 }
 
 void ExampleUnitTestClass::TestFunction2( Fnd::Test::TestCase& test_case )
