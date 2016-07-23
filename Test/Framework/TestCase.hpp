@@ -5,6 +5,7 @@
 
 #include <functional>
 #include <memory>
+#include <sstream>
 
 namespace Fnd
 {
@@ -30,6 +31,36 @@ public:
 	void Run();
 
 	void Assert( bool succeeded, const std::string& description = "" );
+	
+	template <typename A, typename B>
+	void AssertEqual(const A& expected, const B& real, const std::string& description = "")
+	{
+		std::stringstream ss;
+		
+		ss << "Expected [" << expected << "] must equal Real [" << real << "]";
+		
+		if (!description.empty())
+		{
+			ss << ": " << description;
+		}
+		
+		Assert(expected == real, ss.str());
+	}
+	
+	template <typename A, typename B>
+	void AssertNotEqual(const A& expected, const B& real, const std::string& description = "")
+	{
+		std::stringstream ss;
+		
+		ss << "Expected [" << expected << "] must not equal Real [" << real << "]";
+		
+		if (!description.empty())
+		{
+			ss << ": " << description;
+		}
+		
+		Assert(expected != real, ss.str());
+	}
 	
 	template<typename ExceptionType,typename LambdaType>
 	void AssertException(LambdaType lambda)
