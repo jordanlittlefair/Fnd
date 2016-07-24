@@ -9,7 +9,7 @@ using namespace Fnd::EntitySystem;
 using namespace Fnd::Test::EntitySystem;
 
 NodeTemplateTests::NodeTemplateTests():
-	TestClass("NodeTemplateTests")
+	UnitTestClass("NodeTemplateTests")
 {
 	AddTestCase( "GetNodeId_Success", &NodeTemplateTests::GetNodeId_Success, this );
 	AddTestCase( "GetEntityId_Success", &NodeTemplateTests::GetEntityId_Success, this );

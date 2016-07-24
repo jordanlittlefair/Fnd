@@ -7,7 +7,7 @@ using namespace Fnd::EntitySystem;
 using namespace Fnd::Test::EntitySystem;
 
 EntityManagerTests::EntityManagerTests():
-	TestClass("EntityManagerTests")
+	UnitTestClass("EntityManagerTests")
 {
 	AddTestCase( "CreateEntity_Success", &EntityManagerTests::CreateEntity_Success, this );
 	AddTestCase( "CreateEntity_Multiple_Success", &EntityManagerTests::CreateEntity_Multiple_Success, this );

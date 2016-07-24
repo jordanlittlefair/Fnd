@@ -8,7 +8,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ComponentTemplateTests::ComponentTemplateTests():
-	TestClass("ComponentTemplateTests")
+	UnitTestClass("ComponentTemplateTests")
 {
 	AddTestCase( "CheckIds", &ComponentTemplateTests::CheckIds, this );
 	AddTestCase( "CheckDataIsEqual", &ComponentTemplateTests::CheckDataIsEqual, this );

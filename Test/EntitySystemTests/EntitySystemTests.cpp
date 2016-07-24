@@ -8,7 +8,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 EntitySystemTests::EntitySystemTests():
-	TestClass("EntitySystemTests")
+	UnitTestClass("EntitySystemTests")
 {
 	AddTestCase( "GetEntityManagerNonConst", &EntitySystemTests::GetEntityManagerNonConst, this );
 	AddTestCase( "GetEntityManagerConst", &EntitySystemTests::GetEntityManagerConst, this );

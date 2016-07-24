@@ -10,7 +10,7 @@ using namespace Fnd::EntitySystem;
 using namespace Fnd::Test::EntitySystem;
 
 NodeContainerTemplateTests::NodeContainerTemplateTests():
-	TestClass("NodeContainerTemplateTests")
+	UnitTestClass("NodeContainerTemplateTests")
 {
 	AddTestCase( "GetNodeId_Success", &NodeContainerTemplateTests::GetNodeId_Success, this );
 	AddTestCase( "CreateNode_Success", &NodeContainerTemplateTests::CreateNode_Success, this );

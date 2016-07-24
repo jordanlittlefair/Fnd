@@ -11,7 +11,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ComponentContainerTests::ComponentContainerTests():
-	TestClass("ComponentTests")
+	UnitTestClass("ComponentTests")
 {
 	AddTestCase( "CheckIds", &ComponentContainerTests::CheckComponentId, this );
 	

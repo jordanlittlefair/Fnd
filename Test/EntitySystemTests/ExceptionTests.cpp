@@ -6,7 +6,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ExceptionTests::ExceptionTests():
-	TestClass("ExceptionTests")
+	UnitTestClass("ExceptionTests")
 {
 	AddTestCase( "ThrowInvalidComponentIdException_Caught", &ExceptionTests::ThrowInvalidComponentIdException_Caught, this );
 	AddTestCase( "ThrowInvalidComponentIdException_CaughtEntitySystemException", &ExceptionTests::ThrowInvalidComponentIdException_CaughtEntitySystemException, this );

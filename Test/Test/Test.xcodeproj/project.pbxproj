@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10A7B3421CB32C3F00B78A7C /* ExampleTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */; };
+		109068721D42DC000086B32C /* ExampleIntegrationTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */; };
+		109068751D42DCC10086B32C /* ExamplePerformanceTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */; };
+		10A7B3421CB32C3F00B78A7C /* ExampleUnitTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B33F1CB32C3F00B78A7C /* ExampleUnitTestClass.cpp */; };
 		10A7B3431CB32C3F00B78A7C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3411CB32C3F00B78A7C /* main.cpp */; };
 		10A7B3451CB32CD700B78A7C /* libFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3441CB32CD700B78A7C /* libFramework.a */; };
 		10FEA98E1D0393C200338F5B /* libEntitySystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEA98D1D0393C200338F5B /* libEntitySystem.a */; };
@@ -28,9 +30,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExampleIntegrationTestClass.hpp; sourceTree = "<group>"; };
+		109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleIntegrationTestClass.cpp; sourceTree = "<group>"; };
+		109068731D42DCB90086B32C /* ExamplePerformanceTestClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExamplePerformanceTestClass.hpp; sourceTree = "<group>"; };
+		109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExamplePerformanceTestClass.cpp; sourceTree = "<group>"; };
 		10A7B3321CB3293700B78A7C /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
-		10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleTestClass.cpp; sourceTree = "<group>"; };
-		10A7B3401CB32C3F00B78A7C /* ExampleTestClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExampleTestClass.hpp; sourceTree = "<group>"; };
+		10A7B33F1CB32C3F00B78A7C /* ExampleUnitTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleUnitTestClass.cpp; sourceTree = "<group>"; };
+		10A7B3401CB32C3F00B78A7C /* ExampleUnitTestClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExampleUnitTestClass.hpp; sourceTree = "<group>"; };
 		10A7B3411CB32C3F00B78A7C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		10A7B3441CB32CD700B78A7C /* libFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFramework.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libFramework.a"; sourceTree = "<group>"; };
 		10FEA98D1D0393C200338F5B /* libEntitySystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEntitySystem.a; path = ../../Code/EntitySystem/build/Debug/libEntitySystem.a; sourceTree = "<group>"; };
@@ -58,12 +64,16 @@
 			children = (
 				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
 				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
+				10A7B3461CB32D2D00B78A7C /* Dependencies */,
+				109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */,
+				109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */,
+				109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */,
+				109068731D42DCB90086B32C /* ExamplePerformanceTestClass.hpp */,
 				10FEA9E61D06378800338F5B /* ExampleTestSuite.cpp */,
 				10FEA9E51D06374700338F5B /* ExampleTestSuite.hpp */,
-				10A7B33F1CB32C3F00B78A7C /* ExampleTestClass.cpp */,
-				10A7B3401CB32C3F00B78A7C /* ExampleTestClass.hpp */,
+				10A7B33F1CB32C3F00B78A7C /* ExampleUnitTestClass.cpp */,
+				10A7B3401CB32C3F00B78A7C /* ExampleUnitTestClass.hpp */,
 				10A7B3411CB32C3F00B78A7C /* main.cpp */,
-				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				10A7B3331CB3293700B78A7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,7 +152,9 @@
 			files = (
 				10A7B3431CB32C3F00B78A7C /* main.cpp in Sources */,
 				10FEA9E71D06378800338F5B /* ExampleTestSuite.cpp in Sources */,
-				10A7B3421CB32C3F00B78A7C /* ExampleTestClass.cpp in Sources */,
+				109068721D42DC000086B32C /* ExampleIntegrationTestClass.cpp in Sources */,
+				10A7B3421CB32C3F00B78A7C /* ExampleUnitTestClass.cpp in Sources */,
+				109068751D42DCC10086B32C /* ExamplePerformanceTestClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

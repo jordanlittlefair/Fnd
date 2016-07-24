@@ -1,8 +1,10 @@
 #include "../Framework/TestSuite.hpp"
+#include "../Framework/ResultPrinterCollection.hpp"
+#include "../Framework/ConsoleResultPrinter.hpp"
+#include "../Framework/XmlResultPrinter.hpp"
 
 #include "../EntitySystemTests/EntitySystemTestSuite.hpp"
 
-#include "../Framework/ConsoleResultPrinter.hpp"
 
 #include <cassert>
 
@@ -12,8 +14,12 @@ int main()
 {
 	std::vector<TestSuitePtr> test_suites;
 	
-	ResultPrinterPtr result_printer = std::make_shared<ConsoleResultPrinter>();
+	std::shared_ptr<ResultPrinterCollection> result_printers = std::make_shared<ResultPrinterCollection>();
+	
+	result_printers->AddResultPrinter(std::make_shared<ConsoleResultPrinter>());
+	result_printers->AddResultPrinter(std::make_shared<XmlResultPrinter>("TestResults/FndTestResults"));
 
+	
 	/*
 		Add any TestSuites below
 	*/
@@ -21,15 +27,14 @@ int main()
 	test_suites.push_back( std::make_shared<EntitySystem::EntitySystemTestSuite>() );
 	
 	
-	
 	for (auto& test_suite : test_suites)
 	{
-		test_suite->SetResultPrinter(result_printer);
+		test_suite->SetResultPrinter(result_printers);
 
 		test_suite->Run();
 
 		assert( test_suite->GetResult().GetSucceeded() );
 	}
-
+	
 	return 0;
 }

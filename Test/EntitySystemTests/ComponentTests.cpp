@@ -5,7 +5,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ComponentTests::ComponentTests():
-	TestClass("ComponentTests")
+	UnitTestClass("ComponentTests")
 {
 	AddTestCase( "CheckIds", &ComponentTests::CheckIds, this );
 }

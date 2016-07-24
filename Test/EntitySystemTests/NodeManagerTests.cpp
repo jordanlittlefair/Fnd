@@ -9,7 +9,7 @@ using namespace Fnd::EntitySystem;
 
 
 NodeManagerTests::NodeManagerTests():
-	TestClass("NodeManagerTests")
+	UnitTestClass("NodeManagerTests")
 {
 	AddTestCase( "RegisterNode_Succeed", &NodeManagerTests::RegisterNode_Succeed, this );
 	AddTestCase( "RegisterNode_Duplicate_Fail", &NodeManagerTests::RegisterNode_Duplicate_Fail, this );

@@ -8,7 +8,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ComponentManagerTests::ComponentManagerTests():
-	TestClass("ComponentManagerTests")
+	UnitTestClass("ComponentManagerTests")
 {
 	AddTestCase( "RegisterComponent_Succeed", &ComponentManagerTests::RegisterComponent_Succeed, this );
 	AddTestCase( "RegisterComponent_Duplicate_Fail", &ComponentManagerTests::RegisterComponent_Duplicate_Fail, this );

@@ -8,7 +8,7 @@ using namespace Fnd::Test::EntitySystem;
 using namespace Fnd::EntitySystem;
 
 ComponentContainerTemplateTests::ComponentContainerTemplateTests():
-	TestClass("ComponentContainerTemplateTests")
+	UnitTestClass("ComponentContainerTemplateTests")
 {
 	AddTestCase( "CheckComponentId", &ComponentContainerTemplateTests::CheckComponentId, this );
 	AddTestCase( "CheckCreateComponent", &ComponentContainerTemplateTests::CheckCreateComponent, this );

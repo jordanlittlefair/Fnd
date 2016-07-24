@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Framework/TestClass.hpp"
+#include "../Framework/UnitTestClass.hpp"
 
 namespace Fnd
 {
@@ -12,7 +12,7 @@ namespace EntitySystem
 {
 
 class NodeTests:
-	public TestClass
+	public UnitTestClass
 {
 public:
 

@@ -6,7 +6,7 @@ using namespace Fnd::EntitySystem;
 using namespace Fnd::Test::EntitySystem;
 
 NodeContainerTests::NodeContainerTests():
-	TestClass("NodeContainerTests")
+	UnitTestClass("NodeContainerTests")
 {
 	AddTestCase("GetNodeId_Success", &NodeContainerTests::GetNodeId_Success, this);
 	AddTestCase("GetNodeNonConst_Success", &NodeContainerTests::GetNodeNonConst_Success, this);
