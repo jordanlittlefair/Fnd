@@ -13,7 +13,6 @@ LambdaTaskTests::LambdaTaskTests():
 	AddTestCase( "TestGetParentSystemId", &LambdaTaskTests::TestGetParentSystemId, this );
 	AddTestCase( "TestOnRunLambda", &LambdaTaskTests::TestOnRunLambda, this );
 	AddTestCase( "TestSuccessStates", &LambdaTaskTests::TestSuccessStates, this );
-	AddTestCase( "TestErrorStatesAndException", &LambdaTaskTests::TestErrorStatesAndException, this );
 }
 
 void LambdaTaskTests::TestGetParentSystemId( TestCase& test_case )
@@ -60,37 +59,4 @@ void LambdaTaskTests::TestSuccessStates( TestCase& test_case )
 	
 	test_case.Assert( runningState == Task::State::Running );
 	test_case.Assert( lt->GetState() == Task::State::Complete );
-}
-
-void LambdaTaskTests::TestErrorStatesAndException( TestCase& test_case )
-{
-	auto parent_system = std::make_shared<MockSystem>(123);
-	
-	Task::State runningState = Task::State::Pending;
-	
-	std::shared_ptr<Task> delegate;
-	
-	auto lt = CreateLambdaTask( parent_system, [&]() { runningState = delegate->GetState(); throw std::runtime_error("Forced exception"); } );
-	
-	delegate = lt;
-	
-	test_case.Assert( lt->GetState() == Task::State::Pending );
-	
-	lt->Run();
-	
-	test_case.Assert( runningState == Task::State::Running );
-	test_case.Assert( lt->GetState() == Task::State::ExceptionThrown );
-	
-	bool exceptionHit = false;
-	
-	try
-	{
-		lt->RethrowException();
-	}
-	catch (const std::runtime_error&)
-	{
-		exceptionHit = true;
-	}
-	
-	test_case.Assert(exceptionHit);
 }

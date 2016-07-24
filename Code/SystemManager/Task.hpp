@@ -19,23 +19,16 @@ public:
 	{
 		Pending,
 		Running,
-		Complete,
-		ExceptionThrown
+		Complete
 	};
 
 	Task( SystemPtr parent_system );
 
 	State GetState() const;
-	
-	void Wait();
-	
-	bool WaitTimeout( const std::chrono::nanoseconds& timeout );
 
 	void Run();
 	
-	SystemId	GetParentSystemId() const;
-	
-	void RethrowException();
+	SystemId GetParentSystemId() const;
 	
 protected:
 
@@ -45,12 +38,13 @@ private:
 
 	void SetState( const State state );
 	
-	std::condition_variable _completed_condition;
-	mutable std::mutex _state_mutex;
+private:
 	
 	SystemPtr _parent_system;
 	
 	State _state;
+	
+	mutable std::mutex _state_mutex;
 	
 	std::exception_ptr _exception;
 };

@@ -85,11 +85,11 @@
 			isa = PBXGroup;
 			children = (
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
-				105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */,
 				10DFC1931D3074A0001FD2FB /* ConcurrentTaskProcessorTests.cpp */,
 				10DFC1921D307496001FD2FB /* ConcurrentTaskProcessorTests.hpp */,
 				10A7B4401CC986F700B78A7C /* CyclicGraphCheckerTests.cpp */,
 				10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */,
+				105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */,
 				105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */,
 				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
 				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
