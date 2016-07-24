@@ -13,23 +13,36 @@
   <ItemGroup>
     <ClCompile Include="AssertResult.cpp" />
     <ClCompile Include="ConsoleResultPrinter.cpp" />
+    <ClCompile Include="IntegrationTestClass.cpp" />
+    <ClCompile Include="PerformanceTestClass.cpp" />
+    <ClCompile Include="ResultPrinterCollection.cpp" />
     <ClCompile Include="TestCase.cpp" />
     <ClCompile Include="TestCaseResult.cpp" />
     <ClCompile Include="TestClass.cpp" />
     <ClCompile Include="TestClassResult.cpp" />
     <ClCompile Include="TestSuite.cpp" />
     <ClCompile Include="TestSuiteResult.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="UnitTestClass.cpp" />
+    <ClCompile Include="XmlResultPrinter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertResult.hpp" />
     <ClInclude Include="ConsoleResultPrinter.hpp" />
+    <ClInclude Include="IntegrationTestClass.hpp" />
     <ClInclude Include="IResultPrinter.hpp" />
+    <ClInclude Include="PerformanceTestClass.hpp" />
+    <ClInclude Include="ResultPrinterCollection.hpp" />
     <ClInclude Include="TestCase.hpp" />
     <ClInclude Include="TestCaseResult.hpp" />
     <ClInclude Include="TestClass.hpp" />
     <ClInclude Include="TestClassResult.hpp" />
     <ClInclude Include="TestSuite.hpp" />
     <ClInclude Include="TestSuiteResult.hpp" />
+    <ClInclude Include="TestType.hpp" />
+    <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="UnitTestClass.hpp" />
+    <ClInclude Include="XmlResultPrinter.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F9A2F267-9FE6-4E93-8C17-2F4D1EF732DD}</ProjectGuid>

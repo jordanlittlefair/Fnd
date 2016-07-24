@@ -7,7 +7,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 SystemGraphNodeTests::SystemGraphNodeTests():
-	TestClass("SystemGraphNodeTests")
+	UnitTestClass("SystemGraphNodeTests")
 {
 	AddTestCase( "SetAndGetId", &SystemGraphNodeTests::SetAndGetId, this );
 	AddTestCase( "GetWeightDefault", &SystemGraphNodeTests::GetWeightDefault, this );

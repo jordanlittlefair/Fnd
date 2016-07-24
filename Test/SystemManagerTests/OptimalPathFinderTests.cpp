@@ -40,7 +40,7 @@ bool InOrder( const SystemId& before, const SystemId& after, const std::vector<S
 }
 
 OptimalPathFinderTests::OptimalPathFinderTests():
-	TestClass("OptimalPathFinderTests")
+	UnitTestClass("OptimalPathFinderTests")
 {
 	AddTestCase( "TestConstructor", &OptimalPathFinderTests::TestConstructor, this );
 	AddTestCase( "TestClearSystemNodes", &OptimalPathFinderTests::TestClearSystemNodes, this );

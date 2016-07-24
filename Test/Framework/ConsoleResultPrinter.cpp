@@ -10,11 +10,13 @@ void ConsoleResultPrinter::PrintBeginTestSuiteResult(const std::string& descript
 		<< description << "...\n";
 }
 	
-void ConsoleResultPrinter::PrintBeginTestClassResult(const std::string& description)
+void ConsoleResultPrinter::PrintBeginTestClassResult(const TestType test_type, const std::string& description)
 {
 	std::cout 
 		<< "\t"
-		<< description << "...\n";
+		<< description
+		<< " [" << GetTestTypeString(test_type) << "]"
+		<< "...\n";
 }
 
 void ConsoleResultPrinter::PrintBeginTestCaseResult(const std::string& description)
@@ -25,7 +27,8 @@ void ConsoleResultPrinter::PrintEndTestSuiteResult(const TestSuiteResult& test_s
 {
 	std::cout
 		<< (test_suite_result.GetSucceeded() ? "Succeeded" : "Failed")
-		<< " [" << test_suite_result.GetNumTestClassesSucceeded() << '/' << test_suite_result.GetNumTestClasses() << " Test Classes]\n";
+		<< " [" << test_suite_result.GetNumTestClassesSucceeded() << '/' << test_suite_result.GetNumTestClasses() << " Test Classes] "
+		<< "[Time Taken: " << Timer::ToSeconds<double>(test_suite_result.GetTimeElapsed()) << "]\n";
 }
 	
 void ConsoleResultPrinter::PrintEndTestClassResult(const TestClassResult& test_class_result)
@@ -33,7 +36,8 @@ void ConsoleResultPrinter::PrintEndTestClassResult(const TestClassResult& test_c
 	std::cout
 		<< "\t"
 		<< (test_class_result.GetSucceeded() ? "Succeeded" : "Failed")
-		<< " [" << test_class_result.GetNumTestCasesSucceeded() << "/" << test_class_result.GetNumTestCases() << " Test Cases]\n";
+		<< " [" << test_class_result.GetNumTestCasesSucceeded() << "/" << test_class_result.GetNumTestCases() << " Test Cases] "
+		<< "[Time Taken: " << Timer::ToSeconds<double>(test_class_result.GetTimeElapsed()) << "]\n";
 }
 
 void ConsoleResultPrinter::PrintEndTestCaseResult(const TestCaseResult& test_case_result)
@@ -42,5 +46,6 @@ void ConsoleResultPrinter::PrintEndTestCaseResult(const TestCaseResult& test_cas
 		<< "\t\t"
 		<< test_case_result.GetDescription()
 		<< ": " << (test_case_result.GetSucceeded() ? "Succeeded" : "Failed")
-		<< " [" << test_case_result.GetNumAssertsSucceeded() << "/" << test_case_result.GetNumAsserts() << " Asserts]\n";
+		<< " [" << test_case_result.GetNumAssertsSucceeded() << "/" << test_case_result.GetNumAsserts() << " Asserts] "
+		<< "[Time Taken: " << Timer::ToSeconds<double>(test_case_result.GetTimeElapsed()) << "]\n";
 }

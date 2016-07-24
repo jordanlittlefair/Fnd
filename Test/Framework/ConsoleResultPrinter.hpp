@@ -17,7 +17,7 @@ public:
 
 	void PrintBeginTestSuiteResult(const std::string& description);
 	
-	void PrintBeginTestClassResult(const std::string& description);
+	void PrintBeginTestClassResult(const TestType test_type, const std::string& description);
 
 	void PrintBeginTestCaseResult(const std::string& description);
 

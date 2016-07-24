@@ -10,7 +10,7 @@ using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 
 TaskManagerTests::TaskManagerTests():
-	TestClass("TaskManagerTests")
+	UnitTestClass("TaskManagerTests")
 {
 	AddTestCase( "Constructor_IsInitialised_False", &TaskManagerTests::Constructor_IsInitialised_False, this );
 	AddTestCase( "Initialise_DefaultProviderConsumer_AreSet", &TaskManagerTests::Initialise_DefaultProviderConsumer_AreSet, this );

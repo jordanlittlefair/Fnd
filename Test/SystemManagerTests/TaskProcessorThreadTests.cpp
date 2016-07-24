@@ -8,7 +8,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 TaskProcessorThreadTests::TaskProcessorThreadTests():
-TestClass("TaskProcessorThreadTests")
+UnitTestClass("TaskProcessorThreadTests")
 {
 	AddTestCase( "IsAlive_BeforeStart_False", &TaskProcessorThreadTests::IsAlive_BeforeStart_False, this );
 	AddTestCase( "IsAlive_AfterStart_True", &TaskProcessorThreadTests::IsAlive_AfterStart_True, this );

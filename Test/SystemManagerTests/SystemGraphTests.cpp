@@ -39,7 +39,7 @@ namespace
 }
 
 SystemGraphTests::SystemGraphTests():
-TestClass("SystemGraphTests")
+UnitTestClass("SystemGraphTests")
 {
 	AddTestCase( "TestUpdateSystemNodes_Empty", &SystemGraphTests::TestUpdateSystemNodes_Empty, this );
 	AddTestCase( "TestUpdateSystemNodes_DuplicateIds", &SystemGraphTests::TestUpdateSystemNodes_DuplicateIds, this );

@@ -7,7 +7,7 @@ using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 
 SystemTests::SystemTests():
-	TestClass("SystemTests")
+	UnitTestClass("SystemTests")
 {
 	AddTestCase( "TestGetId", &SystemTests::TestGetId, this );
 	AddTestCase( "TestAddDependency", &SystemTests::TestAddDependency, this );

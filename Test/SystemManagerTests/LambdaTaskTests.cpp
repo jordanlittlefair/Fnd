@@ -8,7 +8,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 LambdaTaskTests::LambdaTaskTests():
-	TestClass("LambdaTaskTests")
+	UnitTestClass("LambdaTaskTests")
 {
 	AddTestCase( "TestGetParentSystemId", &LambdaTaskTests::TestGetParentSystemId, this );
 	AddTestCase( "TestOnRunLambda", &LambdaTaskTests::TestOnRunLambda, this );

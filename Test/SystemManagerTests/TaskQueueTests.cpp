@@ -12,7 +12,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 TaskQueueTests::TaskQueueTests():
-TestClass("TaskQueueTests")
+UnitTestClass("TaskQueueTests")
 {
 	AddTestCase( "IsAlive_OnStartup_True", &TaskQueueTests::IsAlive_OnStartup_True, this );
 	AddTestCase( "IsAlive_AfterKill_False", &TaskQueueTests::IsAlive_AfterKill_False, this );

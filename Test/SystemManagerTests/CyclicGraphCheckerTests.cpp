@@ -7,7 +7,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 CyclicGraphCheckerTests::CyclicGraphCheckerTests():
-	TestClass("CyclicGraphCheckerTests")
+	UnitTestClass("CyclicGraphCheckerTests")
 {
 	AddTestCase( "TestConstructor", &CyclicGraphCheckerTests::TestConstructor, this );
 	AddTestCase( "TestClearSystemNodes", &CyclicGraphCheckerTests::TestClearSystemNodes, this );

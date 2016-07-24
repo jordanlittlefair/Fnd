@@ -10,7 +10,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 TaskTests::TaskTests():
-	TestClass("TaskTests")
+	UnitTestClass("TaskTests")
 {
 	AddTestCase( "TestGetParentSystemId", &TaskTests::TestGetParentSystemId, this );
 	AddTestCase( "TestRun", &TaskTests::TestRun, this );

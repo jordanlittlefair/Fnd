@@ -2,6 +2,7 @@
 
 #include "TestCase.hpp"
 #include "TestClassResult.hpp"
+#include "TestType.hpp"
 
 #include <memory>
 #include <vector>
@@ -17,6 +18,8 @@ class TestClass
 public:
 	
 	void SetResultPrinter(ResultPrinterPtr result_printer);
+	
+	TestType GetTestType() const;
 
 	void Run();
 	
@@ -26,7 +29,7 @@ public:
 	
 protected:
 
-	TestClass( const std::string& desciption );
+	TestClass(const TestType type, const std::string& desciption);
 
 	template <typename FunctionType,typename DerivedType>
 	void AddTestCase( const std::string& name, FunctionType function, DerivedType* ptr )
@@ -47,6 +50,8 @@ private:
 	void AddTestCase( TestCasePtr test_case );
 	
 private:
+	
+	const TestType _type;
 	
 	std::vector<TestCasePtr> _test_cases;
 

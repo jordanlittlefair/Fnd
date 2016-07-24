@@ -11,7 +11,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 ConcurrentTaskProcessorTests::ConcurrentTaskProcessorTests():
-	TestClass("ConcurrentTaskProcessorTests")
+	UnitTestClass("ConcurrentTaskProcessorTests")
 {
 	AddTestCase( "IsRunning_BeforeStart_False", &ConcurrentTaskProcessorTests::IsRunning_BeforeStart_False, this );
 	AddTestCase( "IsRunning_AfterStart_True", &ConcurrentTaskProcessorTests::IsRunning_AfterStart_True, this );

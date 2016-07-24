@@ -2,7 +2,8 @@
 
 using namespace Fnd::Test;
 
-TestClass::TestClass( const std::string& description ):
+TestClass::TestClass(const TestType type, const std::string& description):
+	_type(type),
 	_result(description)
 {
 }
@@ -12,14 +13,21 @@ void TestClass::SetResultPrinter(ResultPrinterPtr result_printer)
 	_result_printer = result_printer;
 }
 
+TestType TestClass::GetTestType() const
+{
+	return _type;
+}
+
 void TestClass::Run()
 {
 	SetupClass();
 
 	if (_result_printer)
 	{
-		_result_printer->PrintBeginTestClassResult(_result.GetDescription());
+		_result_printer->PrintBeginTestClassResult(_type, _result.GetDescription());
 	}
+	
+	_result.StartTimer();
 
 	for ( auto& test_case : _test_cases )
 	{
@@ -33,6 +41,8 @@ void TestClass::Run()
 		
 		CleanupTest();
 	}
+	
+	_result.EndTimer();
 	
 	if (_result_printer)
 	{

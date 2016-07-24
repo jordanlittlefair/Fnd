@@ -11,6 +11,16 @@ TestSuiteResult::TestSuiteResult( const std::string& description ):
 {
 }
 
+void TestSuiteResult::StartTimer()
+{
+	_timer.Start();
+}
+
+void TestSuiteResult::EndTimer()
+{
+	_timer.End();
+}
+
 void TestSuiteResult::AddTestClassResult( const TestClassResult& test_class_result )
 {
 	_succeeded = _succeeded && test_class_result.GetSucceeded();
@@ -52,6 +62,11 @@ unsigned int TestSuiteResult::GetNumTestClassesSucceeded() const
 unsigned int TestSuiteResult::GetNumTestClassesFailed() const
 {
 	return _num_test_classes_failed;
+}
+
+Timer::Duration TestSuiteResult::GetTimeElapsed() const
+{
+	return _timer.GetTimeElapsed();
 }
 
 const std::vector<TestClassResult> TestSuiteResult::GetTestClasses() const

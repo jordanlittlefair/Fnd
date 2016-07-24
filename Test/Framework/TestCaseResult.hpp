@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AssertResult.hpp"
+#include "Timer.hpp"
 
 #include <vector>
 
@@ -23,6 +24,10 @@ public:
 	//TestCaseResult( const TestCaseResult& ) = default;
 	//TestCaseResult& operator=( const TestCaseResult& ) = default;
 	
+	void StartTimer();
+	
+	void EndTimer();
+	
 	void AddAssertResult( const AssertResult& assert_result );
 	
 	std::string GetDescription() const;
@@ -32,12 +37,15 @@ public:
 	unsigned int GetNumAsserts() const;
 	unsigned int GetNumAssertsSucceeded() const;
 	unsigned int GetNumAssertsFailed() const;
+	Timer::Duration GetTimeElapsed() const;
 	
 	const std::vector<AssertResult>& GetAssertResults() const;
 	
 private:
 
 	std::string _description;
+	
+	Timer _timer;
 
 	bool _succeeded;
 

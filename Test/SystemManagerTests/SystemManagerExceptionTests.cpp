@@ -7,7 +7,7 @@ using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
 SystemManagerExceptionTests::SystemManagerExceptionTests():
-	TestClass("SystemManagerExceptionTests")
+	UnitTestClass("SystemManagerExceptionTests")
 {
 	AddTestCase( "SystemManagerExceptionTests", &SystemManagerExceptionTests::TestInvalidSystemIdException, this );
 	AddTestCase( "TestInvalidSystemDependenciesException", &SystemManagerExceptionTests::TestInvalidSystemDependenciesException, this );
