@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TestClassResult.hpp"
+#include "Timer.hpp"
 
 #include <string>
 #include <vector>
@@ -24,6 +25,10 @@ public:
 	//TestSuiteResult( const TestSuiteResult& ) = default;
 	//TestSuiteResult& operator=( const TestSuiteResult& ) = default;
 	
+	void StartTimer();
+	
+	void EndTimer();
+	
 	void AddTestClassResult( const TestClassResult& test_class_result );
 	
 	std::string GetDescription() const;
@@ -33,6 +38,7 @@ public:
 	unsigned int GetNumTestClasses() const;
 	unsigned int GetNumTestClassesSucceeded() const;
 	unsigned int GetNumTestClassesFailed() const;
+	Timer::Duration GetTimeElapsed() const;
 
 	const std::vector<TestClassResult> GetTestClasses() const;
 	
@@ -41,6 +47,8 @@ private:
 	std::string _description;
 
 	bool _succeeded;
+	
+	Timer _timer;
 
 	unsigned int _num_test_classes;
 	unsigned int _num_test_classes_succeeded;

@@ -18,6 +18,8 @@ public:
 
 	void Run();
 	
+	void Run(const TestType type);
+	
 	const TestSuiteResult& GetResult() const;
 	
 	virtual ~TestSuite();
@@ -34,6 +36,10 @@ protected:
 	
 	void AddTestClass( TestClassPtr test_class );
 
+private:
+	
+	void SortTestClasses();
+	
 private:
 	
 	std::vector<TestClassPtr> _test_classes;
