@@ -19,6 +19,7 @@
     <ClCompile Include="SystemGraph.cpp" />
     <ClCompile Include="SystemGraphNode.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskManager.cpp" />
     <ClCompile Include="TaskProcessorThread.cpp" />
     <ClCompile Include="TaskQueue.cpp" />
   </ItemGroup>
@@ -37,6 +38,7 @@
     <ClInclude Include="SystemGraphNode.hpp" />
     <ClInclude Include="SystemId.hpp" />
     <ClInclude Include="Task.hpp" />
+    <ClInclude Include="TaskManager.hpp" />
     <ClInclude Include="TaskProcessorThread.hpp" />
     <ClInclude Include="TaskQueue.hpp" />
   </ItemGroup>
