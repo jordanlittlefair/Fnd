@@ -11,10 +11,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ExampleTestClass.hpp">
+    <ClInclude Include="ExampleTestSuite.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExampleTestSuite.hpp">
+    <ClInclude Include="ExampleIntegrationTestClass.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExamplePerformanceTestClass.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExampleUnitTestClass.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -22,10 +28,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExampleTestClass.cpp">
+    <ClCompile Include="ExampleTestSuite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExampleTestSuite.cpp">
+    <ClCompile Include="ExampleIntegrationTestClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExamplePerformanceTestClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExampleUnitTestClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
