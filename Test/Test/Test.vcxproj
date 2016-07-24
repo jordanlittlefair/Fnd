@@ -80,12 +80,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ExampleTestClass.hpp" />
+    <ClInclude Include="ExampleIntegrationTestClass.hpp" />
+    <ClInclude Include="ExamplePerformanceTestClass.hpp" />
     <ClInclude Include="ExampleTestSuite.hpp" />
+    <ClInclude Include="ExampleUnitTestClass.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExampleTestClass.cpp" />
+    <ClCompile Include="ExampleIntegrationTestClass.cpp" />
+    <ClCompile Include="ExamplePerformanceTestClass.cpp" />
     <ClCompile Include="ExampleTestSuite.cpp" />
+    <ClCompile Include="ExampleUnitTestClass.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

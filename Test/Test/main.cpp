@@ -10,6 +10,7 @@ using namespace Fnd::Test;
 
 int main()
 {
+	{
 	ExampleTestSuite test_suite;
 	
 	std::shared_ptr<ResultPrinterCollection> result_printers = std::make_shared<ResultPrinterCollection>();
@@ -23,5 +24,6 @@ int main()
 	
 	TestSuiteResult result = test_suite.GetResult();
 		
+	}
 	return 0;
 }
