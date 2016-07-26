@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AssertNodeType.hpp"
 #include "NodeContainer.hpp"
 #include "NodeTemplate.hpp"
 #include "Exceptions.hpp"
@@ -18,6 +19,8 @@ class NodeContainerTemplate:
 	public NodeContainer
 {
 public:
+
+	static_assert(AssertNodeType<NodeTypeT>::IsValid,"NodeType must be valid");
 
 	typedef NodeTypeT NodeType;
 

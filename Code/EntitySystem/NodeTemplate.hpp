@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AssertNodeType.hpp"
 #include "ComponentManager.hpp"
 #include "Node.hpp"
 
@@ -15,9 +16,7 @@ class NodeTemplate:
 {
 public:
 
-	static_assert( sizeof(typename NodeType::Components), "NodeType must define a Components struct" );
-	static_assert( sizeof(typename NodeType::ComponentsConst), "NodeType must define a ComponentsConst struct" );
-	static_assert( sizeof(typename NodeType::Components) == sizeof(typename NodeType::ComponentsConst), "Components must be the same size as ComponentsConst" );
+	static_assert(AssertNodeType<NodeType>::IsValid,"NodeType must be valid");
 	
 	typedef typename NodeType::Components Components;
 	typedef typename NodeType::ComponentsConst ComponentsConst;

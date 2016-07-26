@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertComponentType.hpp" />
+    <ClInclude Include="AssertNodeType.hpp" />
     <ClInclude Include="BasicEntityIdGenerator.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentContainer.hpp" />
