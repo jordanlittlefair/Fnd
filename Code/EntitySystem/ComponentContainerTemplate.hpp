@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AssertComponentType.hpp"
 #include "ComponentContainer.hpp"
 #include "ComponentTemplate.hpp"
 #include "Exceptions.hpp"
@@ -18,6 +19,8 @@ class ComponentContainerTemplate:
 	public ComponentContainer
 {
 public:
+
+	static_assert(AssertComponentType<ComponentTypeT>::IsValid, "ComponentType must be valid");
 
 	typedef ComponentTypeT ComponentType;
 

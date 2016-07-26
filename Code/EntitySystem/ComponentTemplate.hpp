@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AssertComponentType.hpp"
 #include "Component.hpp"
 
 namespace Fnd
@@ -14,7 +15,7 @@ class ComponentTemplate:
 {
 public:
 	
-	static_assert( sizeof(typename ComponentType::Data), "ComponentType must define a Data struct" );
+	static_assert(AssertComponentType<ComponentType>::IsValid, "ComponentType must be valid");
 	
 	typedef typename ComponentType::Data ComponentData;
 
