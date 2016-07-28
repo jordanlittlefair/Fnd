@@ -34,6 +34,8 @@ private:
 	void Kill_BeforeStart_DoNothing(TestCase& test_case);
 	void Kill_AfterStart_Success(TestCase& test_case);
 	void Kill_Twice_DoNothing(TestCase& test_case);
+	
+	// All WaitForTasks() and WaitForTasksWithIds(,) tests are handled in TaskQueueTests - TaskManager is just a wrapper
 };
 
 }

@@ -1,6 +1,7 @@
 #include "TaskQueueTests.hpp"
 
 #include "MockSystem.hpp"
+#include "MockTask.hpp"
 
 #include "../../Code/SystemManager/TaskQueue.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
@@ -27,6 +28,15 @@ UnitTestClass("TaskQueueTests")
 	AddTestCase( "GetNumTasks_None", &TaskQueueTests::GetNumTasks_None, this );
 	AddTestCase( "GetNumTasks_OnePending", &TaskQueueTests::GetNumTasks_OnePending, this );
 	AddTestCase( "GetNumTasks_OnePendingOneRunning", &TaskQueueTests::GetNumTasks_OnePendingOneRunning, this );
+	AddTestCase( "WaitForTasks_NoTasks_Return", &TaskQueueTests::WaitForTasks_NoTasks_Return, this );
+	AddTestCase( "WaitForTasks_OneTask_WaitThenReturn", &TaskQueueTests::WaitForTasks_OneTask_WaitThenReturn, this );
+	AddTestCase( "WaitForTasks_TwoTasks_WaitThenReturn", &TaskQueueTests::WaitForTasks_TwoTasks_WaitThenReturn, this );
+	AddTestCase( "WaitForTasksWithIds_NoTasks_Return", &TaskQueueTests::WaitForTasksWithIds_NoTasks_Return, this );
+	AddTestCase( "WaitForTasksWithIds_OneMatchingTask_WaitThenReturn", &TaskQueueTests::WaitForTasksWithIds_OneMatchingTask_WaitThenReturn, this );
+	AddTestCase( "WaitForTasksWithIds_TwoMatchingTasksSameId_WaitThenReturn", &TaskQueueTests::WaitForTasksWithIds_TwoMatchingTasksSameId_WaitThenReturn, this );
+	AddTestCase( "WaitForTasksWithIds_TwoMatchingTasksDifferentIds_WaitThenReturn", &TaskQueueTests::WaitForTasksWithIds_TwoMatchingTasksDifferentIds_WaitThenReturn, this );
+	AddTestCase( "WaitForTasksWithIds_NoMatchingIds_Return", &TaskQueueTests::WaitForTasksWithIds_NoMatchingIds_Return, this );
+	AddTestCase( "WaitForTasksWithIds_OneMatchingOneNotMatching_WaitThenReturn", &TaskQueueTests::WaitForTasksWithIds_OneMatchingOneNotMatching_WaitThenReturn, this );
 }
 
 void TaskQueueTests::IsAlive_OnStartup_True(TestCase& test_case)
@@ -248,5 +258,620 @@ void TaskQueueTests::GetNumTasks_OnePendingOneRunning(TestCase& test_case)
 	
 	test_case.Assert(tq.GetNumPendingTasks() == 1);
 	test_case.Assert(tq.GetNumTasks() == 1);
+}
+
+void TaskQueueTests::WaitForTasks_NoTasks_Return(TestCase& test_case)
+{
+	TaskQueue tq;
 	
+	tq.WaitForTasks();
+}
+
+void TaskQueueTests::WaitForTasks_OneTask_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system = std::make_shared<MockSystem>(123);
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex;
+	std::atomic<bool> task_running(false);
+	std::condition_variable task_running_condition;
+	TaskPtr task = CreateLambdaTask(system, [&]()
+	{
+		std::unique_lock<std::mutex> lock(task_mutex);
+		
+		// Wait for the task to start
+		task_running_condition.wait(lock,[&]
+		{
+			return task_running.load();
+		});
+		
+		// Then wait for it to end
+		task_running_condition.wait(lock,[&]
+		{
+			return !task_running;
+		});
+	});
+	
+	// Add the task so there's something to wait for
+	tq.SubmitTask(task);
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+		
+		tq.WaitForTasks();
+		
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		tq.RunNextTask(true);
+	});
+	
+	// Force the task to start
+	task_running = true;
+	task_running_condition.notify_all();
+	
+	// The task is now running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Force the task to complete
+	task_running = false;
+	
+	task_running_condition.notify_all();
+
+	// Make sure the waiting_thread has finished now the task has completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasks_TwoTasks_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system = std::make_shared<MockSystem>(123);
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex[2];
+	std::atomic<bool> task_running[2];
+	task_running[0] = task_running[1] = false;
+	std::condition_variable task_running_condition[2];
+	TaskPtr task[2];
+	for(int i = 0; i < 2; ++i)
+	{
+		task[i] = CreateLambdaTask(system, [&,i]()
+		{
+			std::unique_lock<std::mutex> lock(task_mutex[i]);
+			
+			// Wait for the task to start
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !!task_running[i];
+			});
+			
+			// Then wait for it to end
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !task_running[i];
+			});
+		});
+	}
+	
+	// Add the task so there's something to wait for
+	for(int i = 0; i < 2; ++i)
+	{
+		tq.SubmitTask(task[i]);
+	}
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+		 
+		tq.WaitForTasks();
+		
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		for(int i = 0; i < 2; ++i)
+		{
+			tq.RunNextTask(true);
+		}
+	});
+	
+	// The task waiting to run and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the first task
+	task_running[0] = true;
+	task_running_condition[0].notify_all();
+	
+	// The first task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the first task
+	task_running[0] = false;
+	task_running_condition[0].notify_all();
+	
+	// The first task has completed and the waiting_thread is waiting for the next task
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the second task
+	task_running[1] = true;
+	task_running_condition[1].notify_all();
+	
+	// The second task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the second task
+	task_running[1] = false;
+	task_running_condition[1].notify_all();
+	
+	// Make sure the waiting_thread has finished now the tasks have completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_NoTasks_Return(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	tq.WaitForTasks();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_OneMatchingTask_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system = std::make_shared<MockSystem>(123);
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex;
+	std::atomic<bool> task_running(false);
+	std::condition_variable task_running_condition;
+	TaskPtr task = CreateLambdaTask(system, [&]()
+	{
+		std::unique_lock<std::mutex> lock(task_mutex);
+		
+		// Wait for the task to start
+		task_running_condition.wait(lock,[&]
+		{
+			return task_running.load();
+		});
+		
+		// Then wait for it to end
+		task_running_condition.wait(lock,[&]
+		{
+			return !task_running;
+		});
+	});
+	
+	// Add the task so there's something to wait for
+	tq.SubmitTask(task);
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+		
+		SystemId system_ids[] = { system->GetId() };
+		tq.WaitForTasks(system_ids, 1);
+		 
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		tq.RunNextTask(true);
+	});
+	
+	// Force the task to start
+	task_running = true;
+	task_running_condition.notify_all();
+	
+	// The task is now running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Force the task to complete
+	task_running = false;
+	task_running_condition.notify_all();
+	
+	// Make sure the waiting_thread has finished now the task has completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_TwoMatchingTasksSameId_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system = std::make_shared<MockSystem>(123);
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex[2];
+	std::atomic<bool> task_running[2];
+	task_running[0] = task_running[1] = false;
+	std::condition_variable task_running_condition[2];
+	TaskPtr task[2];
+	for(int i = 0; i < 2; ++i)
+	{
+		task[i] = CreateLambdaTask(system, [&,i]()
+		{
+			std::unique_lock<std::mutex> lock(task_mutex[i]);
+		   
+			// Wait for the task to start
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !!task_running[i];
+			});
+		   
+			// Then wait for it to end
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !task_running[i];
+			});
+		});
+	}
+	
+	// Add the task so there's something to wait for
+	for(int i = 0; i < 2; ++i)
+	{
+		tq.SubmitTask(task[i]);
+	}
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+		
+		SystemId system_ids[] = { system->GetId() };
+		
+		tq.WaitForTasks(system_ids, 1);
+		 
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		for(int i = 0; i < 2; ++i)
+		{
+			tq.RunNextTask(true);
+		}
+	});
+	
+	// The task waiting to run and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the first task
+	task_running[0] = true;
+	task_running_condition[0].notify_all();
+	
+	// The first task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the first task
+	task_running[0] = false;
+	task_running_condition[0].notify_all();
+	
+	// The first task has completed and the waiting_thread is waiting for the next task
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the second task
+	task_running[1] = true;
+	task_running_condition[1].notify_all();
+	
+	// The second task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the second task
+	task_running[1] = false;
+	task_running_condition[1].notify_all();
+	
+	// Make sure the waiting_thread has finished now the tasks have completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_TwoMatchingTasksDifferentIds_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system[] = { std::make_shared<MockSystem>(123), std::make_shared<MockSystem>(456) };
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex[2];
+	std::atomic<bool> task_running[2];
+	task_running[0] = task_running[1] = false;
+	std::condition_variable task_running_condition[2];
+	TaskPtr task[2];
+	for(int i = 0; i < 2; ++i)
+	{
+		task[i] = CreateLambdaTask(system[i], [&,i]()
+		{
+			std::unique_lock<std::mutex> lock(task_mutex[i]);
+
+			// Wait for the task to start
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !!task_running[i];
+			});
+
+			// Then wait for it to end
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !task_running[i];
+			});
+		});
+	}
+	
+	// Add the task so there's something to wait for
+	for(int i = 0; i < 2; ++i)
+	{
+		tq.SubmitTask(task[i]);
+	}
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+
+		SystemId system_ids[] = { system[0]->GetId(), system[1]->GetId() };
+
+		tq.WaitForTasks(system_ids, 2);
+
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		for(int i = 0; i < 2; ++i)
+		{
+			tq.RunNextTask(true);
+		}
+	});
+	
+	// The task waiting to run and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the first task
+	task_running[0] = true;
+	task_running_condition[0].notify_all();
+	
+	// The first task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the first task
+	task_running[0] = false;
+	task_running_condition[0].notify_all();
+	
+	// The first task has completed and the waiting_thread is waiting for the next task
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the second task
+	task_running[1] = true;
+	task_running_condition[1].notify_all();
+	
+	// The second task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the second task
+	task_running[1] = false;
+	task_running_condition[1].notify_all();
+	
+	// Make sure the waiting_thread has finished now the tasks have completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_NoMatchingIds_Return(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system = std::make_shared<MockSystem>(123);
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex;
+	std::atomic<bool> task_running(false);
+	std::condition_variable task_running_condition;
+	TaskPtr task = CreateLambdaTask(system, [&]()
+	{
+		std::unique_lock<std::mutex> lock(task_mutex);
+
+		// Wait for the task to start
+		task_running_condition.wait(lock,[&]
+		{
+			return task_running.load();
+		});
+
+		// Then wait for it to end
+		task_running_condition.wait(lock,[&]
+		{
+			return !task_running;
+		});
+	});
+	
+	// Add the task so there's something to wait for
+	tq.SubmitTask(task);
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+
+		SystemId system_ids[] = { 456 };
+		tq.WaitForTasks(system_ids, 1);
+
+		is_waiting = false;
+	});
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		tq.RunNextTask(true);
+	});
+	
+	// Force the task to start
+	task_running = true;
+	task_running_condition.notify_all();
+	
+	// The task is now running but the waiting_thread should not be waiting
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(!is_waiting, "Must be waiting");
+	
+	// Force the task to complete
+	task_running = false;
+	task_running_condition.notify_all();
+	
+	// Make sure the waiting_thread has finished now the task has completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
+}
+
+void TaskQueueTests::WaitForTasksWithIds_OneMatchingOneNotMatching_WaitThenReturn(TestCase& test_case)
+{
+	TaskQueue tq;
+	
+	SystemPtr system[] = { std::make_shared<MockSystem>(123), std::make_shared<MockSystem>(456) };
+	
+	// The task will 'run' and only complete once task_running is set to false and the condition is notified
+	std::mutex task_mutex[2];
+	std::atomic<bool> task_running[2];
+	task_running[0] = task_running[1] = false;
+	std::condition_variable task_running_condition[2];
+	TaskPtr task[2];
+	for(int i = 0; i < 2; ++i)
+	{
+		task[i] = CreateLambdaTask(system[i], [&,i]()
+		{
+			std::unique_lock<std::mutex> lock(task_mutex[i]);
+		   
+			// Wait for the task to start
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !!task_running[i];
+			});
+			
+			// Then wait for it to end
+			task_running_condition[i].wait(lock,[&]
+			{
+				return !task_running[i];
+			});
+	   });
+	}
+	
+	// Add the task so there's something to wait for
+	for(int i = 0; i < 2; ++i)
+	{
+		tq.SubmitTask(task[i]);
+	}
+	
+	std::atomic<bool> is_waiting(false);
+	// This thread will wait for the task to complete and set the flag
+	std::thread waiting_thread = std::thread([&]()
+	{
+		is_waiting = true;
+		
+		SystemId system_ids[] = { system[0]->GetId() };
+		
+		tq.WaitForTasks(system_ids,1);
+		
+		is_waiting = false;
+	 });
+	
+	// This thread will process the tasks
+	std::thread running_thread = std::thread([&]()
+	{
+		for(int i = 0; i < 2; ++i)
+		{
+			tq.RunNextTask(true);
+		}
+	});
+	
+	// The task waiting to run and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Start the first task
+	task_running[0] = true;
+	task_running_condition[0].notify_all();
+	
+	// The first task is running and the waiting_thread is waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(is_waiting, "Must be waiting");
+	
+	// Finish the first task
+	task_running[0] = false;
+	task_running_condition[0].notify_all();
+	
+	// The first task has completed and the waiting_thread doesn't need to wait for the second task
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	// Start the second task
+	task_running[1] = true;
+	task_running_condition[1].notify_all();
+	
+	// The second task is running but the waiting_thread is not waiting for it
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	// Finish the second task
+	task_running[1] = false;
+	task_running_condition[1].notify_all();
+	
+	// Make sure the waiting_thread has finished now the tasks have completed
+	std::this_thread::sleep_for(std::chrono::milliseconds(5));
+	waiting_thread.join();
+	test_case.Assert(!is_waiting, "Must not be waiting");
+	
+	running_thread.join();
 }

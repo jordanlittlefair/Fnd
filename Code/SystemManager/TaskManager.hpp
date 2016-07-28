@@ -23,6 +23,10 @@ public:
 	
 	void Start();
 	
+	void WaitForTasks() const;
+	
+	void WaitForTasks(const SystemId system_ids[], const unsigned int num_ids) const;
+	
 	void Kill();
 	
 	void SetTaskConsumer(TaskConsumerPtr task_consumer);

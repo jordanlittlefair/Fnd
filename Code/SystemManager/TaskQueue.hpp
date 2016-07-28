@@ -25,6 +25,10 @@ public:
 	
 	void RunNextTask(const bool wait);
 	
+	void WaitForTasks() const;
+	
+	void WaitForTasks(const SystemId system_ids[], const unsigned int num_ids) const;
+	
 	unsigned int GetNumPendingTasks() const;
 	
 	unsigned int GetNumTasks() const;
@@ -51,7 +55,7 @@ private:
 	
 	std::queue<TaskPtr> _pending_tasks;
 	mutable std::mutex _tasks_mutex;
-	std::condition_variable _has_pending_condition;
+	mutable std::condition_variable _has_pending_condition;
 };
 
 }

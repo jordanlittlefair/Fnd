@@ -62,6 +62,16 @@ void TaskManager::Start()
 	_task_consumer->Start();
 }
 
+void TaskManager::WaitForTasks() const
+{
+	_task_provider->WaitForTasks();
+}
+
+void TaskManager::WaitForTasks(const SystemId system_ids[], const unsigned int num_ids) const
+{
+	_task_provider->WaitForTasks(system_ids, num_ids);
+}
+
 void TaskManager::Kill()
 {
 	if (!_is_initialised)

@@ -24,6 +24,10 @@ public:
 	
 	void RunNextTask(const bool wait);
 	
+	void WaitForTasks() const;
+	
+	void WaitForTasks(const Fnd::SystemManager::SystemId system_ids[], const unsigned int num_ids) const;
+	
 	void TriggerRunTask();
 	
 	unsigned int GetRunTaskCount() const;

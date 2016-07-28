@@ -33,6 +33,15 @@ private:
 	void GetNumTasks_None(TestCase& test_case);
 	void GetNumTasks_OnePending(TestCase& test_case);
 	void GetNumTasks_OnePendingOneRunning(TestCase& test_case);
+	void WaitForTasks_NoTasks_Return(TestCase& test_case);
+	void WaitForTasks_OneTask_WaitThenReturn(TestCase& test_case);
+	void WaitForTasks_TwoTasks_WaitThenReturn(TestCase& test_case);
+	void WaitForTasksWithIds_NoTasks_Return(TestCase& test_case);
+	void WaitForTasksWithIds_OneMatchingTask_WaitThenReturn(TestCase& test_case);
+	void WaitForTasksWithIds_TwoMatchingTasksSameId_WaitThenReturn(TestCase& test_case);
+	void WaitForTasksWithIds_TwoMatchingTasksDifferentIds_WaitThenReturn(TestCase& test_case);
+	void WaitForTasksWithIds_NoMatchingIds_Return(TestCase& test_case);
+	void WaitForTasksWithIds_OneMatchingOneNotMatching_WaitThenReturn(TestCase& test_case);
 };
 
 }

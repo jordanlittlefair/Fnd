@@ -1,5 +1,6 @@
 #include "TaskQueue.hpp"
 
+#include <algorithm>
 #include <cassert>
 
 using namespace Fnd::SystemManager;
@@ -20,14 +21,14 @@ unsigned int TaskQueue::GetNumPendingTasks() const
 {
 	std::lock_guard<std::mutex> lock(_tasks_mutex);
 	
-	return _pending_tasks.size();
+	return (unsigned int)_pending_tasks.size();
 }
 
 unsigned int TaskQueue::GetNumTasks() const
 {
 	std::lock_guard<std::mutex> lock(_tasks_mutex);
 	
-	return _tasks.size();
+	return (unsigned int)_tasks.size();
 }
 
 void TaskQueue::SubmitTask(TaskPtr task)
@@ -38,7 +39,7 @@ void TaskQueue::SubmitTask(TaskPtr task)
 	
 	_pending_tasks.push(task);
 	
-	_has_pending_condition.notify_one();
+	_has_pending_condition.notify_all();
 }
 
 void TaskQueue::RunNextTask(const bool wait)
@@ -51,6 +52,66 @@ void TaskQueue::RunNextTask(const bool wait)
 		
 		CompleteTask(current_task);
 	}
+}
+
+void TaskQueue::WaitForTasks() const
+{
+	{
+		std::lock_guard<std::mutex> lock(_tasks_mutex);
+		
+		if (_tasks.empty())
+		{
+			return;
+		}
+	}
+	
+	std::unique_lock<std::mutex> lock(_tasks_mutex);
+	
+	_has_pending_condition.wait( lock, [&]()
+	{
+		return _tasks.empty() || !_is_alive;
+	} );
+}
+
+void TaskQueue::WaitForTasks(const SystemId system_ids[], const unsigned int num_ids) const
+{
+	auto ContainsTask = [&]()
+	{
+		// Probably not the most efficient way to do this...
+		
+		for (unsigned int i = 0; i < num_ids; ++i )
+		{
+			const SystemId& id = system_ids[i];
+			
+			auto iter = std::find_if(_tasks.begin(),_tasks.end(),[&](const TaskPtr& task)
+			{
+				return task->GetParentSystemId() == id;
+			});
+			
+			if (iter != _tasks.end())
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	};
+	
+	{
+		std::lock_guard<std::mutex> lock(_tasks_mutex);
+		
+		if (!ContainsTask())
+		{
+			return;
+		}
+	}
+	
+	std::unique_lock<std::mutex> lock(_tasks_mutex);
+	
+	_has_pending_condition.wait( lock, [&]()
+	{
+		return !_is_alive || !ContainsTask();
+	} );
 }
 
 void TaskQueue::Kill()
@@ -137,6 +198,8 @@ void TaskQueue::CompleteTask(TaskPtr task)
 		
 		_tasks.pop_back();
 	}
+	
+	_has_pending_condition.notify_all();
 }
 
 void TaskQueue::WaitForTask()

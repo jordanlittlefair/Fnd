@@ -18,6 +18,10 @@ public:
 	
 	virtual void RunNextTask(const bool wait) = 0;
 	
+	virtual void WaitForTasks() const = 0;
+	
+	virtual void WaitForTasks(const SystemId system_id[], const unsigned int num_ids) const = 0;
+	
 	virtual void Kill() = 0;
 	
 	virtual ~ITaskProvider() {}

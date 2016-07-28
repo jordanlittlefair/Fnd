@@ -54,6 +54,16 @@ void MockTaskProvider::RunNextTask(const bool wait)
 	}
 }
 
+void MockTaskProvider::WaitForTasks() const
+{
+	// Do nothing
+}
+
+void MockTaskProvider::WaitForTasks(const Fnd::SystemManager::SystemId system_ids[], const unsigned int num_ids) const
+{
+	// Do nothing
+}
+
 void MockTaskProvider::TriggerRunTask()
 {
 	_has_task_condition.notify_all();
