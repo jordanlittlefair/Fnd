@@ -109,6 +109,11 @@ ITaskConsumer& TaskManager::GetTaskConsumer()
 	return *_task_consumer;
 }
 
+TaskConsumerPtr TaskManager::GetTaskConsumerPtr()
+{
+	return _task_consumer;
+}
+
 void TaskManager::SetTaskProvider(TaskProviderPtr task_provider)
 {
 	_task_provider = task_provider;
@@ -126,6 +131,11 @@ ITaskProvider& TaskManager::GetTaskProvider()
 	assert(_task_provider);
 	
 	return *_task_provider;
+}
+
+TaskProviderPtr TaskManager::GetTaskProviderPtr()
+{
+	return _task_provider;
 }
 
 TaskManager::~TaskManager()

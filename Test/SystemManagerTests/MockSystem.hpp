@@ -17,6 +17,10 @@ class MockSystem:
 public:
 
 	MockSystem( const Fnd::SystemManager::SystemId& id );
+	
+protected:
+	
+	virtual void OnRun();
 };
 
 }

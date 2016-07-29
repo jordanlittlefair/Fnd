@@ -20,10 +20,17 @@ public:
 
 private:
 
-	void TestGetId( TestCase& test_case );
-	void TestAddDependency( TestCase& test_case );
-	void TestAddDependency_Duplicate( TestCase& test_case );
-	void TestGetDependencies( TestCase& test_case );
+	void GetId_Success(TestCase& test_case);
+	void AddDependency_Success(TestCase& test_case);
+	void AddDependency_DuplicateId_Fail(TestCase& test_case);
+	
+	void Run_NoTasks_Succeess(TestCase& test_case);
+	void Run_OneTaskSynchronous_Success(TestCase& test_case);
+	void Run_TwoTasksSynchronous_Success(TestCase& test_case);
+	void Run_FiftyTasksSynchronous_Success(TestCase& test_case);
+	void Run_OneTaskAsynchronous_Success(TestCase& test_case);
+	void Run_TwoTasksAsynchronous_Success(TestCase& test_case);
+	void Run_FiftyTasksAsynchronous_Success(TestCase& test_case);
 };
 
 }

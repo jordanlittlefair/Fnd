@@ -7,3 +7,7 @@ MockSystem::MockSystem( const SystemId& id ):
 	System(id)
 {
 }
+
+void MockSystem::OnRun()
+{
+}

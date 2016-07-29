@@ -35,11 +35,15 @@ public:
 
 	ITaskConsumer& GetTaskConsumer();
 	
+	TaskConsumerPtr GetTaskConsumerPtr();
+	
 	void SetTaskProvider(TaskProviderPtr task_provider);
 
 	const ITaskProvider& GetTaskProvider() const;
 	
 	ITaskProvider& GetTaskProvider();
+	
+	TaskProviderPtr GetTaskProviderPtr();
 	
 	virtual ~TaskManager();
 	
