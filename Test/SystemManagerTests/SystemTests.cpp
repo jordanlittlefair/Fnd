@@ -216,10 +216,9 @@ void SystemTests::Run_FiftyTasksSynchronous_Success(TestCase& test_case)
 		{
 			for (unsigned int i = 0; i < 50; ++i)
 			{
-				SubmitTask( CreateLambdaTask(This(), [&]()
+				SubmitTask( CreateLambdaTask(This(), [&,i]()
 				{
-					unsigned int i_copy = i;
-					_test_data.task_has_ran[i_copy] = true;
+					_test_data.task_has_ran[i] = true;
 				}));
 			}
 		}
@@ -343,6 +342,8 @@ void SystemTests::Run_TwoTasksAsynchronous_Success(TestCase& test_case)
 	task_manager.Initialise();
 	task_manager.Start();
 	
+	system->SetTaskProvider(task_manager.GetTaskProviderPtr());
+	
 	test_case.Assert(!test_data.system_has_ran[0], "Task[0] must not have ran");
 	test_case.Assert(!test_data.system_has_ran[1], "Task[1] must not have ran");
 	
@@ -373,10 +374,9 @@ void SystemTests::Run_FiftyTasksAsynchronous_Success(TestCase& test_case)
 		{
 			for (unsigned int i = 0; i < 50; ++i)
 			{
-				SubmitTask( CreateLambdaTask(This(), [&]()
+				SubmitTask( CreateLambdaTask(This(), [&,i]()
 				{
-					unsigned int i_copy = i;
-					_test_data.task_has_ran[i_copy] = true;
+					_test_data.task_has_ran[i] = true;
 				}));
 			}
 		}
@@ -396,6 +396,8 @@ void SystemTests::Run_FiftyTasksAsynchronous_Success(TestCase& test_case)
 	TaskManager task_manager;
 	task_manager.Initialise();
 	task_manager.Start();
+	
+	system->SetTaskProvider(task_manager.GetTaskProviderPtr());
 	
 	for (unsigned int i = 0; i < 50; ++i)
 	{
