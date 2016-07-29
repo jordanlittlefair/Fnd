@@ -15,6 +15,10 @@ public:
 	
 	TaskManager();
 	
+	void SetTaskConsumer(TaskConsumerPtr task_consumer);
+	
+	void SetTaskProvider(TaskProviderPtr task_provider);
+	
 	bool IsInitialised() const;
 	
 	void Initialise();
@@ -23,21 +27,13 @@ public:
 	
 	void Start();
 	
-	void WaitForTasks() const;
-	
-	void WaitForTasks(const SystemId system_ids[], const unsigned int num_ids) const;
-	
 	void Kill();
-	
-	void SetTaskConsumer(TaskConsumerPtr task_consumer);
 	
 	const ITaskConsumer& GetTaskConsumer() const;
 
 	ITaskConsumer& GetTaskConsumer();
 	
 	TaskConsumerPtr GetTaskConsumerPtr();
-	
-	void SetTaskProvider(TaskProviderPtr task_provider);
 
 	const ITaskProvider& GetTaskProvider() const;
 	
