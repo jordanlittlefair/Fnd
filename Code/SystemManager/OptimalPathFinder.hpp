@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IOptimalPathFinder.hpp"
 #include "SystemGraphNode.hpp"
 
 #include <map>
@@ -10,7 +11,8 @@ namespace Fnd
 namespace SystemManager
 {
 
-class OptimalPathFinder
+class OptimalPathFinder:
+	public IOptimalPathFinder
 {
 public:
 
@@ -20,7 +22,7 @@ public:
 	
 	void UpdateSystemGraphNodes( const std::vector<std::shared_ptr<SystemGraphNode>>& system_nodes );
 	
-	void ClearSystemNodes();
+	void ClearSystemGraphNodes();
 	
 	std::vector<SystemId> GetOptimalPath() const;
 	

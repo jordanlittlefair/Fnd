@@ -20,15 +20,17 @@ public:
 
 private:
 
-	void TestUpdateSystemNodes_Empty( TestCase& test_case );
-	void TestUpdateSystemNodes_DuplicateIds( TestCase& test_case );
-	void TestUpdateSystemNodes_SingleNode( TestCase& test_case );
-	void TestUpdateSystemNodes_NoDependencies( TestCase& test_case );
-	void TestUpdateSystemNodes_SingleDependency( TestCase& test_case );
-	void TestUpdateSystemNodes_MultipleDependencies( TestCase& test_case );
-	void TestUpdateSystemNodes_SharedDependencies( TestCase& test_case );
-	void TestUpdateSystemNodes_Chain( TestCase& test_case );
-	void TestUpdateSystemNodes_CyclicDependencies( TestCase& test_case );
+	void UpdateSystemNodes_Empty_Success(TestCase& test_case);
+	void UpdateSystemNodes_DuplicateIds_Throw(TestCase& test_case);
+	void UpdateSystemNodes_SingleNode_Success(TestCase& test_case);
+	void UpdateSystemNodes_NoDependencies_Success(TestCase& test_case);
+	void UpdateSystemNodes_SingleDependency_Success(TestCase& test_case);
+	void UpdateSystemNodes_MultipleDependencies_Success(TestCase& test_case);
+	void UpdateSystemNodes_SharedDependencies_Success(TestCase& test_case);
+	void UpdateSystemNodes_Chain_Success(TestCase& test_case);
+	void UpdateSystemNodes_CyclicDependencies_Throw(TestCase& test_case);
+	
+	void GetOptimalPath_Success(TestCase& test_case);
 };
 
 }

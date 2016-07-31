@@ -79,7 +79,7 @@ void OptimalPathFinderTests::TestClearSystemNodes( TestCase& test_case )
 	
 	test_case.Assert( opf.GetOptimalPath().size() == 1 );
 	
-	opf.ClearSystemNodes();
+	opf.ClearSystemGraphNodes();
 	
 	test_case.Assert( opf.GetOptimalPath().size() == 0 );
 }

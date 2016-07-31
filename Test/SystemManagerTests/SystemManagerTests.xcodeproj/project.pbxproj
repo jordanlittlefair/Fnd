@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */; };
 		109068641D42C3820086B32C /* MockTaskConsumer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068631D42C3820086B32C /* MockTaskConsumer.cpp */; };
+		109068A01D4EA5D30086B32C /* MockOptimalPathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1090689F1D4EA5D30086B32C /* MockOptimalPathFinder.cpp */; };
 		10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */; };
 		10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4271CC590D500B78A7C /* MockSystem.cpp */; };
 		10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4291CC59D9400B78A7C /* SystemTests.cpp */; };
@@ -32,6 +33,8 @@
 		105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambdaTaskTests.cpp; sourceTree = "<group>"; };
 		109068621D42C2F60086B32C /* MockTaskConsumer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockTaskConsumer.hpp; sourceTree = "<group>"; };
 		109068631D42C3820086B32C /* MockTaskConsumer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockTaskConsumer.cpp; sourceTree = "<group>"; };
+		1090689E1D4EA57F0086B32C /* MockOptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockOptimalPathFinder.hpp; sourceTree = "<group>"; };
+		1090689F1D4EA5D30086B32C /* MockOptimalPathFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockOptimalPathFinder.cpp; sourceTree = "<group>"; };
 		10A7B3F31CBAB3F100B78A7C /* libSystemManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSystemManagerTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B4081CBAB8E900B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSystemManager.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libSystemManager.a"; sourceTree = "<group>"; };
 		10A7B4101CBC203000B78A7C /* libCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCore.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libCore.a"; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				10A7B43F1CC950C100B78A7C /* CyclicGraphCheckerTests.hpp */,
 				105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */,
 				105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */,
+				1090689F1D4EA5D30086B32C /* MockOptimalPathFinder.cpp */,
+				1090689E1D4EA57F0086B32C /* MockOptimalPathFinder.hpp */,
 				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
 				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
 				10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */,
@@ -213,6 +218,7 @@
 				10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */,
 				10DFC1941D3074A0001FD2FB /* ConcurrentTaskProcessorTests.cpp in Sources */,
 				10A7B4471CCAF9D100B78A7C /* OptimalPathFinderTests.cpp in Sources */,
+				109068A01D4EA5D30086B32C /* MockOptimalPathFinder.cpp in Sources */,
 				10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */,
 				10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */,
 				10FEA9AE1D03A9D200338F5B /* SystemManagerTestSuite.cpp in Sources */,

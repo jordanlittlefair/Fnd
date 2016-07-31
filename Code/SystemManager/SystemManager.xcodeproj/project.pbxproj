@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		105BFE141CCCEA350095CF2E /* LambdaTask.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LambdaTask.hpp; sourceTree = "<group>"; };
+		1090689D1D4E9B720086B32C /* IOptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOptimalPathFinder.hpp; sourceTree = "<group>"; };
 		10A7B3C91CB9CA8800B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSystemManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3E01CB9CC6A00B78A7C /* SystemGraphNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemGraphNode.hpp; sourceTree = "<group>"; };
 		10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemGraphNode.cpp; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				10A7B43C1CC94BBD00B78A7C /* CyclicGraphChecker.hpp */,
 				10A7B4361CC8455A00B78A7C /* Exceptions.cpp */,
 				10A7B4351CC8450B00B78A7C /* Exceptions.hpp */,
+				1090689D1D4E9B720086B32C /* IOptimalPathFinder.hpp */,
 				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
 				10DFC1911D30739A001FD2FB /* ITaskConsumer.hpp */,
 				10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */,

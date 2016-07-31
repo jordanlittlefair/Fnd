@@ -28,7 +28,7 @@ void OptimalPathFinder::UpdateSystemGraphNodes( const std::vector<std::shared_pt
 	_system_graph_nodes = system_nodes;
 }
 
-void OptimalPathFinder::ClearSystemNodes()
+void OptimalPathFinder::ClearSystemGraphNodes()
 {
 	_system_graph_nodes.clear();
 }

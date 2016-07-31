@@ -2,6 +2,7 @@
 
 #include "CyclicGraphChecker.hpp"
 #include "Exceptions.hpp"
+#include "OptimalPathFinder.hpp"
 
 #include <cassert>
 #include <map>
@@ -11,6 +12,11 @@ using namespace Fnd::SystemManager;
 
 SystemGraph::SystemGraph()
 {
+}
+
+void SystemGraph::SetOptimalPathFinder(OptimalPathFinderPtr optimal_path_finder)
+{
+	_optimal_path_finder = optimal_path_finder;
 }
 
 void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>& systems )
@@ -71,6 +77,15 @@ void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>
 	}
 }
 
+std::vector<SystemId> SystemGraph::GetOptimalPath()
+{
+	assert(_optimal_path_finder);
+	
+	_optimal_path_finder->UpdateSystemGraphNodes(_system_nodes);
+	
+	return _optimal_path_finder->GetOptimalPath();
+}
+
 std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const SystemId& id ) const
 {
 	for ( const auto& node : _system_nodes )
@@ -81,7 +96,7 @@ std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const SystemId& id ) cons
 		}
 	}
 	
-	throw std::runtime_error( "Invalid Id" );
+	throw InvalidSystemIdException();
 }
 
 const std::vector<std::shared_ptr<SystemGraphNode>>& SystemGraph::GetSystemNodes() const

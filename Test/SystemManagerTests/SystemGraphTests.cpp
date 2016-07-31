@@ -1,5 +1,6 @@
 #include "SystemGraphTests.hpp"
 
+#include "MockOptimalPathFinder.hpp"
 #include "MockSystemGraph.hpp"
 #include "MockSystem.hpp"
 
@@ -41,24 +42,25 @@ namespace
 SystemGraphTests::SystemGraphTests():
 UnitTestClass("SystemGraphTests")
 {
-	AddTestCase( "TestUpdateSystemNodes_Empty", &SystemGraphTests::TestUpdateSystemNodes_Empty, this );
-	AddTestCase( "TestUpdateSystemNodes_DuplicateIds", &SystemGraphTests::TestUpdateSystemNodes_DuplicateIds, this );
-	AddTestCase( "TestUpdateSystemNodes_SingleNode", &SystemGraphTests::TestUpdateSystemNodes_SingleNode, this );
-	AddTestCase( "TestUpdateSystemNodes_NoDependencies", &SystemGraphTests::TestUpdateSystemNodes_NoDependencies, this );
-	AddTestCase( "TestUpdateSystemNodes_SingleDependency", &SystemGraphTests::TestUpdateSystemNodes_SingleDependency, this );
-	AddTestCase( "TestUpdateSystemNodes_MultipleDependencies", &SystemGraphTests::TestUpdateSystemNodes_MultipleDependencies, this );
-	AddTestCase( "TestUpdateSystemNodes_SharedDependencies", &SystemGraphTests::TestUpdateSystemNodes_SharedDependencies, this );
-	AddTestCase( "TestUpdateSystemNodes_CyclicDependencies", &SystemGraphTests::TestUpdateSystemNodes_CyclicDependencies, this );
+	AddTestCase( "UpdateSystemNodes_Empty_Success", &SystemGraphTests::UpdateSystemNodes_Empty_Success, this );
+	AddTestCase( "UpdateSystemNodes_DuplicateIds_Throw", &SystemGraphTests::UpdateSystemNodes_DuplicateIds_Throw, this );
+	AddTestCase( "UpdateSystemNodes_SingleNode_Success", &SystemGraphTests::UpdateSystemNodes_SingleNode_Success, this );
+	AddTestCase( "UpdateSystemNodes_NoDependencies_Success", &SystemGraphTests::UpdateSystemNodes_NoDependencies_Success, this );
+	AddTestCase( "UpdateSystemNodes_SingleDependency_Success", &SystemGraphTests::UpdateSystemNodes_SingleDependency_Success, this );
+	AddTestCase( "UpdateSystemNodes_MultipleDependencies_Success", &SystemGraphTests::UpdateSystemNodes_MultipleDependencies_Success, this );
+	AddTestCase( "UpdateSystemNodes_SharedDependencies_Success", &SystemGraphTests::UpdateSystemNodes_SharedDependencies_Success, this );
+	AddTestCase( "UpdateSystemNodes_CyclicDependencies_Throw", &SystemGraphTests::UpdateSystemNodes_CyclicDependencies_Throw, this );
+	AddTestCase( "GetOptimalPath_Success", &SystemGraphTests::GetOptimalPath_Success, this );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_Empty( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_Empty_Success( TestCase& test_case )
 {
 	MockSystemGraph graph;
 	
 	test_case.Assert( graph.GetSystemNodes().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_DuplicateIds( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_DuplicateIds_Throw( TestCase& test_case )
 {
 	MockSystemGraph graph;
 	
@@ -70,22 +72,15 @@ void SystemGraphTests::TestUpdateSystemNodes_DuplicateIds( TestCase& test_case )
 	systems.push_back(node0);
 	systems.push_back(node1);
 	
-	bool caught_exception = false;
-	
-	try
+	test_case.AssertException<InvalidSystemIdException>([&]()
 	{
 		graph.UpdateSystemNodes(systems);
-	}
-	catch ( const InvalidSystemIdException& )
-	{
-		caught_exception = true;
-	}
+	});
 	
-	test_case.Assert( caught_exception );
 	test_case.Assert( graph.GetSystemNodes().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_SingleNode( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_SingleNode_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -107,7 +102,7 @@ void SystemGraphTests::TestUpdateSystemNodes_SingleNode( TestCase& test_case )
 	test_case.Assert( graph.GetSystemNodes()[0]->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_NoDependencies( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_NoDependencies_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -142,7 +137,7 @@ void SystemGraphTests::TestUpdateSystemNodes_NoDependencies( TestCase& test_case
 	test_case.Assert( node1_out->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_SingleDependency( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_SingleDependency_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -179,7 +174,7 @@ void SystemGraphTests::TestUpdateSystemNodes_SingleDependency( TestCase& test_ca
 	test_case.Assert( node1_out->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_MultipleDependencies( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_MultipleDependencies_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -228,7 +223,7 @@ void SystemGraphTests::TestUpdateSystemNodes_MultipleDependencies( TestCase& tes
 	test_case.Assert( node2_out->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_SharedDependencies( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_SharedDependencies_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -277,7 +272,7 @@ void SystemGraphTests::TestUpdateSystemNodes_SharedDependencies( TestCase& test_
 	test_case.Assert( node2_out->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_Chain( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_Chain_Success( TestCase& test_case )
 {
 /*
 	Graph:
@@ -325,9 +320,9 @@ void SystemGraphTests::TestUpdateSystemNodes_Chain( TestCase& test_case )
 	test_case.Assert( node2_out->GetNext().empty() );
 }
 
-void SystemGraphTests::TestUpdateSystemNodes_CyclicDependencies( TestCase& test_case )
+void SystemGraphTests::UpdateSystemNodes_CyclicDependencies_Throw( TestCase& test_case )
 {
-/*
+	/*
 	Graph:
 		->0->1->
 		  <--/
@@ -345,17 +340,34 @@ void SystemGraphTests::TestUpdateSystemNodes_CyclicDependencies( TestCase& test_
 	systems.push_back(node0);
 	systems.push_back(node1);
 	
-	bool hitException = false;
-	
-	try
+	test_case.AssertException<InvalidSystemDependenciesException>([&]()
 	{
 		graph.UpdateSystemNodes(systems);
-	}
-	catch ( const InvalidSystemDependenciesException& )
-	{
-		hitException = true;
-	}
+	});
 	
-	test_case.Assert( hitException );
 	test_case.Assert( graph.GetSystemNodes().empty() );
+}
+
+void SystemGraphTests::GetOptimalPath_Success(TestCase &test_case)
+{
+	SystemGraph system_graph;
+	
+	OptimalPathFinderPtr opf = std::make_shared<MockOptimalPathFinder>();
+	
+	system_graph.SetOptimalPathFinder(opf);
+	
+	std::vector<std::shared_ptr<ISystem>> systems;
+	
+	auto node0 = std::make_shared<MockSystem>(123);
+	auto node1 = std::make_shared<MockSystem>(456);
+	
+	systems.push_back(node0);
+	systems.push_back(node1);
+	
+	system_graph.UpdateSystemNodes(systems);
+	
+	auto optimal_path = system_graph.GetOptimalPath();
+	
+	test_case.Assert(optimal_path[0] == 123);
+	test_case.Assert(optimal_path[1] == 456);
 }
