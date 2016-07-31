@@ -100,7 +100,7 @@ std::shared_ptr<SystemGraphNode> SystemGraph::GetNode( const SystemId& id ) cons
 		}
 	}
 	
-	throw InvalidSystemIdException();
+	throw InvalidSystemIdException(id);
 }
 
 const std::vector<std::shared_ptr<SystemGraphNode>>& SystemGraph::GetSystemNodes() const

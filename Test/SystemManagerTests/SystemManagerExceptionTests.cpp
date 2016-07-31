@@ -22,7 +22,7 @@ void SystemManagerExceptionTests::TestInvalidSystemIdException( TestCase& test_c
 
 	try
 	{
-		throw InvalidSystemIdException();
+		throw InvalidSystemIdException(0);
 	}
 	catch ( const InvalidSystemIdException& )
 	{
@@ -31,7 +31,7 @@ void SystemManagerExceptionTests::TestInvalidSystemIdException( TestCase& test_c
 	
 	try
 	{
-		throw InvalidSystemIdException();
+		throw InvalidSystemIdException(0);
 	}
 	catch ( const Fnd::SystemManager::Exception& )
 	{
@@ -40,7 +40,7 @@ void SystemManagerExceptionTests::TestInvalidSystemIdException( TestCase& test_c
 	
 	try
 	{
-		throw InvalidSystemIdException();
+		throw InvalidSystemIdException(0);
 	}
 	catch ( const Fnd::Core::Exception& )
 	{
@@ -49,7 +49,7 @@ void SystemManagerExceptionTests::TestInvalidSystemIdException( TestCase& test_c
 	
 	try
 	{
-		throw InvalidSystemIdException();
+		throw InvalidSystemIdException(0);
 	}
 	catch ( const std::exception& )
 	{

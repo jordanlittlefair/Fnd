@@ -1,5 +1,6 @@
 #pragma once
 
+#include "SystemId.hpp"
 #include "../Core/Exception.hpp"
 
 namespace Fnd
@@ -22,6 +23,8 @@ class InvalidSystemIdException:
 public:
 
 	InvalidSystemIdException();
+	
+	InvalidSystemIdException(const SystemId system_id);
 };
 	
 class InvalidSystemDependenciesException:
