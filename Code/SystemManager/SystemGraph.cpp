@@ -1,6 +1,5 @@
 #include "SystemGraph.hpp"
 
-#include "CyclicGraphChecker.hpp"
 #include "Exceptions.hpp"
 #include "OptimalPathFinder.hpp"
 
@@ -12,6 +11,11 @@ using namespace Fnd::SystemManager;
 
 SystemGraph::SystemGraph()
 {
+}
+
+void SystemGraph::SetCyclicGraphChecker(CyclicGraphCheckerPtr cyclic_graph_checker)
+{
+	_cyclic_graph_checker = cyclic_graph_checker;
 }
 
 void SystemGraph::SetOptimalPathFinder(OptimalPathFinderPtr optimal_path_finder)
@@ -122,7 +126,9 @@ bool SystemGraph::ContainsDuplicateSystemIds( const std::vector<std::shared_ptr<
 
 bool SystemGraph::IsGraphCyclic() const
 {
-	CyclicGraphChecker cgc(_system_nodes);
+	assert(_cyclic_graph_checker);
 	
-	return cgc.IsCyclic();
+	_cyclic_graph_checker->UpdateSystemGraphNodes(_system_nodes);
+	
+	return _cyclic_graph_checker->IsCyclic();
 }

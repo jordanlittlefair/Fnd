@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ICyclicGraphChecker.hpp"
 #include "IOptimalPathFinder.hpp"
 #include "ISystem.hpp"
 #include "SystemGraphNode.hpp"
@@ -17,6 +18,8 @@ class SystemGraph
 public:
 
 	SystemGraph();
+	
+	void SetCyclicGraphChecker(CyclicGraphCheckerPtr cyclic_graph_checker);
 	
 	void SetOptimalPathFinder(OptimalPathFinderPtr optimal_path_finder);
 	
@@ -37,6 +40,8 @@ private:
 	bool IsGraphCyclic() const;
 	
 private:
+	
+	CyclicGraphCheckerPtr _cyclic_graph_checker;
 	
 	OptimalPathFinderPtr _optimal_path_finder;
 

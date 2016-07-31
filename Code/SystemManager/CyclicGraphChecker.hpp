@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ICyclicGraphChecker.hpp"
 #include "SystemGraphNode.hpp"
 
 #include <map>
@@ -10,7 +11,8 @@ namespace Fnd
 namespace SystemManager
 {
 
-class CyclicGraphChecker
+class CyclicGraphChecker:
+	public ICyclicGraphChecker
 {
 public:
 
