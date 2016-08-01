@@ -37,6 +37,8 @@ protected:
 	
 	SystemPtr This();
 	
+	bool HasTaskProvider() const;
+	
 	void SubmitTask(TaskPtr task);
 	
 	void WaitForSystemTasks();

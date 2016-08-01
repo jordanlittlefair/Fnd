@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../../Code/SystemManager/SystemGraph.hpp"
+#include "../../Code/SystemManager/ISystemGraph.hpp"
 
 namespace Fnd
 {
@@ -14,11 +14,17 @@ namespace SystemManager
 {
 
 class MockSystemGraph:
-	public Fnd::SystemManager::SystemGraph
+	public Fnd::SystemManager::ISystemGraph
 {
 public:
 
-	const std::vector<std::shared_ptr<Fnd::SystemManager::SystemGraphNode>> GetSystemNodes() const;
+	void UpdateSystemNodes(const std::vector<Fnd::SystemManager::SystemPtr>& systems);
+	
+	std::vector<Fnd::SystemManager::SystemId> GetOptimalPath() const;
+	
+private:
+	
+	std::vector<Fnd::SystemManager::SystemId> _systems;
 };
 
 }

@@ -8,6 +8,11 @@ MockSystem::MockSystem( const SystemId& id ):
 {
 }
 
+bool MockSystem::HasTaskProvider() const
+{
+	return System::HasTaskProvider();
+}
+
 void MockSystem::OnRun()
 {
 }

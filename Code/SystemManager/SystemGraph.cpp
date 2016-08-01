@@ -81,7 +81,7 @@ void SystemGraph::UpdateSystemNodes( const std::vector<std::shared_ptr<ISystem>>
 	}
 }
 
-std::vector<SystemId> SystemGraph::GetOptimalPath()
+std::vector<SystemId> SystemGraph::GetOptimalPath() const
 {
 	assert(_optimal_path_finder);
 	

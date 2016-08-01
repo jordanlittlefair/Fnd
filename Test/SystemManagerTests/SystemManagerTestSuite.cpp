@@ -12,6 +12,7 @@
 #include "TaskProcessorThreadTests.hpp"
 #include "ConcurrentTaskProcessorTests.hpp"
 #include "TaskManagerTests.hpp"
+#include "SystemContainerTests.hpp"
 
 using namespace Fnd::Test::SystemManager;
 
@@ -30,4 +31,5 @@ SystemManagerTestSuite::SystemManagerTestSuite():
 	AddTestClass<TaskProcessorThreadTests>();
 	AddTestClass<ConcurrentTaskProcessorTests>();
 	AddTestClass<TaskManagerTests>();
+	AddTestClass<SystemContainerTests>();
 }

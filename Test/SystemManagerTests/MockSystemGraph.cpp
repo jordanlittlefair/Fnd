@@ -3,7 +3,17 @@
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
 
-const std::vector<std::shared_ptr<SystemGraphNode>> MockSystemGraph::GetSystemNodes() const
+void MockSystemGraph::UpdateSystemNodes(const std::vector<Fnd::SystemManager::SystemPtr>& systems)
 {
-	return SystemGraph::GetSystemNodes();
+	_systems.clear();
+	
+	for (auto system : systems)
+	{
+		_systems.push_back(system->GetId());
+	}
+}
+
+std::vector<Fnd::SystemManager::SystemId> MockSystemGraph::GetOptimalPath() const
+{
+	return _systems;
 }

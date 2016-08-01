@@ -42,9 +42,14 @@ SystemPtr System::This()
 	return shared_from_this();
 }
 
+bool System::HasTaskProvider() const
+{
+	return _task_provider != nullptr;
+}
+
 void System::SubmitTask(TaskPtr task)
 {
-	if (_task_provider)
+	if (HasTaskProvider())
 	{
 		_task_provider->SubmitTask(task);
 	}
@@ -56,7 +61,7 @@ void System::SubmitTask(TaskPtr task)
 
 void System::WaitForSystemTasks()
 {
-	if (_task_provider)
+	if (HasTaskProvider())
 	{
 		SystemId system_ids[] = { _id };
 	

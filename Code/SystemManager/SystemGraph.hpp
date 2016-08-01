@@ -3,6 +3,7 @@
 #include "ICyclicGraphChecker.hpp"
 #include "IOptimalPathFinder.hpp"
 #include "ISystem.hpp"
+#include "ISystemGraph.hpp"
 #include "SystemGraphNode.hpp"
 
 #include <map>
@@ -13,7 +14,8 @@ namespace Fnd
 namespace SystemManager
 {
 
-class SystemGraph
+class SystemGraph:
+	public ISystemGraph
 {
 public:
 
@@ -25,7 +27,7 @@ public:
 	
 	void UpdateSystemNodes(const std::vector<SystemPtr>& systems);
 	
-	std::vector<SystemId> GetOptimalPath();
+	std::vector<SystemId> GetOptimalPath() const;
 	
 protected:
 

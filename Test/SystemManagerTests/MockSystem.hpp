@@ -18,6 +18,8 @@ public:
 
 	MockSystem( const Fnd::SystemManager::SystemId& id );
 	
+	bool HasTaskProvider() const;
+	
 protected:
 	
 	virtual void OnRun();

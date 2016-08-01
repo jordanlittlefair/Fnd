@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		105BFE151CCCEA350095CF2E /* LambdaTask.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 105BFE141CCCEA350095CF2E /* LambdaTask.hpp */; };
+		109068A71D4EB9FC0086B32C /* SystemContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068A51D4EB9FC0086B32C /* SystemContainer.cpp */; };
+		109068A81D4EB9FC0086B32C /* SystemContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 109068A61D4EB9FC0086B32C /* SystemContainer.hpp */; };
 		10A7B3E21CB9CEDA00B78A7C /* SystemGraphNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */; };
 		10A7B41D1CC44CF900B78A7C /* ISystem.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10A7B41C1CC44CF900B78A7C /* ISystem.hpp */; };
 		10A7B4231CC451AD00B78A7C /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4211CC451AD00B78A7C /* System.cpp */; };
@@ -29,6 +31,10 @@
 		105BFE141CCCEA350095CF2E /* LambdaTask.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LambdaTask.hpp; sourceTree = "<group>"; };
 		1090689D1D4E9B720086B32C /* IOptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOptimalPathFinder.hpp; sourceTree = "<group>"; };
 		109068A11D4EAE090086B32C /* ICyclicGraphChecker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ICyclicGraphChecker.hpp; sourceTree = "<group>"; };
+		109068A51D4EB9FC0086B32C /* SystemContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemContainer.cpp; sourceTree = "<group>"; };
+		109068A61D4EB9FC0086B32C /* SystemContainer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SystemContainer.hpp; sourceTree = "<group>"; };
+		109068AD1D4EBBA10086B32C /* ISystemGraph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ISystemGraph.hpp; sourceTree = "<group>"; };
+		109068AE1D4EBD6D0086B32C /* ISystemContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ISystemContainer.hpp; sourceTree = "<group>"; };
 		10A7B3C91CB9CA8800B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSystemManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3E01CB9CC6A00B78A7C /* SystemGraphNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemGraphNode.hpp; sourceTree = "<group>"; };
 		10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemGraphNode.cpp; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 				109068A11D4EAE090086B32C /* ICyclicGraphChecker.hpp */,
 				1090689D1D4E9B720086B32C /* IOptimalPathFinder.hpp */,
 				10A7B41C1CC44CF900B78A7C /* ISystem.hpp */,
+				109068AE1D4EBD6D0086B32C /* ISystemContainer.hpp */,
+				109068AD1D4EBBA10086B32C /* ISystemGraph.hpp */,
 				10DFC1911D30739A001FD2FB /* ITaskConsumer.hpp */,
 				10DFC1851D288472001FD2FB /* ITaskProcessorThread.hpp */,
 				10DFC17D1D247D0C001FD2FB /* ITaskProvider.hpp */,
@@ -90,6 +98,8 @@
 				10A7B4421CCAD9BF00B78A7C /* OptimalPathFinder.hpp */,
 				10A7B4211CC451AD00B78A7C /* System.cpp */,
 				10A7B4221CC451AD00B78A7C /* System.hpp */,
+				109068A51D4EB9FC0086B32C /* SystemContainer.cpp */,
+				109068A61D4EB9FC0086B32C /* SystemContainer.hpp */,
 				10A7B42B1CC5A14000B78A7C /* SystemGraph.cpp */,
 				10A7B42C1CC5A14000B78A7C /* SystemGraph.hpp */,
 				10A7B3E11CB9CEDA00B78A7C /* SystemGraphNode.cpp */,
@@ -123,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A7B42E1CC5A14000B78A7C /* SystemGraph.hpp in Headers */,
+				109068A81D4EB9FC0086B32C /* SystemContainer.hpp in Headers */,
 				105BFE151CCCEA350095CF2E /* LambdaTask.hpp in Headers */,
 				10A7B41D1CC44CF900B78A7C /* ISystem.hpp in Headers */,
 				10A7B43E1CC94BBD00B78A7C /* CyclicGraphChecker.hpp in Headers */,
@@ -190,6 +201,7 @@
 				10DFC1981D31C742001FD2FB /* TaskManager.cpp in Sources */,
 				10A7B42D1CC5A14000B78A7C /* SystemGraph.cpp in Sources */,
 				10A7B4371CC8455A00B78A7C /* Exceptions.cpp in Sources */,
+				109068A71D4EB9FC0086B32C /* SystemContainer.cpp in Sources */,
 				10A7B43D1CC94BBD00B78A7C /* CyclicGraphChecker.cpp in Sources */,
 				10A7B4441CCADB5F00B78A7C /* OptimalPathFinder.cpp in Sources */,
 				10DFC1901D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp in Sources */,

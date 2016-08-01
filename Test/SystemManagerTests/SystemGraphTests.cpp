@@ -6,6 +6,7 @@
 #include "MockSystem.hpp"
 
 #include "../../Code/SystemManager/Exceptions.hpp"
+#include "../../Code/SystemManager/SystemGraph.hpp"
 
 using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
@@ -71,7 +72,17 @@ void SystemGraphTests::UpdateSystemNodes_Cyclic_Throw(TestCase& test_case)
 
 void SystemGraphTests::UpdateSystemNodes_HasNodes(TestCase& test_case)
 {
-	MockSystemGraph system_graph;
+	class TestSystemGraph:
+		public SystemGraph
+	{
+	public:
+		const std::vector<std::shared_ptr<SystemGraphNode>>& GetSystemNodes() const
+		{
+			return SystemGraph::GetSystemNodes();
+		}
+	};
+	
+	TestSystemGraph system_graph;
 	
 	CyclicGraphCheckerPtr cgc = std::make_shared<MockCyclicGraphChecker>();
 	
