@@ -34,6 +34,14 @@ public:
 
 	InvalidSystemDependenciesException();
 };
+	
+class InvalidOperationException:
+	public Fnd::SystemManager::Exception
+{
+public:
+	
+	InvalidOperationException();
+};
 
 }
 

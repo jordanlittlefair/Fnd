@@ -1,5 +1,7 @@
 #include "SystemManager.hpp"
 
+#include "Exceptions.hpp"
+
 #include <cassert>
 
 using namespace Fnd::SystemManager;
@@ -37,6 +39,11 @@ void SystemManager::AddSystem(SystemPtr system)
 {
 	assert(_system_container);
 	
+	if (_is_initialised)
+	{
+		throw InvalidOperationException();
+	}
+	
 	_system_container->AddSystem(system);
 }
 
@@ -47,7 +54,7 @@ void SystemManager::Initialise()
 	
 	if (_is_initialised)
 	{
-		return; // TODO: or throw?
+		throw InvalidOperationException();
 	}
 	
 	// TODO: initialise systems in _system_container
@@ -62,12 +69,12 @@ void SystemManager::Start()
 	
 	if (_task_manager->IsAlive())
 	{
-		return; // TODO: or throw?
+		throw InvalidOperationException();
 	}
 	
 	if (!_is_initialised)
 	{
-		return; // TODO: or throw?
+		throw InvalidOperationException();
 	}
 	
 	_task_manager->Start();
@@ -77,6 +84,16 @@ void SystemManager::Run()
 {
 	assert(_task_manager);
 	assert(_system_container);
+	
+	if (!_is_initialised)
+	{
+		throw InvalidOperationException();
+	}
+	
+	if (!_task_manager->IsAlive())
+	{
+		throw InvalidOperationException();
+	}
 	
 	const std::vector<SystemPtr>& systems = _system_container->GetOrderedSystems();
 	
@@ -95,7 +112,7 @@ void SystemManager::Kill()
 	
 	if (!_task_manager->IsAlive())
 	{
-		return; // TODO: or throw
+		throw InvalidOperationException();
 	}
 	
 	_task_manager->Kill();
@@ -103,5 +120,4 @@ void SystemManager::Kill()
 
 SystemManager::~SystemManager()
 {
-	Kill();
 }

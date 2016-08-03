@@ -27,15 +27,15 @@ private:
 	void IsAlive_AfterStart_True(TestCase& test_case);
 	void IsAlive_AfterKill_False(TestCase& test_case);
 	
-	void AddSystem_BeforeInitialise_Fail(TestCase& test_case);
-	void AddSystem_AfterInitialise_Success(TestCase& test_case);
+	void AddSystem_BeforeInitialise_Success(TestCase& test_case);
+	void AddSystem_AfterInitialise_Fail(TestCase& test_case);
 	
 	void Initialise_Success(TestCase& test_case);
-	void Initialise_AlreadyInitialised_Ignored(TestCase& test_case);
+	void Initialise_AlreadyInitialised_Fail(TestCase& test_case);
 	
 	void Start_BeforeInitialised_Fail(TestCase& test_case);
 	void Start_AfterInitialised_Success(TestCase& test_case);
-	void Start_AlreadyStarted(TestCase& test_case);
+	void Start_AlreadyStarted_Fail(TestCase& test_case);
 	
 	void Run_BeforeInitialises_Fail(TestCase& test_case);
 	void Run_BeforeStart_Fail(TestCase& test_case);

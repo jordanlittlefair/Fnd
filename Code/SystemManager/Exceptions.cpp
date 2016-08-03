@@ -34,3 +34,8 @@ InvalidSystemDependenciesException::InvalidSystemDependenciesException():
 	Fnd::SystemManager::Exception("Invalid System dependencies")
 {
 }
+
+InvalidOperationException::InvalidOperationException():
+Fnd::SystemManager::Exception("Invalid Operation on SystemManager component")
+{
+}
