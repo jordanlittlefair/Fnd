@@ -13,6 +13,7 @@
 		109068A41D4EB09E0086B32C /* MockCyclicGraphChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068A31D4EB09E0086B32C /* MockCyclicGraphChecker.cpp */; };
 		109068AB1D4EBA0C0086B32C /* SystemContainerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068A91D4EBA0C0086B32C /* SystemContainerTests.cpp */; };
 		109068AC1D4EBA0C0086B32C /* SystemContainerTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 109068AA1D4EBA0C0086B32C /* SystemContainerTests.hpp */; };
+		109068B61D5008210086B32C /* SystemManagerTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068B51D5008210086B32C /* SystemManagerTests.cpp */; };
 		10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B41A1CC1B95700B78A7C /* SystemGraphNodeTests.cpp */; };
 		10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4271CC590D500B78A7C /* MockSystem.cpp */; };
 		10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B4291CC59D9400B78A7C /* SystemTests.cpp */; };
@@ -42,6 +43,8 @@
 		109068A31D4EB09E0086B32C /* MockCyclicGraphChecker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockCyclicGraphChecker.cpp; sourceTree = "<group>"; };
 		109068A91D4EBA0C0086B32C /* SystemContainerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemContainerTests.cpp; sourceTree = "<group>"; };
 		109068AA1D4EBA0C0086B32C /* SystemContainerTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SystemContainerTests.hpp; sourceTree = "<group>"; };
+		109068B41D5007EA0086B32C /* SystemManagerTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SystemManagerTests.hpp; sourceTree = "<group>"; };
+		109068B51D5008210086B32C /* SystemManagerTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemManagerTests.cpp; sourceTree = "<group>"; };
 		10A7B3F31CBAB3F100B78A7C /* libSystemManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSystemManagerTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B4081CBAB8E900B78A7C /* libSystemManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSystemManager.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libSystemManager.a"; sourceTree = "<group>"; };
 		10A7B4101CBC203000B78A7C /* libCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCore.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libCore.a"; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				10A7B42F1CC6B34000B78A7C /* SystemGraphTests.hpp */,
 				10A7B4391CC941C000B78A7C /* SystemManagerExceptionTests.cpp */,
 				10A7B4381CC9413100B78A7C /* SystemManagerExceptionTests.hpp */,
+				109068B51D5008210086B32C /* SystemManagerTests.cpp */,
+				109068B41D5007EA0086B32C /* SystemManagerTests.hpp */,
 				10FEA9AD1D03A9D200338F5B /* SystemManagerTestSuite.cpp */,
 				10FEA9AC1D03A9BB00338F5B /* SystemManagerTestSuite.hpp */,
 				10A7B4291CC59D9400B78A7C /* SystemTests.cpp */,
@@ -230,6 +235,7 @@
 				10A7B42A1CC59D9400B78A7C /* SystemTests.cpp in Sources */,
 				10DFC1941D3074A0001FD2FB /* ConcurrentTaskProcessorTests.cpp in Sources */,
 				10A7B4471CCAF9D100B78A7C /* OptimalPathFinderTests.cpp in Sources */,
+				109068B61D5008210086B32C /* SystemManagerTests.cpp in Sources */,
 				109068AB1D4EBA0C0086B32C /* SystemContainerTests.cpp in Sources */,
 				109068A01D4EA5D30086B32C /* MockOptimalPathFinder.cpp in Sources */,
 				10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */,

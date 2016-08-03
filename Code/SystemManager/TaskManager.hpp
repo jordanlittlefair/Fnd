@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ITaskConsumer.hpp"
+#include "ITaskManager.hpp"
 #include "ITaskProvider.hpp"
 
 namespace Fnd
@@ -9,7 +10,8 @@ namespace Fnd
 namespace SystemManager
 {
 
-class TaskManager
+class TaskManager:
+	public ITaskManager
 {
 public:
 	
@@ -28,17 +30,9 @@ public:
 	void Start();
 	
 	void Kill();
-	
-	const ITaskConsumer& GetTaskConsumer() const;
-
-	ITaskConsumer& GetTaskConsumer();
-	
+		
 	TaskConsumerPtr GetTaskConsumerPtr();
 
-	const ITaskProvider& GetTaskProvider() const;
-	
-	ITaskProvider& GetTaskProvider();
-	
 	TaskProviderPtr GetTaskProviderPtr();
 	
 	virtual ~TaskManager();

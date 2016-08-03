@@ -42,8 +42,8 @@ void TaskManagerTests::Initialise_DefaultProviderConsumer_AreSet(TestCase& test_
 	
 	tm.Initialise();
 	
-	tm.GetTaskConsumer();
-	tm.GetTaskProvider();
+	test_case.Assert(tm.GetTaskConsumerPtr() != nullptr);
+	test_case.Assert(tm.GetTaskProviderPtr() != nullptr);
 }
 
 void TaskManagerTests::Initialise_CustomProvider_IsSet(TestCase& test_case)
@@ -56,7 +56,7 @@ void TaskManagerTests::Initialise_CustomProvider_IsSet(TestCase& test_case)
 	
 	tm.Initialise();
 	
-	test_case.Assert(&tm.GetTaskProvider() == tp.get());
+	test_case.Assert(tm.GetTaskProviderPtr().get() == tp.get());
 }
 
 void TaskManagerTests::Initialise_CustomConsumer_IsSet(TestCase& test_case)
@@ -69,7 +69,7 @@ void TaskManagerTests::Initialise_CustomConsumer_IsSet(TestCase& test_case)
 	
 	tm.Initialise();
 	
-	test_case.Assert(&tm.GetTaskConsumer() == tc.get());
+	test_case.Assert(tm.GetTaskConsumerPtr().get() == tc.get());
 }
 
 void TaskManagerTests::Initialise_IsInitialised(TestCase& test_case)

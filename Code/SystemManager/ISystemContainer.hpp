@@ -3,6 +3,7 @@
 #include "ISystem.hpp"
 #include "ISystemGraph.hpp"
 
+#include <memory>
 #include <vector>
 
 namespace Fnd
@@ -24,6 +25,8 @@ public:
 	
 	virtual ~ISystemContainer() {}
 };
+	
+typedef std::shared_ptr<ISystemContainer> SystemContainerPtr;
 
 }
 

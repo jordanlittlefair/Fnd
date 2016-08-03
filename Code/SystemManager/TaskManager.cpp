@@ -85,20 +85,6 @@ void TaskManager::SetTaskConsumer(TaskConsumerPtr task_consumer)
 	_task_consumer = task_consumer;
 }
 
-const ITaskConsumer& TaskManager::GetTaskConsumer() const
-{
-	assert(_task_consumer);
-	
-	return *_task_consumer;
-}
-
-ITaskConsumer& TaskManager::GetTaskConsumer()
-{
-	assert(_task_consumer);
-	
-	return *_task_consumer;
-}
-
 TaskConsumerPtr TaskManager::GetTaskConsumerPtr()
 {
 	return _task_consumer;
@@ -107,20 +93,6 @@ TaskConsumerPtr TaskManager::GetTaskConsumerPtr()
 void TaskManager::SetTaskProvider(TaskProviderPtr task_provider)
 {
 	_task_provider = task_provider;
-}
-
-const ITaskProvider& TaskManager::GetTaskProvider() const
-{
-	assert(_task_provider);
-	
-	return *_task_provider;
-}
-
-ITaskProvider& TaskManager::GetTaskProvider()
-{
-	assert(_task_provider);
-	
-	return *_task_provider;
 }
 
 TaskProviderPtr TaskManager::GetTaskProviderPtr()
