@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */; };
+		10682A9E1D52AABD007189A4 /* MockSystemContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682A9D1D52AABD007189A4 /* MockSystemContainer.cpp */; };
+		10682AA11D52AB07007189A4 /* MockTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682AA01D52AB07007189A4 /* MockTaskManager.cpp */; };
 		109068641D42C3820086B32C /* MockTaskConsumer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068631D42C3820086B32C /* MockTaskConsumer.cpp */; };
 		109068A01D4EA5D30086B32C /* MockOptimalPathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1090689F1D4EA5D30086B32C /* MockOptimalPathFinder.cpp */; };
 		109068A41D4EB09E0086B32C /* MockCyclicGraphChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068A31D4EB09E0086B32C /* MockCyclicGraphChecker.cpp */; };
@@ -35,6 +37,10 @@
 /* Begin PBXFileReference section */
 		105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LambdaTaskTests.hpp; sourceTree = "<group>"; };
 		105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambdaTaskTests.cpp; sourceTree = "<group>"; };
+		10682A9C1D52AAB4007189A4 /* MockSystemContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockSystemContainer.hpp; sourceTree = "<group>"; };
+		10682A9D1D52AABD007189A4 /* MockSystemContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockSystemContainer.cpp; sourceTree = "<group>"; };
+		10682A9F1D52AAF8007189A4 /* MockTaskManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockTaskManager.hpp; sourceTree = "<group>"; };
+		10682AA01D52AB07007189A4 /* MockTaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockTaskManager.cpp; sourceTree = "<group>"; };
 		109068621D42C2F60086B32C /* MockTaskConsumer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockTaskConsumer.hpp; sourceTree = "<group>"; };
 		109068631D42C3820086B32C /* MockTaskConsumer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockTaskConsumer.cpp; sourceTree = "<group>"; };
 		1090689E1D4EA57F0086B32C /* MockOptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockOptimalPathFinder.hpp; sourceTree = "<group>"; };
@@ -110,12 +116,16 @@
 				1090689E1D4EA57F0086B32C /* MockOptimalPathFinder.hpp */,
 				10A7B4271CC590D500B78A7C /* MockSystem.cpp */,
 				10A7B4261CC58F7800B78A7C /* MockSystem.hpp */,
+				10682A9D1D52AABD007189A4 /* MockSystemContainer.cpp */,
+				10682A9C1D52AAB4007189A4 /* MockSystemContainer.hpp */,
 				10A7B4331CC6EED400B78A7C /* MockSystemGraph.cpp */,
 				10A7B4321CC6EE5100B78A7C /* MockSystemGraph.hpp */,
 				10A7B4511CCC490800B78A7C /* MockTask.cpp */,
 				10A7B44E1CCC48E900B78A7C /* MockTask.hpp */,
 				109068631D42C3820086B32C /* MockTaskConsumer.cpp */,
 				109068621D42C2F60086B32C /* MockTaskConsumer.hpp */,
+				10682AA01D52AB07007189A4 /* MockTaskManager.cpp */,
+				10682A9F1D52AAF8007189A4 /* MockTaskManager.hpp */,
 				10DFC18C1D288DC8001FD2FB /* MockTaskProvider.cpp */,
 				10DFC18B1D288C69001FD2FB /* MockTaskProvider.hpp */,
 				10A7B4461CCAF9D100B78A7C /* OptimalPathFinderTests.cpp */,
@@ -237,11 +247,13 @@
 				10A7B4471CCAF9D100B78A7C /* OptimalPathFinderTests.cpp in Sources */,
 				109068B61D5008210086B32C /* SystemManagerTests.cpp in Sources */,
 				109068AB1D4EBA0C0086B32C /* SystemContainerTests.cpp in Sources */,
+				10682A9E1D52AABD007189A4 /* MockSystemContainer.cpp in Sources */,
 				109068A01D4EA5D30086B32C /* MockOptimalPathFinder.cpp in Sources */,
 				10A7B4281CC590D500B78A7C /* MockSystem.cpp in Sources */,
 				10A7B41B1CC1B95700B78A7C /* SystemGraphNodeTests.cpp in Sources */,
 				109068A41D4EB09E0086B32C /* MockCyclicGraphChecker.cpp in Sources */,
 				10FEA9AE1D03A9D200338F5B /* SystemManagerTestSuite.cpp in Sources */,
+				10682AA11D52AB07007189A4 /* MockTaskManager.cpp in Sources */,
 				10DFC1821D27327E001FD2FB /* TaskQueueTests.cpp in Sources */,
 				10DFC19B1D31CA18001FD2FB /* TaskManagerTests.cpp in Sources */,
 				10A7B4501CCC48FA00B78A7C /* TaskTests.cpp in Sources */,
