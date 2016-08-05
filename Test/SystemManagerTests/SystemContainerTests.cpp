@@ -187,11 +187,65 @@ void SystemContainerTests::IsInitialised_AfterInitialise_True(TestCase& test_cas
 
 void SystemContainerTests::Initialise_SystemsInitialised_Success(TestCase& test_case)
 {
-	// TODO
+	SystemContainer sc;
+	SystemGraphPtr sg = std::make_shared<MockSystemGraph>();
+	TaskProviderPtr tp = std::make_shared<MockTaskProvider>();
+	CyclicGraphCheckerPtr cgc = std::make_shared<MockCyclicGraphChecker>();
+	
+	sc.SetSystemGraph(sg);
+	
+	SystemPtr system0 = std::make_shared<MockSystem>(123);
+	SystemPtr system1 = std::make_shared<MockSystem>(456);
+	
+	sc.AddSystem(system0);
+	sc.AddSystem(system1);
+	
+	test_case.Assert(!system0->IsInitialised());
+	test_case.Assert(!system1->IsInitialised());
+	
+	sc.Initialise();
+	
+	test_case.Assert(sc.IsInitialised());
+	test_case.Assert(system0->IsInitialised());
+	test_case.Assert(system1->IsInitialised());
 }
 
 void SystemContainerTests::Initialise_SystemFailsToInitialise_Throw(TestCase& test_case)
 {
-	// TODO
+	class TestSystem:
+		public MockSystem
+	{
+	public:
+		TestSystem(const SystemId id):
+			MockSystem(id)
+		{
+		}
+	protected:
+		void OnInitialise()
+		{
+			throw std::runtime_error("Failed to initialise System");
+		}
+	};
+	
+	SystemContainer sc;
+	SystemGraphPtr sg = std::make_shared<MockSystemGraph>();
+	TaskProviderPtr tp = std::make_shared<MockTaskProvider>();
+	CyclicGraphCheckerPtr cgc = std::make_shared<MockCyclicGraphChecker>();
+	
+	sc.SetSystemGraph(sg);
+	
+	SystemPtr system = std::make_shared<TestSystem>(123);
+	
+	sc.AddSystem(system);
+	
+	test_case.Assert(!system->IsInitialised());
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		sc.Initialise();
+	});
+	
+	test_case.Assert(!sc.IsInitialised());
+	test_case.Assert(!system->IsInitialised());
 }
 
