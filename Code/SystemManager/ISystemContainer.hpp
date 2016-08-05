@@ -18,7 +18,11 @@ public:
 	
 	virtual void SetTaskProvider(TaskProviderPtr task_provider) = 0;
 	
+	virtual bool IsInitialised() const = 0;
+	
 	virtual void AddSystem(SystemPtr system) = 0;
+	
+	virtual void Initialise() = 0;
 	
 	// Get the systems in their optimal path order
 	virtual const std::vector<SystemPtr>& GetOrderedSystems() const = 0;

@@ -23,7 +23,11 @@ public:
 	
 	void SetTaskProvider(TaskProviderPtr task_provider);
 	
+	bool IsInitialised() const{return true;}
+	
 	void AddSystem(SystemPtr system);
+	
+	void Initialise(){}
 	
 	// Get the systems in their optimal path order
 	const std::vector<SystemPtr>& GetOrderedSystems() const;
@@ -33,6 +37,8 @@ private:
 	void CalculateOptimalPath();
 	
 private:
+	
+	bool _is_initialised;
 	
 	SystemGraphPtr _system_graph;
 	
