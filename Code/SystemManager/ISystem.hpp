@@ -27,6 +27,10 @@ public:
 
 	virtual const std::vector<SystemId>& GetDependencies() const = 0;
 	
+	virtual bool IsInitialised() const = 0;
+	
+	virtual void Initialise() = 0;
+	
 	virtual void Run() = 0;
 
 	virtual ~ISystem() {}

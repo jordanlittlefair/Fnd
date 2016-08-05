@@ -1,9 +1,14 @@
 #include "System.hpp"
 
+#include "Exceptions.hpp"
+
+#include <cassert>
+
 using namespace Fnd::SystemManager;
 
 System::System( const SystemId& id ):
-	_id(id)
+	_id(id),
+	_is_initialised(false)
 {
 }
 
@@ -30,8 +35,30 @@ const std::vector<SystemId>& System::GetDependencies() const
 	return _dependencies;
 }
 
+bool System::IsInitialised() const
+{
+	return _is_initialised;
+}
+
+void System::Initialise()
+{
+	if (_is_initialised)
+	{
+		return;
+	}
+	
+	OnInitialise();
+	
+	_is_initialised = true;
+}
+
 void System::Run()
 {
+	if (!_is_initialised)
+	{
+		throw InvalidOperationException();
+	}
+	
 	OnRun();
 	
 	WaitForSystemTasks();

@@ -13,6 +13,10 @@ bool MockSystem::HasTaskProvider() const
 	return System::HasTaskProvider();
 }
 
+void MockSystem::OnInitialise()
+{
+}
+
 void MockSystem::OnRun()
 {
 }

@@ -99,6 +99,7 @@ void SystemTests::Run_NoTasks_Succeess(TestCase& test_case)
 	test_data.system_has_ran = false;
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	test_case.Assert(!test_data.system_has_ran, "System must not have ran");
 	
@@ -139,6 +140,7 @@ void SystemTests::Run_OneTaskSynchronous_Success(TestCase& test_case)
 	test_data.task_has_ran = false;
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	test_case.Assert(!test_data.task_has_ran, "Task must not have ran");
 	
@@ -185,6 +187,7 @@ void SystemTests::Run_TwoTasksSynchronous_Success(TestCase& test_case)
 	test_data.system_has_ran[1] = false;
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	test_case.Assert(!test_data.system_has_ran[0], "Task[0] must not have ran");
 	test_case.Assert(!test_data.system_has_ran[1], "Task[1] must not have ran");
@@ -233,6 +236,7 @@ void SystemTests::Run_FiftyTasksSynchronous_Success(TestCase& test_case)
 	}
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	for (unsigned int i = 0; i < 50; ++i)
 	{
@@ -283,6 +287,7 @@ void SystemTests::Run_OneTaskAsynchronous_Success(TestCase& test_case)
 	test_data.task_has_ran = false;
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;
@@ -336,6 +341,7 @@ void SystemTests::Run_TwoTasksAsynchronous_Success(TestCase& test_case)
 	test_data.system_has_ran[1] = false;
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;
@@ -391,6 +397,7 @@ void SystemTests::Run_FiftyTasksAsynchronous_Success(TestCase& test_case)
 	}
 	
 	SystemPtr system = std::make_shared<TestSystem>(test_data);
+	system->Initialise();
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;

@@ -24,8 +24,7 @@ void SystemManager::SetSystemContainer(SystemContainerPtr system_container)
 
 bool SystemManager::IsInitialised() const
 {
-	// TODO: this should be a method on _system_container
-	return _is_initialised;
+	return _system_container && _system_container->IsInitialised();
 }
 
 bool SystemManager::IsAlive() const
@@ -57,7 +56,7 @@ void SystemManager::Initialise()
 		throw InvalidOperationException();
 	}
 	
-	// TODO: initialise systems in _system_container
+	_system_container->Initialise();
 	
 	_is_initialised = true;
 }

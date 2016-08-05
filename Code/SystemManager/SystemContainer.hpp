@@ -23,11 +23,11 @@ public:
 	
 	void SetTaskProvider(TaskProviderPtr task_provider);
 	
-	bool IsInitialised() const{return true;}
+	bool IsInitialised() const;
 	
 	void AddSystem(SystemPtr system);
 	
-	void Initialise(){}
+	void Initialise();
 	
 	// Get the systems in their optimal path order
 	const std::vector<SystemPtr>& GetOrderedSystems() const;

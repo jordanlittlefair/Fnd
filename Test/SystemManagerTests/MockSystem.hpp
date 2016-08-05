@@ -22,6 +22,8 @@ public:
 	
 protected:
 	
+	virtual void OnInitialise();
+	
 	virtual void OnRun();
 };
 

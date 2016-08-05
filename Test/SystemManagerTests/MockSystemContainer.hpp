@@ -20,15 +20,17 @@ public:
 	
 	void SetTaskProvider(Fnd::SystemManager::TaskProviderPtr task_provider);
 	
-	bool IsInitialised() const { return true; }
+	bool IsInitialised() const;
 	
 	void AddSystem(Fnd::SystemManager::SystemPtr system);
 	
-	void Initialise() {}
+	void Initialise();
 	
 	const std::vector<Fnd::SystemManager::SystemPtr>& GetOrderedSystems() const;
 	
 private:
+	
+	bool _is_initialised;
 	
 	Fnd::SystemManager::TaskProviderPtr _task_provider;
 	

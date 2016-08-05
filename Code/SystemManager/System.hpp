@@ -27,6 +27,10 @@ public:
 	
 	const std::vector<SystemId>& GetDependencies() const;
 	
+	bool IsInitialised() const;
+	
+	void Initialise();
+	
 	void Run();
 	
 	~System();
@@ -43,11 +47,15 @@ protected:
 	
 	void WaitForSystemTasks();
 
+	virtual void OnInitialise() = 0;
+	
 	virtual void OnRun() = 0;
 	
 private:
 
 	const SystemId _id;
+	
+	bool _is_initialised;
 
 	std::vector<SystemId> _dependencies;
 	

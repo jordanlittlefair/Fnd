@@ -5,7 +5,8 @@
 
 using namespace Fnd::SystemManager;
 
-SystemContainer::SystemContainer()
+SystemContainer::SystemContainer():
+	_is_initialised(false)
 {
 }
 
@@ -24,8 +25,18 @@ void SystemContainer::SetTaskProvider(TaskProviderPtr task_provider)
 	}
 }
 
+bool SystemContainer::IsInitialised() const
+{
+	return _is_initialised;
+}
+
 void SystemContainer::AddSystem(SystemPtr system)
 {
+	if (_is_initialised)
+	{
+		throw InvalidOperationException();
+	}
+	
 	if ( std::find_if(_systems.begin(),_systems.end(),[&](const SystemPtr& existing_system)
 			{
 				return existing_system->GetId() == system->GetId();
@@ -41,6 +52,21 @@ void SystemContainer::AddSystem(SystemPtr system)
 	{
 		throw InvalidSystemIdException(system->GetId());
 	}
+}
+
+void SystemContainer::Initialise()
+{
+	if (_is_initialised)
+	{
+		throw InvalidOperationException();
+	}
+	
+	for (auto& system : _systems)
+	{
+		system->Initialise();
+	}
+	
+	_is_initialised = true;
 }
 
 const std::vector<SystemPtr>& SystemContainer::GetOrderedSystems() const
