@@ -44,7 +44,7 @@ void System::Initialise()
 {
 	if (_is_initialised)
 	{
-		return;
+		throw InvalidOperationException();
 	}
 	
 	OnInitialise();

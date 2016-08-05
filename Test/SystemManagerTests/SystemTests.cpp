@@ -1,7 +1,7 @@
 #include "SystemTests.hpp"
 
 #include "MockSystem.hpp"
-
+#include "../../Code/SystemManager/Exceptions.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
 #include "../../Code/SystemManager/TaskManager.hpp"
 
@@ -15,6 +15,14 @@ SystemTests::SystemTests():
 	AddTestCase( "GetId_Success", &SystemTests::GetId_Success, this );
 	AddTestCase( "AddDependency_Success", &SystemTests::AddDependency_Success, this );
 	AddTestCase( "AddDependency_DuplicateId_Fail", &SystemTests::AddDependency_DuplicateId_Fail, this );
+	
+	AddTestCase( "IsInitialised_BeforeInitialise_False", &SystemTests::IsInitialised_BeforeInitialise_False, this );
+	AddTestCase( "IsInitialised_AfterInitialise_True", &SystemTests::IsInitialised_AfterInitialise_True, this );
+	
+	AddTestCase( "Initialise_Success", &SystemTests::Initialise_Success, this );
+	AddTestCase( "Initialise_ForceFail_Throw", &SystemTests::Initialise_ForceFail_Throw, this );
+	AddTestCase( "Initialise_AlreadyInitialised_Fail", &SystemTests::Initialise_AlreadyInitialised_Fail, this );
+	
 	AddTestCase( "Run_NoTasks_Succeess", &SystemTests::Run_NoTasks_Succeess, this );
 	AddTestCase( "Run_OneTaskSynchronous_Success", &SystemTests::Run_OneTaskSynchronous_Success, this );
 	AddTestCase( "Run_TwoTasksSynchronous_Success", &SystemTests::Run_TwoTasksSynchronous_Success, this );
@@ -68,6 +76,69 @@ void SystemTests::AddDependency_DuplicateId_Fail( TestCase& test_case )
 	
 	test_case.Assert( system.GetDependencies().size() == 1 );
 	test_case.Assert( std::find( system.GetDependencies().begin(), system.GetDependencies().end(), dep1 ) != system.GetDependencies().end() );
+}
+
+void SystemTests::IsInitialised_BeforeInitialise_False(TestCase& test_case)
+{
+	MockSystem system(123);
+	
+	test_case.AssertEqual(false, system.IsInitialised());
+}
+
+void SystemTests::IsInitialised_AfterInitialise_True(TestCase& test_case)
+{
+	MockSystem system(123);
+	
+	system.Initialise();
+	
+	test_case.AssertEqual(true, system.IsInitialised());
+}
+
+void SystemTests::Initialise_Success(TestCase& test_case)
+{
+	MockSystem system(123);
+	
+	system.Initialise();
+	
+	test_case.AssertEqual(true, system.IsInitialised());
+}
+
+void SystemTests::Initialise_ForceFail_Throw(TestCase& test_case)
+{
+	class TestSystem:
+		public MockSystem
+	{
+	public:
+		TestSystem(const SystemId& id):
+			MockSystem(id)
+		{
+			
+		}
+	protected:
+		void OnInitialise()
+		{
+			throw std::runtime_error("Failed to initialise system");
+		}
+	};
+	
+	TestSystem system(123);
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		system.Initialise();
+	});
+}
+
+void SystemTests::Initialise_AlreadyInitialised_Fail(TestCase& test_case)
+{
+	MockSystem system(123);
+	
+	system.Initialise();
+	
+	test_case.AssertException<InvalidOperationException>([&]()
+	{
+		system.Initialise();
+	});
 }
 
 void SystemTests::Run_NoTasks_Succeess(TestCase& test_case)

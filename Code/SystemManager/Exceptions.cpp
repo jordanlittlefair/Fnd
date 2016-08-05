@@ -21,7 +21,7 @@ Exception::Exception( const std::string& what ):
 }
 
 InvalidSystemIdException::InvalidSystemIdException():
-Fnd::SystemManager::Exception("Invalid SystemId[")
+Fnd::SystemManager::Exception("Invalid SystemId")
 {
 }
 
