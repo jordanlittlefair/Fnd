@@ -2,6 +2,8 @@
 
 #include "../../Code/SystemManager/ITaskProvider.hpp"
 
+#include <condition_variable>
+
 namespace Fnd
 {
 

@@ -6,6 +6,7 @@
 #include "../../Code/SystemManager/TaskQueue.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
 
+#include <atomic>
 #include <thread>
 
 using namespace Fnd::Test;
