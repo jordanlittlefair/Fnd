@@ -3,6 +3,8 @@
 #include "Exceptions.hpp"
 #include "ISystem.hpp"
 
+#include <algorithm>
+
 using namespace Fnd::SystemManager;
 
 SystemContainer::SystemContainer():

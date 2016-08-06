@@ -2,6 +2,7 @@
 
 #include "ITaskProvider.hpp"
 
+#include <condition_variable>
 #include <map>
 #include <mutex>
 #include <queue>
