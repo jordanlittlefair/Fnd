@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */; };
 		10682BAD1D57E51F007189A4 /* UtilityTestSuite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */; };
+		10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10682B9A1D57E4E7007189A4 /* libUtilityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtilityTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UtilityTestSuite.cpp; sourceTree = "<group>"; };
 		10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UtilityTestSuite.hpp; sourceTree = "<group>"; };
+		10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HashIdFromNameGeneratorTests.hpp; sourceTree = "<group>"; };
+		10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashIdFromNameGeneratorTests.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,8 @@
 		10682B911D57E4E7007189A4 = {
 			isa = PBXGroup;
 			children = (
+				10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */,
+				10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */,
 				10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */,
 				10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */,
 				10682B9B1D57E4E7007189A4 /* Products */,
@@ -112,6 +117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */,
 				10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
