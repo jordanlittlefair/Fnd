@@ -10,6 +10,8 @@
 		10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */; };
 		10682BAD1D57E51F007189A4 /* UtilityTestSuite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */; };
 		10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */; };
+		10682BB61D57F406007189A4 /* IdNameMapperTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BB51D57F406007189A4 /* IdNameMapperTests.cpp */; };
+		10682BBB1D5FD944007189A4 /* MockIdFromNameGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BBA1D5FD944007189A4 /* MockIdFromNameGenerator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,10 @@
 		10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UtilityTestSuite.hpp; sourceTree = "<group>"; };
 		10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HashIdFromNameGeneratorTests.hpp; sourceTree = "<group>"; };
 		10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashIdFromNameGeneratorTests.cpp; sourceTree = "<group>"; };
+		10682BB41D57F3FB007189A4 /* IdNameMapperTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IdNameMapperTests.hpp; sourceTree = "<group>"; };
+		10682BB51D57F406007189A4 /* IdNameMapperTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdNameMapperTests.cpp; sourceTree = "<group>"; };
+		10682BB91D5FD8AA007189A4 /* MockIdFromNameGenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockIdFromNameGenerator.hpp; sourceTree = "<group>"; };
+		10682BBA1D5FD944007189A4 /* MockIdFromNameGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockIdFromNameGenerator.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,10 @@
 			children = (
 				10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */,
 				10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */,
+				10682BB51D57F406007189A4 /* IdNameMapperTests.cpp */,
+				10682BB41D57F3FB007189A4 /* IdNameMapperTests.hpp */,
+				10682BBA1D5FD944007189A4 /* MockIdFromNameGenerator.cpp */,
+				10682BB91D5FD8AA007189A4 /* MockIdFromNameGenerator.hpp */,
 				10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */,
 				10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */,
 				10682B9B1D57E4E7007189A4 /* Products */,
@@ -118,7 +128,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */,
+				10682BB61D57F406007189A4 /* IdNameMapperTests.cpp in Sources */,
 				10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */,
+				10682BBB1D5FD944007189A4 /* MockIdFromNameGenerator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

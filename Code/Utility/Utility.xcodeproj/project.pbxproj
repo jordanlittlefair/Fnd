@@ -17,6 +17,7 @@
 		10682B851D57E3F0007189A4 /* HashIdFromNameGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashIdFromNameGenerator.hpp; sourceTree = "<group>"; };
 		10682B861D57E3F0007189A4 /* IIdFromNameGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IIdFromNameGenerator.hpp; sourceTree = "<group>"; };
 		10682B891D57E402007189A4 /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		10682BB31D57F04B007189A4 /* IdNameMapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IdNameMapper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,9 +34,10 @@
 		10682B671D57E3B5007189A4 = {
 			isa = PBXGroup;
 			children = (
-				10682B891D57E402007189A4 /* Utility.cpp */,
 				10682B851D57E3F0007189A4 /* HashIdFromNameGenerator.hpp */,
+				10682BB31D57F04B007189A4 /* IdNameMapper.hpp */,
 				10682B861D57E3F0007189A4 /* IIdFromNameGenerator.hpp */,
+				10682B891D57E402007189A4 /* Utility.cpp */,
 				10682B711D57E3B5007189A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -243,6 +245,7 @@
 				10682B7D1D57E3B5007189A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
