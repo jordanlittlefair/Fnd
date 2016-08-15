@@ -3,8 +3,8 @@
 #include "../Framework/ConsoleResultPrinter.hpp"
 #include "../Framework/XmlResultPrinter.hpp"
 
+#include "../UtilityTests/UtilityTestSuite.hpp"
 #include "../SystemManagerTests/SystemManagerTestSuite.hpp"
-
 
 #include <cassert>
 
@@ -24,17 +24,16 @@ int main()
 		Add any TestSuites below
 	*/
 	
+	test_suites.push_back( std::make_shared<Utility::UtilityTestSuite>() );
 	test_suites.push_back( std::make_shared<SystemManager::SystemManagerTestSuite>() );
 	
-	
-
 	for (auto& test_suite : test_suites)
 	{
 		test_suite->SetResultPrinter(result_printers);
-	
+		
 		test_suite->Run();
-	
-		//assert( test_suite->GetResult().GetSucceeded() );
+		
+		assert( test_suite->GetResult().GetSucceeded() );
 	}
 	
 	return 0;
