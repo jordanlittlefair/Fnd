@@ -99,8 +99,14 @@
     <ProjectReference Include="..\..\Code\Game\Game.vcxproj">
       <Project>{1f00df01-bd96-420f-b4ca-5bfc36ddfa4e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Code\Utility\Utility.vcxproj">
+      <Project>{fec57043-b352-4c89-af7e-3ca70a67cbb0}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Framework\Framework.vcxproj">
       <Project>{f9a2f267-9fe6-4e93-8c17-2f4d1ef732dd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityTests\UtilityTests.vcxproj">
+      <Project>{d17d1923-92a9-4f90-bb6f-71d010a82b55}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
