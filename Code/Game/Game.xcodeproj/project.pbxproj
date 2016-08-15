@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10682B8B1D57E43C007189A4 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3801CB81FC400B78A7C /* libCore.a */; };
+		10682B8C1D57E43C007189A4 /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10682B841D57E3B6007189A4 /* libUtility.a */; };
 		10A7B3761CB81DF800B78A7C /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3751CB81DF800B78A7C /* Main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		10682B831D57E3B6007189A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10682B7E1D57E3B5007189A4 /* Utility.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 10682B701D57E3B5007189A4;
+			remoteInfo = Utility;
+		};
 		10A7B37F1CB81FC400B78A7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */;
@@ -33,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		10682B7E1D57E3B5007189A4 /* Utility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utility.xcodeproj; path = ../Utility/Utility.xcodeproj; sourceTree = "<group>"; };
 		10A7B3691CB81DA400B78A7C /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3751CB81DF800B78A7C /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
@@ -43,15 +53,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10682B8B1D57E43C007189A4 /* libCore.a in Frameworks */,
+				10682B8C1D57E43C007189A4 /* libUtility.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10682B7F1D57E3B5007189A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10682B841D57E3B6007189A4 /* libUtility.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		10A7B3601CB81DA400B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10682B7E1D57E3B5007189A4 /* Utility.xcodeproj */,
 				10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */,
 				10A7B3741CB81DEC00B78A7C /* Source */,
 				10A7B3731CB81DDF00B78A7C /* Header */,
@@ -139,6 +160,10 @@
 					ProductGroup = 10A7B37C1CB81FC400B78A7C /* Products */;
 					ProjectRef = 10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */;
 				},
+				{
+					ProductGroup = 10682B7F1D57E3B5007189A4 /* Products */;
+					ProjectRef = 10682B7E1D57E3B5007189A4 /* Utility.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -148,6 +173,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		10682B841D57E3B6007189A4 /* libUtility.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libUtility.a;
+			remoteRef = 10682B831D57E3B6007189A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		10A7B3801CB81FC400B78A7C /* libCore.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
