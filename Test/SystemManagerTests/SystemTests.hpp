@@ -21,6 +21,7 @@ public:
 private:
 
 	void GetId_Success(TestCase& test_case);
+	void GetName_Success(TestCase& test_case);
 	void AddDependency_Success(TestCase& test_case);
 	void AddDependency_DuplicateId_Fail(TestCase& test_case);
 	

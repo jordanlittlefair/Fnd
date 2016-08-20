@@ -87,6 +87,12 @@
     <ClCompile Include="SystemManagerTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MockNameMappedSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NameMappedSystemTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CyclicGraphCheckerTests.hpp">
@@ -159,6 +165,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SystemManagerTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNameMappedSystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NameMappedSystemTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

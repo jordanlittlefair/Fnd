@@ -16,7 +16,7 @@ class MockSystem:
 {
 public:
 
-	MockSystem(const Fnd::SystemManager::SystemId& id);
+	MockSystem(const Fnd::SystemManager::SystemId& id, const std::string& name = "MockSystem");
 	
 	bool HasTaskProvider() const;
 	

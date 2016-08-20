@@ -15,6 +15,7 @@
     <ClCompile Include="CyclicGraphCheckerTests.cpp" />
     <ClCompile Include="LambdaTaskTests.cpp" />
     <ClCompile Include="MockCyclicGraphChecker.cpp" />
+    <ClCompile Include="MockNameMappedSystem.cpp" />
     <ClCompile Include="MockOptimalPathFinder.cpp" />
     <ClCompile Include="MockSystem.cpp" />
     <ClCompile Include="MockSystemContainer.cpp" />
@@ -23,6 +24,7 @@
     <ClCompile Include="MockTaskConsumer.cpp" />
     <ClCompile Include="MockTaskManager.cpp" />
     <ClCompile Include="MockTaskProvider.cpp" />
+    <ClCompile Include="NameMappedSystemTests.cpp" />
     <ClCompile Include="OptimalPathFinderTests.cpp" />
     <ClCompile Include="SystemContainerTests.cpp" />
     <ClCompile Include="SystemGraphNodeTests.cpp" />
@@ -41,6 +43,7 @@
     <ClInclude Include="CyclicGraphCheckerTests.hpp" />
     <ClInclude Include="LambdaTaskTests.hpp" />
     <ClInclude Include="MockCyclicGraphChecker.hpp" />
+    <ClInclude Include="MockNameMappedSystem.hpp" />
     <ClInclude Include="MockOptimalPathFinder.hpp" />
     <ClInclude Include="MockSystem.hpp" />
     <ClInclude Include="MockSystemContainer.hpp" />
@@ -49,6 +52,7 @@
     <ClInclude Include="MockTaskConsumer.hpp" />
     <ClInclude Include="MockTaskManager.hpp" />
     <ClInclude Include="MockTaskProvider.hpp" />
+    <ClInclude Include="NameMappedSystemTests.hpp" />
     <ClInclude Include="OptimalPathFinderTests.hpp" />
     <ClInclude Include="SystemContainerTests.hpp" />
     <ClInclude Include="SystemGraphNodeTests.hpp" />

@@ -13,6 +13,7 @@ SystemTests::SystemTests():
 	UnitTestClass("SystemTests")
 {
 	AddTestCase( "GetId_Success", &SystemTests::GetId_Success, this );
+	AddTestCase( "GetName_Success", &SystemTests::GetName_Success, this );
 	AddTestCase( "AddDependency_Success", &SystemTests::AddDependency_Success, this );
 	AddTestCase( "AddDependency_DuplicateId_Fail", &SystemTests::AddDependency_DuplicateId_Fail, this );
 	
@@ -39,6 +40,16 @@ void SystemTests::GetId_Success( TestCase& test_case )
 	MockSystem system( id );
 	
 	test_case.Assert( system.GetId() == id );
+}
+
+void SystemTests::GetName_Success(TestCase& test_case)
+{
+	const SystemId id = 123;
+	const std::string name = "MockSystemName";
+	
+	MockSystem system(id, name);
+	
+	test_case.Assert( system.GetName() == name );
 }
 
 void SystemTests::AddDependency_Success( TestCase& test_case )
