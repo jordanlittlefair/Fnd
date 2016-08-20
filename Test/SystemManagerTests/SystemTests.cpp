@@ -1,9 +1,11 @@
 #include "SystemTests.hpp"
 
 #include "MockSystem.hpp"
+#include "../../Code/SystemManager/ConcurrentTaskProcessor.hpp"
 #include "../../Code/SystemManager/Exceptions.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
 #include "../../Code/SystemManager/TaskManager.hpp"
+#include "../../Code/SystemManager/TaskQueue.hpp"
 
 using namespace Fnd::SystemManager;
 using namespace Fnd::Test;
@@ -373,6 +375,8 @@ void SystemTests::Run_OneTaskAsynchronous_Success(TestCase& test_case)
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;
+	task_manager.SetTaskProvider(std::make_shared<TaskQueue>());
+	task_manager.SetTaskConsumer(std::make_shared<ConcurrentTaskProcessor>(std::thread::hardware_concurrency()));
 	task_manager.Initialise();
 	task_manager.Start();
 	
@@ -427,6 +431,8 @@ void SystemTests::Run_TwoTasksAsynchronous_Success(TestCase& test_case)
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;
+	task_manager.SetTaskProvider(std::make_shared<TaskQueue>());
+	task_manager.SetTaskConsumer(std::make_shared<ConcurrentTaskProcessor>(std::thread::hardware_concurrency()));
 	task_manager.Initialise();
 	task_manager.Start();
 	
@@ -483,6 +489,8 @@ void SystemTests::Run_FiftyTasksAsynchronous_Success(TestCase& test_case)
 	
 	// Run the tasks inside of the TaskManager
 	TaskManager task_manager;
+	task_manager.SetTaskProvider(std::make_shared<TaskQueue>());
+	task_manager.SetTaskConsumer(std::make_shared<ConcurrentTaskProcessor>(std::thread::hardware_concurrency()));
 	task_manager.Initialise();
 	task_manager.Start();
 	

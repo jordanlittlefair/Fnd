@@ -1,6 +1,7 @@
 #include "TaskManager.hpp"
 
 #include "ConcurrentTaskProcessor.hpp"
+#include "Exceptions.hpp"
 #include "TaskQueue.hpp"
 
 #include <cassert>
@@ -20,20 +21,11 @@ bool TaskManager::IsInitialised() const
 
 void TaskManager::Initialise()
 {
+	assert(_task_consumer);
+	
 	if (_is_initialised)
 	{
-		return;		// or throw an exception?
-	}
-	
-	if (!_task_consumer)
-	{
-		const unsigned int num_threads = std::thread::hardware_concurrency();
-		_task_consumer = std::make_shared<ConcurrentTaskProcessor>(num_threads);
-	}
-	
-	if (!_task_provider)
-	{
-		_task_provider = std::make_shared<TaskQueue>();
+		throw InvalidOperationException();
 	}
 	
 	_task_consumer->SetTaskProvider(_task_provider);

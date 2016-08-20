@@ -13,9 +13,8 @@ TaskManagerTests::TaskManagerTests():
 	UnitTestClass("TaskManagerTests")
 {
 	AddTestCase( "Constructor_IsInitialised_False", &TaskManagerTests::Constructor_IsInitialised_False, this );
-	AddTestCase( "Initialise_DefaultProviderConsumer_AreSet", &TaskManagerTests::Initialise_DefaultProviderConsumer_AreSet, this );
-	AddTestCase( "Initialise_CustomProvider_IsSet", &TaskManagerTests::Initialise_CustomProvider_IsSet, this );
-	AddTestCase( "Initialise_CustomConsumer_IsSet", &TaskManagerTests::Initialise_CustomConsumer_IsSet, this );
+	AddTestCase( "Initialise_TaskProvider_IsSet", &TaskManagerTests::Initialise_TaskProvider_IsSet, this );
+	AddTestCase( "Initialise_TaskConsumer_IsSet", &TaskManagerTests::Initialise_TaskConsumer_IsSet, this );
 	AddTestCase( "Initialise_IsInitialised", &TaskManagerTests::Initialise_IsInitialised, this );
 	AddTestCase( "Start_BeforeInitialised_NotAlive", &TaskManagerTests::Start_BeforeInitialised_NotAlive, this );
 	AddTestCase( "Start_AfterInitialised_Alive", &TaskManagerTests::Start_AfterInitialised_Alive, this );
@@ -36,36 +35,30 @@ void TaskManagerTests::Constructor_IsInitialised_False(TestCase& test_case)
 	test_case.Assert(!tm.IsAlive());
 }
 
-void TaskManagerTests::Initialise_DefaultProviderConsumer_AreSet(TestCase& test_case)
-{
-	TaskManager tm;
-	
-	tm.Initialise();
-	
-	test_case.Assert(tm.GetTaskConsumerPtr() != nullptr);
-	test_case.Assert(tm.GetTaskProviderPtr() != nullptr);
-}
-
-void TaskManagerTests::Initialise_CustomProvider_IsSet(TestCase& test_case)
+void TaskManagerTests::Initialise_TaskProvider_IsSet(TestCase& test_case)
 {
 	TaskManager tm;
 	
 	auto tp = std::make_shared<MockTaskProvider>();
+	auto tc = std::make_shared<MockTaskConsumer>();
 	
 	tm.SetTaskProvider(tp);
+	tm.SetTaskConsumer(tc);
 	
 	tm.Initialise();
 	
 	test_case.Assert(tm.GetTaskProviderPtr().get() == tp.get());
 }
 
-void TaskManagerTests::Initialise_CustomConsumer_IsSet(TestCase& test_case)
+void TaskManagerTests::Initialise_TaskConsumer_IsSet(TestCase& test_case)
 {
 	TaskManager tm;
 	
 	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
 	
 	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
 	
 	tm.Initialise();
 	
@@ -75,6 +68,12 @@ void TaskManagerTests::Initialise_CustomConsumer_IsSet(TestCase& test_case)
 void TaskManagerTests::Initialise_IsInitialised(TestCase& test_case)
 {
 	TaskManager tm;
+	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
 	
 	tm.Initialise();
 	
@@ -98,6 +97,12 @@ void TaskManagerTests::Start_AfterInitialised_Alive(TestCase& test_case)
 {
 	TaskManager tm;
 	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
+	
 	tm.Initialise();
 	
 	tm.Start();
@@ -116,6 +121,12 @@ void TaskManagerTests::IsAlive_AfterStart_True(TestCase& test_case)
 {
 	TaskManager tm;
 	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
+	
 	tm.Initialise();
 	
 	tm.Start();
@@ -126,6 +137,12 @@ void TaskManagerTests::IsAlive_AfterStart_True(TestCase& test_case)
 void TaskManagerTests::IsAlive_AfterKill_False(TestCase& test_case)
 {
 	TaskManager tm;
+	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
 	
 	tm.Initialise();
 	
@@ -147,6 +164,12 @@ void TaskManagerTests::Kill_BeforeStart_DoNothing(TestCase& test_case)
 {
 	TaskManager tm;
 	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
+	
 	tm.Initialise();
 	
 	tm.Kill();
@@ -155,6 +178,12 @@ void TaskManagerTests::Kill_BeforeStart_DoNothing(TestCase& test_case)
 void TaskManagerTests::Kill_AfterStart_Success(TestCase& test_case)
 {
 	TaskManager tm;
+	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
 	
 	tm.Initialise();
 	
@@ -166,6 +195,12 @@ void TaskManagerTests::Kill_AfterStart_Success(TestCase& test_case)
 void TaskManagerTests::Kill_Twice_DoNothing(TestCase& test_case)
 {
 	TaskManager tm;
+	
+	auto tc = std::make_shared<MockTaskConsumer>();
+	auto tp = std::make_shared<MockTaskProvider>();
+	
+	tm.SetTaskConsumer(tc);
+	tm.SetTaskProvider(tp);
 	
 	tm.Initialise();
 	
