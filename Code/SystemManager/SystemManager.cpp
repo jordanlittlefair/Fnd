@@ -70,6 +70,8 @@ void SystemManager::Initialise()
 	
 	_system_container->Initialise();
 	
+	_task_manager->Initialise();
+	
 	_is_initialised = true;
 }
 

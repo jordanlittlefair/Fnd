@@ -15,6 +15,7 @@
 #include "SystemContainerTests.hpp"
 #include "SystemManagerTests.hpp"
 #include "NameMappedSystemTests.hpp"
+#include "SystemManagerIntegrationTests.hpp"
 
 using namespace Fnd::Test::SystemManager;
 
@@ -36,4 +37,5 @@ SystemManagerTestSuite::SystemManagerTestSuite():
 	AddTestClass<SystemContainerTests>();
 	AddTestClass<SystemManagerTests>();
 	AddTestClass<NameMappedSystemTests>();
+	AddTestClass<SystemManagerIntegrationTests>();
 }

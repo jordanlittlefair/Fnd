@@ -4,6 +4,7 @@
 #include "ISystem.hpp"
 
 #include <algorithm>
+#include <cassert>
 
 using namespace Fnd::SystemManager;
 
@@ -34,6 +35,8 @@ bool SystemContainer::IsInitialised() const
 
 void SystemContainer::AddSystem(SystemPtr system)
 {
+	assert(_system_graph);
+	
 	if (_is_initialised)
 	{
 		throw InvalidOperationException();
@@ -58,6 +61,8 @@ void SystemContainer::AddSystem(SystemPtr system)
 
 void SystemContainer::Initialise()
 {
+	assert(_system_graph);
+	
 	if (_is_initialised)
 	{
 		throw InvalidOperationException();
@@ -78,6 +83,8 @@ const std::vector<SystemPtr>& SystemContainer::GetOrderedSystems() const
 
 void SystemContainer::CalculateOptimalPath()
 {
+	assert(_system_graph);
+	
 	_system_graph->UpdateSystemNodes(_systems);
 	
 	std::vector<SystemId> path_ids = _system_graph->GetOptimalPath();
