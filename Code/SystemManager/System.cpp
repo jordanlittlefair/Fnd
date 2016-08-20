@@ -6,8 +6,9 @@
 
 using namespace Fnd::SystemManager;
 
-System::System( const SystemId& id ):
+System::System(const SystemId& id, const std::string& name):
 	_id(id),
+	_name(name),
 	_is_initialised(false)
 {
 }
@@ -20,6 +21,11 @@ void System::SetTaskProvider(TaskProviderPtr task_provider)
 SystemId System::GetId() const
 {
 	return _id;
+}
+
+std::string System::GetName() const
+{
+	return _name;
 }
 
 void System::AddDependency( const SystemId& dependency )

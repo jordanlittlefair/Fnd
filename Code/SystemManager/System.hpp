@@ -22,6 +22,8 @@ public:
 	void SetTaskProvider(TaskProviderPtr task_provider);
 	
 	SystemId GetId() const;
+
+	std::string GetName() const;
 	
 	void AddDependency(const SystemId& dependency);
 	
@@ -37,7 +39,7 @@ public:
 	
 protected:
 
-	System(const SystemId& id);
+	System(const SystemId& id, const std::string& name);
 	
 	SystemPtr This();
 	
@@ -54,6 +56,8 @@ protected:
 private:
 
 	const SystemId _id;
+
+	const std::string _name;
 	
 	bool _is_initialised;
 
