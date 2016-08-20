@@ -12,6 +12,11 @@ SystemManager::SystemManager():
 	
 }
 
+void SystemManager::SetSystemIdNameMapper(SystemIdNameMapperPtr system_id_name_mapper)
+{
+	_system_id_name_mapper = system_id_name_mapper;
+}
+
 void SystemManager::SetTaskManager(TaskManagerPtr task_manager)
 {
 	_task_manager = task_manager;
@@ -32,6 +37,13 @@ bool SystemManager::IsAlive() const
 	assert(_task_manager);
 	
 	return _task_manager->IsAlive();
+}
+
+SystemIdNameMapperPtr SystemManager::GetSystemIdNameMapper()
+{
+	assert(_system_id_name_mapper);
+
+	return _system_id_name_mapper;
 }
 
 void SystemManager::AddSystem(SystemPtr system)

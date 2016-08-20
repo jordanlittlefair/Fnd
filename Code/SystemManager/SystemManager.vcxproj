@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="NameMappedSystem.cpp" />
     <ClCompile Include="ConcurrentTaskProcessor.cpp" />
     <ClCompile Include="CyclicGraphChecker.cpp" />
     <ClCompile Include="Exceptions.cpp" />
@@ -40,12 +41,14 @@
     <ClInclude Include="ITaskProcessorThread.hpp" />
     <ClInclude Include="ITaskProvider.hpp" />
     <ClInclude Include="LambdaTask.hpp" />
+    <ClInclude Include="NameMappedSystem.hpp" />
     <ClInclude Include="OptimalPathFinder.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemContainer.hpp" />
     <ClInclude Include="SystemGraph.hpp" />
     <ClInclude Include="SystemGraphNode.hpp" />
     <ClInclude Include="SystemId.hpp" />
+    <ClInclude Include="SystemIdNameMapper.hpp" />
     <ClInclude Include="SystemManager.hpp" />
     <ClInclude Include="Task.hpp" />
     <ClInclude Include="TaskManager.hpp" />

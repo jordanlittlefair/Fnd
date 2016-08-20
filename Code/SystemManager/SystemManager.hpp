@@ -4,6 +4,8 @@
 #include "ISystemManager.hpp"
 #include "ITaskManager.hpp"
 
+#include "SystemIdNameMapper.hpp"
+
 namespace Fnd
 {
 	
@@ -16,6 +18,8 @@ class SystemManager:
 public:
 	
 	SystemManager();
+
+	void SetSystemIdNameMapper(SystemIdNameMapperPtr system_id_name_mapper);
 	
 	void SetTaskManager(TaskManagerPtr task_manager);
 	
@@ -24,6 +28,8 @@ public:
 	bool IsInitialised() const;
 	
 	bool IsAlive() const;
+
+	SystemIdNameMapperPtr GetSystemIdNameMapper();
 	
 	void AddSystem(SystemPtr system);
 	
@@ -40,6 +46,8 @@ public:
 private:
 	
 	bool _is_initialised;
+
+	SystemIdNameMapperPtr _system_id_name_mapper;
 	
 	TaskManagerPtr _task_manager;
 	
