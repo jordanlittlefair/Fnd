@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103386201D68C33400811892 /* NameMappedSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033861D1D68C33400811892 /* NameMappedSystem.cpp */; };
+		103386211D68C33400811892 /* NameMappedSystem.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033861E1D68C33400811892 /* NameMappedSystem.hpp */; };
+		103386221D68C33400811892 /* SystemIdNameMapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033861F1D68C33400811892 /* SystemIdNameMapper.hpp */; };
 		105BFE151CCCEA350095CF2E /* LambdaTask.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 105BFE141CCCEA350095CF2E /* LambdaTask.hpp */; };
 		109068A71D4EB9FC0086B32C /* SystemContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068A51D4EB9FC0086B32C /* SystemContainer.cpp */; };
 		109068A81D4EB9FC0086B32C /* SystemContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 109068A61D4EB9FC0086B32C /* SystemContainer.hpp */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1033861D1D68C33400811892 /* NameMappedSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NameMappedSystem.cpp; sourceTree = "<group>"; };
+		1033861E1D68C33400811892 /* NameMappedSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NameMappedSystem.hpp; sourceTree = "<group>"; };
+		1033861F1D68C33400811892 /* SystemIdNameMapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SystemIdNameMapper.hpp; sourceTree = "<group>"; };
 		105BFE141CCCEA350095CF2E /* LambdaTask.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LambdaTask.hpp; sourceTree = "<group>"; };
 		10682A9B1D511FDE007189A4 /* ITaskManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ITaskManager.hpp; sourceTree = "<group>"; };
 		1090689D1D4E9B720086B32C /* IOptimalPathFinder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOptimalPathFinder.hpp; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 		10A7B3C01CB9CA8800B78A7C = {
 			isa = PBXGroup;
 			children = (
+				1033861D1D68C33400811892 /* NameMappedSystem.cpp */,
+				1033861E1D68C33400811892 /* NameMappedSystem.hpp */,
+				1033861F1D68C33400811892 /* SystemIdNameMapper.hpp */,
 				10DFC18F1D3071CE001FD2FB /* ConcurrentTaskProcessor.cpp */,
 				10DFC18E1D2AEA01001FD2FB /* ConcurrentTaskProcessor.hpp */,
 				10A7B43B1CC94BBD00B78A7C /* CyclicGraphChecker.cpp */,
@@ -143,12 +152,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				109068B21D5004ED0086B32C /* SystemManager.hpp in Headers */,
+				103386221D68C33400811892 /* SystemIdNameMapper.hpp in Headers */,
 				10A7B42E1CC5A14000B78A7C /* SystemGraph.hpp in Headers */,
 				109068A81D4EB9FC0086B32C /* SystemContainer.hpp in Headers */,
 				105BFE151CCCEA350095CF2E /* LambdaTask.hpp in Headers */,
 				10A7B41D1CC44CF900B78A7C /* ISystem.hpp in Headers */,
 				10A7B43E1CC94BBD00B78A7C /* CyclicGraphChecker.hpp in Headers */,
 				10A7B4241CC451AD00B78A7C /* System.hpp in Headers */,
+				103386211D68C33400811892 /* NameMappedSystem.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +231,7 @@
 				10A7B4231CC451AD00B78A7C /* System.cpp in Sources */,
 				10DFC17F1D248114001FD2FB /* TaskQueue.cpp in Sources */,
 				10A7B3E21CB9CEDA00B78A7C /* SystemGraphNode.cpp in Sources */,
+				103386201D68C33400811892 /* NameMappedSystem.cpp in Sources */,
 				10DFC1871D2884E4001FD2FB /* TaskProcessorThread.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

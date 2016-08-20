@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103386271D68C34600811892 /* MockNameMappedSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386231D68C34600811892 /* MockNameMappedSystem.cpp */; };
+		103386281D68C34600811892 /* MockNameMappedSystem.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103386241D68C34600811892 /* MockNameMappedSystem.hpp */; };
+		103386291D68C34600811892 /* NameMappedSystemTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386251D68C34600811892 /* NameMappedSystemTests.cpp */; };
+		1033862A1D68C34600811892 /* NameMappedSystemTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103386261D68C34600811892 /* NameMappedSystemTests.hpp */; };
 		105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */; };
 		10682A9E1D52AABD007189A4 /* MockSystemContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682A9D1D52AABD007189A4 /* MockSystemContainer.cpp */; };
 		10682AA11D52AB07007189A4 /* MockTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682AA01D52AB07007189A4 /* MockTaskManager.cpp */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103386231D68C34600811892 /* MockNameMappedSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockNameMappedSystem.cpp; sourceTree = "<group>"; };
+		103386241D68C34600811892 /* MockNameMappedSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockNameMappedSystem.hpp; sourceTree = "<group>"; };
+		103386251D68C34600811892 /* NameMappedSystemTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NameMappedSystemTests.cpp; sourceTree = "<group>"; };
+		103386261D68C34600811892 /* NameMappedSystemTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NameMappedSystemTests.hpp; sourceTree = "<group>"; };
 		105BFE161CCD2FAD0095CF2E /* LambdaTaskTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LambdaTaskTests.hpp; sourceTree = "<group>"; };
 		105BFE171CCD2FC70095CF2E /* LambdaTaskTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambdaTaskTests.cpp; sourceTree = "<group>"; };
 		10682A9C1D52AAB4007189A4 /* MockSystemContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockSystemContainer.hpp; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 		10A7B3EA1CBAB3F100B78A7C = {
 			isa = PBXGroup;
 			children = (
+				103386231D68C34600811892 /* MockNameMappedSystem.cpp */,
+				103386241D68C34600811892 /* MockNameMappedSystem.hpp */,
+				103386251D68C34600811892 /* NameMappedSystemTests.cpp */,
+				103386261D68C34600811892 /* NameMappedSystemTests.hpp */,
 				10A7B41E1CC44E1000B78A7C /* Dependencies */,
 				10DFC1931D3074A0001FD2FB /* ConcurrentTaskProcessorTests.cpp */,
 				10DFC1921D307496001FD2FB /* ConcurrentTaskProcessorTests.hpp */,
@@ -181,7 +193,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1033862A1D68C34600811892 /* NameMappedSystemTests.hpp in Headers */,
 				109068AC1D4EBA0C0086B32C /* SystemContainerTests.hpp in Headers */,
+				103386281D68C34600811892 /* MockNameMappedSystem.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +275,9 @@
 				10A7B43A1CC941C000B78A7C /* SystemManagerExceptionTests.cpp in Sources */,
 				105BFE181CCD2FC70095CF2E /* LambdaTaskTests.cpp in Sources */,
 				10DFC18A1D288769001FD2FB /* TaskProcessorThreadTests.cpp in Sources */,
+				103386271D68C34600811892 /* MockNameMappedSystem.cpp in Sources */,
 				109068641D42C3820086B32C /* MockTaskConsumer.cpp in Sources */,
+				103386291D68C34600811892 /* NameMappedSystemTests.cpp in Sources */,
 				10DFC18D1D288DC8001FD2FB /* MockTaskProvider.cpp in Sources */,
 				10A7B4411CC986F700B78A7C /* CyclicGraphCheckerTests.cpp in Sources */,
 				10A7B4311CC6EC8400B78A7C /* SystemGraphTests.cpp in Sources */,
