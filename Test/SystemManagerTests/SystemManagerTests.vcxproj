@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConcurrentTaskProcessorTests.cpp" />
+    <ClCompile Include="CyclicGraphCheckerTests.cpp" />
+    <ClCompile Include="LambdaTaskTests.cpp" />
+    <ClCompile Include="MockCyclicGraphChecker.cpp" />
+    <ClCompile Include="MockNameMappedSystem.cpp" />
+    <ClCompile Include="MockOptimalPathFinder.cpp" />
+    <ClCompile Include="MockSystem.cpp" />
+    <ClCompile Include="MockSystemContainer.cpp" />
+    <ClCompile Include="MockSystemGraph.cpp" />
+    <ClCompile Include="MockTask.cpp" />
+    <ClCompile Include="MockTaskConsumer.cpp" />
+    <ClCompile Include="MockTaskManager.cpp" />
+    <ClCompile Include="MockTaskProvider.cpp" />
+    <ClCompile Include="NameMappedSystemTests.cpp" />
+    <ClCompile Include="OptimalPathFinderTests.cpp" />
+    <ClCompile Include="SystemContainerTests.cpp" />
+    <ClCompile Include="SystemGraphNodeTests.cpp" />
+    <ClCompile Include="SystemGraphTests.cpp" />
+    <ClCompile Include="SystemManagerExceptionTests.cpp" />
+    <ClCompile Include="SystemManagerIntegrationTests.cpp" />
+    <ClCompile Include="SystemManagerTests.cpp" />
+    <ClCompile Include="SystemManagerTestSuite.cpp" />
+    <ClCompile Include="SystemTests.cpp" />
+    <ClCompile Include="TaskManagerTests.cpp" />
+    <ClCompile Include="TaskProcessorThreadTests.cpp" />
+    <ClCompile Include="TaskQueueTests.cpp" />
+    <ClCompile Include="TaskTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConcurrentTaskProcessorTests.hpp" />
+    <ClInclude Include="CyclicGraphCheckerTests.hpp" />
+    <ClInclude Include="LambdaTaskTests.hpp" />
+    <ClInclude Include="MockCyclicGraphChecker.hpp" />
+    <ClInclude Include="MockNameMappedSystem.hpp" />
+    <ClInclude Include="MockOptimalPathFinder.hpp" />
+    <ClInclude Include="MockSystem.hpp" />
+    <ClInclude Include="MockSystemContainer.hpp" />
+    <ClInclude Include="MockSystemGraph.hpp" />
+    <ClInclude Include="MockTask.hpp" />
+    <ClInclude Include="MockTaskConsumer.hpp" />
+    <ClInclude Include="MockTaskManager.hpp" />
+    <ClInclude Include="MockTaskProvider.hpp" />
+    <ClInclude Include="NameMappedSystemTests.hpp" />
+    <ClInclude Include="OptimalPathFinderTests.hpp" />
+    <ClInclude Include="SystemContainerTests.hpp" />
+    <ClInclude Include="SystemGraphNodeTests.hpp" />
+    <ClInclude Include="SystemGraphTests.hpp" />
+    <ClInclude Include="SystemManagerExceptionTests.hpp" />
+    <ClInclude Include="SystemManagerIntegrationTests.hpp" />
+    <ClInclude Include="SystemManagerTests.hpp" />
+    <ClInclude Include="SystemManagerTestSuite.hpp" />
+    <ClInclude Include="SystemTests.hpp" />
+    <ClInclude Include="TaskManagerTests.hpp" />
+    <ClInclude Include="TaskProcessorThreadTests.hpp" />
+    <ClInclude Include="TaskQueueTests.hpp" />
+    <ClInclude Include="TaskTests.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{742DB0EA-4239-46CB-8A95-4DEC4B44DF15}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SystemManagerTests</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\Bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\Bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

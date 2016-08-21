@@ -15,6 +15,9 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:SystemManagerTests/SystemManagerTests.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Test/Test.xcodeproj">
    </FileRef>
    <FileRef

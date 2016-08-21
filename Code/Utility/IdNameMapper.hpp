@@ -2,6 +2,7 @@
 
 #include "IIdFromNameGenerator.hpp"
 
+#include <cstdlib>
 #include <map>
 #include <utility>
 
