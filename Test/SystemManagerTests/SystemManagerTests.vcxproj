@@ -30,6 +30,7 @@
     <ClCompile Include="SystemGraphNodeTests.cpp" />
     <ClCompile Include="SystemGraphTests.cpp" />
     <ClCompile Include="SystemManagerExceptionTests.cpp" />
+    <ClCompile Include="SystemManagerIntegrationTests.cpp" />
     <ClCompile Include="SystemManagerTests.cpp" />
     <ClCompile Include="SystemManagerTestSuite.cpp" />
     <ClCompile Include="SystemTests.cpp" />
@@ -58,6 +59,7 @@
     <ClInclude Include="SystemGraphNodeTests.hpp" />
     <ClInclude Include="SystemGraphTests.hpp" />
     <ClInclude Include="SystemManagerExceptionTests.hpp" />
+    <ClInclude Include="SystemManagerIntegrationTests.hpp" />
     <ClInclude Include="SystemManagerTests.hpp" />
     <ClInclude Include="SystemManagerTestSuite.hpp" />
     <ClInclude Include="SystemTests.hpp" />
