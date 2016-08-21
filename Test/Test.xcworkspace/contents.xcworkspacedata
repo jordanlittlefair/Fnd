@@ -17,4 +17,10 @@
    <FileRef
       location = "group:Test/Test.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Framework/Framework.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UtilityTests/UtilityTests.xcodeproj">
+   </FileRef>
 </Workspace>

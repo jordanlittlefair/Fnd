@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10682BAF1D57E571007189A4 /* libUtilityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10682BAE1D57E571007189A4 /* libUtilityTests.a */; };
 		109068721D42DC000086B32C /* ExampleIntegrationTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */; };
 		109068751D42DCC10086B32C /* ExamplePerformanceTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */; };
 		10A7B3421CB32C3F00B78A7C /* ExampleUnitTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B33F1CB32C3F00B78A7C /* ExampleUnitTestClass.cpp */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		10682BAE1D57E571007189A4 /* libUtilityTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtilityTests.a; path = ../UtilityTests/build/Debug/libUtilityTests.a; sourceTree = "<group>"; };
 		109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExampleIntegrationTestClass.hpp; sourceTree = "<group>"; };
 		109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleIntegrationTestClass.cpp; sourceTree = "<group>"; };
 		109068731D42DCB90086B32C /* ExamplePerformanceTestClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExamplePerformanceTestClass.hpp; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			files = (
 				10FEA9901D0393CA00338F5B /* libEntitySystemTests.a in Frameworks */,
 				10FEA98E1D0393C200338F5B /* libEntitySystem.a in Frameworks */,
+				10682BAF1D57E571007189A4 /* libUtilityTests.a in Frameworks */,
 				10A7B3451CB32CD700B78A7C /* libFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +67,7 @@
 			children = (
 				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
 				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
+				10682BAE1D57E571007189A4 /* libUtilityTests.a */,
 				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */,
 				109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */,
