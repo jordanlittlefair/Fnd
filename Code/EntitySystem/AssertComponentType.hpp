@@ -19,6 +19,7 @@ public:
 	static_assert(sizeof(ComponentType), "ComponentType must define an Id");
 
 	static_assert(sizeof(ComponentType::Id), "ComponentType must define an Id");
+	static_assert(sizeof(ComponentType::Name), "ComponentType must define a Name");
 
 	static const bool IsValid = true;
 };

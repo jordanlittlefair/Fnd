@@ -16,6 +16,8 @@ namespace EntitySystem
 struct MockComponentType1
 {
 	static const Fnd::EntitySystem::ComponentId Id;
+	
+	static const std::string Name;
 
 	struct Data
 	{
@@ -27,6 +29,8 @@ struct MockComponentType1
 struct MockComponentType2
 {
 	static const Fnd::EntitySystem::ComponentId Id;
+	
+	static const std::string Name;
 
 	struct Data
 	{
