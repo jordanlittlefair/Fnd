@@ -15,6 +15,9 @@ public:
 
 	// Ideally there'd be some SFINAE to make sure the Id and Data exist (for a nice error message)
 	// but Visual Studio 2012 doesn't seem to like that...
+	
+	static_assert(sizeof(NodeType::Id), "NodeType must define an Id");
+	static_assert(sizeof(NodeType::Name), "NodeType must define a Name");
 
 	static_assert( sizeof(typename NodeType::Components), "NodeType must define a Components struct" );
 

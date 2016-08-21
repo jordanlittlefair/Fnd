@@ -20,6 +20,8 @@ namespace EntitySystem
 struct MockNodeType1
 {
 	static const Fnd::EntitySystem::NodeId Id;
+	
+	static const std::string Name;
 
 	struct Components
 	{
@@ -39,6 +41,8 @@ struct MockNodeType1
 struct MockNodeType2
 {
 	static const Fnd::EntitySystem::NodeId Id;
+	
+	static const std::string Name;
 	
 	struct Components
 	{

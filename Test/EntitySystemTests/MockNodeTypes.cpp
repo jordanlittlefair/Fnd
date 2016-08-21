@@ -6,6 +6,9 @@ using namespace Fnd::EntitySystem;
 const NodeId MockNodeType1::Id = 1;
 const NodeId MockNodeType2::Id = 2;
 
+const std::string MockNodeType1::Name = "One";
+const std::string MockNodeType2::Name = "Two";
+
 /* static */
 auto MockNodeType1::GetComponents(const Fnd::EntitySystem::EntityId& entity_id, Fnd::EntitySystem::ComponentManager& component_manager) -> Components
 {
