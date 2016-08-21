@@ -14,10 +14,12 @@ namespace EntitySystem
 class StaticIdNameMappers
 {
 public:
-
-	static ComponentIdNameMapper& GetComponentIdNameMapper();
 	
-	static NodeIdNameMapper& GetNodeIdNameMapper();
+	static StaticIdNameMappers& Instance();
+
+	ComponentIdNameMapper& GetComponentIdNameMapper();
+	
+	NodeIdNameMapper& GetNodeIdNameMapper();
 	
 private:
 	
@@ -27,8 +29,8 @@ private:
 	
 private:
 	
-	static ComponentIdNameMapper _component_id_name_mapper;
-	static NodeIdNameMapper _node_id_name_mapper;
+	ComponentIdNameMapper _component_id_name_mapper;
+	NodeIdNameMapper _node_id_name_mapper;
 };
 
 }
