@@ -50,6 +50,7 @@ private:
 	
 	void Initialise_Start_Kill_Success(TestCase& test_case);
 	void Add_Initialise_Run_Systems_InOrder(TestCase& test_case);
+	void RunSystemsWithTasks(TestCase& test_case);
 };
 
 }

@@ -2,6 +2,10 @@
 
 #include "MockNameMappedSystem.hpp"
 
+#include "../../Code/SystemManager/LambdaTask.hpp"
+
+#include <set>
+
 using namespace Fnd::Test;
 using namespace Fnd::Test::SystemManager;
 using namespace Fnd::SystemManager;
@@ -11,6 +15,7 @@ SystemManagerIntegrationTests::SystemManagerIntegrationTests():
 {
 	AddTestCase("Initialise_Start_Kill_Success", &SystemManagerIntegrationTests::Initialise_Start_Kill_Success, this);
 	AddTestCase("Add_Initialise_Run_Systems_InOrder", &SystemManagerIntegrationTests::Add_Initialise_Run_Systems_InOrder, this);
+	AddTestCase("RunSystemsWithTasks", &SystemManagerIntegrationTests::RunSystemsWithTasks, this);
 }
 
 std::shared_ptr<SystemManagerIntegrationTests::IntegratedSystemManagerClasses> SystemManagerIntegrationTests::GetClasses() const
@@ -141,6 +146,94 @@ void SystemManagerIntegrationTests::Add_Initialise_Run_Systems_InOrder(TestCase&
 		test_case.Assert(run_order[(i * 3) + 0] == system2->GetId());
 		test_case.Assert(run_order[(i * 3) + 1] == system1->GetId());
 		test_case.Assert(run_order[(i * 3) + 2] == system0->GetId());
+	}
+	
+	system_manager->Kill();
+}
+
+void SystemManagerIntegrationTests::RunSystemsWithTasks(TestCase& test_case)
+{
+	class MultiTaskSystem:
+		public MockNameMappedSystem
+	{
+	public:
+		MultiTaskSystem(Fnd::SystemManager::SystemIdNameMapperPtr system_id_name_mapper, const std::string& name):
+			MockNameMappedSystem(system_id_name_mapper, name),
+			_run_count(0)
+		{
+		}
+		unsigned int GetRunCount() const
+		{
+			return _run_count;
+		}
+		unsigned int NumThreadsWhichExecutedTasks() const
+		{
+			std::set<std::thread::id> unique_threads;
+
+			std::lock_guard<std::mutex> lock(_ran_tasks_mutex);
+			for (auto& iter : _ran_tasks)
+			{
+				unique_threads.insert(iter.second);
+			}
+
+			return unique_threads.size();
+		}
+	protected:
+		void OnRun()
+		{			
+			++_run_count;
+
+			{
+				std::lock_guard<std::mutex> lock(_ran_tasks_mutex);
+				_ran_tasks.clear();
+			}
+
+			for (unsigned int i = 0; i < 100; ++i)
+			{
+				unsigned int task_id = i;
+				SubmitTask(CreateLambdaTask(This(),[=]()
+				{					
+					{
+						std::lock_guard<std::mutex> lock(_ran_tasks_mutex);
+						_ran_tasks[task_id] = std::this_thread::get_id();
+					}
+				}));
+			}
+		}
+	private:
+		unsigned int _run_count;
+		std::map<unsigned int,std::thread::id> _ran_tasks; // { task_id, thread_id }
+		mutable std::mutex _ran_tasks_mutex;
+	};
+
+	const unsigned int num_threads = 4;
+	
+	auto classes = GetClasses();
+	auto system_manager = classes->system_manager;
+	
+	auto system0 = std::make_shared<MultiTaskSystem>(classes->system_id_name_mapper, "System Zero");
+	auto system1 = std::make_shared<MultiTaskSystem>(classes->system_id_name_mapper, "System One");
+	auto system2 = std::make_shared<MultiTaskSystem>(classes->system_id_name_mapper, "System Two");
+		
+	system_manager->AddSystem(system0);
+	system_manager->AddSystem(system1);
+	system_manager->AddSystem(system2);
+
+	system_manager->Initialise();	
+	system_manager->Start();
+	
+	for (unsigned int i = 0; i < 10; ++i)
+	{
+		test_case.AssertEqual(i, system0->GetRunCount());
+		test_case.AssertEqual(i, system1->GetRunCount());
+		test_case.AssertEqual(i, system2->GetRunCount());
+		
+		system_manager->Run();
+
+		// Assert that tasks have been executed on all threads
+		test_case.AssertEqual(num_threads, system0->NumThreadsWhichExecutedTasks());
+		test_case.AssertEqual(num_threads, system1->NumThreadsWhichExecutedTasks());
+		test_case.AssertEqual(num_threads, system2->NumThreadsWhichExecutedTasks());
 	}
 	
 	system_manager->Kill();

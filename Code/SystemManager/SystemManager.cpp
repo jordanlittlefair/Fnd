@@ -68,6 +68,7 @@ void SystemManager::Initialise()
 		throw InvalidOperationException();
 	}
 	
+	_system_container->SetTaskProvider(_task_manager->GetTaskProviderPtr());
 	_system_container->Initialise();
 	
 	_task_manager->Initialise();
