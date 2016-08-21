@@ -4,7 +4,7 @@
 #include "../Framework/XmlResultPrinter.hpp"
 
 #include "../UtilityTests/UtilityTestSuite.hpp"
-
+#include "../SystemManagerTests/SystemManagerTestSuite.hpp"
 
 #include <cassert>
 
@@ -19,12 +19,12 @@ int main()
 	result_printers->AddResultPrinter(std::make_shared<ConsoleResultPrinter>());
 	result_printers->AddResultPrinter(std::make_shared<XmlResultPrinter>("TestResults/FndTestResults"));
 	
-	
 	/*
 		Add any TestSuites below
-	 */
+	*/
 	
 	test_suites.push_back( std::make_shared<Utility::UtilityTestSuite>() );
+	test_suites.push_back( std::make_shared<SystemManager::SystemManagerTestSuite>() );
 	
 	
 	
