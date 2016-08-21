@@ -1,6 +1,6 @@
 #pragma once
 
-#include "NodeId.hpp"
+#include "ComponentId.hpp"
 
 #include "../Utility/HashIdFromNameGenerator.hpp"
 #include "../Utility/IdNameMapper.hpp"
@@ -13,11 +13,11 @@ namespace Fnd
 namespace EntitySystem
 {
 
-typedef Fnd::Utility::HashIdFromNameGenerator<NodeId> NodeIdFromNameGenerator;
-typedef Fnd::Utility::IdNameMapper<NodeId> NodeIdNameMapper;
+typedef Fnd::Utility::HashIdFromNameGenerator<ComponentId> ComponentIdFromNameGenerator;
+typedef Fnd::Utility::IdNameMapper<ComponentId> ComponentIdNameMapper;
 
-typedef std::shared_ptr<NodeIdFromNameGenerator> NodeIdFromNameGeneratorPtr;
-typedef std::shared_ptr<NodeIdNameMapper> NodeIdNameMapperPtr;
+typedef std::shared_ptr<ComponentIdFromNameGenerator> ComponentIdFromNameGeneratorPtr;
+typedef std::shared_ptr<ComponentIdNameMapper> ComponentIdNameMapperPtr;
 
 }
 
