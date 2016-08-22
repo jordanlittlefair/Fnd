@@ -3,6 +3,8 @@
 #include "AssertComponentType.hpp"
 #include "Component.hpp"
 
+#include <string>
+
 namespace Fnd
 {
 
@@ -18,6 +20,11 @@ public:
 	static_assert(AssertComponentType<ComponentType>::IsValid, "ComponentType must be valid");
 	
 	typedef typename ComponentType::Data ComponentData;
+	
+	static std::string GetName()
+	{
+		return ComponentType::Name;
+	}
 
 	ComponentTemplate( const EntityId entity_id ):
 		Component( ComponentType::Id, entity_id )

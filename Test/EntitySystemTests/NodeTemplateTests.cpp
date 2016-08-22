@@ -12,6 +12,7 @@ NodeTemplateTests::NodeTemplateTests():
 	UnitTestClass("NodeTemplateTests")
 {
 	AddTestCase( "GetNodeId_Success", &NodeTemplateTests::GetNodeId_Success, this );
+	AddTestCase( "GetName_Success", &NodeTemplateTests::GetName_Success, this );
 	AddTestCase( "GetEntityId_Success", &NodeTemplateTests::GetEntityId_Success, this );
 	AddTestCase( "GetNodeNonConst_Success", &NodeTemplateTests::GetNodeNonConst_Success, this );
 	AddTestCase( "GetNodeNonConst_NonExistingEntityId", &NodeTemplateTests::GetNodeNonConst_NonExistingEntityId, this );
@@ -30,6 +31,14 @@ void NodeTemplateTests::GetNodeId_Success( Fnd::Test::TestCase& test_case )
 	NodeTemplate<MockNodeType1> node(123);
 	
 	test_case.Assert(node.GetNodeId() == MockNodeType1::Id);
+}
+
+void NodeTemplateTests::GetName_Success( Fnd::Test::TestCase& test_case )
+{
+	NodeTemplate<MockNodeType1> node(123);
+	
+	test_case.AssertEqual(MockNodeType1::Name, node.GetName());
+	test_case.AssertEqual(MockNodeType1::Name, NodeTemplate<MockNodeType1>::GetName());
 }
 
 void NodeTemplateTests::GetEntityId_Success( Fnd::Test::TestCase& test_case )

@@ -22,6 +22,8 @@ private:
 	
 	void GetNodeId_Success( Fnd::Test::TestCase& test_case );
 	
+	void GetName_Success(Fnd::Test::TestCase& test_case);
+	
 	void GetEntityId_Success( Fnd::Test::TestCase& test_case );
 	
 	void GetNodeNonConst_Success( Fnd::Test::TestCase& test_case );

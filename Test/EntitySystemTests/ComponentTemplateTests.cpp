@@ -11,6 +11,7 @@ ComponentTemplateTests::ComponentTemplateTests():
 	UnitTestClass("ComponentTemplateTests")
 {
 	AddTestCase( "CheckIds", &ComponentTemplateTests::CheckIds, this );
+	AddTestCase( "GetName", &ComponentTemplateTests::GetName, this );
 	AddTestCase( "CheckDataIsEqual", &ComponentTemplateTests::CheckDataIsEqual, this );
 	AddTestCase( "CheckDataFromConstructorIsEqual", &ComponentTemplateTests::CheckDataFromConstructorIsEqual, this );
 }
@@ -23,6 +24,14 @@ void ComponentTemplateTests::CheckIds( Fnd::Test::TestCase& test_case )
 
 	test_case.Assert( component->GetComponentId() == MockComponentType1::Id );
 	test_case.Assert( component->GetEntityId() == entity_id );
+}
+
+void ComponentTemplateTests::GetName(Fnd::Test::TestCase& test_case)
+{
+	ComponentTemplate<MockComponentType1> ct(0);
+	
+	test_case.AssertEqual(MockComponentType1::Name, ct.GetName());
+	test_case.AssertEqual(MockComponentType1::Name, ComponentTemplate<MockComponentType1>::GetName());
 }
 
 void ComponentTemplateTests::CheckDataIsEqual( Fnd::Test::TestCase& test_case )

@@ -4,6 +4,8 @@
 #include "ComponentManager.hpp"
 #include "Node.hpp"
 
+#include <string>
+
 namespace Fnd
 {
 
@@ -20,6 +22,11 @@ public:
 	
 	typedef typename NodeType::Components Components;
 	typedef typename NodeType::ComponentsConst ComponentsConst;
+	
+	static std::string GetName()
+	{
+		return NodeType::Name;
+	}
 
 	NodeTemplate ( const EntityId entity_id ):
 		Node( NodeType::Id, entity_id )
