@@ -4,6 +4,7 @@
 
 #include <cstdlib>
 #include <map>
+#include <memory>
 #include <utility>
 
 namespace Fnd

@@ -9,6 +9,12 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:Framework/Framework.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EntitySystemTests/EntitySystemTests.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SystemManagerTests/SystemManagerTests.xcodeproj">
    </FileRef>
    <FileRef
