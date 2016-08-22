@@ -74,6 +74,15 @@
     <ClInclude Include="AssertNodeType.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentIdNameMapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeIdNameMapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticIdNameMappers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -104,6 +113,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NodeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticIdNameMappers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,6 +18,7 @@
     <ClInclude Include="ComponentContainer.hpp" />
     <ClInclude Include="ComponentContainerTemplate.hpp" />
     <ClInclude Include="ComponentId.hpp" />
+    <ClInclude Include="ComponentIdNameMapper.hpp" />
     <ClInclude Include="ComponentManager.hpp" />
     <ClInclude Include="ComponentTemplate.hpp" />
     <ClInclude Include="EntityId.hpp" />
@@ -30,8 +31,10 @@
     <ClInclude Include="NodeContainer.hpp" />
     <ClInclude Include="NodeContainerTemplate.hpp" />
     <ClInclude Include="NodeId.hpp" />
+    <ClInclude Include="NodeIdNameMapper.hpp" />
     <ClInclude Include="NodeManager.hpp" />
     <ClInclude Include="NodeTemplate.hpp" />
+    <ClInclude Include="StaticIdNameMappers.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicEntityIdGenerator.cpp" />
@@ -44,6 +47,7 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeContainer.cpp" />
     <ClCompile Include="NodeManager.cpp" />
+    <ClCompile Include="StaticIdNameMappers.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B06713F6-8423-4C04-B7FC-B06298DC2512}</ProjectGuid>
