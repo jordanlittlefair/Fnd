@@ -8,7 +8,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class BasicEntityIdGenerator
+class BasicEntityIdGenerator:
+	public IEntityIdGenerator
 {
 public:
 

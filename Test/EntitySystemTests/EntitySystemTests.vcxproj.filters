@@ -70,6 +70,9 @@
     <ClInclude Include="NodeTemplateTests.hpp">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="EntitySystemIntegrationTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComponentContainerTests.cpp">
@@ -131,6 +134,9 @@
       <Filter>Tests</Filter>
     </ClCompile>
     <ClCompile Include="NodeTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystemIntegrationTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
