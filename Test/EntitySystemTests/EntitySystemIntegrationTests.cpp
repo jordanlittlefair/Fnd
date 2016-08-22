@@ -18,6 +18,7 @@ struct ComponentTypeA
 
 	struct Data
 	{
+		char padding[256];
 		int update_count;
 	};
 };
@@ -31,6 +32,7 @@ struct ComponentTypeB
 	struct Data
 	{
 		int update_count;
+		char padding[2048];
 	};
 };
 
@@ -42,7 +44,9 @@ struct ComponentTypeC
 
 	struct Data
 	{
+		char padding0[512];
 		int update_count;
+		char padding1[512];
 	};
 };
 
