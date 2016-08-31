@@ -227,30 +227,131 @@ void DocumentTreeTests::AddMultipleNodesToObject_Success(Fnd::Test::TestCase& te
 
 void DocumentTreeTests::AddStringNodeToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<StringNode>("child", "value"));
+	
+	test_case.AssertEqual(1, arrayNode->GetValue().GetNumElements());
+	test_case.AssertEqual("value", arrayNode->GetValue().GetElementValue<StringNode>(0));
+	
+	arrayNode->GetValue().GetElementValue<StringNode>(0) = "updated";
+	
+	test_case.AssertEqual("updated", arrayNode->GetValue().GetElementValue<StringNode>(0));
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<IntegerNode>(0);
+	});
 }
 
 void DocumentTreeTests::AddIntegergNodeToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<IntegerNode>("child", 123));
+	
+	test_case.AssertEqual(1, arrayNode->GetValue().GetNumElements());
+	test_case.AssertEqual(123, arrayNode->GetValue().GetElementValue<IntegerNode>(0));
+	
+	arrayNode->GetValue().GetElementValue<IntegerNode>(0) = 321;
+	
+	test_case.AssertEqual(321, arrayNode->GetValue().GetElementValue<IntegerNode>(0));
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<FloatNode>(0);
+	});
 }
 
 void DocumentTreeTests::AddFloatNodeToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<FloatNode>("child", 123.456));
+	
+	test_case.AssertEqual(1, arrayNode->GetValue().GetNumElements());
+	test_case.AssertEqual(123.456, arrayNode->GetValue().GetElementValue<FloatNode>(0));
+	
+	arrayNode->GetValue().GetElementValue<FloatNode>(0) = 654.321;
+	
+	test_case.AssertEqual(654.321, arrayNode->GetValue().GetElementValue<FloatNode>(0));
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<ObjectNode>(0);
+	});
 }
 
 void DocumentTreeTests::AddObjectNodeToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<ObjectNode>("child"));
+	
+	test_case.AssertEqual(1, arrayNode->GetValue().GetNumElements());
+	test_case.Assert(arrayNode->GetValue().GetElementValue<ObjectNode>(0).GetChildren().empty());
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<ArrayNode>(0);
+	});
 }
 
 void DocumentTreeTests::AddArrayNodeToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<ArrayNode>("child"));
+	
+	test_case.AssertEqual(1, arrayNode->GetValue().GetNumElements());
+	
+	test_case.Assert(arrayNode->GetValue().GetElementValue<ArrayNode>(0).GetElements().empty());
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<StringNode>(0);
+	});
 }
 
 void DocumentTreeTests::AddMultipleNodesToArray_Success(Fnd::Test::TestCase& test_case)
 {
+	ArrayNodePtr arrayNode = std::make_shared<ArrayNode>("key");
 	
+	arrayNode->GetValue().AddElement(std::make_shared<StringNode>("string", "value"));
+	arrayNode->GetValue().AddElement(std::make_shared<IntegerNode>("integer", 123));
+	arrayNode->GetValue().AddElement(std::make_shared<FloatNode>("float", 123.456));
+	arrayNode->GetValue().AddElement(std::make_shared<ObjectNode>("object"));
+	arrayNode->GetValue().AddElement(std::make_shared<ArrayNode>("array"));
+	
+	test_case.AssertEqual((int)INode::Type::String, (int)arrayNode->GetValue().GetElementType(0));
+	test_case.AssertEqual("value", arrayNode->GetValue().GetElementValue<StringNode>(0));
+	test_case.AssertEqual((int)INode::Type::Integer, (int)arrayNode->GetValue().GetElementType(1));
+	test_case.AssertEqual(123, arrayNode->GetValue().GetElementValue<IntegerNode>(1));
+	test_case.AssertEqual((int)INode::Type::Float, (int)arrayNode->GetValue().GetElementType(2));
+	test_case.AssertEqual(123.456, arrayNode->GetValue().GetElementValue<FloatNode>(2));
+	test_case.AssertEqual((int)INode::Type::Object, (int)arrayNode->GetValue().GetElementType(3));
+	test_case.Assert(arrayNode->GetValue().GetElementValue<ObjectNode>(3).GetChildren().empty());
+	test_case.AssertEqual((int)INode::Type::Array, (int)arrayNode->GetValue().GetElementType(4));
+	test_case.Assert(arrayNode->GetValue().GetElementValue<ArrayNode>(4).GetElements().empty());
+	
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<IntegerNode>(0);
+	});
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<FloatNode>(1);
+	});
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<ObjectNode>(2);
+	});
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<ArrayNode>(3);
+	});
+	test_case.AssertException<std::exception>([&]()
+	{
+		arrayNode->GetValue().GetElementValue<StringNode>(4);
+	});
 }

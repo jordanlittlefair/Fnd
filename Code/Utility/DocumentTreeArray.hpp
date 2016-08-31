@@ -23,6 +23,8 @@ public:
 	
 	void AddElement(const NodePtr& element);
 	
+	unsigned int GetNumElements() const;
+	
 	INode::Type GetElementType(const unsigned int index) const;
 	
 	NodePtr GetElement(const unsigned int index) const;
@@ -42,6 +44,19 @@ public:
 	
 	template <typename NodeType_T>
 	const typename NodeType_T::DataType& GetElementValue(const unsigned int index) const
+	{
+		std::shared_ptr<NodeType_T> node = GetElementNode<NodeType_T>(index);
+		
+		if (node->GetType() != NodeType_T::NodeType)
+		{
+			throw std::runtime_error("Wrong type!");
+		}
+		
+		return node->GetValue();
+	}
+	
+	template <typename NodeType_T>
+	typename NodeType_T::DataType& GetElementValue(const unsigned int index)
 	{
 		std::shared_ptr<NodeType_T> node = GetElementNode<NodeType_T>(index);
 		

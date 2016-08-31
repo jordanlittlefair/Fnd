@@ -18,6 +18,11 @@ void Array::AddElement(const NodePtr& element)
 	_elements.push_back(element);
 }
 
+unsigned int Array::GetNumElements() const
+{
+	return _elements.size();
+}
+
 INode::Type Array::GetElementType(const unsigned int index) const
 {
 	return _elements[index]->GetType();
