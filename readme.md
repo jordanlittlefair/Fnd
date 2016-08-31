@@ -10,8 +10,8 @@ ___
 
 ####General
 
-- [ ] Component based *Entity System* - Extensible *Component*, *Node* and *Entity* managers to describe and store *Entity's* data. Inspired by [Unity](http://unity3d.com/).
-- [ ] Multi-threaded *Systems* - Fully encapsulated *Systems* to act on *Entities* via their *Nodes*, sometimes concurrently.
+- [x] Component based *Entity System* - Extensible *Component*, *Node* and *Entity* managers to describe and store *Entity's* data. Inspired by [Unity](http://unity3d.com/).
+- [x] Multi-threaded *Systems* - Fully encapsulated *Systems* to act on *Entities* via their *Nodes*, sometimes concurrently.
 - [ ] Black boxed *Game Components* or *System Collections* - Graphics, Physics, Sound *Game Components* contain their own resources, and act on an *Entity's* *Node* via *Systems* which it defines (i.e. a simple Graphics component may define ModelRenderer and LightRenderer *Systems* to draw the scene to an internal buffer).
 - [ ] Allow *Entities* to be written to and read from a simple file structure. This includes custom *Component* and *Node* types.
 

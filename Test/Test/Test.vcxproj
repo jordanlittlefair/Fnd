@@ -96,14 +96,26 @@
     <ProjectReference Include="..\..\Code\Core\Platform.vcxproj">
       <Project>{6bd48548-0116-4c6e-82bf-1efcae6395cb}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Code\EntitySystem\EntitySystem.vcxproj">
+      <Project>{b06713f6-8423-4c04-b7fc-b06298dc2512}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Code\Game\Game.vcxproj">
       <Project>{1f00df01-bd96-420f-b4ca-5bfc36ddfa4e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySystemTests\EntitySystemTests.vcxproj">
+      <Project>{915fb217-65a4-4349-bb7e-0c1553ad8f72}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Code\SystemManager\SystemManager.vcxproj">
+      <Project>{57495a44-f395-4c68-8526-f83c932f0142}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Code\Utility\Utility.vcxproj">
       <Project>{fec57043-b352-4c89-af7e-3ca70a67cbb0}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Framework\Framework.vcxproj">
       <Project>{f9a2f267-9fe6-4e93-8c17-2f4d1ef732dd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemManagerTests\SystemManagerTests.vcxproj">
+      <Project>{742db0ea-4239-46cb-8a95-4dec4b44df15}</Project>
     </ProjectReference>
     <ProjectReference Include="..\UtilityTests\UtilityTests.vcxproj">
       <Project>{d17d1923-92a9-4f90-bb6f-71d010a82b55}</Project>
