@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		103386B71D74C63500811892 /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103386B61D74C63500811892 /* libUtility.a */; };
+		103386C61D76027200811892 /* DocumentTreeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386C51D76027200811892 /* DocumentTreeTests.cpp */; };
 		10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */; };
 		10682BAD1D57E51F007189A4 /* UtilityTestSuite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */; };
 		10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */; };
@@ -17,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		103386B61D74C63500811892 /* libUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtility.a; path = ../../Code/Utility/build/Debug/libUtility.a; sourceTree = "<group>"; };
+		103386C41D76026500811892 /* DocumentTreeTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DocumentTreeTests.hpp; sourceTree = "<group>"; };
+		103386C51D76027200811892 /* DocumentTreeTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentTreeTests.cpp; sourceTree = "<group>"; };
 		10682B9A1D57E4E7007189A4 /* libUtilityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtilityTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UtilityTestSuite.cpp; sourceTree = "<group>"; };
 		10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UtilityTestSuite.hpp; sourceTree = "<group>"; };
@@ -40,10 +43,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10682B911D57E4E7007189A4 = {
+		103386C71D76028000811892 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				103386B61D74C63500811892 /* libUtility.a */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		10682B911D57E4E7007189A4 = {
+			isa = PBXGroup;
+			children = (
+				103386C71D76028000811892 /* Dependencies */,
+				103386C51D76027200811892 /* DocumentTreeTests.cpp */,
+				103386C41D76026500811892 /* DocumentTreeTests.hpp */,
 				10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */,
 				10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */,
 				10682BB51D57F406007189A4 /* IdNameMapperTests.cpp */,
@@ -134,6 +147,7 @@
 				10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */,
 				10682BB61D57F406007189A4 /* IdNameMapperTests.cpp in Sources */,
 				10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */,
+				103386C61D76027200811892 /* DocumentTreeTests.cpp in Sources */,
 				10682BBB1D5FD944007189A4 /* MockIdFromNameGenerator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

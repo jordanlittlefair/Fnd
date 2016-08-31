@@ -13,12 +13,6 @@ namespace Utility
 namespace DocumentTree
 {
 
-/*
-	An object to be stored in an object node. Stores a list of child nodes.
-*/
-class Object;
-typedef std::shared_ptr<Object> ObjectPtr;
-
 class Object
 {
 public:
@@ -50,6 +44,19 @@ public:
 	
 	template <typename NodeType_T>
 	const typename NodeType_T::DataType& GetChildValue(const std::string& name) const
+	{
+		std::shared_ptr<NodeType_T> node = GetChildNode<NodeType_T>(name);
+		
+		if (node->GetType() != NodeType_T::NodeType)
+		{
+			throw std::runtime_error("Wrong type!");
+		}
+		
+		return node->GetValue();
+	}
+	
+	template <typename NodeType_T>
+	typename NodeType_T::DataType& GetChildValue(const std::string& name)
 	{
 		std::shared_ptr<NodeType_T> node = GetChildNode<NodeType_T>(name);
 		

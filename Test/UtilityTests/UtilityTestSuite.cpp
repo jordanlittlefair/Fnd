@@ -2,6 +2,7 @@
 
 #include "HashIdFromNameGeneratorTests.hpp"
 #include "IdNameMapperTests.hpp"
+#include "DocumentTreeTests.hpp"
 
 using namespace Fnd::Test::Utility;
 
@@ -10,4 +11,5 @@ UtilityTestSuite::UtilityTestSuite():
 {
 	AddTestClass<HashIdFromNameGeneratorTests>();
 	AddTestClass<IdNameMapperTests>();
+	AddTestClass<DocumentTreeTests>();
 }
