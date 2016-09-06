@@ -38,6 +38,8 @@ public:
 	virtual ~IFile() {}
 };
 	
+typedef std::shared_ptr<IFile> FilePtr;
+	
 }
 	
 }
