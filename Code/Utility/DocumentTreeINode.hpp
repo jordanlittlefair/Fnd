@@ -22,8 +22,7 @@ public:
 	enum class Type
 	{
 		String,
-		Integer,
-		Float,
+		Number,
 		Object,
 		Array
 	};
