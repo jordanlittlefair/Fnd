@@ -13,9 +13,9 @@ class JsonParser:
 {
 public:
 	
-	DocumentTree::NodePtr Parse(const Buffer& buffer) const;
+	DocumentTree::ObjectNodePtr Parse(const Buffer& buffer) const;
 	
-	Buffer Serialise(const DocumentTree::NodePtr& document_tree) const;
+	Buffer Serialise(const DocumentTree::ObjectNodePtr& document_tree) const;
 	
 	std::string GetDefaultFileExtension() const;
 };

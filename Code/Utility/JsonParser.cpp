@@ -6,7 +6,7 @@
 using namespace Fnd::Utility;
 using namespace Fnd::Utility::DocumentTree;
 
-NodePtr JsonParser::Parse(const Buffer& buffer) const
+ObjectNodePtr JsonParser::Parse(const Buffer& buffer) const
 {
 	rapidjson::Document document;
 	document.Parse(std::string(buffer.begin(), buffer.end()).c_str());
@@ -19,7 +19,7 @@ NodePtr JsonParser::Parse(const Buffer& buffer) const
 	return nullptr;
 }
 
-Buffer JsonParser::Serialise(const DocumentTree::NodePtr& document_tree) const
+Buffer JsonParser::Serialise(const DocumentTree::ObjectNodePtr& document_tree) const
 {
 	return Buffer();
 }
