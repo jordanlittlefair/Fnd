@@ -7,8 +7,6 @@ using namespace Fnd::Test::Utility;
 using namespace Fnd::Utility;
 using namespace Fnd::Utility::DocumentTree;
 
-// Temporary 'fix' to get the tests running before theyre implemented... stops nullptrs from being dereferenced
-#define FORCE_PASS (true)
 
 namespace
 {
@@ -46,7 +44,7 @@ void JsonParserTests::ParseAndSerialise_EmptyObject_Success(Fnd::Test::TestCase&
 		Check tree contains items
 	*/
 	
-	test_case.Assert(FORCE_PASS || tree->GetValue().GetChildren().empty());
+	test_case.Assert(tree->GetValue().GetChildren().empty());
 	
 	/*
 		Serialise it and make sure it's equal to what the input
@@ -71,8 +69,8 @@ void JsonParserTests::ParseAndSerialise_StringValue_Success(Fnd::Test::TestCase&
 		Check tree contains items
 	 */
 	
-	test_case.AssertEqual(FORCE_PASS || tree->GetValue().GetChildren().size(), 1);
-	test_case.Assert(FORCE_PASS || tree->GetValue().GetChildNode<StringNode>("key")->GetValue() == "value");
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	test_case.Assert(tree->GetValue().GetChildNode<StringNode>("key")->GetValue() == "value");
 	
 	/*
 		Serialise it and make sure it's equal to what the input
@@ -89,7 +87,7 @@ void JsonParserTests::ParseAndSerialise_NumberValue_Success(Fnd::Test::TestCase&
 		Create buffer and parse it to document tree
 	 */
 	
-	Buffer input = MakeBuffer("{\"key\":123}");
+	Buffer input = MakeBuffer("{\"key\":123.456}");
 	
 	DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
 	
@@ -97,8 +95,8 @@ void JsonParserTests::ParseAndSerialise_NumberValue_Success(Fnd::Test::TestCase&
 		Check tree contains items
 	 */
 	
-	test_case.AssertEqual(FORCE_PASS || tree->GetValue().GetChildren().size(), 1);
-	test_case.Assert(FORCE_PASS || tree->GetValue().GetChildNode<NumberNode>("key")->GetValue() == 123);
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	test_case.Assert(tree->GetValue().GetChildNode<NumberNode>("key")->GetValue() == 123.456);
 	
 	/*
 		Serialise it and make sure it's equal to what the input
@@ -123,8 +121,8 @@ void JsonParserTests::ParseAndSerialise_EmptyArrayValue_Success(Fnd::Test::TestC
 		Check tree contains items
 	 */
 	
-	test_case.AssertEqual(FORCE_PASS || tree->GetValue().GetChildren().size(), 1);
-	test_case.Assert(FORCE_PASS || tree->GetValue().GetChildNode<ArrayNode>("key")->GetValue().GetNumElements() == 0);
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	test_case.Assert(tree->GetValue().GetChildNode<ArrayNode>("key")->GetValue().GetNumElements() == 0);
 	
 	/*
 		Serialise it and make sure it's equal to what the input
@@ -149,8 +147,8 @@ void JsonParserTests::ParseAndSerialise_EmptyObjectValue_Success(Fnd::Test::Test
 		Check tree contains items
 	 */
 	
-	test_case.AssertEqual(FORCE_PASS || tree->GetValue().GetChildren().size(), 1);
-	test_case.Assert(FORCE_PASS || tree->GetValue().GetChildNode<ObjectNode>("key")->GetValue().GetChildren().empty());
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	test_case.Assert(tree->GetValue().GetChildNode<ObjectNode>("key")->GetValue().GetChildren().empty());
 	
 	/*
 		Serialise it and make sure it's equal to what the input
