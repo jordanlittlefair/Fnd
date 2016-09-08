@@ -1,9 +1,13 @@
 #include "JsonParser.hpp"
 
+#define RAPIDJSON_ASSERT(x) if(!(x)) { throw std::runtime_error("JSONParser Exception"); }
+
 #include "../../External/RapidJSON/document.h"
 #include "../../External/RapidJSON/rapidjson.h"
 #include "../../External/RapidJSON/stringbuffer.h"
 #include "../../External/RapidJSON/writer.h"
+
+#include <cassert>
 
 using namespace Fnd::Utility;
 using namespace Fnd::Utility::DocumentTree;

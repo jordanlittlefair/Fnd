@@ -27,8 +27,9 @@ private:
 	void ParseAndSerialise_EmptyObjectValue_Success(Fnd::Test::TestCase& test_case);
 	void ParseAndSerialise_BoolValue_Success(Fnd::Test::TestCase& test_case);
 	void ParseAndSerialise_NullValue_Success(Fnd::Test::TestCase& test_case);
-	void ParseAndSerialise_ObjectWithEachType(Fnd::Test::TestCase& test_case);
-	
+	void ParseAndSerialise_ObjectWithEachType_Success(Fnd::Test::TestCase& test_case);
+	void ParseAndSerialise_ArrayOfObjects_Success(Fnd::Test::TestCase& test_case);
+	void InvalidJson_Parse_Fail(Fnd::Test::TestCase& test_case);
 };
 
 }

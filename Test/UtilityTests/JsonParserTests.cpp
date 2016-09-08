@@ -30,8 +30,9 @@ JsonParserTests::JsonParserTests():
 	AddTestCase("ParseAndSerialise_EmptyObjectValue_Success", &JsonParserTests::ParseAndSerialise_EmptyObjectValue_Success, this);
 	AddTestCase("ParseAndSerialise_BoolValue_Success", &JsonParserTests::ParseAndSerialise_BoolValue_Success, this);
 	AddTestCase("ParseAndSerialise_NullValue_Success", &JsonParserTests::ParseAndSerialise_NullValue_Success, this);
-	
-	AddTestCase("ParseAndSerialise_ObjectWithEachType", &JsonParserTests::ParseAndSerialise_ObjectWithEachType, this);
+	AddTestCase("ParseAndSerialise_ObjectWithEachType_Success", &JsonParserTests::ParseAndSerialise_ObjectWithEachType_Success, this);
+	AddTestCase("ParseAndSerialise_ArrayOfObjects_Success", &JsonParserTests::ParseAndSerialise_ArrayOfObjects_Success, this);
+	AddTestCase("InvalidJson_Parse_Fail", &JsonParserTests::InvalidJson_Parse_Fail, this);
 }
 
 void JsonParserTests::ParseAndSerialise_EmptyObject_Success(Fnd::Test::TestCase& test_case)
@@ -216,11 +217,11 @@ void JsonParserTests::ParseAndSerialise_NullValue_Success(Fnd::Test::TestCase& t
 	test_case.AssertEqual(MakeString(input), MakeString(output));
 }
 
-void JsonParserTests::ParseAndSerialise_ObjectWithEachType(Fnd::Test::TestCase& test_case)
+void JsonParserTests::ParseAndSerialise_ObjectWithEachType_Success(Fnd::Test::TestCase& test_case)
 {
 	/*
 		Create buffer and parse it to document tree
-	 */
+	*/
 	
 	Buffer input = MakeBuffer("{\"object\":{\"number\":999.999,\"string\":\"a string\",\"bool\":false,\"null\":null,\"array\":[1.2,3.4,5.6],\"sub-object\":{\"sub-string\":\"a sub string\"}}}");
 	
@@ -228,7 +229,7 @@ void JsonParserTests::ParseAndSerialise_ObjectWithEachType(Fnd::Test::TestCase& 
 	
 	/*
 		Check tree contains items
-	 */
+	*/
 	
 	test_case.AssertEqual(1, tree->GetValue().GetChildren().size());
 	test_case.AssertEqual((int)INode::Type::Object, (int)tree->GetValue().GetChildren()[0]->GetType());
@@ -253,13 +254,68 @@ void JsonParserTests::ParseAndSerialise_ObjectWithEachType(Fnd::Test::TestCase& 
 	auto sub = object->GetValue().GetChildNode<ObjectNode>("sub-object");
 	test_case.AssertEqual("a sub string", sub->GetValue().GetChildNode<StringNode>("sub-string")->GetValue());
 	
-	
 	/*
 		Serialise it and make sure it's equal to what the input
-	 */
+	*/
 	
 	Buffer output = JsonParser().Serialise(tree);
 	
 	test_case.AssertEqual(MakeString(input), MakeString(output));
 }
 
+void JsonParserTests::ParseAndSerialise_ArrayOfObjects_Success(Fnd::Test::TestCase& test_case)
+{
+	/*
+		Create buffer and parse it to document tree
+	*/
+	
+	Buffer input = MakeBuffer("{\"array\":[{\"number\":0.0,\"string\":\"zero\"},{\"number\":1.0,\"string\":\"one\"},{\"number\":2.0,\"string\":\"two\"}]}");
+	
+	DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
+	
+	/*
+		Check tree contains items
+	*/
+	
+	test_case.AssertEqual(1, tree->GetValue().GetChildren().size());
+	test_case.AssertEqual((int)INode::Type::Array, (int)tree->GetValue().GetChildren()[0]->GetType());
+	
+	auto array = tree->GetValue().GetChildNode<ArrayNode>("array");
+	test_case.AssertEqual(3, array->GetValue().GetNumElements());
+	ObjectNodePtr objects[3] =
+	{
+		array->GetValue().GetElementNode<ObjectNode>(0),
+		array->GetValue().GetElementNode<ObjectNode>(1),
+		array->GetValue().GetElementNode<ObjectNode>(2)
+	};
+	
+	std::string strings[] = { "zero", "one", "two" };
+	
+	for (unsigned int i = 0; i < 3; ++i)
+	{
+		test_case.AssertEqual(i, objects[i]->GetValue().GetChildNode<NumberNode>("number")->GetValue());
+		test_case.AssertEqual(strings[i], objects[i]->GetValue().GetChildNode<StringNode>("string")->GetValue());
+	}
+	
+	/*
+		Serialise it and make sure it's equal to what the input
+	*/
+	
+	Buffer output = JsonParser().Serialise(tree);
+	
+	test_case.AssertEqual(MakeString(input), MakeString(output));
+}
+
+void JsonParserTests::InvalidJson_Parse_Fail(Fnd::Test::TestCase& test_case)
+{
+	/*
+		Create buffer and parse it to document tree
+	 */
+	
+	Buffer input = MakeBuffer("{\"a\"\":123");
+	
+	test_case.AssertException<std::exception>([&]
+	{
+		DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
+	});
+}
