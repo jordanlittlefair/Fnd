@@ -12,6 +12,7 @@
 		103386C31D75FD6000811892 /* DocumentTreeArray.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103386C11D75FD6000811892 /* DocumentTreeArray.hpp */; };
 		103386E31D7DFD5D00811892 /* StdFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386E21D7DFD5D00811892 /* StdFile.cpp */; };
 		103386F61D7E35BD00811892 /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386F51D7E35BD00811892 /* JsonParser.cpp */; };
+		103386FF1D81EAE000811892 /* DocumentTreeNull.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103386FE1D81EAE000811892 /* DocumentTreeNull.hpp */; };
 		10682B871D57E3F0007189A4 /* HashIdFromNameGenerator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682B851D57E3F0007189A4 /* HashIdFromNameGenerator.hpp */; };
 		10682B881D57E3F0007189A4 /* IIdFromNameGenerator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682B861D57E3F0007189A4 /* IIdFromNameGenerator.hpp */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		103386F31D7E33C300811892 /* JsonParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = JsonParser.hpp; sourceTree = "<group>"; };
 		103386F41D7E33D800811892 /* IParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IParser.hpp; sourceTree = "<group>"; };
 		103386F51D7E35BD00811892 /* JsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParser.cpp; sourceTree = "<group>"; };
+		103386FE1D81EAE000811892 /* DocumentTreeNull.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DocumentTreeNull.hpp; sourceTree = "<group>"; };
 		10682B701D57E3B5007189A4 /* libUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10682B851D57E3F0007189A4 /* HashIdFromNameGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashIdFromNameGenerator.hpp; sourceTree = "<group>"; };
 		10682B861D57E3F0007189A4 /* IIdFromNameGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IIdFromNameGenerator.hpp; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				103386A31D74B3FE00811892 /* DocumentTreeINode.hpp */,
 				103386B81D74FDB600811892 /* DocumentTreeNodes.hpp */,
 				103386A71D74B6CE00811892 /* DocumentTreeNodeTemplate.hpp */,
+				103386FE1D81EAE000811892 /* DocumentTreeNull.hpp */,
 				103386AF1D74BCF700811892 /* DocumentTreeObject.cpp */,
 				103386AE1D74B9D400811892 /* DocumentTreeObject.hpp */,
 				10682B851D57E3F0007189A4 /* HashIdFromNameGenerator.hpp */,
@@ -87,6 +90,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103386FF1D81EAE000811892 /* DocumentTreeNull.hpp in Headers */,
 				103386C31D75FD6000811892 /* DocumentTreeArray.hpp in Headers */,
 				10682B881D57E3F0007189A4 /* IIdFromNameGenerator.hpp in Headers */,
 				10682B871D57E3F0007189A4 /* HashIdFromNameGenerator.hpp in Headers */,
