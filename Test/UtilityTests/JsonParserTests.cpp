@@ -30,6 +30,8 @@ JsonParserTests::JsonParserTests():
 	AddTestCase("ParseAndSerialise_EmptyObjectValue_Success", &JsonParserTests::ParseAndSerialise_EmptyObjectValue_Success, this);
 	AddTestCase("ParseAndSerialise_BoolValue_Success", &JsonParserTests::ParseAndSerialise_BoolValue_Success, this);
 	AddTestCase("ParseAndSerialise_NullValue_Success", &JsonParserTests::ParseAndSerialise_NullValue_Success, this);
+	
+	AddTestCase("ParseAndSerialise_ObjectWithEachType", &JsonParserTests::ParseAndSerialise_ObjectWithEachType, this);
 }
 
 void JsonParserTests::ParseAndSerialise_EmptyObject_Success(Fnd::Test::TestCase& test_case)
@@ -213,3 +215,51 @@ void JsonParserTests::ParseAndSerialise_NullValue_Success(Fnd::Test::TestCase& t
 	
 	test_case.AssertEqual(MakeString(input), MakeString(output));
 }
+
+void JsonParserTests::ParseAndSerialise_ObjectWithEachType(Fnd::Test::TestCase& test_case)
+{
+	/*
+		Create buffer and parse it to document tree
+	 */
+	
+	Buffer input = MakeBuffer("{\"object\":{\"number\":999.999,\"string\":\"a string\",\"bool\":false,\"null\":null,\"array\":[1.2,3.4,5.6],\"sub-object\":{\"sub-string\":\"a sub string\"}}}");
+	
+	DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
+	
+	/*
+		Check tree contains items
+	 */
+	
+	test_case.AssertEqual(1, tree->GetValue().GetChildren().size());
+	test_case.AssertEqual((int)INode::Type::Object, (int)tree->GetValue().GetChildren()[0]->GetType());
+	
+	auto object = tree->GetValue().GetChildNode<ObjectNode>("object");
+	test_case.AssertEqual(6, object->GetValue().GetChildren().size());
+	test_case.AssertEqual(999.999, object->GetValue().GetChildNode<NumberNode>("number")->GetValue());
+	test_case.AssertEqual("a string", object->GetValue().GetChildNode<StringNode>("string")->GetValue());
+	test_case.AssertEqual(false, object->GetValue().GetChildNode<BoolNode>("bool")->GetValue());
+	object->GetValue().GetChildNode<NullNode>("null")->GetValue(); // Doesn't return anything - mustn't throw
+	test_case.Assert(object->GetValue().HasChild("array"));
+	test_case.AssertEqual((int)INode::Type::Array, (int)object->GetValue().GetChildType("array"));
+	test_case.Assert(object->GetValue().HasChild("sub-object"));
+	test_case.AssertEqual((int)INode::Type::Object, (int)object->GetValue().GetChildType("sub-object"));
+	
+	auto array = object->GetValue().GetChildNode<ArrayNode>("array");
+	test_case.AssertEqual(3, array->GetValue().GetNumElements());
+	test_case.AssertEqual(1.2, array->GetValue().GetElementNode<NumberNode>(0)->GetValue());
+	test_case.AssertEqual(3.4, array->GetValue().GetElementNode<NumberNode>(1)->GetValue());
+	test_case.AssertEqual(5.6, array->GetValue().GetElementNode<NumberNode>(2)->GetValue());
+	
+	auto sub = object->GetValue().GetChildNode<ObjectNode>("sub-object");
+	test_case.AssertEqual("a sub string", sub->GetValue().GetChildNode<StringNode>("sub-string")->GetValue());
+	
+	
+	/*
+		Serialise it and make sure it's equal to what the input
+	 */
+	
+	Buffer output = JsonParser().Serialise(tree);
+	
+	test_case.AssertEqual(MakeString(input), MakeString(output));
+}
+

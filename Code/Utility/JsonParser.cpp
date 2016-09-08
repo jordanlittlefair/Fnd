@@ -103,25 +103,32 @@ namespace
 	void SerialiseBool(const DocumentTree::BoolNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 	void SerialiseNull(const DocumentTree::NullNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 	void SerialiseNode(const DocumentTree::NodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
-
-	void SerialiseString(const DocumentTree::StringNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
-	{
-		writer.String(node_in->GetName().c_str());
-		writer.String(node_in->GetValue().c_str());
-	}
-
-	void SerialiseNumber(const DocumentTree::NumberNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
-	{
-		writer.String(node_in->GetName().c_str());
-		writer.Double(node_in->GetValue());
-	}
-
-	void SerialiseObject(const DocumentTree::ObjectNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	
+	void PrintName(const DocumentTree::NodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
 	{
 		if (!node_in->GetName().empty())
 		{
 			writer.String(node_in->GetName().c_str());
 		}
+	}
+
+	void SerialiseString(const DocumentTree::StringNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	{
+		PrintName(node_in, writer);
+		
+		writer.String(node_in->GetValue().c_str());
+	}
+
+	void SerialiseNumber(const DocumentTree::NumberNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	{
+		PrintName(node_in, writer);
+		
+		writer.Double(node_in->GetValue());
+	}
+
+	void SerialiseObject(const DocumentTree::ObjectNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	{
+		PrintName(node_in, writer);
 
 		writer.StartObject();
 
@@ -138,7 +145,7 @@ namespace
 
 	void SerialiseArray(const DocumentTree::ArrayNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
 	{
-		writer.String(node_in->GetName().c_str());
+		PrintName(node_in, writer);
 
 		writer.StartArray();
 
@@ -154,13 +161,15 @@ namespace
 
 	void SerialiseBool(const DocumentTree::BoolNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
 	{
-		writer.String(node_in->GetName().c_str());
+		PrintName(node_in, writer);
+		
 		writer.Bool(node_in->GetValue());
 	}
 
 	void SerialiseNull(const DocumentTree::NullNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
 	{
-		writer.String(node_in->GetName().c_str());
+		PrintName(node_in, writer);
+		
 		writer.Null();
 	}
 
