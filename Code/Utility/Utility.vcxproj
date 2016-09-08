@@ -16,6 +16,7 @@
     <ClInclude Include="DocumentTreeINode.hpp" />
     <ClInclude Include="DocumentTreeNodes.hpp" />
     <ClInclude Include="DocumentTreeNodeTemplate.hpp" />
+    <ClInclude Include="DocumentTreeNull.hpp" />
     <ClInclude Include="DocumentTreeObject.hpp" />
     <ClInclude Include="HashIdFromNameGenerator.hpp" />
     <ClInclude Include="IdNameMapper.hpp" />

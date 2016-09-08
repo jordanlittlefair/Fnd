@@ -24,7 +24,9 @@ public:
 		String,
 		Number,
 		Object,
-		Array
+		Array,
+		Bool,
+		Null
 	};
 	
 	virtual std::string GetName() const = 0;

@@ -19,6 +19,8 @@ namespace
 	NumberNodePtr ParseNumber(const rapidjson::Value& object_in, const std::string& name);
 	ObjectNodePtr ParseObject(const rapidjson::Value& object_in, const std::string& name);
 	ArrayNodePtr ParseArray(const rapidjson::Value& object_in, const std::string& name);
+	BoolNodePtr ParseBool(const rapidjson::Value& object_in, const std::string& name);
+	NullNodePtr ParseNull(const rapidjson::Value& object_in, const std::string& name);
 	NodePtr ParseNode(const rapidjson::Value& object_in, const std::string& name);
 
 	StringNodePtr ParseString(const rapidjson::Value& object_in, const std::string& name)
@@ -55,25 +57,33 @@ namespace
 		return ret;
 	}
 
+	BoolNodePtr ParseBool(const rapidjson::Value& object_in, const std::string& name)
+	{
+		return std::make_shared<BoolNode>(name, object_in.GetBool());
+	}
+
+	NullNodePtr ParseNull(const rapidjson::Value& object_in, const std::string& name)
+	{
+		return std::make_shared<NullNode>(name);
+	}
+
 	NodePtr ParseNode(const rapidjson::Value& object_in, const std::string& name)
 	{
 		switch (object_in.GetType())
 		{
 		case rapidjson::kStringType:
 			return ParseString(object_in, name);
-			break;
 		case rapidjson::kNumberType:
 			return ParseNumber(object_in, name);
-			break;
 		case rapidjson::kObjectType:
 			return ParseObject(object_in, name);
-			break;
 		case rapidjson::kArrayType: 
 			return ParseArray(object_in, name);
-			break;
-		case rapidjson::kNullType:
 		case rapidjson::kFalseType:
 		case rapidjson::kTrueType:
+			return ParseBool(object_in, name);
+		case rapidjson::kNullType:
+			return ParseNull(object_in, name);
 		default:
 			assert(!"Unknown type!");
 			return nullptr;
@@ -90,6 +100,8 @@ namespace
 	void SerialiseNumber(const DocumentTree::NumberNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 	void SerialiseObject(const DocumentTree::ObjectNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 	void SerialiseArray(const DocumentTree::ArrayNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
+	void SerialiseBool(const DocumentTree::BoolNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
+	void SerialiseNull(const DocumentTree::NullNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 	void SerialiseNode(const DocumentTree::NodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer);
 
 	void SerialiseString(const DocumentTree::StringNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
@@ -140,6 +152,18 @@ namespace
 		writer.EndArray();
 	}
 
+	void SerialiseBool(const DocumentTree::BoolNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	{
+		writer.String(node_in->GetName().c_str());
+		writer.Bool(node_in->GetValue());
+	}
+
+	void SerialiseNull(const DocumentTree::NullNodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
+	{
+		writer.String(node_in->GetName().c_str());
+		writer.Null();
+	}
+
 	void SerialiseNode(const DocumentTree::NodePtr& node_in, rapidjson::Writer<rapidjson::StringBuffer>& writer)
 	{
 		switch (node_in->GetType())
@@ -155,6 +179,12 @@ namespace
 			break;
 		case INode::Type::Array:
 			SerialiseArray(std::static_pointer_cast<ArrayNode>(node_in), writer);
+			break;
+		case INode::Type::Bool:
+			SerialiseBool(std::static_pointer_cast<BoolNode>(node_in), writer);
+			break;
+		case INode::Type::Null:
+			SerialiseNull(std::static_pointer_cast<NullNode>(node_in), writer);
 			break;
 		default:
 			assert(!"Unknown type!");

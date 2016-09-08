@@ -28,6 +28,8 @@ JsonParserTests::JsonParserTests():
 	AddTestCase("ParseAndSerialise_NumberValue_Success", &JsonParserTests::ParseAndSerialise_NumberValue_Success, this);
 	AddTestCase("ParseAndSerialise_EmptyArrayValue_Success", &JsonParserTests::ParseAndSerialise_EmptyArrayValue_Success, this);
 	AddTestCase("ParseAndSerialise_EmptyObjectValue_Success", &JsonParserTests::ParseAndSerialise_EmptyObjectValue_Success, this);
+	AddTestCase("ParseAndSerialise_BoolValue_Success", &JsonParserTests::ParseAndSerialise_BoolValue_Success, this);
+	AddTestCase("ParseAndSerialise_NullValue_Success", &JsonParserTests::ParseAndSerialise_NullValue_Success, this);
 }
 
 void JsonParserTests::ParseAndSerialise_EmptyObject_Success(Fnd::Test::TestCase& test_case)
@@ -153,6 +155,59 @@ void JsonParserTests::ParseAndSerialise_EmptyObjectValue_Success(Fnd::Test::Test
 	/*
 		Serialise it and make sure it's equal to what the input
 	 */
+	
+	Buffer output = JsonParser().Serialise(tree);
+	
+	test_case.AssertEqual(MakeString(input), MakeString(output));
+}
+
+void JsonParserTests::ParseAndSerialise_BoolValue_Success(Fnd::Test::TestCase& test_case)
+{
+	/*
+		Create buffer and parse it to document tree
+	*/
+	
+	Buffer input = MakeBuffer("{\"key\":true}");
+	
+	DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
+	
+	/*
+		Check tree contains items
+	*/
+	
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	test_case.AssertEqual(tree->GetValue().GetChildNode<BoolNode>("key")->GetValue(), true);
+	
+	/*
+		Serialise it and make sure it's equal to what the input
+	*/
+	
+	Buffer output = JsonParser().Serialise(tree);
+	
+	test_case.AssertEqual(MakeString(input), MakeString(output));
+}
+
+void JsonParserTests::ParseAndSerialise_NullValue_Success(Fnd::Test::TestCase& test_case)
+{
+	/*
+		Create buffer and parse it to document tree
+	*/
+	
+	Buffer input = MakeBuffer("{\"key\":null}");
+	
+	DocumentTree::ObjectNodePtr tree = JsonParser().Parse(input);
+	
+	/*
+		Check tree contains items
+	*/
+	
+	test_case.AssertEqual(tree->GetValue().GetChildren().size(), 1);
+	
+	tree->GetValue().GetChildNode<NullNode>("key")->GetValue(); // Doesn't return anything - mustn't throw
+	
+	/*
+		Serialise it and make sure it's equal to what the input
+	*/
 	
 	Buffer output = JsonParser().Serialise(tree);
 	

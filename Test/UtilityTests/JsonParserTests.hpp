@@ -25,6 +25,8 @@ private:
 	void ParseAndSerialise_NumberValue_Success(Fnd::Test::TestCase& test_case);
 	void ParseAndSerialise_EmptyArrayValue_Success(Fnd::Test::TestCase& test_case);
 	void ParseAndSerialise_EmptyObjectValue_Success(Fnd::Test::TestCase& test_case);
+	void ParseAndSerialise_BoolValue_Success(Fnd::Test::TestCase& test_case);
+	void ParseAndSerialise_NullValue_Success(Fnd::Test::TestCase& test_case);
 	
 };
 
