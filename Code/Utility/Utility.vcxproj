@@ -11,12 +11,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buffer.hpp" />
+    <ClInclude Include="DocumentTreeArray.hpp" />
+    <ClInclude Include="DocumentTreeINode.hpp" />
+    <ClInclude Include="DocumentTreeNodes.hpp" />
+    <ClInclude Include="DocumentTreeNodeTemplate.hpp" />
+    <ClInclude Include="DocumentTreeObject.hpp" />
     <ClInclude Include="HashIdFromNameGenerator.hpp" />
     <ClInclude Include="IdNameMapper.hpp" />
+    <ClInclude Include="IFile.hpp" />
     <ClInclude Include="IIdFromNameGenerator.hpp" />
+    <ClInclude Include="IParser.hpp" />
+    <ClInclude Include="JsonParser.hpp" />
+    <ClInclude Include="StdFile.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="DocumentTreeArray.cpp" />
+    <ClCompile Include="DocumentTreeObject.cpp" />
+    <ClCompile Include="JsonParser.cpp" />
+    <ClCompile Include="StdFile.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}</ProjectGuid>

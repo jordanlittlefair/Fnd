@@ -3,6 +3,7 @@
 #include "IFile.hpp"
 
 #include <fstream>
+#include <mutex>
 
 namespace Fnd
 {

@@ -2,6 +2,7 @@
 
 #include "Buffer.hpp"
 
+#include <memory>
 #include <string>
 
 namespace Fnd
