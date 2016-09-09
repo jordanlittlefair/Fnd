@@ -11,9 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ModuleConfigFileTests.hpp" />
+    <ClInclude Include="ModuleConfigTests.hpp" />
     <ClInclude Include="ModulesTestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ModuleConfigFileTests.cpp" />
+    <ClCompile Include="ModuleConfigTests.cpp" />
     <ClCompile Include="ModulesTestSuite.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

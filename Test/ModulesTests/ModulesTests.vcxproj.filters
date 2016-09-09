@@ -18,9 +18,21 @@
     <ClInclude Include="ModulesTestSuite.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleConfigFileTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleConfigTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModulesTestSuite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleConfigFileTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleConfigTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
