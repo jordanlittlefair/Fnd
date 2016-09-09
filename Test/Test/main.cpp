@@ -6,6 +6,7 @@
 #include "../UtilityTests/UtilityTestSuite.hpp"
 #include "../EntitySystemTests/EntitySystemTestSuite.hpp"
 #include "../SystemManagerTests/SystemManagerTestSuite.hpp"
+#include "../ModulesTests/ModulesTestSuite.hpp"
 
 
 #include <cassert>
@@ -28,6 +29,7 @@ int main()
 	test_suites.push_back( std::make_shared<Utility::UtilityTestSuite>() );
 	test_suites.push_back( std::make_shared<EntitySystem::EntitySystemTestSuite>() );
 	test_suites.push_back( std::make_shared<SystemManager::SystemManagerTestSuite>() );
+	test_suites.push_back( std::make_shared<Modules::ModulesTestSuite>() );
 	
 	
 	for (auto& test_suite : test_suites)
