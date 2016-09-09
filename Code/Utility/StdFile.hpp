@@ -18,9 +18,7 @@ class StdFile:
 	public IFile
 {
 public:
-	
-	StdFile();
-	
+		
 	StdFile(const std::string& filename);
 	
 	void Open();

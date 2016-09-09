@@ -33,15 +33,9 @@ namespace
 	};
 }
 
-StdFile::StdFile()
-{
-	
-}
-
 StdFile::StdFile(const std::string& filename):
 	_filename(filename)
 {
-	Open();
 }
 
 void StdFile::Open()
