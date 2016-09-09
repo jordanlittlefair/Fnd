@@ -20,7 +20,9 @@ public:
 	
 private:
 	
-	void Test(Fnd::Test::TestCase& test_case);
+	void LoadDefault_Success(Fnd::Test::TestCase& test_case);
+	void Load_Success(Fnd::Test::TestCase& test_case);
+	void Save_Success(Fnd::Test::TestCase& test_case);
 };
 
 }

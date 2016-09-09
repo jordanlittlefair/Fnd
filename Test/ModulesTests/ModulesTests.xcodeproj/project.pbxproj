@@ -16,6 +16,8 @@
 		1033879B1D83690B00811892 /* MockFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103387991D83690B00811892 /* MockFile.cpp */; };
 		1033879C1D83690B00811892 /* MockFile.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033879A1D83690B00811892 /* MockFile.hpp */; };
 		1033879F1D836A4B00811892 /* MockParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033879E1D836A4B00811892 /* MockParser.cpp */; };
+		103387AC1D8377E900811892 /* MockModuleConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103387AB1D8377E900811892 /* MockModuleConfig.cpp */; };
+		103387AF1D837C8900811892 /* MockConfigProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103387AE1D837C8900811892 /* MockConfigProvider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		1033879A1D83690B00811892 /* MockFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MockFile.hpp; sourceTree = "<group>"; };
 		1033879D1D8369E300811892 /* MockParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockParser.hpp; sourceTree = "<group>"; };
 		1033879E1D836A4B00811892 /* MockParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockParser.cpp; sourceTree = "<group>"; };
+		103387AA1D8377DD00811892 /* MockModuleConfig.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockModuleConfig.hpp; sourceTree = "<group>"; };
+		103387AB1D8377E900811892 /* MockModuleConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockModuleConfig.cpp; sourceTree = "<group>"; };
+		103387AD1D837C2000811892 /* MockConfigProvider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockConfigProvider.hpp; sourceTree = "<group>"; };
+		103387AE1D837C8900811892 /* MockConfigProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockConfigProvider.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +52,14 @@
 		103387641D83626400811892 = {
 			isa = PBXGroup;
 			children = (
-				1033879E1D836A4B00811892 /* MockParser.cpp */,
-				1033879D1D8369E300811892 /* MockParser.hpp */,
+				103387AE1D837C8900811892 /* MockConfigProvider.cpp */,
+				103387AD1D837C2000811892 /* MockConfigProvider.hpp */,
 				103387991D83690B00811892 /* MockFile.cpp */,
 				1033879A1D83690B00811892 /* MockFile.hpp */,
+				103387AB1D8377E900811892 /* MockModuleConfig.cpp */,
+				103387AA1D8377DD00811892 /* MockModuleConfig.hpp */,
+				1033879E1D836A4B00811892 /* MockParser.cpp */,
+				1033879D1D8369E300811892 /* MockParser.hpp */,
 				1033877B1D83629900811892 /* ModuleConfigFileTests.cpp */,
 				1033877C1D83629900811892 /* ModuleConfigFileTests.hpp */,
 				1033877D1D83629900811892 /* ModuleConfigTests.cpp */,
@@ -139,10 +149,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				103387811D83629900811892 /* ModuleConfigFileTests.cpp in Sources */,
+				103387AF1D837C8900811892 /* MockConfigProvider.cpp in Sources */,
 				103387831D83629900811892 /* ModuleConfigTests.cpp in Sources */,
 				103387851D83629900811892 /* ModulesTestSuite.cpp in Sources */,
 				1033879F1D836A4B00811892 /* MockParser.cpp in Sources */,
 				1033879B1D83690B00811892 /* MockFile.cpp in Sources */,
+				103387AC1D8377E900811892 /* MockModuleConfig.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
