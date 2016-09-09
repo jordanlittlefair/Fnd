@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1033875C1D83618600811892 /* libModules.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1033874F1D8360A800811892 /* libModules.a */; };
+		1033875D1D83618600811892 /* libSystemManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103386731D6A5D3B00811892 /* libSystemManager.a */; };
+		1033875E1D83618600811892 /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1033864E1D69FF8800811892 /* libUtility.a */; };
 		10A7B3761CB81DF800B78A7C /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3751CB81DF800B78A7C /* Main.cpp */; };
 		10FEA9461D03919600338F5B /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A7B3801CB81FC400B78A7C /* libCore.a */; };
 		10FEA9471D03919600338F5B /* libEntitySystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEA92B1D03912400338F5B /* libEntitySystem.a */; };
@@ -26,6 +29,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 10A7B3C91CB9CA8800B78A7C;
 			remoteInfo = SystemManager;
+		};
+		1033874E1D8360A800811892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 103387481D8360A700811892 /* Modules.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1033873A1D8360A700811892;
+			remoteInfo = Modules;
 		};
 		10A7B37F1CB81FC400B78A7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -58,6 +68,7 @@
 /* Begin PBXFileReference section */
 		103386471D69FF8800811892 /* Utility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utility.xcodeproj; path = ../Utility/Utility.xcodeproj; sourceTree = "<group>"; };
 		1033866C1D6A5D3B00811892 /* SystemManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SystemManager.xcodeproj; path = ../SystemManager/SystemManager.xcodeproj; sourceTree = "<group>"; };
+		103387481D8360A700811892 /* Modules.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Modules.xcodeproj; path = ../Modules/Modules.xcodeproj; sourceTree = "<group>"; };
 		10A7B3691CB81DA400B78A7C /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7B3751CB81DF800B78A7C /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		10A7B37B1CB81FC400B78A7C /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
@@ -69,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1033875C1D83618600811892 /* libModules.a in Frameworks */,
+				1033875D1D83618600811892 /* libSystemManager.a in Frameworks */,
+				1033875E1D83618600811892 /* libUtility.a in Frameworks */,
 				10FEA9461D03919600338F5B /* libCore.a in Frameworks */,
 				10FEA9471D03919600338F5B /* libEntitySystem.a in Frameworks */,
 			);
@@ -93,9 +107,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		103387491D8360A700811892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1033874F1D8360A800811892 /* libModules.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		10A7B3601CB81DA400B78A7C = {
 			isa = PBXGroup;
 			children = (
+				103387481D8360A700811892 /* Modules.xcodeproj */,
 				1033866C1D6A5D3B00811892 /* SystemManager.xcodeproj */,
 				103386471D69FF8800811892 /* Utility.xcodeproj */,
 				10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */,
@@ -199,6 +222,10 @@
 					ProjectRef = 10FEA9251D03912400338F5B /* EntitySystem.xcodeproj */;
 				},
 				{
+					ProductGroup = 103387491D8360A700811892 /* Products */;
+					ProjectRef = 103387481D8360A700811892 /* Modules.xcodeproj */;
+				},
+				{
 					ProductGroup = 1033866D1D6A5D3B00811892 /* Products */;
 					ProjectRef = 1033866C1D6A5D3B00811892 /* SystemManager.xcodeproj */;
 				},
@@ -227,6 +254,13 @@
 			fileType = archive.ar;
 			path = libSystemManager.a;
 			remoteRef = 103386721D6A5D3B00811892 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1033874F1D8360A800811892 /* libModules.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libModules.a;
+			remoteRef = 1033874E1D8360A800811892 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		10A7B3801CB81FC400B78A7C /* libCore.a */ = {

@@ -4,7 +4,7 @@ using namespace Fnd::Test::Modules;
 
 
 ModuleConfigTests::ModuleConfigTests():
-	UnitTestClass("ModuleConfigFileTests")
+	UnitTestClass("ModuleConfigTests")
 {
 	AddTestCase("Test", &ModuleConfigTests::Test, this);
 }

@@ -26,4 +26,7 @@
    <FileRef
       location = "group:UtilityTests/UtilityTests.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ModulesTests/ModulesTests.xcodeproj">
+   </FileRef>
 </Workspace>
