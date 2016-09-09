@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103386B71D74C63500811892 /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103386B61D74C63500811892 /* libUtility.a */; };
+		103386C61D76027200811892 /* DocumentTreeTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386C51D76027200811892 /* DocumentTreeTests.cpp */; };
+		103386EE1D7E242D00811892 /* StdFileTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386ED1D7E242D00811892 /* StdFileTests.cpp */; };
+		103386FD1D7EE7E500811892 /* JsonParserTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103386FC1D7EE7E500811892 /* JsonParserTests.cpp */; };
 		10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */; };
 		10682BAD1D57E51F007189A4 /* UtilityTestSuite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */; };
 		10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */; };
@@ -15,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103386B61D74C63500811892 /* libUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtility.a; path = ../../Code/Utility/build/Debug/libUtility.a; sourceTree = "<group>"; };
+		103386C41D76026500811892 /* DocumentTreeTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DocumentTreeTests.hpp; sourceTree = "<group>"; };
+		103386C51D76027200811892 /* DocumentTreeTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentTreeTests.cpp; sourceTree = "<group>"; };
+		103386EC1D7E23BB00811892 /* StdFileTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StdFileTests.hpp; sourceTree = "<group>"; };
+		103386ED1D7E242D00811892 /* StdFileTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StdFileTests.cpp; sourceTree = "<group>"; };
+		103386FB1D7EE7B600811892 /* JsonParserTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = JsonParserTests.hpp; sourceTree = "<group>"; };
+		103386FC1D7EE7E500811892 /* JsonParserTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParserTests.cpp; sourceTree = "<group>"; };
 		10682B9A1D57E4E7007189A4 /* libUtilityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtilityTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UtilityTestSuite.cpp; sourceTree = "<group>"; };
 		10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UtilityTestSuite.hpp; sourceTree = "<group>"; };
@@ -31,21 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103386B71D74C63500811892 /* libUtility.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		103386C71D76028000811892 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				103386B61D74C63500811892 /* libUtility.a */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
 		10682B911D57E4E7007189A4 = {
 			isa = PBXGroup;
 			children = (
+				103386C71D76028000811892 /* Dependencies */,
+				103386C51D76027200811892 /* DocumentTreeTests.cpp */,
+				103386C41D76026500811892 /* DocumentTreeTests.hpp */,
 				10682BB11D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp */,
 				10682BB01D57E8C5007189A4 /* HashIdFromNameGeneratorTests.hpp */,
 				10682BB51D57F406007189A4 /* IdNameMapperTests.cpp */,
 				10682BB41D57F3FB007189A4 /* IdNameMapperTests.hpp */,
+				103386FC1D7EE7E500811892 /* JsonParserTests.cpp */,
+				103386FB1D7EE7B600811892 /* JsonParserTests.hpp */,
 				10682BBA1D5FD944007189A4 /* MockIdFromNameGenerator.cpp */,
 				10682BB91D5FD8AA007189A4 /* MockIdFromNameGenerator.hpp */,
+				103386ED1D7E242D00811892 /* StdFileTests.cpp */,
+				103386EC1D7E23BB00811892 /* StdFileTests.hpp */,
 				10682BAA1D57E51F007189A4 /* UtilityTestSuite.cpp */,
 				10682BAB1D57E51F007189A4 /* UtilityTestSuite.hpp */,
 				10682B9B1D57E4E7007189A4 /* Products */,
@@ -130,7 +157,10 @@
 				10682BB21D57E97D007189A4 /* HashIdFromNameGeneratorTests.cpp in Sources */,
 				10682BB61D57F406007189A4 /* IdNameMapperTests.cpp in Sources */,
 				10682BAC1D57E51F007189A4 /* UtilityTestSuite.cpp in Sources */,
+				103386C61D76027200811892 /* DocumentTreeTests.cpp in Sources */,
 				10682BBB1D5FD944007189A4 /* MockIdFromNameGenerator.cpp in Sources */,
+				103386EE1D7E242D00811892 /* StdFileTests.cpp in Sources */,
+				103386FD1D7EE7E500811892 /* JsonParserTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +287,7 @@
 				10682BA71D57E4E7007189A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,15 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DocumentTreeTests.cpp" />
     <ClCompile Include="HashIdFromNameGeneratorTests.cpp" />
     <ClCompile Include="IdNameMapperTests.cpp" />
+    <ClCompile Include="JsonParserTests.cpp" />
     <ClCompile Include="MockIdFromNameGenerator.cpp" />
+    <ClCompile Include="StdFileTests.cpp" />
     <ClCompile Include="UtilityTestSuite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DocumentTreeTests.hpp" />
     <ClInclude Include="HashIdFromNameGeneratorTests.hpp" />
     <ClInclude Include="IdNameMapperTests.hpp" />
+    <ClInclude Include="JsonParserTests.hpp" />
     <ClInclude Include="MockIdFromNameGenerator.hpp" />
+    <ClInclude Include="StdFileTests.hpp" />
     <ClInclude Include="UtilityTestSuite.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

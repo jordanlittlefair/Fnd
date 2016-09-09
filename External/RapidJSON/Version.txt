@@ -1,0 +1,2 @@
+Version: 1.1.0
+Link: https://github.com/miloyip/rapidjson/releases/tag/v1.1.0
