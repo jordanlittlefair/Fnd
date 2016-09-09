@@ -20,7 +20,8 @@ public:
 	
 private:
 	
-	void Test(Fnd::Test::TestCase& test_case);
+	void LoadConfigDocumentTree_Success(Fnd::Test::TestCase& test_case);
+	void SaveConfigDocumentTree_Success(Fnd::Test::TestCase& test_case);
 };
 
 }

@@ -83,16 +83,7 @@
 		10A7B3291CB3293700B78A7C = {
 			isa = PBXGroup;
 			children = (
-				1033878C1D8362F500811892 /* libModules.a */,
-				1033878D1D8362F500811892 /* libModulesTests.a */,
-				1033878E1D8362F500811892 /* libUtility.a */,
-				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
-				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
-				10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */,
 				10A7B3461CB32D2D00B78A7C /* Dependencies */,
-				10A7B3E61CBAB3AD00B78A7C /* libCore.a */,
-				10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */,
-				10682BAE1D57E571007189A4 /* libUtilityTests.a */,
 				109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */,
 				109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */,
 				109068741D42DCC10086B32C /* ExamplePerformanceTestClass.cpp */,
@@ -117,6 +108,15 @@
 		10A7B3461CB32D2D00B78A7C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				10A7B3E61CBAB3AD00B78A7C /* libCore.a */,
+				10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */,
+				10682BAE1D57E571007189A4 /* libUtilityTests.a */,
+				1033878C1D8362F500811892 /* libModules.a */,
+				1033878D1D8362F500811892 /* libModulesTests.a */,
+				1033878E1D8362F500811892 /* libUtility.a */,
+				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
+				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
+				10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */,
 				10A7B3441CB32CD700B78A7C /* libFramework.a */,
 			);
 			name = Dependencies;
