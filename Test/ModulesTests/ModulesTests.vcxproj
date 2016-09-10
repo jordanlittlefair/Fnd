@@ -11,11 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MockConfigProvider.hpp" />
+    <ClInclude Include="MockFile.hpp" />
+    <ClInclude Include="MockModuleConfig.hpp" />
+    <ClInclude Include="MockParser.hpp" />
     <ClInclude Include="ModuleConfigFileTests.hpp" />
     <ClInclude Include="ModuleConfigTests.hpp" />
     <ClInclude Include="ModulesTestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MockConfigProvider.cpp" />
+    <ClCompile Include="MockFile.cpp" />
+    <ClCompile Include="MockModuleConfig.cpp" />
+    <ClCompile Include="MockParser.cpp" />
     <ClCompile Include="ModuleConfigFileTests.cpp" />
     <ClCompile Include="ModuleConfigTests.cpp" />
     <ClCompile Include="ModulesTestSuite.cpp" />

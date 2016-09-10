@@ -20,7 +20,7 @@ void MockModuleConfig::OnLoadDefault()
 	_config.str = _default;
 }
 
-void MockModuleConfig::OnLoad(const Utility::DocumentTree::ObjectNodePtr& document_tree)
+void MockModuleConfig::OnLoad(const ObjectNodePtr& document_tree)
 {
 	_config.str = document_tree->GetValue().GetChildValue<StringNode>("node");
 }
