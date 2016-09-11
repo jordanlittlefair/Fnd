@@ -4,6 +4,7 @@
 *.user
 *.sln.docstates
 xcuserdata
+*.DS_Store
 
 # Ignore build output directories
 
