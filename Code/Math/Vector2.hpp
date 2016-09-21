@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cmath>
+#include "Utility.hpp"
 
 namespace Fnd
 {
@@ -11,6 +11,8 @@ namespace Math
 template <typename Number>
 struct Vector2
 {
+	typedef Number NumberType;
+	
 	Number x;
 	Number y;
 	
@@ -131,7 +133,7 @@ Number LengthSquared(const Vector2<Number>& vec)
 template <typename Number>
 Number Length(const Vector2<Number>& vec)
 {
-	return sqrt(LengthSquared(vec));
+	return Utility::Sqrt(LengthSquared(vec));
 }
 
 template <typename Number>

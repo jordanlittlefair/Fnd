@@ -1,4 +1,8 @@
+#include "Vector2.hpp"
+#include "Vector3.hpp"
 #include "Vector4.hpp"
+#include "Constants.hpp"
+#include "Utility.hpp"
 
 using namespace Fnd::Math;
 
@@ -19,4 +23,11 @@ void test()
 	
 	Length(fv);
 	LengthSquared(fv);
+	
+	Vector3f start(1,2,3);
+	Vector3f end(4,5,6);
+	
+	Utility::Lerp(start, end, .75);
+	
+	Utility::Clamp(2,3,4);
 }
