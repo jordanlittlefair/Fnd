@@ -3,6 +3,7 @@
 #include "Vector4.hpp"
 #include "Constants.hpp"
 #include "Utility.hpp"
+#include "Quaternion.hpp"
 
 using namespace Fnd::Math;
 
@@ -30,4 +31,18 @@ void test()
 	Utility::Lerp(start, end, .75);
 	
 	Utility::Clamp(2,3,4);
+	Utility::Sin(0.1);
+	Utility::Cos(0.1);
+	Utility::Tan(0.1);
+	Utility::ASin(0.1);
+	Utility::ACos(0.1);
+	Utility::ATan(0.1);
+	
+	Quaternion<float> q = Quaternion<float>(1,0,0,1);
+	
+	q.GetXAxis() + q.GetYAxis() + q.GetZAxis();
+	
+	Normalise(q);
+	
+	q * q;
 }

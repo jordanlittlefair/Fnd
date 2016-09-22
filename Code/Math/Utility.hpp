@@ -30,6 +30,42 @@ Number ToDegrees(const Number& radians)
 {
 	return radians * (360 / Constants::Tau<Number>());
 }
+	
+template <typename Number>
+Number Sin(const Number& radians)
+{
+	return (Number)sin(radians);
+}
+	
+template <typename Number>
+Number ASin(const Number& radians)
+{
+	return (Number)asin(radians);
+}
+
+template <typename Number>
+Number Cos(const Number& radians)
+{
+	return (Number)cos(radians);
+}
+
+template <typename Number>
+Number ACos(const Number& radians)
+{
+	return (Number)acos(radians);
+}
+
+template <typename Number>
+Number Tan(const Number& radians)
+{
+	return (Number)tan(radians);
+}
+
+template <typename Number>
+Number ATan(const Number& radians)
+{
+	return (Number)atan(radians);
+}
 
 template <typename Number>
 Number Abs(const Number& num)
