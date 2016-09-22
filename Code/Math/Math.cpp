@@ -5,6 +5,7 @@
 #include "Utility.hpp"
 #include "Quaternion.hpp"
 #include "Matrix3.hpp"
+#include "Matrix4.hpp"
 
 using namespace Fnd::Math;
 
@@ -49,6 +50,14 @@ void test()
 	
 	Matrix3f m3;
 	
-	m3 = m3 * Transpose(m3);
-	m3 = Inverse(m3) * m3;
+	m3 = m3 * m3;
+	m3 = Vector3() * Transpose(m3);
+	m3 = Inverse(m3) * Vector3();
+	
+	Matrix4f m4;
+	
+	m4 = m4 * m4;
+	m4 = Vector4() * Transpose(m4);
+	m4 = Inverse(m4) * Vector4();
+
 }
