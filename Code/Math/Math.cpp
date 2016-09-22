@@ -4,6 +4,7 @@
 #include "Constants.hpp"
 #include "Utility.hpp"
 #include "Quaternion.hpp"
+#include "Matrix3.hpp"
 
 using namespace Fnd::Math;
 
@@ -45,4 +46,9 @@ void test()
 	Normalise(q);
 	
 	q * q;
+	
+	Matrix3f m3;
+	
+	m3 = m3 * Transpose(m3);
+	m3 = Inverse(m3) * m3;
 }
