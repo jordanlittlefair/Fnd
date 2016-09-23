@@ -149,6 +149,15 @@ Number Dot(const Vector3<Number>& vec0, const Vector3<Number>& vec1)
 {
 	return (vec0.x * vec1.x) + (vec0.y * vec1.y) + (vec0.z * vec1.z);
 }
+	
+template <typename Number>
+Vector3<Number> Cross(const Vector3<Number>& vec0, const Vector3<Number>& vec1)
+{
+	return Vector3<Number>(
+		vec0.y * vec1.z - vec0.z * vec1.y,
+		vec0.z * vec1.x - vec0.x * vec1.z,
+		vec0.x * vec1.y - vec0.y * vec1.x);
+}
 
 }
 
