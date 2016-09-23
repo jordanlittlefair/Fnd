@@ -6,6 +6,7 @@
 #include "Quaternion.hpp"
 #include "Matrix3.hpp"
 #include "Matrix4.hpp"
+#include "Matrix3Helper.hpp"
 
 using namespace Fnd::Math;
 
@@ -51,13 +52,21 @@ void test()
 	Matrix3f m3;
 	
 	m3 = m3 * m3;
-	m3 = Vector3() * Transpose(m3);
-	m3 = Inverse(m3) * Vector3();
+	Vector3f() * Transpose(m3);
+	Inverse(m3) * Vector3f();
 	
 	Matrix4f m4;
 	
 	m4 = m4 * m4;
-	m4 = Vector4() * Transpose(m4);
-	m4 = Inverse(m4) * Vector4();
-
+	Vector4f() * Transpose(m4);
+	Inverse(m4) * Vector4f();
+	
+	Matrix3Helper<MatrixOrder::RowMajor>::CreateXRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::RowMajor>::CreateYRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::RowMajor>::CreateZRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::ColumnMajor>::CreateXRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::ColumnMajor>::CreateYRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::ColumnMajor>::CreateZRotationMatrix(0.5f);
+	Matrix3Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f);
+	Matrix3Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f,1.5f,1.5f);
 }

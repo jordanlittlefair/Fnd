@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103F696E1D949A25000C18CA /* Matrix3Helper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103F696C1D949A25000C18CA /* Matrix3Helper.hpp */; };
+		103F696F1D949A25000C18CA /* MatrixHelper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 103F696D1D949A25000C18CA /* MatrixHelper.hpp */; };
 		107B70711D861BC900589CEC /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 107B70701D861BC900589CEC /* Math.cpp */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +19,8 @@
 		103F69671D934AD4000C18CA /* Quaternion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Quaternion.hpp; sourceTree = "<group>"; };
 		103F696A1D9491D2000C18CA /* Matrix3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix3.hpp; sourceTree = "<group>"; };
 		103F696B1D9495D5000C18CA /* Matrix4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix4.hpp; sourceTree = "<group>"; };
+		103F696C1D949A25000C18CA /* Matrix3Helper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix3Helper.hpp; sourceTree = "<group>"; };
+		103F696D1D949A25000C18CA /* MatrixHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MatrixHelper.hpp; sourceTree = "<group>"; };
 		107B70571D8613B500589CEC /* libMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		107B706F1D8615A800589CEC /* Vector2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2.hpp; sourceTree = "<group>"; };
 		107B70701D861BC900589CEC /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
@@ -40,7 +44,9 @@
 				103F69651D8F5254000C18CA /* Constants.hpp */,
 				107B70701D861BC900589CEC /* Math.cpp */,
 				103F696A1D9491D2000C18CA /* Matrix3.hpp */,
+				103F696C1D949A25000C18CA /* Matrix3Helper.hpp */,
 				103F696B1D9495D5000C18CA /* Matrix4.hpp */,
+				103F696D1D949A25000C18CA /* MatrixHelper.hpp */,
 				103F69671D934AD4000C18CA /* Quaternion.hpp */,
 				103F69661D8F5591000C18CA /* Utility.hpp */,
 				107B706F1D8615A800589CEC /* Vector2.hpp */,
@@ -65,6 +71,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103F696E1D949A25000C18CA /* Matrix3Helper.hpp in Headers */,
+				103F696F1D949A25000C18CA /* MatrixHelper.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
