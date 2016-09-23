@@ -7,6 +7,7 @@
 #include "Matrix3.hpp"
 #include "Matrix4.hpp"
 #include "Matrix3Helper.hpp"
+#include "Matrix4Helper.hpp"
 
 using namespace Fnd::Math;
 
@@ -69,4 +70,13 @@ void test()
 	Matrix3Helper<MatrixOrder::ColumnMajor>::CreateZRotationMatrix(0.5f);
 	Matrix3Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f);
 	Matrix3Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f,1.5f,1.5f);
+	
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateXRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateYRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateZRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::ColumnMajor>::CreateXRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::ColumnMajor>::CreateYRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::ColumnMajor>::CreateZRotationMatrix(0.5f);
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f);
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateScaleMatrix(1.5f,1.5f,1.5f);
 }
