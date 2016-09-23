@@ -2,6 +2,7 @@
 
 #include "Matrix3.hpp"
 #include "MatrixHelper.hpp"
+#include "Utility.hpp"
 
 namespace Fnd
 {
@@ -20,9 +21,9 @@ public:
 	{
 		return MatrixHelper<MatrixOrderT>::ConvertOrder(
 			Matrix3<Number>(
-				1.0f, 0.0f, 0.0f,
-				0.0f, cos(radians), -sin(radians),
-				0.0f, sin(radians), cos(radians)));
+				1, 0, 0,
+				0, Utility::Cos(radians), -Utility::Sin(radians),
+				0, Utility::Sin(radians), Utility::Cos(radians)));
 	}
 	
 	template <typename Number>
@@ -30,9 +31,9 @@ public:
 	{
 		return MatrixHelper<MatrixOrderT>::ConvertOrder(
 			Matrix3<Number>(
-				cos(radians), 0.0f, sin(radians),
-				0.0f, 1.0f, 0.0f,
-				-sin(radians), 0.0f, cos(radians)));
+				Utility::Cos(radians), 0, Utility::Sin(radians),
+				0, 1, 0,
+				-Utility::Sin(radians), 0, Utility::Cos(radians)));
 	}
 	
 	template <typename Number>
@@ -40,9 +41,9 @@ public:
 	{
 		return MatrixHelper<MatrixOrderT>::ConvertOrder(
 			Matrix3<Number>(
-				cos(radians), 0.0f, sin(radians),
-				-sin(radians), 0.0f, cos(radians),
-				0.0f, 1.0f, 0.0f));
+				Utility::Cos(radians), 0, Utility::Sin(radians),
+				-Utility::Sin(radians), 0, Utility::Cos(radians),
+				0, 1, 0));
 	}
 	
 	template <typename Number>
