@@ -12,10 +12,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IConfigProvider.hpp" />
+    <ClInclude Include="Module.hpp" />
     <ClInclude Include="ModuleConfigFile.hpp" />
     <ClInclude Include="ModuleConfig.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Module.cpp" />
     <ClCompile Include="ModuleConfigFile.cpp" />
     <ClCompile Include="ModuleConfig.cpp" />
   </ItemGroup>

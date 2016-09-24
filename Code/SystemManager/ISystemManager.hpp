@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ISystem.hpp"
+
 #include <memory>
 
 namespace Fnd
