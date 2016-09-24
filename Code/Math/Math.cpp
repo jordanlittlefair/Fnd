@@ -32,7 +32,7 @@ void test()
 	Vector3f start(1,2,3);
 	Vector3f end(4,5,6);
 	
-	Utility::Lerp(start, end, .75);
+	Utility::Lerp(start, end, .75f);
 	
 	Utility::Clamp(2,3,4);
 	Utility::Sin(0.1);
