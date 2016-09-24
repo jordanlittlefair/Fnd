@@ -2,6 +2,7 @@
 
 #include "Matrix4.hpp"
 #include "MatrixHelper.hpp"
+#include "Quaternion.hpp"
 #include "Utility.hpp"
 #include "Vector3.hpp"
 
@@ -83,6 +84,21 @@ public:
 				0, 0, 0, 1));
 	}
 	
+	template <typename Number>
+	static Matrix4<Number> CreateRotationMatrix(const Quaternion<Number>& q)
+	{
+		const Vector3<Number> x = Normalise(q.GetXAxis());
+		const Vector3<Number> y = Normalise(q.GetYAxis());
+		const Vector3<Number> z = Normalise(Cross(x, y));
+		
+		return MatrixHelper<MatrixOrderT>::ConvertOrder(
+			Matrix4<Number>(
+				x.x, x.y, x.z, 0,
+				y.x, y.y, y.z, 0,
+				z.x, z.y, z.z, 0,
+				0, 0, 0, 1 ));
+	}
+	
 	template <Handedness Handedness, typename Number>
 	static Matrix4<Number> CreateWorldMatrix(const Vector3<Number>& position, const Vector3<Number>& direction, const Vector3<Number>& up)
 	{
@@ -126,6 +142,26 @@ public:
 				0, y_scale, 0, 0,
 				0, 0, far_plane / (Handedness == Handedness::Left ? (far_plane - near_plane) : (near_plane - far_plane)), Handedness == Handedness::Left ? 1 : -1,
 				0, 0, near_plane * far_plane / ( near_plane - far_plane ), 0 ));
+	}
+	
+	template <typename Number>
+	static Vector3<Number> TransformPosition(const Vector3<Number>& vector, const Matrix4<Number>& matrix)
+	{
+		const Vector4<Number> hvector =	MatrixOrderT == MatrixOrder::RowMajor ?
+			Vector4<Number>(vector.x, vector.y, vector.z, 1) * matrix :
+			matrix * Vector4<Number>(vector.x, vector.y, vector.z, 1);
+		
+		return Vector3<Number>(hvector.x, hvector.y, hvector.z) / hvector.w;
+	}
+	
+	template <typename Number>
+	static Vector3<Number> TransformDirection(const Vector3<Number>& vector, const Matrix4<Number>& matrix)
+	{
+		const Vector4<Number> hvector =	MatrixOrderT == MatrixOrder::RowMajor ?
+		Vector4<Number>(vector.x, vector.y, vector.z, 0) * matrix :
+		matrix * Vector4<Number>(vector.x, vector.y, vector.z, 0);
+		
+		return Vector3<Number>(hvector.x, hvector.y, hvector.z);
 	}
 };
 	

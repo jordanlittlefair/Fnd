@@ -82,4 +82,7 @@ void test()
 	Matrix4Helper<MatrixOrder::RowMajor>::CreateWorldMatrix<Handedness::Right>(Vector3f(), Vector3f(), Vector3f());
 	Matrix4Helper<MatrixOrder::RowMajor>::CreateLookAtMatrix<Handedness::Left>(Vector3f(), Vector3f(), Vector3f());
 	Matrix4Helper<MatrixOrder::ColumnMajor>::CreateProjectionMatrix<Handedness::Left>(1.0f, 16.0f / 9.0f, 0.01f, 1000.0f);
+	Matrix4Helper<MatrixOrder::RowMajor>::CreateRotationMatrix(Quaternionf());
+	Matrix4Helper<MatrixOrder::RowMajor>::TransformPosition(Vector3f(), Matrix4f());
+	Matrix4Helper<MatrixOrder::ColumnMajor>::TransformDirection(Vector3f(), Matrix4f());
 }
