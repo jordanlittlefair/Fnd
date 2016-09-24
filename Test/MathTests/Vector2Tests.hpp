@@ -22,16 +22,16 @@ public:
 	Vector2Tests(const std::string& number_type):
 		VectorTestsBase<Fnd::Math::Vector2<Number>>("Vector2Tests<" + number_type + ">")
 	{
-		AddTestCase( "Constructor_Success", &Vector2Tests::Constructor_Success, this );
-		AddTestCase( "LengthSquared_Success", &Vector2Tests::LengthSquared_Success, this );
-		AddTestCase( "Length_Success", &Vector2Tests::Length_Success, this );
-		AddTestCase( "Normalise_Success", &Vector2Tests::Normalise_Success, this );
-		AddTestCase( "Dot_Success", &Vector2Tests::Dot_Success, this );
+		this->AddTestCase( "Constructor_Success", &Vector2Tests::Constructor_Success, this );
+		this->AddTestCase( "LengthSquared_Success", &Vector2Tests::LengthSquared_Success, this );
+		this->AddTestCase( "Length_Success", &Vector2Tests::Length_Success, this );
+		this->AddTestCase( "Normalise_Success", &Vector2Tests::Normalise_Success, this );
+		this->AddTestCase( "Dot_Success", &Vector2Tests::Dot_Success, this );
 	}
 
 private:
 
-	using VectorTestsBase<Fnd::Math::Vector2<Number>>::TestVec;
+	using typename VectorTestsBase<Fnd::Math::Vector2<Number>>::TestVec;
 
 	void Constructor_Success(TestCase& test_case)
 	{

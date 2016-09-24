@@ -59,7 +59,7 @@ public:
 			ss << ": " << description;
 		}		
 		
-		Assert(abs(expected - real) < accuracy, ss.str());
+		Assert(Abs(expected - real) < accuracy, ss.str());
 	}
 	
 	template <typename A, typename B>
@@ -97,6 +97,14 @@ public:
 	virtual ~TestCase();
 
 private:
+	
+private:
+	
+	template <typename T>
+	T Abs(const T& t)
+	{
+		return t < 0 ? -t : t;
+	}
 
 	TestFunction _function;
 

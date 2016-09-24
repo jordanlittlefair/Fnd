@@ -22,16 +22,16 @@ public:
 	Vector4Tests(const std::string& number_type):
 		VectorTestsBase<Fnd::Math::Vector4<Number>>("Vector4Tests<" + number_type + ">")
 	{
-		AddTestCase( "Constructor_Success", &Vector4Tests::Constructor_Success, this );
-		AddTestCase( "LengthSquared_Success", &Vector4Tests::LengthSquared_Success, this );
-		AddTestCase( "Length_Success", &Vector4Tests::Length_Success, this );
-		AddTestCase( "Normalise_Success", &Vector4Tests::Normalise_Success, this );
-		AddTestCase( "Dot_Success", &Vector4Tests::Dot_Success, this );
+		this->AddTestCase( "Constructor_Success", &Vector4Tests::Constructor_Success, this );
+		this->AddTestCase( "LengthSquared_Success", &Vector4Tests::LengthSquared_Success, this );
+		this->AddTestCase( "Length_Success", &Vector4Tests::Length_Success, this );
+		this->AddTestCase( "Normalise_Success", &Vector4Tests::Normalise_Success, this );
+		this->AddTestCase( "Dot_Success", &Vector4Tests::Dot_Success, this );
 	}
 
 private:
 
-	using VectorTestsBase<Fnd::Math::Vector4<Number>>::TestVec;
+	using typename VectorTestsBase<Fnd::Math::Vector4<Number>>::TestVec;
 
 	void Constructor_Success(TestCase& test_case)
 	{

@@ -2,6 +2,8 @@
 
 #include "Utility.hpp"
 
+#include <cassert>
+
 namespace Fnd
 {
 	
