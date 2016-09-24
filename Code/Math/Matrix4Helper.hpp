@@ -105,12 +105,14 @@ public:
 		const Vector3<Number> x_axis = Normalise(Cross(up, z_axis));
 		const Vector3<Number> y_axis = Normalise(Cross(z_axis, x_axis));
 		
+		const Number handedness_modifier = Handedness == Handedness::Left ? -1 : 1;
+		
 		return MatrixHelper<MatrixOrderT>::ConvertOrder(
 			Matrix4<Number>(
 				x_axis.x, y_axis.x, z_axis.x, 0,
 				x_axis.y, y_axis.y, z_axis.y, 0,
 				x_axis.z, y_axis.z, z_axis.z, 0,
-				Dot(x_axis, eye), Dot(y_axis, eye), Dot(z_axis, eye), 1));
+				handedness_modifier * Dot(x_axis, eye), handedness_modifier * Dot(y_axis, eye), handedness_modifier * Dot(z_axis, eye), 1));
 	}
 	
 	template <Handedness Handedness, typename Number>
