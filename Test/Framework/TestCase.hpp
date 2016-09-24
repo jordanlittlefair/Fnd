@@ -46,6 +46,21 @@ public:
 		
 		Assert(expected == real, ss.str());
 	}
+
+	template <typename A, typename B>
+	void AssertFloatEqual(const A& expected, const B& real, const float& accuracy = std::numeric_limits<decltype(real+expected)>::epsilon(), const std::string& description = "")
+	{
+		std::stringstream ss;
+		
+		ss << "Expected [" << expected << "] must equal Real [" << real << "]";
+		
+		if (!description.empty())
+		{
+			ss << ": " << description;
+		}		
+		
+		Assert(abs(expected - real) < accuracy, ss.str());
+	}
 	
 	template <typename A, typename B>
 	void AssertNotEqual(const A& expected, const B& real, const std::string& description = "")
