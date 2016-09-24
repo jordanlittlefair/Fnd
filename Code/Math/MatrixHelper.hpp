@@ -14,6 +14,12 @@ enum class MatrixOrder
 	ColumnMajor
 };
 	
+enum class Handedness
+{
+	Left,
+	Right
+};
+	
 template <MatrixOrder MatrixOrderT>
 class MatrixHelper
 {
