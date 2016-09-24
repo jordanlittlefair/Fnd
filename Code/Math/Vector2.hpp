@@ -30,6 +30,20 @@ struct Vector2
 	{
 		return Vector2(0, 0);
 	}
+
+	const Number& operator[] (const unsigned int i) const
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	Number& operator[] (const unsigned int i)
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	static const unsigned int NumElements = 2;
 };
 	
 typedef Vector2<float> Vector2f;
@@ -73,7 +87,7 @@ Vector2<Number> operator *(const Scalar& lhs, const Vector2<Number>& rhs)
 template <typename Number>
 Vector2<Number> operator *(const Vector2<Number>& lhs, const Vector2<Number>& rhs)
 {
-	return Vector2<Number>(lhs.x * rhs.x, lhs.x * rhs.y);
+	return Vector2<Number>(lhs.x * rhs.x, lhs.y * rhs.y);
 }
 
 template <typename Number, typename Scalar>
@@ -85,7 +99,7 @@ Vector2<Number> operator /(const Vector2<Number>& lhs, const Scalar& rhs)
 template <typename Number>
 Vector2<Number> operator /(const Vector2<Number>& lhs, const Vector2<Number>& rhs)
 {
-	return Vector2<Number>(lhs.x / rhs.x, lhs.x / rhs.y);
+	return Vector2<Number>(lhs.x / rhs.x, lhs.y / rhs.y);
 }
 	
 template <typename Number>

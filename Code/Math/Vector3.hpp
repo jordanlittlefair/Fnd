@@ -32,6 +32,20 @@ struct Vector3
 	{
 		return Vector3(0, 0, 0);
 	}
+
+	const Number& operator[] (const unsigned int i) const
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	Number& operator[] (const unsigned int i)
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	static const unsigned int NumElements = 3;
 };
 	
 typedef Vector3<float> Vector3f;
@@ -75,7 +89,7 @@ Vector3<Number> operator *(const Scalar& lhs, const Vector3<Number>& rhs)
 template <typename Number>
 Vector3<Number> operator *(const Vector3<Number>& lhs, const Vector3<Number>& rhs)
 {
-	return Vector3<Number>(lhs.x * rhs.x, lhs.x * rhs.y, lhs.z * rhs.z);
+	return Vector3<Number>(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
 }
 
 template <typename Number, typename Scalar>
@@ -87,7 +101,7 @@ Vector3<Number> operator /(const Vector3<Number>& lhs, const Scalar& rhs)
 template <typename Number>
 Vector3<Number> operator /(const Vector3<Number>& lhs, const Vector3<Number>& rhs)
 {
-	return Vector3<Number>(lhs.x / rhs.x, lhs.x / rhs.y, lhs.z / rhs.z);
+	return Vector3<Number>(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
 }
 
 template <typename Number>

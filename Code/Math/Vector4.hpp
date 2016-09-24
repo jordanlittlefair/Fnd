@@ -34,6 +34,20 @@ struct Vector4
 	{
 		return Vector4(0, 0, 0, 0);
 	}
+
+	const Number& operator[] (const unsigned int i) const
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	Number& operator[] (const unsigned int i)
+	{
+		assert(i < NumElements);
+		return ((Number*)this)[i];
+	}
+
+	static const unsigned int NumElements = 4;
 };
 
 typedef Vector4<float> Vector4f;
@@ -71,13 +85,13 @@ Vector4<Number> operator *(const Vector4<Number>& lhs, const Scalar& rhs)
 template <typename Number, typename Scalar>
 Vector4<Number> operator *(const Scalar& lhs, const Vector4<Number>& rhs)
 {
-	return Vector4<Number>(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+	return Vector4<Number>(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
 }
 
 template <typename Number>
 Vector4<Number> operator *(const Vector4<Number>& lhs, const Vector4<Number>& rhs)
 {
-	return Vector4<Number>(lhs.x * rhs.x, lhs.x * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w);
+	return Vector4<Number>(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w);
 }
 
 template <typename Number, typename Scalar>
@@ -89,7 +103,7 @@ Vector4<Number> operator /(const Vector4<Number>& lhs, const Scalar& rhs)
 template <typename Number>
 Vector4<Number> operator /(const Vector4<Number>& lhs, const Vector4<Number>& rhs)
 {
-	return Vector4<Number>(lhs.x / rhs.x, lhs.x / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
+	return Vector4<Number>(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
 }
 
 template <typename Number>
