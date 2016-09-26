@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ComponentContainerTemplate.hpp"
+#include "ComponentManagerBase.hpp"
 #include "Exceptions.hpp"
 
 #include <memory>
@@ -11,7 +12,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class ComponentManager
+class ComponentManager:
+	public ComponentManagerBase
 {
 public:
 
@@ -20,22 +22,13 @@ public:
 	template <typename ComponentType>
 	bool IsRegistered() const
 	{
-		const auto iter = _component_containers.find( ComponentType::Id );
-
-		return iter != _component_containers.end();
+		return ComponentManagerBase::IsRegistered(ComponentType::Id);
 	}
 
 	template <typename ComponentType>
 	void RegisterComponent()
 	{
-		if ( !IsRegistered<ComponentType>() )
-		{
-			_component_containers[ComponentType::Id] = std::make_shared<ComponentContainerTemplate<ComponentType>>();
-		}
-		else
-		{
-			throw InvalidComponentIdException(ComponentType::Id);
-		}
+		ComponentManagerBase::RegisterComponent(std::make_shared<ComponentContainerTemplate<ComponentType>>());
 	}
 
 	template <typename ComponentType>
@@ -79,34 +72,14 @@ private:
 	template <typename ComponentType>
 	ComponentContainerTemplate<ComponentType>& GetComponentContainer()
 	{
-		const auto iter = _component_containers.find( ComponentType::Id );
-
-		if ( iter != _component_containers.end() )
-		{
-			return *(ComponentContainerTemplate<ComponentType>*)((iter->second).get());
-		}
-		else
-		{
-			throw InvalidComponentIdException(ComponentType::Id);
-		}
+		return (ComponentContainerTemplate<ComponentType>&)ComponentManagerBase::GetComponentContainer(ComponentType::Id);
 	}
 
 	template <typename ComponentType>
 	const ComponentContainerTemplate<ComponentType>& GetComponentContainer() const
 	{
-		const auto iter = _component_containers.find( ComponentType::Id );
-		
-		if ( iter != _component_containers.end() )
-		{
-			return *(ComponentContainerTemplate<ComponentType>*)((iter->second).get());
-		}
-		else
-		{
-			throw InvalidComponentIdException(ComponentType::Id);
-		}
+		return (ComponentContainerTemplate<ComponentType>&)ComponentManagerBase::GetComponentContainer(ComponentType::Id);
 	}
-
-	std::map<ComponentId,std::shared_ptr<ComponentContainer>> _component_containers;
 };
 
 }

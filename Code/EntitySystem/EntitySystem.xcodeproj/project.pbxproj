@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		101F23871D0F22EF004D5B5E /* EntitySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 101F23861D0F22EF004D5B5E /* EntitySystem.cpp */; };
+		10318A7A1D99DF7F001FD3A3 /* ComponentManagerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10318A791D99DF7F001FD3A3 /* ComponentManagerBase.cpp */; };
 		103386811D6A600300811892 /* AssertComponentType.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033867D1D6A600300811892 /* AssertComponentType.hpp */; };
 		103386821D6A600300811892 /* AssertNodeType.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033867E1D6A600300811892 /* AssertNodeType.hpp */; };
 		103386831D6A600300811892 /* BasicEntityIdGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033867F1D6A600300811892 /* BasicEntityIdGenerator.cpp */; };
@@ -40,6 +41,8 @@
 		101F23851D0F21EE004D5B5E /* EntitySystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntitySystem.hpp; sourceTree = "<group>"; };
 		101F23861D0F22EF004D5B5E /* EntitySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntitySystem.cpp; sourceTree = "<group>"; };
 		101F23881D0F23EA004D5B5E /* IEntitySystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IEntitySystem.hpp; sourceTree = "<group>"; };
+		10318A781D99DD9D001FD3A3 /* ComponentManagerBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComponentManagerBase.hpp; sourceTree = "<group>"; };
+		10318A791D99DF7F001FD3A3 /* ComponentManagerBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentManagerBase.cpp; sourceTree = "<group>"; };
 		1033867D1D6A600300811892 /* AssertComponentType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssertComponentType.hpp; sourceTree = "<group>"; };
 		1033867E1D6A600300811892 /* AssertNodeType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssertNodeType.hpp; sourceTree = "<group>"; };
 		1033867F1D6A600300811892 /* BasicEntityIdGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicEntityIdGenerator.cpp; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				103386861D6A61D400811892 /* ComponentIdNameMapper.hpp */,
 				10FEA9321D03915700338F5B /* ComponentManager.cpp */,
 				10FEA9331D03915700338F5B /* ComponentManager.hpp */,
+				10318A791D99DF7F001FD3A3 /* ComponentManagerBase.cpp */,
+				10318A781D99DD9D001FD3A3 /* ComponentManagerBase.hpp */,
 				10FEA9341D03915700338F5B /* ComponentTemplate.hpp */,
 				10FEA9351D03915700338F5B /* EntityId.hpp */,
 				10FEA9BA1D04D90800338F5B /* EntityManager.cpp */,
@@ -133,9 +138,9 @@
 				10FEA9FF1D08E13200338F5B /* NodeManager.cpp */,
 				10FEA9FE1D08E12400338F5B /* NodeManager.hpp */,
 				10FEA9DA1D05E67600338F5B /* NodeTemplate.hpp */,
+				10FEA9181D03912400338F5B /* Products */,
 				103386891D6A655700811892 /* StaticIdNameMappers.cpp */,
 				103386881D6A646C00811892 /* StaticIdNameMappers.hpp */,
-				10FEA9181D03912400338F5B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +237,7 @@
 				10FEAA001D08E13200338F5B /* NodeManager.cpp in Sources */,
 				10FEA9421D03915700338F5B /* Exceptions.cpp in Sources */,
 				101F23871D0F22EF004D5B5E /* EntitySystem.cpp in Sources */,
+				10318A7A1D99DF7F001FD3A3 /* ComponentManagerBase.cpp in Sources */,
 				103386831D6A600300811892 /* BasicEntityIdGenerator.cpp in Sources */,
 				10FEA9381D03915700338F5B /* Component.cpp in Sources */,
 				10FEA9C31D04D90800338F5B /* Node.cpp in Sources */,

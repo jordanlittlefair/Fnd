@@ -12,7 +12,17 @@ void MockComponentContainer::AddComponent( const MockComponent& component )
 {
 	_map[component.GetEntityId()] = std::make_shared<MockComponent>( component );
 }
-	
+
+Fnd::EntitySystem::Component& MockComponentContainer::OnCreateComponent(const Fnd::EntitySystem::EntityId entity_id)
+{
+	return *(_map[entity_id] = std::make_shared<MockComponent>(GetComponentId(),entity_id));
+}
+
+bool MockComponentContainer::OnHasComponent(const Fnd::EntitySystem::EntityId entity_id) const
+{
+	return _map.find(entity_id) != _map.end();
+}
+
 const Component& MockComponentContainer::OnGetComponent( const EntityId entity_id ) const
 {
 	auto iter = _map.find( entity_id );
@@ -39,4 +49,10 @@ Component& MockComponentContainer::OnGetComponent( const EntityId entity_id )
 	{
 		throw std::runtime_error( "Component doesn't exist!" );
 	}
+}
+
+
+void MockComponentContainer::OnDestroyComponent(const Fnd::EntitySystem::EntityId entity_id)
+{
+	
 }
