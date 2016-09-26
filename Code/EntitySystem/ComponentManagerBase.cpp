@@ -1,5 +1,7 @@
 #include "ComponentManagerBase.hpp"
 
+#include "Exceptions.hpp"
+
 #include <cassert>
 
 using namespace Fnd::EntitySystem;

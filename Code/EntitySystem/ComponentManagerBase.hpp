@@ -1,8 +1,9 @@
 #pragma once
 
-#include "ComponentContainerTemplate.hpp"
-#include "Exceptions.hpp"
+#include "ComponentContainer.hpp"
+#include "IComponentManager.hpp"
 
+#include <map>
 #include <memory>
 
 namespace Fnd
@@ -11,7 +12,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class ComponentManagerBase
+class ComponentManagerBase:
+	public IComponentManager
 {
 public:
 	
