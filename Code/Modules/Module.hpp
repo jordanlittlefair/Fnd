@@ -21,7 +21,7 @@ public:
 
 	void RegisterNodes(EntitySystem::NodeManager& node_manager);
 
-	void RegisterSystems(SystemManager::SystemManagerPtr system_manager) const;
+	void RegisterSystems(SystemManager::SystemManagerPtr system_manager);
 
 protected:
 
@@ -29,7 +29,11 @@ protected:
 
 protected:
 
-	virtual std::vector<SystemManager::SystemPtr> OnGetSystems() const = 0;
+	virtual void OnRegisterComponents(EntitySystem::ComponentManager& component_manager);
+	
+	virtual void OnRegisterNodes(EntitySystem::NodeManager& node_manager);
+	
+	virtual void OnRegisterSystems(SystemManager::SystemManagerPtr system_manager);
 
 private:
 

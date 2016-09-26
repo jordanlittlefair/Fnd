@@ -16,20 +16,30 @@ std::string Module::GetName() const
 
 void Module::RegisterComponents(ComponentManager& component_manager)
 {
-	// TODO
+	OnRegisterComponents(component_manager);
 }
 
 void Module::RegisterNodes(NodeManager& node_manager)
 {
-	// TODO
+	OnRegisterNodes(node_manager);
 }
 
-void Module::RegisterSystems(SystemManagerPtr system_manager) const
+void Module::RegisterSystems(SystemManagerPtr system_manager)
 {
-	std::vector<SystemPtr> systems = OnGetSystems();
+	OnRegisterSystems(system_manager);
+}
 
-	for (auto& system : systems)
-	{
-		system_manager->AddSystem(system);
-	}
+void Module::OnRegisterComponents(ComponentManager& component_manager)
+{
+	// Override if additional components are required for this module
+}
+
+void Module::OnRegisterNodes(NodeManager& node_manager)
+{
+	// Override if additional nodes are required for this module
+}
+
+void Module::OnRegisterSystems(SystemManagerPtr system_manager)
+{
+	// Override if additional systems are required for this module
 }
