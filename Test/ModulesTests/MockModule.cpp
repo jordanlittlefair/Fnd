@@ -5,7 +5,10 @@ using namespace Fnd::Modules;
 
 MockModule::MockModule(const std::string& name):
 	Module(name),
-	_initialise_should_throw(false)
+	_initialise_should_throw(false),
+	_has_registered_components(false),
+	_has_registered_nodes(false),
+	_has_registered_systems(false)
 {
 }
 
@@ -14,19 +17,35 @@ void MockModule::SetThrowException()
 	_initialise_should_throw = true;
 }
 
+
+bool MockModule::HasRegisteredComponents() const
+{
+	return _has_registered_components;
+}
+
+bool MockModule::HasRegisteredNodes() const
+{
+	return _has_registered_nodes;
+}
+
+bool MockModule::HasRegisteredSystems() const
+{
+	return _has_registered_systems;
+}
+
 void MockModule::OnRegisterComponents(EntitySystem::IComponentManager& component_manager)
 {
-	
+	_has_registered_components = true;
 }
 
 void MockModule::OnRegisterNodes(EntitySystem::INodeManager& node_manager)
 {
-	
+	_has_registered_nodes = true;
 }
 
 void MockModule::OnRegisterSystems(SystemManager::ISystemManager& system_manager)
 {
-	
+	_has_registered_systems = true;
 }
 
 IModuleConfig& MockModule::OnGetModuleConfig()

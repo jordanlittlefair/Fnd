@@ -22,6 +22,12 @@ public:
 	MockModule(const std::string& name);
 	
 	void SetThrowException();
+	
+	bool HasRegisteredComponents() const;
+	
+	bool HasRegisteredNodes() const;
+	
+	bool HasRegisteredSystems() const;
 
 protected:
 	
@@ -38,6 +44,12 @@ protected:
 private:
 	
 	bool _initialise_should_throw;
+	
+	bool _has_registered_components;
+	
+	bool _has_registered_nodes;
+	
+	bool _has_registered_systems;
 	
 	MockModuleConfig _config;
 };
