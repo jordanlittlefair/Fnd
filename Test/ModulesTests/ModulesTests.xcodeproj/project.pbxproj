@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10318A8D1D9B266A001FD3A3 /* ModuleTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10318A8C1D9B266A001FD3A3 /* ModuleTests.cpp */; };
+		10318A901D9B29A1001FD3A3 /* MockModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10318A8F1D9B29A1001FD3A3 /* MockModule.cpp */; };
 		103387811D83629900811892 /* ModuleConfigFileTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033877B1D83629900811892 /* ModuleConfigFileTests.cpp */; };
 		103387821D83629900811892 /* ModuleConfigFileTests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1033877C1D83629900811892 /* ModuleConfigFileTests.hpp */; };
 		103387831D83629900811892 /* ModuleConfigTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033877D1D83629900811892 /* ModuleConfigTests.cpp */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10318A8B1D9B2640001FD3A3 /* ModuleTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ModuleTests.hpp; sourceTree = "<group>"; };
+		10318A8C1D9B266A001FD3A3 /* ModuleTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleTests.cpp; sourceTree = "<group>"; };
+		10318A8E1D9B293D001FD3A3 /* MockModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MockModule.hpp; sourceTree = "<group>"; };
+		10318A8F1D9B29A1001FD3A3 /* MockModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MockModule.cpp; sourceTree = "<group>"; };
 		1033876D1D83626400811892 /* libModulesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModulesTests.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1033877B1D83629900811892 /* ModuleConfigFileTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleConfigFileTests.cpp; sourceTree = "<group>"; };
 		1033877C1D83629900811892 /* ModuleConfigFileTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModuleConfigFileTests.hpp; sourceTree = "<group>"; };
@@ -52,6 +58,8 @@
 		103387641D83626400811892 = {
 			isa = PBXGroup;
 			children = (
+				10318A8F1D9B29A1001FD3A3 /* MockModule.cpp */,
+				10318A8E1D9B293D001FD3A3 /* MockModule.hpp */,
 				103387AE1D837C8900811892 /* MockConfigProvider.cpp */,
 				103387AD1D837C2000811892 /* MockConfigProvider.hpp */,
 				103387991D83690B00811892 /* MockFile.cpp */,
@@ -66,6 +74,8 @@
 				1033877E1D83629900811892 /* ModuleConfigTests.hpp */,
 				1033877F1D83629900811892 /* ModulesTestSuite.cpp */,
 				103387801D83629900811892 /* ModulesTestSuite.hpp */,
+				10318A8C1D9B266A001FD3A3 /* ModuleTests.cpp */,
+				10318A8B1D9B2640001FD3A3 /* ModuleTests.hpp */,
 				1033876E1D83626400811892 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				103387811D83629900811892 /* ModuleConfigFileTests.cpp in Sources */,
+				10318A8D1D9B266A001FD3A3 /* ModuleTests.cpp in Sources */,
 				103387AF1D837C8900811892 /* MockConfigProvider.cpp in Sources */,
 				103387831D83629900811892 /* ModuleConfigTests.cpp in Sources */,
 				103387851D83629900811892 /* ModulesTestSuite.cpp in Sources */,
+				10318A901D9B29A1001FD3A3 /* MockModule.cpp in Sources */,
 				1033879F1D836A4B00811892 /* MockParser.cpp in Sources */,
 				1033879B1D83690B00811892 /* MockFile.cpp in Sources */,
 				103387AC1D8377E900811892 /* MockModuleConfig.cpp in Sources */,

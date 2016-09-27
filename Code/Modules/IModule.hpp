@@ -22,6 +22,8 @@ public:
 	
 	virtual void RegisterSystems(SystemManager::ISystemManager& system_manager) = 0;
 	
+	virtual bool IsInitialised() const = 0;
+	
 	virtual void Initialise() = 0;
 	
 	virtual ~IModule() {}

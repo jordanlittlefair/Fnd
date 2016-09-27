@@ -32,6 +32,11 @@ void Module::RegisterSystems(ISystemManager& system_manager)
 	OnRegisterSystems(system_manager);
 }
 
+bool Module::IsInitialised() const
+{
+	return _is_initialised;
+}
+
 void Module::Initialise()
 {
 	if (_is_initialised)

@@ -23,6 +23,8 @@ public:
 
 	void RegisterSystems(SystemManager::ISystemManager& system_manager);
 	
+	bool IsInitialised() const;
+	
 	void Initialise();
 
 protected:

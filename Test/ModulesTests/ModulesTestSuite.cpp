@@ -2,6 +2,7 @@
 
 #include "ModuleConfigFileTests.hpp"
 #include "ModuleConfigTests.hpp"
+#include "ModuleTests.hpp"
 
 using namespace Fnd::Test::Modules;
 
@@ -10,4 +11,5 @@ ModulesTestSuite::ModulesTestSuite():
 {
 	AddTestClass<ModuleConfigFileTests>();
 	AddTestClass<ModuleConfigTests>();
+	AddTestClass<ModuleTests>();
 }
