@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IConfigProvider.hpp"
+#include "IModuleConfig.hpp"
 
 namespace Fnd
 {
@@ -8,7 +8,8 @@ namespace Fnd
 namespace Modules
 {
 
-class ModuleConfig
+class ModuleConfig:
+	public IModuleConfig
 {
 public:
 
@@ -36,8 +37,6 @@ private:
 
 	bool _is_loaded;
 };
-
-typedef std::shared_ptr<ModuleConfig> ModuleConfigPtr;
 
 }
 

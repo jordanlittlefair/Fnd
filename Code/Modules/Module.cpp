@@ -1,11 +1,14 @@
 #include "Module.hpp"
 
+#include "Exceptions.hpp"
+
 using namespace Fnd::EntitySystem;
 using namespace Fnd::Modules;
 using namespace Fnd::SystemManager;
 
 Module::Module(const std::string& name):
-	_name(name)
+	_name(name),
+	_is_initialised(false)
 {
 }
 
@@ -27,6 +30,19 @@ void Module::RegisterNodes(INodeManager& node_manager)
 void Module::RegisterSystems(ISystemManager& system_manager)
 {
 	OnRegisterSystems(system_manager);
+}
+
+void Module::Initialise()
+{
+	if (_is_initialised)
+	{
+		throw Modules::InvalidOperationException("Module is already initialised");
+	}
+	
+	// OnInitialise(...) must cast the config to the appropriate derived config type and read any data needed to initialise itself
+	OnInitialise(OnGetModuleConfig());
+	
+	_is_initialised = true;
 }
 
 void Module::OnRegisterComponents(IComponentManager& component_manager)

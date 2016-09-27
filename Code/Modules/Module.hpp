@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IModule.hpp"
+#include "IModuleConfig.hpp"
 
 namespace Fnd
 {
@@ -21,6 +22,8 @@ public:
 	void RegisterNodes(EntitySystem::INodeManager& node_manager);
 
 	void RegisterSystems(SystemManager::ISystemManager& system_manager);
+	
+	void Initialise();
 
 protected:
 
@@ -33,10 +36,16 @@ protected:
 	virtual void OnRegisterNodes(EntitySystem::INodeManager& node_manager);
 	
 	virtual void OnRegisterSystems(SystemManager::ISystemManager& system_manager);
+	
+	virtual IModuleConfig& OnGetModuleConfig() = 0;
+	
+	virtual void OnInitialise(const IModuleConfig& config) = 0;
 
 private:
 
 	const std::string _name;
+	
+	bool _is_initialised;
 };
 
 }
