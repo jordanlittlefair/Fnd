@@ -1,6 +1,7 @@
 #pragma once
 
 #include "NodeContainerTemplate.hpp"
+#include "NodeManagerBase.hpp"
 #include "Exceptions.hpp"
 
 
@@ -10,7 +11,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class NodeManager
+class NodeManager:
+	public NodeManagerBase
 {
 public:
 	
@@ -19,22 +21,13 @@ public:
 	template <typename NodeType>
 	bool IsRegistered() const
 	{
-		const auto iter = _node_containers.find(NodeType::Id);
-	
-		return iter != _node_containers.end();
+		return NodeManagerBase::IsRegistered(NodeType::Id);
 	}
 	
 	template <typename NodeType>
 	void RegisterNode()
 	{
-		if ( !IsRegistered<NodeType>() )
-		{
-			_node_containers[NodeType::Id] = std::make_shared<NodeContainerTemplate<NodeType>>();
-		}
-		else
-		{
-			throw InvalidNodeIdException(NodeType::Id);
-		}
+		NodeManagerBase::RegisterNode(std::make_shared<NodeContainerTemplate<NodeType>>());
 	}
 	
 	template <typename NodeType>
@@ -84,36 +77,13 @@ private:
 	template <typename NodeType>
 	NodeContainerTemplate<NodeType>& GetNodeContainer()
 	{
-		const auto iter = _node_containers.find(NodeType::Id);
-	
-		if (iter != _node_containers.end())
-		{
-			return *(NodeContainerTemplate<NodeType>*)((iter->second).get());
-		}
-		else
-		{
-			throw InvalidNodeIdException(NodeType::Id);
-		}
+		return (NodeContainerTemplate<NodeType>&)NodeManagerBase::GetNodeContainer(NodeType::Id);
 	}
 	
 	template <typename NodeType>
 	const NodeContainerTemplate<NodeType>& GetNodeContainer() const
 	{
-		const auto iter = _node_containers.find(NodeType::Id);
-	
-		if ( iter != _node_containers.end() )
-		{
-			return *(NodeContainerTemplate<NodeType>*)((iter->second).get());
-		}
-		else
-		{
-			throw InvalidNodeIdException(NodeType::Id);
-		}
-	}
-	
-private:
-	
-	std::map<NodeId,std::shared_ptr<NodeContainer>> _node_containers;
+		return (const NodeContainerTemplate<NodeType>&)NodeManagerBase::GetNodeContainer(NodeType::Id);	}
 };
 
 }
