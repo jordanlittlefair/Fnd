@@ -35,7 +35,7 @@ Node& NodeManagerBase::CreateNode(const NodeId node_id, const EntityId entity_id
 	return GetNodeContainer(node_id).CreateNode(entity_id);
 }
 
-bool NodeManagerBase::HasNode(const NodeId node_id, const EntityId entity_id)
+bool NodeManagerBase::HasNode(const NodeId node_id, const EntityId entity_id) const
 {
 	return GetNodeContainer(node_id).HasNode(entity_id);
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "NodeContainer.hpp"
+#include "INodeManager.hpp"
 
 #include <map>
 #include <memory>
@@ -11,7 +12,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class NodeManagerBase
+class NodeManagerBase:
+	public INodeManager
 {
 public:
 	
@@ -21,7 +23,7 @@ public:
 	
 	Node& CreateNode(const NodeId node_id, const EntityId entity_id);
 	
-	bool HasNode(const NodeId node_id, const EntityId entity_id);
+	bool HasNode(const NodeId node_id, const EntityId entity_id) const;
 	
 	const Node& GetNode(const NodeId node_id, const EntityId entity_id) const;
 	

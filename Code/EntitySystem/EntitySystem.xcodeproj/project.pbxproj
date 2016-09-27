@@ -47,6 +47,7 @@
 		10318A801D99EA78001FD3A3 /* IComponentManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IComponentManager.hpp; sourceTree = "<group>"; };
 		10318A811D99EC20001FD3A3 /* NodeManagerBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeManagerBase.hpp; sourceTree = "<group>"; };
 		10318A821D99EE10001FD3A3 /* NodeManagerBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeManagerBase.cpp; sourceTree = "<group>"; };
+		10318A841D99F2FC001FD3A3 /* INodeManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = INodeManager.hpp; sourceTree = "<group>"; };
 		1033867D1D6A600300811892 /* AssertComponentType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssertComponentType.hpp; sourceTree = "<group>"; };
 		1033867E1D6A600300811892 /* AssertNodeType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssertNodeType.hpp; sourceTree = "<group>"; };
 		1033867F1D6A600300811892 /* BasicEntityIdGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicEntityIdGenerator.cpp; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				10318A801D99EA78001FD3A3 /* IComponentManager.hpp */,
 				10FEA9BC1D04D90800338F5B /* IEntityIdGenerator.hpp */,
 				101F23881D0F23EA004D5B5E /* IEntitySystem.hpp */,
+				10318A841D99F2FC001FD3A3 /* INodeManager.hpp */,
 				10FEA9BD1D04D90800338F5B /* Node.cpp */,
 				10FEA9BE1D04D90800338F5B /* Node.hpp */,
 				10FEA9EB1D077B5500338F5B /* NodeContainer.cpp */,
