@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		10318A731D99D7EB001FD3A3 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Module.cpp; sourceTree = "<group>"; };
 		10318A741D99D7EB001FD3A3 /* Module.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Module.hpp; sourceTree = "<group>"; };
+		10318A861D9A12F6001FD3A3 /* IModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IModule.hpp; sourceTree = "<group>"; };
 		1033873A1D8360A700811892 /* libModules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModules.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		103387521D83614600811892 /* IConfigProvider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IConfigProvider.hpp; sourceTree = "<group>"; };
 		103387531D83614600811892 /* ModuleConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleConfig.cpp; sourceTree = "<group>"; };
@@ -41,9 +42,10 @@
 		103387311D8360A700811892 = {
 			isa = PBXGroup;
 			children = (
+				103387521D83614600811892 /* IConfigProvider.hpp */,
+				10318A861D9A12F6001FD3A3 /* IModule.hpp */,
 				10318A731D99D7EB001FD3A3 /* Module.cpp */,
 				10318A741D99D7EB001FD3A3 /* Module.hpp */,
-				103387521D83614600811892 /* IConfigProvider.hpp */,
 				103387531D83614600811892 /* ModuleConfig.cpp */,
 				103387541D83614600811892 /* ModuleConfig.hpp */,
 				103387551D83614600811892 /* ModuleConfigFile.cpp */,

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../EntitySystem/IComponentManager.hpp"
-#include "../EntitySystem/INodeManager.hpp"
-#include "../SystemManager/ISystemManager.hpp"
+#include "IModule.hpp"
 
 namespace Fnd
 {
@@ -10,7 +8,9 @@ namespace Fnd
 namespace Modules
 {
 
-class Module
+class Module:
+	public IModule
+	
 {
 public:
 
