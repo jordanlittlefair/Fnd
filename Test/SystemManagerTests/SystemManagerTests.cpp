@@ -19,8 +19,8 @@ UnitTestClass("SystemManagerTests")
 	AddTestCase( "IsAlive_BeforeStart_False", &SystemManagerTests::IsAlive_BeforeStart_False, this );
 	AddTestCase( "IsAlive_AfterStart_True", &SystemManagerTests::IsAlive_AfterStart_True, this );
 	AddTestCase( "IsAlive_AfterKill_False", &SystemManagerTests::IsAlive_AfterKill_False, this );
-	AddTestCase( "AddSystem_BeforeInitialise_Success", &SystemManagerTests::AddSystem_BeforeInitialise_Success, this );
-	AddTestCase( "AddSystem_AfterInitialise_Fail", &SystemManagerTests::AddSystem_AfterInitialise_Fail, this );
+	AddTestCase( "RegisterSystem_BeforeInitialise_Success", &SystemManagerTests::RegisterSystem_BeforeInitialise_Success, this );
+	AddTestCase( "RegisterSystem_AfterInitialise_Fail", &SystemManagerTests::RegisterSystem_AfterInitialise_Fail, this );
 	AddTestCase( "Initialise_Success", &SystemManagerTests::Initialise_Success, this );
 	AddTestCase( "Initialise_AlreadyInitialised_Fail", &SystemManagerTests::Initialise_AlreadyInitialised_Fail, this );
 	AddTestCase( "Start_BeforeInitialised_Fail", &SystemManagerTests::Start_BeforeInitialised_Fail, this );
@@ -116,7 +116,7 @@ void SystemManagerTests::IsAlive_AfterKill_False(TestCase& test_case)
 	test_case.AssertEqual(false, sm.IsAlive());
 }
 
-void SystemManagerTests::AddSystem_BeforeInitialise_Success(TestCase& test_case)
+void SystemManagerTests::RegisterSystem_BeforeInitialise_Success(TestCase& test_case)
 {
 	class SystemManager sm;
 	
@@ -128,12 +128,12 @@ void SystemManagerTests::AddSystem_BeforeInitialise_Success(TestCase& test_case)
 	
 	auto system = std::make_shared<MockSystem>(123);
 	
-	sm.AddSystem(system);
+	sm.RegisterSystem(system);
 	
 	test_case.AssertEqual(123, sc->GetOrderedSystems()[0]->GetId());
 }
 
-void SystemManagerTests::AddSystem_AfterInitialise_Fail(TestCase& test_case)
+void SystemManagerTests::RegisterSystem_AfterInitialise_Fail(TestCase& test_case)
 {
 	class SystemManager sm;
 	
@@ -149,7 +149,7 @@ void SystemManagerTests::AddSystem_AfterInitialise_Fail(TestCase& test_case)
 	
 	test_case.AssertException<std::exception>([&]()
 	{
-		sm.AddSystem(system);
+		sm.RegisterSystem(system);
 	});
 }
 
@@ -353,7 +353,7 @@ void SystemManagerTests::Run_OneSystem_Success(TestCase& test_case)
 	
 	auto system = std::make_shared<TestSystem>(123);
 	
-	sm.AddSystem(system);
+	sm.RegisterSystem(system);
 	
 	sm.Initialise();
 	
@@ -377,8 +377,8 @@ void SystemManagerTests::Run_TwoSystems_Success(TestCase& test_case)
 	auto system0 = std::make_shared<TestSystem>(123);
 	auto system1 = std::make_shared<TestSystem>(456);
 	
-	sm.AddSystem(system0);
-	sm.AddSystem(system1);
+	sm.RegisterSystem(system0);
+	sm.RegisterSystem(system1);
 	
 	sm.Initialise();
 	

@@ -2,6 +2,7 @@
 
 #include "MockNameMappedSystem.hpp"
 
+#include "../../Code/SystemManager/Exceptions.hpp"
 #include "../../Code/SystemManager/LambdaTask.hpp"
 
 #include <set>
@@ -123,9 +124,14 @@ void SystemManagerIntegrationTests::Add_Initialise_Run_Systems_InOrder(TestCase&
 	system0->AddDependency(system1->GetId());
 	system1->AddDependency(system2->GetId());
 	
-	system_manager->AddSystem(system0);
-	system_manager->AddSystem(system1);
-	system_manager->AddSystem(system2);
+	system_manager->RegisterSystem(system0);
+	system_manager->RegisterSystem(system1);
+	system_manager->RegisterSystem(system2);
+	
+	test_case.AssertException<InvalidSystemIdException>([&]()
+	{
+		system_manager->RegisterSystem(system0);
+	});
 	
 	system_manager->Initialise();
 	
@@ -215,9 +221,9 @@ void SystemManagerIntegrationTests::RunSystemsWithTasks(TestCase& test_case)
 	auto system1 = std::make_shared<MultiTaskSystem>(classes->system_id_name_mapper, "System One");
 	auto system2 = std::make_shared<MultiTaskSystem>(classes->system_id_name_mapper, "System Two");
 		
-	system_manager->AddSystem(system0);
-	system_manager->AddSystem(system1);
-	system_manager->AddSystem(system2);
+	system_manager->RegisterSystem(system0);
+	system_manager->RegisterSystem(system1);
+	system_manager->RegisterSystem(system2);
 
 	system_manager->Initialise();	
 	system_manager->Start();

@@ -46,7 +46,7 @@ SystemIdNameMapperPtr SystemManager::GetSystemIdNameMapper()
 	return _system_id_name_mapper;
 }
 
-void SystemManager::AddSystem(SystemPtr system)
+void SystemManager::RegisterSystem(SystemPtr system)
 {
 	assert(_system_container);
 	

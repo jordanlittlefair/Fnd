@@ -31,7 +31,7 @@ public:
 
 	SystemIdNameMapperPtr GetSystemIdNameMapper();
 	
-	void AddSystem(SystemPtr system);
+	void RegisterSystem(SystemPtr system);
 	
 	void Initialise();
 	
