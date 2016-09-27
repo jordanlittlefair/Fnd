@@ -32,6 +32,8 @@ public:
 	
 	virtual ~INodeManager() {}
 };
+	
+typedef std::shared_ptr<INodeManager> NodeManagerPtr;
 
 }
 

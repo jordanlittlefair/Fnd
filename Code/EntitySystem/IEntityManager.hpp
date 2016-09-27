@@ -2,6 +2,7 @@
 
 #include "EntityId.hpp"
 
+#include <memory>
 #include <vector>
 
 namespace Fnd
@@ -22,6 +23,8 @@ public:
 	
 	virtual ~IEntityManager() {}
 };
+	
+typedef std::shared_ptr<IEntityManager> EntityManagerPtr;
 
 }
 

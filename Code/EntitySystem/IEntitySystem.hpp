@@ -1,8 +1,8 @@
 #pragma once
 
-#include "EntityManager.hpp"
-#include "ComponentManager.hpp"
-#include "NodeManager.hpp"
+#include "IEntityManager.hpp"
+#include "IComponentManager.hpp"
+#include "INodeManager.hpp"
 
 namespace Fnd
 {
@@ -13,14 +13,14 @@ class IEntitySystem
 {
 public:
 
-	virtual class EntityManager& EntityManager() = 0;
-	virtual const class EntityManager& EntityManager() const = 0;
+	virtual IEntityManager& GetEntityManager() = 0;
+	virtual const IEntityManager& GetEntityManager() const = 0;
 
-	virtual class ComponentManager& ComponentManager() = 0;
-	virtual const class ComponentManager& ComponentManager() const = 0;
+	virtual IComponentManager& GetComponentManager() = 0;
+	virtual const IComponentManager& GetComponentManager() const = 0;
 
-	virtual class NodeManager& NodeManager() = 0;
-	virtual const class NodeManager& NodeManager() const = 0;
+	virtual INodeManager& GetNodeManager() = 0;
+	virtual const INodeManager& GetNodeManager() const = 0;
 };
 
 }

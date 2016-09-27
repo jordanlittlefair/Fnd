@@ -1,6 +1,10 @@
 #pragma once
 
+#include "ComponentManager.hpp"
+#include "EntityManager.hpp"
 #include "IEntitySystem.hpp"
+#include "IEntityIdGenerator.hpp"
+#include "NodeManager.hpp"
 
 namespace Fnd
 {
@@ -15,25 +19,25 @@ public:
 	
 	EntitySystem(EntityIdGeneratorPtr entity_id_generator);
 	
-	class EntityManager& EntityManager();
+	class IEntityManager& GetEntityManager();
 	
-	const class EntityManager& EntityManager() const;
+	const class IEntityManager& GetEntityManager() const;
 	
-	class ComponentManager& ComponentManager();
+	class IComponentManager& GetComponentManager();
 	
-	const class ComponentManager& ComponentManager() const;
+	const class IComponentManager& GetComponentManager() const;
 	
-	class NodeManager& NodeManager();
+	class INodeManager& GetNodeManager();
 	
-	const class NodeManager& NodeManager() const;
+	const class INodeManager& GetNodeManager() const;
 	
 private:
 	
 	EntityIdGeneratorPtr _entity_id_generator;
 	
-	class EntityManager _entity_manager;
-	class ComponentManager _component_manager;
-	class NodeManager _node_manager;
+	EntityManager _entity_manager;
+	ComponentManager _component_manager;
+	NodeManager _node_manager;
 };
 	
 }

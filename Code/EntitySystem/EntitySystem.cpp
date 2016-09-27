@@ -10,32 +10,32 @@ EntitySystem::EntitySystem(EntityIdGeneratorPtr entity_id_generator):
 {
 }
 
-class EntityManager& EntitySystem::EntityManager()
+class IEntityManager& EntitySystem::GetEntityManager()
 {
 	return _entity_manager;
 }
 
-const class EntityManager& EntitySystem::EntityManager() const
+const class IEntityManager& EntitySystem::GetEntityManager() const
 {
 	return _entity_manager;
 }
 
-class ComponentManager& EntitySystem::ComponentManager()
+class IComponentManager& EntitySystem::GetComponentManager()
 {
 	return _component_manager;
 }
 
-const class ComponentManager& EntitySystem::ComponentManager() const
+const class IComponentManager& EntitySystem::GetComponentManager() const
 {
 	return _component_manager;
 }
 
-class NodeManager& EntitySystem::NodeManager()
+class INodeManager& EntitySystem::GetNodeManager()
 {
 	return _node_manager;
 }
 
-const class NodeManager& EntitySystem::NodeManager() const
+const class INodeManager& EntitySystem::GetNodeManager() const
 {
 	return _node_manager;
 }

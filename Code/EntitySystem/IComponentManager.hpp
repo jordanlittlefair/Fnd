@@ -33,6 +33,8 @@ public:
 	
 	virtual ~IComponentManager() {}
 };
+	
+typedef std::shared_ptr<IComponentManager> ComponentManagerPtr;
 
 }
 

@@ -213,9 +213,9 @@ void EntitySystemIntegrationTests::Create_Components_Nodes_And_Loop_Nodes(Fnd::T
 	using namespace Nodes;
 	class EntitySystem es(std::make_shared<BasicEntityIdGenerator>());
 
-	EntityManager& em = es.EntityManager();
-	ComponentManager& cm = es.ComponentManager();
-	NodeManager& nm = es.NodeManager();
+	EntityManager& em = (EntityManager&)es.GetEntityManager();
+	ComponentManager& cm = (ComponentManager&)es.GetComponentManager();
+	NodeManager& nm = (NodeManager&)es.GetNodeManager();
 
 	/*
 		Register types
