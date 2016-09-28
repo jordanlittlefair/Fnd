@@ -19,7 +19,7 @@ MockTemplatedModuleConfig::ConfigData MockTemplatedModuleConfig::OnLoadDefaultCo
 	return ret;
 }
 
-MockTemplatedModuleConfig::ConfigData MockTemplatedModuleConfig::OnLoadConfigData(const Utility::DocumentTree::ObjectNodePtr& document_tree)
+MockTemplatedModuleConfig::ConfigData MockTemplatedModuleConfig::OnLoadConfigData(const Fnd::Utility::DocumentTree::ObjectNodePtr& document_tree)
 {
 	MockConfigData ret;
 	

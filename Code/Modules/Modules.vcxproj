@@ -11,12 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Exceptions.hpp" />
     <ClInclude Include="IConfigProvider.hpp" />
+    <ClInclude Include="IModule.hpp" />
+    <ClInclude Include="IModuleConfig.hpp" />
     <ClInclude Include="Module.hpp" />
     <ClInclude Include="ModuleConfigFile.hpp" />
     <ClInclude Include="ModuleConfig.hpp" />
+    <ClInclude Include="TemplatedModuleConfig.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exceptions.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="ModuleConfigFile.cpp" />
     <ClCompile Include="ModuleConfig.cpp" />

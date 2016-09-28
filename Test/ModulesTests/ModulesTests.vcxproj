@@ -13,20 +13,28 @@
   <ItemGroup>
     <ClInclude Include="MockConfigProvider.hpp" />
     <ClInclude Include="MockFile.hpp" />
+    <ClInclude Include="MockModule.hpp" />
     <ClInclude Include="MockModuleConfig.hpp" />
     <ClInclude Include="MockParser.hpp" />
+    <ClInclude Include="MockTemplatedModuleConfig.hpp" />
     <ClInclude Include="ModuleConfigFileTests.hpp" />
     <ClInclude Include="ModuleConfigTests.hpp" />
     <ClInclude Include="ModulesTestSuite.hpp" />
+    <ClInclude Include="ModuleTests.hpp" />
+    <ClInclude Include="TemplatedModuleConfigTests.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MockConfigProvider.cpp" />
     <ClCompile Include="MockFile.cpp" />
+    <ClCompile Include="MockModule.cpp" />
     <ClCompile Include="MockModuleConfig.cpp" />
     <ClCompile Include="MockParser.cpp" />
+    <ClCompile Include="MockTemplatedModuleConfig.cpp" />
     <ClCompile Include="ModuleConfigFileTests.cpp" />
     <ClCompile Include="ModuleConfigTests.cpp" />
     <ClCompile Include="ModulesTestSuite.cpp" />
+    <ClCompile Include="ModuleTests.cpp" />
+    <ClCompile Include="TemplatedModuleConfigTests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{55BD92DA-AB02-4960-907A-5202CBCFE305}</ProjectGuid>

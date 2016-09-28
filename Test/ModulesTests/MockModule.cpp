@@ -33,17 +33,17 @@ bool MockModule::HasRegisteredSystems() const
 	return _has_registered_systems;
 }
 
-void MockModule::OnRegisterComponents(EntitySystem::IComponentManager& component_manager)
+void MockModule::OnRegisterComponents(Fnd::EntitySystem::IComponentManager& component_manager)
 {
 	_has_registered_components = true;
 }
 
-void MockModule::OnRegisterNodes(EntitySystem::INodeManager& node_manager)
+void MockModule::OnRegisterNodes(Fnd::EntitySystem::INodeManager& node_manager)
 {
 	_has_registered_nodes = true;
 }
 
-void MockModule::OnRegisterSystems(SystemManager::ISystemManager& system_manager)
+void MockModule::OnRegisterSystems(Fnd::SystemManager::ISystemManager& system_manager)
 {
 	_has_registered_systems = true;
 }
