@@ -30,6 +30,7 @@
 		103387541D83614600811892 /* ModuleConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModuleConfig.hpp; sourceTree = "<group>"; };
 		103387551D83614600811892 /* ModuleConfigFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleConfigFile.cpp; sourceTree = "<group>"; };
 		103387561D83614600811892 /* ModuleConfigFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModuleConfigFile.hpp; sourceTree = "<group>"; };
+		10F1AC8D1D9B48070067B493 /* TemplatedModuleConfig.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TemplatedModuleConfig.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 				103387541D83614600811892 /* ModuleConfig.hpp */,
 				103387551D83614600811892 /* ModuleConfigFile.cpp */,
 				103387561D83614600811892 /* ModuleConfigFile.hpp */,
+				10F1AC8D1D9B48070067B493 /* TemplatedModuleConfig.hpp */,
 				1033873B1D8360A700811892 /* Products */,
 			);
 			sourceTree = "<group>";
