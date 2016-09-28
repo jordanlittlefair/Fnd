@@ -10,20 +10,30 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MathTestSuite.hpp" />
+    <ClInclude Include="Vector2Tests.hpp" />
+    <ClInclude Include="Vector3Tests.hpp" />
+    <ClInclude Include="Vector4Tests.hpp" />
+    <ClInclude Include="VectorTestsBase.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MathTestSuite.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{48289AFB-5080-4766-ABA2-C3A12A5D29C6}</ProjectGuid>
+    <ProjectGuid>{C8A43E2D-5897-4B87-9E80-D5E549EADD8A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Test</RootNamespace>
+    <RootNamespace>MathTests</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -40,12 +50,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)..\Bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)..\Bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -55,10 +63,10 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -70,69 +78,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="ExampleIntegrationTestClass.hpp" />
-    <ClInclude Include="ExamplePerformanceTestClass.hpp" />
-    <ClInclude Include="ExampleTestSuite.hpp" />
-    <ClInclude Include="ExampleUnitTestClass.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ExampleIntegrationTestClass.cpp" />
-    <ClCompile Include="ExamplePerformanceTestClass.cpp" />
-    <ClCompile Include="ExampleTestSuite.cpp" />
-    <ClCompile Include="ExampleUnitTestClass.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Code\Core\Platform.vcxproj">
-      <Project>{6bd48548-0116-4c6e-82bf-1efcae6395cb}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Code\EntitySystem\EntitySystem.vcxproj">
-      <Project>{b06713f6-8423-4c04-b7fc-b06298dc2512}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Code\Game\Game.vcxproj">
-      <Project>{1f00df01-bd96-420f-b4ca-5bfc36ddfa4e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Code\Modules\Modules.vcxproj">
-      <Project>{598a7ace-10a9-40b7-b522-cca0e7489953}</Project>
-	</ProjectReference>
-    <ProjectReference Include="..\..\Code\Math\Math.vcxproj">
-      <Project>{ab113364-78b5-42c3-bb3d-e56c0ebd2313}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\EntitySystemTests\EntitySystemTests.vcxproj">
-      <Project>{915fb217-65a4-4349-bb7e-0c1553ad8f72}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Code\SystemManager\SystemManager.vcxproj">
-      <Project>{57495a44-f395-4c68-8526-f83c932f0142}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Code\Utility\Utility.vcxproj">
-      <Project>{fec57043-b352-4c89-af7e-3ca70a67cbb0}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework\Framework.vcxproj">
-      <Project>{f9a2f267-9fe6-4e93-8c17-2f4d1ef732dd}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ModulesTests\ModulesTests.vcxproj">
-      <Project>{55bd92da-ab02-4960-907a-5202cbcfe305}</Project>
-	</ProjectReference>
-    <ProjectReference Include="..\MathTests\MathTests.vcxproj">
-      <Project>{c8a43e2d-5897-4b87-9e80-d5e549eadd8a}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemManagerTests\SystemManagerTests.vcxproj">
-      <Project>{742db0ea-4239-46cb-8a95-4dec4b44df15}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\UtilityTests\UtilityTests.vcxproj">
-      <Project>{d17d1923-92a9-4f90-bb6f-71d010a82b55}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

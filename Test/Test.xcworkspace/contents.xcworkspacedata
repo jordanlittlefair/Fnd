@@ -15,6 +15,9 @@
       location = "group:EntitySystemTests/EntitySystemTests.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:MathTests/MathTests.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SystemManagerTests/SystemManagerTests.xcodeproj">
    </FileRef>
    <FileRef
