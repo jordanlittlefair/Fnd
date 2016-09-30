@@ -114,6 +114,16 @@ public:
 	
 protected:
 	
+	Node& OnCreateNode(const EntityId entity_id)
+	{
+		return OnCreateNode(entity_id);
+	}
+	
+	bool OnHasNode(const EntityId entity_id) const
+	{
+		return HasNode(entity_id);
+	}
+	
 	const Node& OnGetNode(const EntityId entity_id) const
 	{
 		return GetNode(entity_id);
@@ -122,6 +132,11 @@ protected:
 	Node& OnGetNode(const EntityId entity_id)
 	{
 		return GetNode(entity_id);
+	}
+	
+	void OnDestroyNode(const EntityId entity_id)
+	{
+		return DestroyNode(entity_id);
 	}
 
 private:

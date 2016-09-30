@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ISystem.hpp"
+
 #include <memory>
 
 namespace Fnd
@@ -16,7 +18,7 @@ public:
 	
 	virtual bool IsAlive() const = 0;
 	
-	virtual void AddSystem(SystemPtr system) = 0;
+	virtual void RegisterSystem(SystemPtr system) = 0;
 	
 	virtual void Initialise() = 0;
 	

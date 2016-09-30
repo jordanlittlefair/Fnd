@@ -102,6 +102,9 @@
     <ProjectReference Include="..\..\Code\Game\Game.vcxproj">
       <Project>{1f00df01-bd96-420f-b4ca-5bfc36ddfa4e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Code\Modules\Modules.vcxproj">
+      <Project>{598a7ace-10a9-40b7-b522-cca0e7489953}</Project>
+	</ProjectReference>
     <ProjectReference Include="..\..\Code\Math\Math.vcxproj">
       <Project>{ab113364-78b5-42c3-bb3d-e56c0ebd2313}</Project>
     </ProjectReference>
@@ -117,6 +120,9 @@
     <ProjectReference Include="..\Framework\Framework.vcxproj">
       <Project>{f9a2f267-9fe6-4e93-8c17-2f4d1ef732dd}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\ModulesTests\ModulesTests.vcxproj">
+      <Project>{55bd92da-ab02-4960-907a-5202cbcfe305}</Project>
+	</ProjectReference>
     <ProjectReference Include="..\MathTests\MathTests.vcxproj">
       <Project>{c8a43e2d-5897-4b87-9e80-d5e549eadd8a}</Project>
     </ProjectReference>

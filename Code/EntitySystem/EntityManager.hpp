@@ -3,6 +3,7 @@
 #include "EntityId.hpp"
 #include "Exceptions.hpp"
 #include "IEntityIdGenerator.hpp"
+#include "IEntityManager.hpp"
 
 #include <vector>
 
@@ -12,7 +13,8 @@ namespace Fnd
 namespace EntitySystem
 {
 
-class EntityManager
+class EntityManager:
+	public IEntityManager
 {
 public:
 

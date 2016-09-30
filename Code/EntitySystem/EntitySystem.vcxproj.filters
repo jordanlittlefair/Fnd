@@ -83,6 +83,21 @@
     <ClInclude Include="StaticIdNameMappers.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ComponentManagerBase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponentManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntityManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INodeManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeManagerBase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -116,6 +131,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StaticIdNameMappers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManagerBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeManagerBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

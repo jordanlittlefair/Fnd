@@ -26,10 +26,16 @@ public:
 	void AddComponent( const MockComponent& component );
 
 protected:
+	
+	Fnd::EntitySystem::Component& OnCreateComponent(const Fnd::EntitySystem::EntityId entity_id);
+	
+	bool OnHasComponent(const Fnd::EntitySystem::EntityId entity_id) const;
 
 	const Fnd::EntitySystem::Component& OnGetComponent( const Fnd::EntitySystem::EntityId entity_id ) const;
 
 	Fnd::EntitySystem::Component& OnGetComponent( const Fnd::EntitySystem::EntityId entity_id );
+	
+	void OnDestroyComponent(const Fnd::EntitySystem::EntityId entity_id);
 
 private:
 

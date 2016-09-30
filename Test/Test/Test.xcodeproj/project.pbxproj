@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1033878F1D8362F500811892 /* libModules.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1033878C1D8362F500811892 /* libModules.a */; };
+		103387901D8362F500811892 /* libModulesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1033878D1D8362F500811892 /* libModulesTests.a */; };
 		103F69E41D973BE7000C18CA /* libMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103F69E11D973BE7000C18CA /* libMath.a */; };
 		103F69E51D973BE7000C18CA /* libMathTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103F69E21D973BE7000C18CA /* libMathTests.a */; };
 		103F69E61D973BE7000C18CA /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103F69E31D973BE7000C18CA /* libUtility.a */; };
@@ -37,9 +39,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1033878C1D8362F500811892 /* libModules.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libModules.a; path = ../../Code/Modules/build/Debug/libModules.a; sourceTree = "<group>"; };
+		1033878D1D8362F500811892 /* libModulesTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libModulesTests.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libModulesTests.a"; sourceTree = "<group>"; };
+		1033878E1D8362F500811892 /* libUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtility.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libUtility.a"; sourceTree = "<group>"; };
 		103F69E11D973BE7000C18CA /* libMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMath.a; path = ../../Code/Math/build/Debug/libMath.a; sourceTree = "<group>"; };
 		103F69E21D973BE7000C18CA /* libMathTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMathTests.a; path = ../MathTests/build/Debug/libMathTests.a; sourceTree = "<group>"; };
-		103F69E31D973BE7000C18CA /* libUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtility.a; path = "../../../Library/Developer/Xcode/DerivedData/Test-ftfxmmxkoykogogvbtiqaduljvsk/Build/Products/Debug/libUtility.a"; sourceTree = "<group>"; };
 		10682BAE1D57E571007189A4 /* libUtilityTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUtilityTests.a; path = ../UtilityTests/build/Debug/libUtilityTests.a; sourceTree = "<group>"; };
 		109068701D42DBF00086B32C /* ExampleIntegrationTestClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExampleIntegrationTestClass.hpp; sourceTree = "<group>"; };
 		109068711D42DC000086B32C /* ExampleIntegrationTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleIntegrationTestClass.cpp; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1033878F1D8362F500811892 /* libModules.a in Frameworks */,
+				103387901D8362F500811892 /* libModulesTests.a in Frameworks */,
 				103F69E41D973BE7000C18CA /* libMath.a in Frameworks */,
 				103F69E51D973BE7000C18CA /* libMathTests.a in Frameworks */,
 				103F69E61D973BE7000C18CA /* libUtility.a in Frameworks */,
@@ -83,13 +89,13 @@
 		10A7B3291CB3293700B78A7C = {
 			isa = PBXGroup;
 			children = (
+				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				103F69E11D973BE7000C18CA /* libMath.a */,
 				103F69E21D973BE7000C18CA /* libMathTests.a */,
 				103F69E31D973BE7000C18CA /* libUtility.a */,
 				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
 				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
 				10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */,
-				10A7B3461CB32D2D00B78A7C /* Dependencies */,
 				10A7B3E61CBAB3AD00B78A7C /* libCore.a */,
 				10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */,
 				10682BAE1D57E571007189A4 /* libUtilityTests.a */,
@@ -117,6 +123,15 @@
 		10A7B3461CB32D2D00B78A7C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				10A7B3E61CBAB3AD00B78A7C /* libCore.a */,
+				10A7B3E71CBAB3AD00B78A7C /* libSystemManager.a */,
+				10682BAE1D57E571007189A4 /* libUtilityTests.a */,
+				1033878C1D8362F500811892 /* libModules.a */,
+				1033878D1D8362F500811892 /* libModulesTests.a */,
+				1033878E1D8362F500811892 /* libUtility.a */,
+				10FEA98F1D0393CA00338F5B /* libEntitySystemTests.a */,
+				10FEA98D1D0393C200338F5B /* libEntitySystem.a */,
+				10A7B4061CBAB78F00B78A7C /* libSystemManagerTests.a */,
 				10A7B3441CB32CD700B78A7C /* libFramework.a */,
 			);
 			name = Dependencies;

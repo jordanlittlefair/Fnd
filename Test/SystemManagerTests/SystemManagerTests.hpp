@@ -27,8 +27,8 @@ private:
 	void IsAlive_AfterStart_True(TestCase& test_case);
 	void IsAlive_AfterKill_False(TestCase& test_case);
 	
-	void AddSystem_BeforeInitialise_Success(TestCase& test_case);
-	void AddSystem_AfterInitialise_Fail(TestCase& test_case);
+	void RegisterSystem_BeforeInitialise_Success(TestCase& test_case);
+	void RegisterSystem_AfterInitialise_Fail(TestCase& test_case);
 	
 	void Initialise_Success(TestCase& test_case);
 	void Initialise_AlreadyInitialised_Fail(TestCase& test_case);

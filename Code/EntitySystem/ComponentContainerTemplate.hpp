@@ -112,6 +112,16 @@ public:
 
 protected:
 
+	Component& OnCreateComponent(const EntityId entity_id)
+	{
+		return CreateComponent(entity_id);
+	}
+	
+	bool OnHasComponent(const EntityId entity_id) const
+	{
+		return HasComponent(entity_id);
+	}
+	
 	const Component& OnGetComponent( const EntityId entity_id ) const
 	{
 		return GetComponent( entity_id );
@@ -120,6 +130,11 @@ protected:
 	Component& OnGetComponent( const EntityId entity_id )
 	{
 		return GetComponent( entity_id );
+	}
+	
+	void OnDestroyComponent(const EntityId entity_id)
+	{
+		return DestroyComponent(entity_id);
 	}
 
 private:

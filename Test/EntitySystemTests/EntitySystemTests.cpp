@@ -22,7 +22,7 @@ void EntitySystemTests::GetEntityManagerNonConst(Fnd::Test::TestCase& test_case)
 {
 	class EntitySystem es(std::make_shared<MockEntityIdGenerator>());
 	
-	es.EntityManager();
+	es.GetEntityManager();
 	
 	// Doesn't throw
 }
@@ -33,7 +33,7 @@ void EntitySystemTests::GetEntityManagerConst(Fnd::Test::TestCase& test_case)
 	
 	const IEntitySystem& es_c = es;
 	
-	es_c.EntityManager();
+	es_c.GetEntityManager();
 	
 	// Doesn't throw
 }
@@ -42,7 +42,7 @@ void EntitySystemTests::GetComponentManagerNonConst(Fnd::Test::TestCase& test_ca
 {
 	class EntitySystem es(std::make_shared<MockEntityIdGenerator>());
 	
-	es.ComponentManager();
+	es.GetComponentManager();
 	
 	// Doesn't throw
 }
@@ -53,7 +53,7 @@ void EntitySystemTests::GetComponentManagerConst(Fnd::Test::TestCase& test_case)
 	
 	const IEntitySystem& es_c = es;
 	
-	es_c.ComponentManager();
+	es_c.GetComponentManager();
 	
 	// Doesn't throw
 }
@@ -62,7 +62,7 @@ void EntitySystemTests::GetNodeManagerNonConst(Fnd::Test::TestCase& test_case)
 {
 	class EntitySystem es(std::make_shared<MockEntityIdGenerator>());
 	
-	es.NodeManager();
+	es.GetNodeManager();
 	
 	// Doesn't throw
 }
@@ -73,7 +73,7 @@ void EntitySystemTests::GetNodeManagerConst(Fnd::Test::TestCase& test_case)
 	
 	const IEntitySystem& es_c = es;
 	
-	es_c.NodeManager();
+	es_c.GetNodeManager();
 	
 	// Doesn't throw
 }

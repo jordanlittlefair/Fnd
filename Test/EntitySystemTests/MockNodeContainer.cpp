@@ -13,6 +13,16 @@ void MockNodeContainer::AddNode(const MockNode& node)
 	_map[node.GetEntityId()] = std::make_shared<MockNode>(node);
 }
 
+Fnd::EntitySystem::Node& MockNodeContainer::OnCreateNode(const Fnd::EntitySystem::EntityId entity_id)
+{
+	return *(_map[entity_id] = std::make_shared<MockNode>(GetNodeId(), entity_id));
+}
+
+bool MockNodeContainer::OnHasNode(const Fnd::EntitySystem::EntityId entity_id) const
+{
+	return _map.find(entity_id) != _map.end();
+}
+
 const Fnd::EntitySystem::Node& MockNodeContainer::OnGetNode(const Fnd::EntitySystem::EntityId entity_id) const
 {
 	auto iter = _map.find(entity_id);
@@ -39,4 +49,9 @@ Fnd::EntitySystem::Node& MockNodeContainer::OnGetNode(const Fnd::EntitySystem::E
 	{
 		throw std::runtime_error("Node doesn't exist!");
 	}
+}
+
+void MockNodeContainer::OnDestroyNode(const Fnd::EntitySystem::EntityId entity_id)
+{
+	_map.erase(entity_id);
 }
