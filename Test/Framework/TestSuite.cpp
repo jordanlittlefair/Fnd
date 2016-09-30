@@ -6,6 +6,27 @@
 
 using namespace Fnd::Test;
 
+namespace
+{
+	std::string RemoveTrailingSlash(const std::string& str)
+	{
+		if (str.empty())
+		{
+			return str;
+		}
+
+		if (
+			str.back() == '\\' ||
+			str.back() == '/'
+			)
+		{
+			return str.substr(0, str.size() - 1);
+		}
+
+		return str;
+	}
+}
+
 TestSuite::TestSuite( const std::string& description ):
 	_result(description)
 {
@@ -18,9 +39,13 @@ void TestSuite::AddTestClass( TestClassPtr test_class )
 
 void TestSuite::SetWorkingDirectory(const std::string& working_directory)
 {
-	DirectoryHelper::CreateDirectory(working_directory, true);
+	DirectoryHelper directory_helper;
 	
-	_working_directory = working_directory;
+	const std::string validated_directory = directory_helper.ValidateString(RemoveTrailingSlash(working_directory)) + '/';
+
+	directory_helper.CreateDirectory(validated_directory, true);
+	
+	_working_directory = validated_directory;
 }
 
 void TestSuite::SetResultPrinter(ResultPrinterPtr result_printer)

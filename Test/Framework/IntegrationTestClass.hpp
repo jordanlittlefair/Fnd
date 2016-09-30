@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DirectoryHelper.hpp"
 #include "TestClass.hpp"
 
 namespace Fnd
@@ -30,6 +31,8 @@ protected:
 private:
 	
 	std::string _current_test;
+
+	DirectoryHelper _directory_helper;
 };
 
 }

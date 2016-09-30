@@ -53,6 +53,9 @@
     <ClCompile Include="IntegrationTestClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DirectoryHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertResult.hpp">
@@ -101,6 +104,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IntegrationTestClass.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryHelper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
