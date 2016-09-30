@@ -37,6 +37,33 @@ typedef WindowsDirectoryHelperImpl DirectoryHelperImpl;
 
 #endif
 
+#ifdef __APPLE__
+
+#include <unistd.h>
+#include <sys/stat.h>
+
+namespace
+{
+	class UnixDirectoryHelperImpl:
+	public DirectoryHelper::IDirectoryHelperImpl
+	{
+	public:
+		void CreateDirectory(const std::string& directory, const bool recursive)
+		{
+			mkdir(directory.c_str(), 0777);
+		}
+		
+		void DeleteDirectory(const std::string& directory, const bool recursive)
+		{
+			rmdir(directory.c_str());
+		}
+	};
+}
+
+typedef UnixDirectoryHelperImpl DirectoryHelperImpl;
+
+#endif
+
 DirectoryHelper::DirectoryHelper():
 	_impl(std::make_shared<DirectoryHelperImpl>())
 {
