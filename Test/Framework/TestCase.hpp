@@ -28,6 +28,8 @@ public:
 	
 	void SetResultPrinter( ResultPrinterPtr result_printer );
 	
+	std::string GetDescription() const;
+	
 	void Run();
 
 	void Assert( bool succeeded, const std::string& description = "" );
@@ -83,6 +85,8 @@ public:
 
 private:
 
+	std::string _description;
+	
 	TestFunction _function;
 
 	ResultPrinterPtr _result_printer;

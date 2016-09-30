@@ -1,5 +1,7 @@
 #include "TestSuite.hpp"
 
+#include "DirectoryHelper.hpp"
+
 #include <algorithm>
 
 using namespace Fnd::Test;
@@ -12,6 +14,13 @@ TestSuite::TestSuite( const std::string& description ):
 void TestSuite::AddTestClass( TestClassPtr test_class )
 {
 	_test_classes.push_back( test_class );
+}
+
+void TestSuite::SetWorkingDirectory(const std::string& working_directory)
+{
+	DirectoryHelper::CreateDirectory(working_directory, true);
+	
+	_working_directory = working_directory;
 }
 
 void TestSuite::SetResultPrinter(ResultPrinterPtr result_printer)
@@ -32,6 +41,8 @@ void TestSuite::Run()
 
 	for ( auto test_class : _test_classes )
 	{
+		test_class->SetWorkingDirectory(_working_directory);
+		
 		test_class->SetResultPrinter(_result_printer);
 
 		test_class->Run();
