@@ -16,12 +16,15 @@ using namespace Fnd::Test;
 
 int main()
 {
+	const std::string working_directory = "TestResults/";
+	const std::string results_filename = working_directory + "FndTestResults";
+	
 	std::vector<TestSuitePtr> test_suites;
 	
 	std::shared_ptr<ResultPrinterCollection> result_printers = std::make_shared<ResultPrinterCollection>();
 	
 	result_printers->AddResultPrinter(std::make_shared<ConsoleResultPrinter>());
-	result_printers->AddResultPrinter(std::make_shared<XmlResultPrinter>("TestResults/FndTestResults"));
+	result_printers->AddResultPrinter(std::make_shared<XmlResultPrinter>(results_filename));
 	
 	/*
 		Add any TestSuites below
@@ -35,6 +38,7 @@ int main()
 	
 	for (auto& test_suite : test_suites)
 	{
+		test_suite->SetWorkingDirectory(working_directory);
 		test_suite->SetResultPrinter(result_printers);
 		
 		test_suite->Run();

@@ -1,5 +1,7 @@
 #include "ExampleIntegrationTestClass.hpp"
 
+#include <fstream>
+
 using namespace Fnd::Test;
 
 ExampleIntegrationTestClass::ExampleIntegrationTestClass():
@@ -29,7 +31,18 @@ void ExampleIntegrationTestClass::CleanUp()
 
 void ExampleIntegrationTestClass::TestFunction1( Fnd::Test::TestCase& test_case )
 {
-	test_case.Assert( 1 == 1 );
+	{
+		std::ifstream file(GetTestCaseDirectory() + "test_file");
+		
+		test_case.Assert(!file.is_open());
+	}
+	{
+		std::ofstream file(GetTestCaseDirectory() + "test_file",std::ios::app);
+	
+		test_case.Assert(file.is_open());
+	
+		file << "some data";
+	}
 }
 
 void ExampleIntegrationTestClass::TestFunction2( Fnd::Test::TestCase& test_case )

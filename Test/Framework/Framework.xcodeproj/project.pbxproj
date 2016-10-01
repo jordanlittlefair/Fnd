@@ -26,6 +26,7 @@
 		1090687C1D43A24E0086B32C /* ResultPrinterCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1090687B1D43A24E0086B32C /* ResultPrinterCollection.cpp */; };
 		1090687F1D43ABB70086B32C /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1090687E1D43ABB70086B32C /* Timer.cpp */; };
 		10A7B3141CB30A6300B78A7C /* AssertResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A7B3131CB30A6300B78A7C /* AssertResult.cpp */; };
+		10F1ACC61D9DD2F40067B493 /* DirectoryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F1ACC51D9DD2F40067B493 /* DirectoryHelper.cpp */; };
 		10FEA99D1D03987B00338F5B /* ConsoleResultPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */; };
 		10FEA99E1D03987B00338F5B /* ConsoleResultPrinter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA99B1D03987B00338F5B /* ConsoleResultPrinter.hpp */; };
 		10FEA99F1D03987B00338F5B /* IResultPrinter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 10FEA99C1D03987B00338F5B /* IResultPrinter.hpp */; };
@@ -60,6 +61,8 @@
 		1090687E1D43ABB70086B32C /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		10A7B3121CB3098700B78A7C /* AssertResult.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AssertResult.hpp; sourceTree = "<group>"; };
 		10A7B3131CB30A6300B78A7C /* AssertResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssertResult.cpp; sourceTree = "<group>"; };
+		10F1ACC41D9DD27E0067B493 /* DirectoryHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DirectoryHelper.hpp; sourceTree = "<group>"; };
+		10F1ACC51D9DD2F40067B493 /* DirectoryHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectoryHelper.cpp; sourceTree = "<group>"; };
 		10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleResultPrinter.cpp; sourceTree = "<group>"; };
 		10FEA99B1D03987B00338F5B /* ConsoleResultPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConsoleResultPrinter.hpp; sourceTree = "<group>"; };
 		10FEA99C1D03987B00338F5B /* IResultPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IResultPrinter.hpp; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				10A7B3121CB3098700B78A7C /* AssertResult.hpp */,
 				10FEA99A1D03987B00338F5B /* ConsoleResultPrinter.cpp */,
 				10FEA99B1D03987B00338F5B /* ConsoleResultPrinter.hpp */,
+				10F1ACC51D9DD2F40067B493 /* DirectoryHelper.cpp */,
+				10F1ACC41D9DD27E0067B493 /* DirectoryHelper.hpp */,
 				1090686B1D42CC840086B32C /* IntegrationTestClass.cpp */,
 				1090686A1D42CC5C0086B32C /* IntegrationTestClass.hpp */,
 				10FEA99C1D03987B00338F5B /* IResultPrinter.hpp */,
@@ -200,6 +205,7 @@
 				10555C991C7B8A8A007BEC3D /* TestCaseResult.cpp in Sources */,
 				10555C9F1C7B8A8A007BEC3D /* TestClass.cpp in Sources */,
 				109068691D42CC060086B32C /* UnitTestClass.cpp in Sources */,
+				10F1ACC61D9DD2F40067B493 /* DirectoryHelper.cpp in Sources */,
 				1090687F1D43ABB70086B32C /* Timer.cpp in Sources */,
 				109068781D42E4EF0086B32C /* XmlResultPrinter.cpp in Sources */,
 				10555CA11C7B8A8A007BEC3D /* TestClassResult.cpp in Sources */,
