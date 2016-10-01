@@ -24,6 +24,7 @@ public:
 	
 	static std::string CanonicalisePath(const std::string& path);
 
+	static std::string RemoveTrailingSlash(const std::string& str);
 public:
 
 	class IDirectoryHelperImpl

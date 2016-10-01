@@ -1,5 +1,6 @@
 #include "DirectoryHelper.hpp"
 
+#include <algorithm>
 #include <sstream>
 
 using namespace Fnd::Test;
@@ -45,12 +46,61 @@ namespace
 	public:
 		void CreateDirectory(const std::string& directory, const bool recursive)
 		{
-			Win32CreateDirectory(directory.c_str(), nullptr);
+			std::vector<std::string> directories = SplitString(DirectoryHelper::CanonicalisePath(directory), '/');
+			std::string current_directory;
+			
+			for (const std::string& dir : directories)
+			{
+				current_directory += dir;
+				
+				Win32CreateDirectory(current_directory.c_str(), nullptr);
+				
+				current_directory += '/';
+				
+			}
 		}
 
 		void DeleteDirectory(const std::string& directory, const bool recursive)
 		{
-			RemoveDirectory(directory.c_str());
+			if (recursive)
+			{
+				WIN32_FIND_DATA find_data;
+				HANDLE file_handle = FindFirstFile((directory + "*").c_str(), &find_data);
+
+				if (file_handle != INVALID_HANDLE_VALUE)
+				{
+					do
+					{
+						if (!strcmp(find_data.cFileName, ".") || !strcmp(find_data.cFileName, ".."))
+						{
+							// skip
+						}
+						else
+						{
+							const std::string content = directory + find_data.cFileName;
+
+							if (find_data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+							{
+								DeleteDirectory(content, true);
+							}
+							else
+							{
+								DeleteFile(content.c_str());
+							}
+						}
+					}
+					while (FindNextFile(file_handle, &find_data));
+
+					FindClose(file_handle);
+					file_handle = INVALID_HANDLE_VALUE;
+
+					RemoveDirectory(directory.c_str());
+				}
+			}
+			else
+			{
+				RemoveDirectory(directory.c_str());
+			}
 		}
 	};
 }
@@ -222,4 +272,22 @@ std::string DirectoryHelper::CanonicalisePath(const std::string& path_in)
 	}
 	
 	return ret;
+}
+
+std::string DirectoryHelper::RemoveTrailingSlash(const std::string& str)
+{
+	if (str.empty())
+	{
+		return str;
+	}
+
+	if (
+		str.back() == '\\' ||
+		str.back() == '/'
+		)
+	{
+		return str.substr(0, str.size() - 1);
+	}
+
+	return str;
 }
