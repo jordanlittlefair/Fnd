@@ -1,9 +1,17 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj", "{1F00DF01-BD96-420F-B4CA-5BFC36DDFA4E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Platform.vcxproj", "{6BD48548-0116-4C6E-82BF-1EFCAE6395CB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntitySystem", "EntitySystem\EntitySystem.vcxproj", "{B06713F6-8423-4C04-B7FC-B06298DC2512}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SystemManager", "SystemManager\SystemManager.vcxproj", "{57495A44-F395-4C68-8526-F83C932F0142}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Utility\Utility.vcxproj", "{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Modules", "Modules\Modules.vcxproj", "{598A7ACE-10A9-40B7-B522-CCA0E7489953}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "Math\Math.vcxproj", "{AB113364-78B5-42C3-BB3D-E56C0EBD2313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +27,26 @@ Global
 		{6BD48548-0116-4C6E-82BF-1EFCAE6395CB}.Debug|Win32.Build.0 = Debug|Win32
 		{6BD48548-0116-4C6E-82BF-1EFCAE6395CB}.Release|Win32.ActiveCfg = Release|Win32
 		{6BD48548-0116-4C6E-82BF-1EFCAE6395CB}.Release|Win32.Build.0 = Release|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Debug|Win32.Build.0 = Debug|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Release|Win32.ActiveCfg = Release|Win32
+		{B06713F6-8423-4C04-B7FC-B06298DC2512}.Release|Win32.Build.0 = Release|Win32
+		{57495A44-F395-4C68-8526-F83C932F0142}.Debug|Win32.ActiveCfg = Debug|Win32
+		{57495A44-F395-4C68-8526-F83C932F0142}.Debug|Win32.Build.0 = Debug|Win32
+		{57495A44-F395-4C68-8526-F83C932F0142}.Release|Win32.ActiveCfg = Release|Win32
+		{57495A44-F395-4C68-8526-F83C932F0142}.Release|Win32.Build.0 = Release|Win32
+		{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}.Debug|Win32.Build.0 = Debug|Win32
+		{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}.Release|Win32.ActiveCfg = Release|Win32
+		{FEC57043-B352-4C89-AF7E-3CA70A67CBB0}.Release|Win32.Build.0 = Release|Win32
+		{598A7ACE-10A9-40B7-B522-CCA0E7489953}.Debug|Win32.ActiveCfg = Debug|Win32
+		{598A7ACE-10A9-40B7-B522-CCA0E7489953}.Debug|Win32.Build.0 = Debug|Win32
+		{598A7ACE-10A9-40B7-B522-CCA0E7489953}.Release|Win32.ActiveCfg = Release|Win32
+		{598A7ACE-10A9-40B7-B522-CCA0E7489953}.Release|Win32.Build.0 = Release|Win32
+		{AB113364-78B5-42C3-BB3D-E56C0EBD2313}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB113364-78B5-42C3-BB3D-E56C0EBD2313}.Debug|Win32.Build.0 = Debug|Win32
+		{AB113364-78B5-42C3-BB3D-E56C0EBD2313}.Release|Win32.ActiveCfg = Release|Win32
+		{AB113364-78B5-42C3-BB3D-E56C0EBD2313}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

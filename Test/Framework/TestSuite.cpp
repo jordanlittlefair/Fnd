@@ -71,6 +71,8 @@ void TestSuite::Run(const TestType type)
 		_result_printer->PrintBeginTestSuiteResult(GetResult().GetDescription());
 	}
 	
+	_result.StartTimer();
+	
 	for (auto test_class : _test_classes)
 	{
 		if (test_class->GetTestType() == type)
@@ -82,6 +84,8 @@ void TestSuite::Run(const TestType type)
 			_result.AddTestClassResult(test_class->GetResult());
 		}
 	}
+	
+	_result.EndTimer();
 	
 	if (_result_printer)
 	{

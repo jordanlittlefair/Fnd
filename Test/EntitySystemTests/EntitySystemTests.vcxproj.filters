@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{d5ca63f4-8926-4d97-8291-f8cc825e44f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mock">
+      <UniqueIdentifier>{80497aa8-b607-4077-8b12-c652ecd2a99c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ComponentContainerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponent.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponentContainer.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockComponentTypes.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentContainerTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentManagerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySystemTestSuite.hpp" />
+    <ClInclude Include="MockEntityIdGenerator.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManagerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNode.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySystemTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNodeContainer.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="MockNodeTypes.hpp">
+      <Filter>Mock</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeContainerTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeContainerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeManagerTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeTemplateTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySystemIntegrationTests.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ComponentContainerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponent.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponentContainer.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockComponentTypes.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentContainerTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystemTestSuite.cpp" />
+    <ClCompile Include="MockEntityIdGenerator.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNode.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystemTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNodeContainer.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="MockNodeTypes.cpp">
+      <Filter>Mock</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeContainerTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeContainerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeManagerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTemplateTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystemIntegrationTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
