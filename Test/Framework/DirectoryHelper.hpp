@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 namespace Fnd
 {
@@ -19,7 +20,9 @@ public:
 	
 	void DeleteDirectory(const std::string& directory, const bool recursive);
 	
-	std::string ValidateString(const std::string& directory) const;		// Remove any characters not accepted in a file/directory name
+	static std::string ValidateString(const std::string& directory);		// Remove any characters not accepted in a file/directory name
+	
+	static std::string CanonicalisePath(const std::string& path);
 
 public:
 
