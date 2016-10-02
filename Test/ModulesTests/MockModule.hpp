@@ -37,9 +37,9 @@ protected:
 	
 	void OnRegisterSystems(Fnd::SystemManager::ISystemManager& system_manager);
 	
-	Fnd::Modules::IModuleConfig& OnGetModuleConfig();
+	Fnd::Modules::IModuleConfig* OnGetModuleConfig();
 	
-	void OnInitialise(const Fnd::Modules::IModuleConfig& config);
+	void OnInitialise(const Fnd::Modules::IModuleConfig* config);
 	
 private:
 	

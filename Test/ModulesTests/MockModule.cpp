@@ -48,12 +48,12 @@ void MockModule::OnRegisterSystems(Fnd::SystemManager::ISystemManager& system_ma
 	_has_registered_systems = true;
 }
 
-IModuleConfig& MockModule::OnGetModuleConfig()
+IModuleConfig* MockModule::OnGetModuleConfig()
 {
-	return _config;
+	return &_config;
 }
 
-void MockModule::OnInitialise(const IModuleConfig& config)
+void MockModule::OnInitialise(const IModuleConfig* config)
 {
 	if (_initialise_should_throw)
 	{
