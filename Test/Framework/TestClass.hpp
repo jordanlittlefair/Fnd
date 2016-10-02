@@ -17,9 +17,13 @@ class TestClass
 {
 public:
 	
+	void SetWorkingDirectory(const std::string& working_directory);
+	
 	void SetResultPrinter(ResultPrinterPtr result_printer);
 	
 	TestType GetTestType() const;
+	
+	std::string GetDescription() const;
 
 	void Run();
 	
@@ -37,13 +41,15 @@ protected:
 		AddTestCase( std::make_shared<TestCase>( name, std::bind( function, ptr, std::placeholders::_1 ) ) );
 	}
 	
+	std::string GetWorkingDirectory() const;
+	
 	virtual void SetupClass();
 	
 	virtual void CleanupClass();
 
-	virtual void SetupTest();
+	virtual void SetupTest(const std::string& test_description);
 
-	virtual void CleanupTest();
+	virtual void CleanupTest(const std::string& test_description);
 	
 private:
 	
@@ -53,7 +59,11 @@ private:
 	
 	const TestType _type;
 	
+	const std::string _description;
+	
 	std::vector<TestCasePtr> _test_cases;
+	
+	std::string _working_directory;
 
 	ResultPrinterPtr _result_printer;
 	

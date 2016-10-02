@@ -4,8 +4,19 @@ using namespace Fnd::Test;
 
 TestClass::TestClass(const TestType type, const std::string& description):
 	_type(type),
+	_description(description),
 	_result(description)
 {
+}
+
+void TestClass::SetWorkingDirectory(const std::string& working_directory)
+{
+	_working_directory = working_directory;
+}
+
+std::string TestClass::GetWorkingDirectory() const
+{
+	return _working_directory;
 }
 
 void TestClass::SetResultPrinter(ResultPrinterPtr result_printer)
@@ -16,6 +27,11 @@ void TestClass::SetResultPrinter(ResultPrinterPtr result_printer)
 TestType TestClass::GetTestType() const
 {
 	return _type;
+}
+
+std::string TestClass::GetDescription() const
+{
+	return _description;
 }
 
 void TestClass::Run()
@@ -31,7 +47,7 @@ void TestClass::Run()
 
 	for ( auto& test_case : _test_cases )
 	{
-		SetupTest();
+		SetupTest(test_case->GetDescription());
 
 		test_case->SetResultPrinter(_result_printer);
 		
@@ -39,7 +55,7 @@ void TestClass::Run()
 		
 		_result.AddTestCaseResult(test_case->GetResult());
 		
-		CleanupTest();
+		CleanupTest(test_case->GetDescription());
 	}
 	
 	_result.EndTimer();
@@ -74,10 +90,10 @@ void TestClass::CleanupClass()
 {
 }
 
-void TestClass::SetupTest()
+void TestClass::SetupTest(const std::string& test_description)
 {
 }
 
-void TestClass::CleanupTest()
+void TestClass::CleanupTest(const std::string& test_description)
 {
 }

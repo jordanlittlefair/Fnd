@@ -14,6 +14,8 @@ class TestSuite
 {
 public:
 	
+	void SetWorkingDirectory(const std::string& working_directory);
+	
 	void SetResultPrinter(ResultPrinterPtr result_printer);
 
 	void Run();
@@ -43,6 +45,8 @@ private:
 private:
 	
 	std::vector<TestClassPtr> _test_classes;
+	
+	std::string _working_directory;
 
 	ResultPrinterPtr _result_printer;
 	

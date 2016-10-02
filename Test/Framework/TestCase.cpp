@@ -4,6 +4,7 @@ using namespace Fnd::Test;
 
 TestCase::TestCase( const std::string& description, TestFunction function ):
 _result(description),
+_description(description),
 _function(function)
 {
 }
@@ -11,6 +12,11 @@ _function(function)
 void TestCase::SetResultPrinter(ResultPrinterPtr result_printer)
 {
 	_result_printer = result_printer;
+}
+
+std::string TestCase::GetDescription() const
+{
+	return _description;
 }
 
 void TestCase::Run()
