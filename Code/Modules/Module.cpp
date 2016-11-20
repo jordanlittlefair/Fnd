@@ -64,3 +64,8 @@ void Module::OnRegisterSystems(ISystemManager& system_manager)
 {
 	// Override if additional systems are required for this module
 }
+
+IModuleConfig* Module::OnGetModuleConfig()
+{
+	return nullptr;
+}

@@ -39,9 +39,9 @@ protected:
 	
 	virtual void OnRegisterSystems(SystemManager::ISystemManager& system_manager);
 	
-	virtual IModuleConfig& OnGetModuleConfig() = 0;
+	virtual IModuleConfig* OnGetModuleConfig();
 	
-	virtual void OnInitialise(const IModuleConfig& config) = 0;
+	virtual void OnInitialise(const IModuleConfig* config) = 0;
 
 private:
 
